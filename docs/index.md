@@ -1,0 +1,14 @@
+# Welcome to Via Foundry's Documentation!
+
+## Getting Started
+- [Platform Overview](vfdocs/vf_docs/ViaFoundry/overview/overview.md)
+- [Pipeline Examples](vfdocs/vf_docs/ViaFoundry/pipeline_example/pipeline_example.md)
+- [About](vfdocs/vf_docs/ViaFoundry/about/about.md)
+- [How To Cite Us](vfdocs/vf_docs/ViaFoundry/cite/cite.md)
+
+## User Guide
+- [Quick Start Guide](vfdocs/vf_docs/ViaFoundry/quick/quick.md)
+- [Project Guide](vfdocs/vf_docs/ViaFoundry/project/project.md)
+- [Run Guide](vfdocs/vf_docs/ViaFoundry/run/run.md)
+- [Profile Guide](vfdocs/vf_docs/ViaFoundry/profile/profile.md)
+- [Frequently Asked Questions](vfdocs/vf_docs/ViaFoundry/faq/faq.md)
