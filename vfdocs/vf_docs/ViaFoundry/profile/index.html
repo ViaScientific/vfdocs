@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Jack Davis" /><link rel="canonical" href="https://viascientific.github.io/vfdocs/vf_docs/ViaFoundry/profile/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Profile Guide - ViaFoundry Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Profile Guide";
+        var mkdocs_page_input_path = "vf_docs/ViaFoundry/profile.md";
+        var mkdocs_page_url = "/vfdocs/vf_docs/ViaFoundry/profile/";
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> ViaFoundry Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../about/">About ViaFoundry</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../quick/">Quick Start Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../project/">Project Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run/">Run Guide</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Profile Guide</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#profile-page">Profile Page</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ssh-keys">SSH Keys</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#amazon-keys">Amazon Keys</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#google-keys">Google Keys</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#groups">Groups</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#run-environments">Run Environments</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#a-defining-host-profiles">A. Defining Host Profiles:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#b-defining-aws-batch-profiles">B. Defining AWS Batch Profiles:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#c-defining-non-batch-amazon-web-services-profiles">C. Defining Non-Batch Amazon Web Services Profiles:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#d-defining-google-profiles">D. Defining Google Profiles:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#github-connection">GitHub Connection</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#change-password">Change Password</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#support">Support</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../faq/">Frequently Asked Questions</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">ViaFoundry Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>User Guide &raquo;</li>
+      <li>Profile Guide</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="profile-guide">Profile Guide</h1>
+<p>In this guide, you'll discover all the available options you can
+explore on your Via Foundry Profile page.</p>
+<h2 id="profile-page">Profile Page</h2>
+<p>After logging in, simply click on the "Profile" tab located at the
+top-right corner of your screen. You'll see a number of different tabs
+on your profile page that you can click through and explore.</p>
+<p><img alt="image" src="../images/profile_tabs.png" /></p>
+<p>The platform offers several options for creating connection profiles and
+managing your credentials.</p>
+<ul>
+<li>First up is the <strong>Run Environments</strong> tab, which is your main hub for
+    creating connection profiles.</li>
+<li>Next, you can use the <strong>Groups</strong> tab to create a group and add
+    members to it, allowing you to share your runs or pipelines with
+    others.</li>
+<li>To manage your SSH keys, you'll need to head over to the <strong>Run
+    Environments</strong> tab, where you can create new keys or enter existing
+    SSH key pairs in the <code>Edit</code> section to establish connections with
+    hosts.</li>
+<li>You can also add your <strong>Amazon Keys</strong> or <strong>Google Keys</strong> in order to
+    execute your runs in the cloud.</li>
+<li>Under the <strong>Repositories</strong> tab (formerly called <strong>GitHub</strong>), you can
+    enter your security credentials to push your pipeline information to
+    your Github or Bitbuckets account.</li>
+<li>If you're not using Google sign-in, you can change your password
+    within the <strong>Change Password</strong> section.</li>
+<li>Lastly, in the <strong>Notification</strong> tab, you can opt into receiving
+    emails about completed or failed runs.</li>
+</ul>
+<p>It's important to note that before creating a run environment, you'll
+need to create SSH keys in the Run Environments tab. And if you plan on
+executing runs in the cloud, you'll need to add your Amazon or Google
+keys as well.</p>
+<h2 id="ssh-keys">SSH Keys</h2>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/ssh_keys.png" /></p>
+<p>To create or enter existing SSH key pairs, navigate to the <strong>SSH Keys</strong>
+tab and click on the <code>Add SSH Key</code> button in the top right corner.</p>
+<p>Next, you'll need to choose between two methods:</p>
+<ul>
+<li><strong>A. Use your own keys:</strong> If you choose this option, you'll need to
+    provide your private and public key pairs. You can find these keys
+    on your computer at the default location: '~/.ssh/id_rsa 'for the
+    private key and '~/.ssh/id_rsa.pub' for the public key. Simply
+    copy and paste these keys into the appropriate fields in your
+    browser. If these files don't exist or you want to create new ones,
+    check out this 
+    <a href="../faq/#how-can-i-create-ssh-keys-in-my-computer">link</a>
+    for guidance.</li>
+<li><strong>B. Create new keys:</strong> To generate a new pair of SSH keys, simply
+    click the "Generate Keys" button.</li>
+</ul>
+<p>After you've saved your key, your information will be encrypted and
+kept secure. To establish a connection, you'll need to add your public
+key to the '~/.ssh/authorized_keys' file on the host machine. For
+help with this step, feel free to contact us at
+<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#118;&#105;&#97;&#115;&#99;&#105;&#101;&#110;&#116;&#105;&#102;&#105;&#99;&#46;&#99;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#118;&#105;&#97;&#115;&#99;&#105;&#101;&#110;&#116;&#105;&#102;&#105;&#99;&#46;&#99;&#111;&#109;</a>.</p>
+<h2 id="amazon-keys">Amazon Keys</h2>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/profile_amazonkeys.png" /></p>
+<p>To enter your AWS security credentials (access key, secret key, and
+default region), head over to the <strong>Amazon Keys</strong> tab and click on the
+<code>Add Amazon Key</code> button. Rest assured that your information will be
+encrypted and kept secure, and only you will have full access to view
+and modify your key information.</p>
+<p><strong>Note:</strong> Once you've saved your key, it won't be visible for security purposes.
+However, you can always overwrite it with a new key or delete it if
+needed.</p>
+<h2 id="google-keys">Google Keys</h2>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/profile_googlekeys.png" /></p>
+<p>To enter your Project ID and Service Account Key in the Google keys tab,
+start by clicking the <code>Add Google Key</code> button.</p>
+<ul>
+<li>For your <strong>Project ID</strong>, head over to the Google Cloud Console and
+    navigate to the Dashboard section. From there, check the Project
+    info box to find your Project ID, which should look something like
+    "viafoundry-193616".</li>
+<li>To input your <strong>Service Account Key</strong>, also head over to the Google
+    Cloud Console and navigate to <strong>APIs &amp; Services</strong> → <strong>Credentials</strong>.
+    From there, click on the <code>Create Credentials</code> drop-down and select
+    <code>Service Account Key</code>. On the following page, choose an existing
+    service account or create a new one if needed, then select JSON as
+    the "Key Type". Finally, click the Create button and download the
+    JSON file with a name of your choice (e.g., creds.json).</li>
+</ul>
+<p>Remember that, after saving your key, you won't be able to view your
+Service Account Key for security reasons. However, you can always
+overwrite it with a new key or delete it if necessary.</p>
+<h2 id="groups">Groups</h2>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/profile_groups.png" /></p>
+<p>In the <strong>Groups</strong> tab, you can create groups by selecting the
+<code>Create a Group</code> button. Once you have created a group, you can add
+members by clicking the <code>Options &gt; Edit Group Members</code> button. This
+interactive platform allows you to share your process, pipeline, or
+projects with your group members. To view the current members of the
+group, select the <code>Options &gt; View Group Members</code> button. Additionally,
+you have the option to delete your group by selecting the
+<code>Options &gt; Delete Group</code> button, or to edit its name with
+<code>Options &gt; Edit Group Name</code>.</p>
+<h2 id="run-environments">Run Environments</h2>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/profile_runenv.png" /></p>
+<p>This section is used for defining connection profiles by clicking on the
+<code>Add Environment</code> button. You can choose from three options: Host,
+Amazon or Google.</p>
+<ul>
+<li><strong>Host</strong>: This option is for users who have access to High
+    Performance Computing (HPC) environments or personal workstations.</li>
+<li><strong>Amazon</strong>: This option is for users who have an Amazon Web Services
+    (AWS) account or plan to create an EC2 instance to run jobs in the
+    cloud.</li>
+<li><strong>Google</strong>: This option is for users who want to use their Google
+    Cloud account to run jobs in the cloud.</li>
+</ul>
+<h3 id="a-defining-host-profiles">A. Defining Host Profiles:</h3>
+<ul>
+<li>
+<p><strong>Username/Hostname:</strong> To connect to a remote host, you need to
+    provide your username and the hostname of the remote host in the
+    format "<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#121;&#111;&#117;&#114;&#117;&#115;&#101;&#114;&#110;&#97;&#109;&#101;&#64;&#121;&#111;&#117;&#114;&#104;&#111;&#115;&#116;&#110;&#97;&#109;&#101;">&#121;&#111;&#117;&#114;&#117;&#115;&#101;&#114;&#110;&#97;&#109;&#101;&#64;&#121;&#111;&#117;&#114;&#104;&#111;&#115;&#116;&#110;&#97;&#109;&#101;</a>". For instance, for the
+    username "us2r" and hostname "ghpcc06.umassrc.org", you should
+    enter "<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#117;&#115;&#50;&#114;&#64;&#103;&#104;&#112;&#99;&#99;&#48;&#54;&#46;&#117;&#109;&#97;&#115;&#115;&#114;&#99;&#46;&#111;&#114;&#103;">&#117;&#115;&#50;&#114;&#64;&#103;&#104;&#112;&#99;&#99;&#48;&#54;&#46;&#117;&#109;&#97;&#115;&#115;&#114;&#99;&#46;&#111;&#114;&#103;</a>".</p>
+</li>
+<li>
+<p><strong>SSH Port (optional):</strong> By default, Via Foundry uses TCP port 22
+    for SSH connections. However, you can specify a different port
+    number if needed.</p>
+</li>
+<li>
+<p><strong>SSH Keys:</strong> Via Foundry stores your SSH keys in the SSH keys tab
+    and uses them to authenticate your SSH connections.</p>
+</li>
+<li>
+<p><strong>Run Command (optional):</strong> You can specify a command or a series of
+    commands to run before starting the Nextflow job. Separate multiple
+    commands using "&amp;&amp;". For example:</p>
+<pre><code>source /etc/bashrc &amp;&amp; module load java/1.8.0_77 &amp;&amp; module load
+singularity/singularity-3.4.0
+</code></pre>
+</li>
+<li>
+<p><strong>Nextflow Path (optional):</strong> If the Nextflow executable is not in
+    your $PATH, you can specify the path to the executable in this
+    block. For example:</p>
+<pre><code>/project/umw_biocore/bin
+</code></pre>
+</li>
+<li>
+<p><strong>Singularity Cache Folder:</strong> Via Foundry uses a local directory to
+    store Singularity images downloaded from remote hosts. By default,
+    this directory is located in your home directory. However, if you
+    are using a computing cluster, you need to specify a shared
+    directory that is accessible from all computing nodes.</p>
+</li>
+<li>
+<p><strong>Profile Variables:</strong> To facilitate the use of genome reference and
+    index files in your pipelines, you can specify a download directory
+    in which these files are stored. If multiple users are using Via
+    Foundry, it is recommended to use a shared path in your cluster. For
+    example:</p>
+<pre><code>params.DOWNDIR="/share/dolphinnext/downloads"
+</code></pre>
+</li>
+<li>
+<p><strong>Environment Variables:</strong> You can set BASH environmental variables
+    here. Note: don't use spaces to separate multiple variables; use
+    newlines instead.</p>
+</li>
+<li>
+<p><strong>Executor Settings:</strong> In Via Foundry, there are four different
+    sections to control executor settings: the first two are defined in
+    <strong>Profile</strong> -&gt; <strong>Run Environment</strong>, and the remaining two are
+    adjusted in the <strong>Advanced</strong> tab of the run page. If you select an
+    executor other than "Local" or "Ignite", Via Foundry prompts you
+    to enter additional settings, such as the queue/partition, memory,
+    CPU, and time.</p>
+<blockquote>
+<p><strong>1. Executor of Nextflow (navigate to Profile -&gt; Run
+Environments)</strong>:</p>
+<blockquote>
+<p>This setting controls how Via Foundry initiates Nextflow.
+Currently, Via Foundry supports the Local, SGE, SLURM, and LSF
+executors to initiate Nextflow. For the SGE, SLURM, and LSF
+executors, Via Foundry only uses them to run Nextflow itself, so
+the time limit should be long enough to execute all processes in
+the pipeline. For local execution, DolphinNext limits the total
+amount of memory and CPU that can be used, so these values
+should be close to the maximum capacity of your computer.</p>
+<ul>
+<li>Suggested parameters for SGE/SLURM/LSF: long (queue) 8 (GB
+    Memory) 1 (CPU) 5000-8000 (min, Time)</li>
+<li>Suggested parameters for Local: 100 (GB Memory) 8 (CPU)</li>
+</ul>
+</blockquote>
+<p><strong>2. Executor of Nextflow Jobs (navigate to Profile -&gt; Run
+Environments)</strong>:</p>
+<blockquote>
+<p>This setting will be used as the default setting for submitted
+jobs by Nextflow if you don't set any parameters in the
+<strong>Advanced</strong> section of your run page.</p>
+<ul>
+<li>Suggested parameters for SGE/SLURM/LSF: short (queue) 20 (GB
+    Memory) 1 (CPU) 240 (min, Time)</li>
+<li>Suggested parameters for Local: 20 (GB Memory) 1 (CPU)</li>
+</ul>
+</blockquote>
+<p><strong>3. Executor Settings for All Processes (in the advanced tab of
+run page)</strong>:</p>
+<blockquote>
+<p>These settings will overwrite those in <strong>Executor of Nextflow
+Jobs</strong> and set default parameters for all Nextflow Jobs.</p>
+<ul>
+<li>Suggested parameters for SGE/SLURM/LSF: short (queue) 20 (GB
+    Memory) 1 (CPU) 240 (min, Time)</li>
+<li>Suggested parameters for Local: 20 (GB Memory) 1 (CPU)</li>
+</ul>
+</blockquote>
+<p><strong>4. Executor Settings for Each Process (in the advanced tab of
+run page)</strong>:</p>
+<blockquote>
+<p>If a particular process requires different parameters than the
+defaults (which are defined in the <strong>Executor Settings for All
+Processes</strong> or <strong>Executor of Nextflow Jobs</strong> sections), you can
+overwrite the general settings by clicking the checkbox of the
+process that you want to change. This will only affect the
+settings of the selected process and keep the original settings
+for the rest of the processes.</p>
+<ul>
+<li>Suggested parameters for SGE/SLURM/LSF: long (queue) 20 (GB
+    Memory) 4 (CPU) 1000-5000 (min, Time)</li>
+<li>Suggested parameters for Local: 20 (GB Memory) 4 (CPU)</li>
+</ul>
+</blockquote>
+<p><strong>Note:</strong> If non-standard resources or settings are required for the
+executor, then you can specify these parameters by using <strong>Other
+Options</strong> box. For instance, to submit an SGE job with 3 CPU using
+parallel environments, you can enter <code>-pe orte 3</code> (to use MPI for
+distributed-memory machines) or <code>-pe smp 3</code> (to use OpenMP for
+shared-memory machines) in the <strong>Other Options</strong> box, leaving the
+CPU box empty.
+:::</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="b-defining-aws-batch-profiles">B. Defining AWS Batch Profiles:</h3>
+<p>Please choose type of the run environment as "Host" and enter
+following information.</p>
+<ul>
+<li>
+<p><strong>Username/Hostname:</strong> To connect to a remote host, you need to
+    provide your username and the hostname of the remote host in the
+    format "<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#121;&#111;&#117;&#114;&#117;&#115;&#101;&#114;&#110;&#97;&#109;&#101;&#64;&#121;&#111;&#117;&#114;&#104;&#111;&#115;&#116;&#110;&#97;&#109;&#101;">&#121;&#111;&#117;&#114;&#117;&#115;&#101;&#114;&#110;&#97;&#109;&#101;&#64;&#121;&#111;&#117;&#114;&#104;&#111;&#115;&#116;&#110;&#97;&#109;&#101;</a>". For instance, for the
+    username "us2r" and hostname "ghpcc06.umassrc.org", you should
+    enter "<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#117;&#115;&#50;&#114;&#64;&#103;&#104;&#112;&#99;&#99;&#48;&#54;&#46;&#117;&#109;&#97;&#115;&#115;&#114;&#99;&#46;&#111;&#114;&#103;">&#117;&#115;&#50;&#114;&#64;&#103;&#104;&#112;&#99;&#99;&#48;&#54;&#46;&#117;&#109;&#97;&#115;&#115;&#114;&#99;&#46;&#111;&#114;&#103;</a>".</p>
+</li>
+<li>
+<p><strong>SSH Port (optional):</strong> By default, Via Foundry uses TCP port 22
+    for SSH connections. However, you can specify a different port
+    number if needed.</p>
+</li>
+<li>
+<p><strong>SSH Keys:</strong> Via Foundry stores your SSH keys in the SSH keys tab
+    and uses them to authenticate your SSH connections.</p>
+</li>
+<li>
+<p><strong>Run Command (optional):</strong> You can specify a command or a series of
+    commands to run before starting the Nextflow job. Separate multiple
+    commands using "&amp;&amp;". For example:</p>
+<pre><code>source /etc/bashrc &amp;&amp; module load java/1.8.0_77 &amp;&amp; module load
+singularity/singularity-3.4.0
+</code></pre>
+</li>
+<li>
+<p><strong>Nextflow Path (optional):</strong> If the Nextflow executable is not in
+    your $PATH, you can specify the path to the executable in this
+    block. For example:</p>
+<pre><code>/project/umw_biocore/bin
+</code></pre>
+</li>
+<li>
+<p><strong>Singularity Cache Folder:</strong> Via Foundry uses a local directory to
+    store Singularity images downloaded from remote hosts. By default,
+    this directory is located in your home directory. However, if you
+    are using a computing cluster, you need to specify a shared
+    directory that is accessible from all computing nodes.</p>
+</li>
+<li>
+<p><strong>Profile Variables:</strong> You can set commonly used pipeline variables
+    here. For instance,<code>params.DOWNDIR</code> is used in most of our public
+    pipelines to save all genome related files (fasta, index etc.), so
+    you can set this variable like this:
+    <code>params.DOWNDIR = "/share/dnext_data"</code> Also, you can enter multiple
+    variables by separating them with newlines.</p>
+</li>
+<li>
+<p><strong>Environment Variables:</strong> You can set BASH environmental variables
+    here. Note: don't use spaces to separate multiple variables; use
+    newlines instead.</p>
+</li>
+<li>
+<p><strong>Executor of Nextflow:</strong> Please select the <code>Local</code> Nextflow
+    executor.</p>
+</li>
+<li>
+<p><strong>Executor Settings for Nextflow:</strong> Please enter 10GB in the
+    <strong>Memory</strong> field and 1 in the <strong>CPU</strong> field.</p>
+</li>
+<li>
+<p><strong>Executor of Nextflow Jobs:</strong> Please select <code>AWS Batch</code> for
+    Nextflow jobs.</p>
+</li>
+<li>
+<p><strong>Queue, Memory, CPU, and other options:</strong> Please enter the queue
+    name and set the default memory and CPU you'll allocate for each
+    job (e.g. 10GB memory and 1CPU). These settings can be adjusted in
+    the run page.</p>
+</li>
+<li>
+<p><strong>Amazon Keys:</strong> AWS credentials that are saved in the <strong>Amazon
+    Keys</strong> tab will allow you to submit jobs to AWS Batch.</p>
+</li>
+<li>
+<p><strong>Default Working Directory:</strong> Default directory in the host machine
+    where runs will be executed. (eg. <code>/data/dnext</code>)</p>
+</li>
+<li>
+<p><strong>Default Bucket Location for Publishing:</strong> Default bucket location
+    where dolphinnext reports will be published. (e.g.
+    <code>s3://bucket/dnext</code>)</p>
+</li>
+</ul>
+<h3 id="c-defining-non-batch-amazon-web-services-profiles">C. Defining Non-Batch Amazon Web Services Profiles:</h3>
+<p><strong>SSH Keys:</strong> These are saved in the <strong>SSH Keys</strong> tab and will be used
+when connecting to a host. SSH keys are a secure way to authenticate and
+encrypt connections between servers. It's recommended to generate a new
+key pair for each instance you plan to connect to. * <strong>Amazon Keys:</strong>
+These AWS credentials are saved in the <strong>Amazon Keys</strong> tab and allow you
+to start/stop Amazon EC2 instances. These credentials consist of an
+access key and a secret access key. * <strong>Instance Type:</strong> This refers to
+the type of <a href="https://aws.amazon.com/ec2/instance-types">_Amazon EC2
+instance</a> that you will use.
+Instance types comprise varying combinations of CPU, memory, storage,
+and networking capacity. For example, "m3.xlarge" is an instance type
+that provides a balance of CPU and memory resources. * <strong>Image ID:</strong>
+This is the virtual machine ID (VM ID) that you will use to launch the
+instance. The image ID is specific to the region and operating system
+that you are using. For example, "ami-032a33ebe57465518" is a sample
+image ID for an Amazon Machine Image (AMI) that is based on the Ubuntu
+operating system.</p>
+<blockquote>
+<p>If you want to create your own image, please install the following programs:</p>
+<ul>
+<li><a href="http://singularity.lbl.gov">Singularity</a></li>
+<li><a href="https://www.docker.com/">Docker engine</a> (version 1.11 or
+        higher)</li>
+<li>Apache Ignite with Cloud-init package</li>
+<li><a href="https://www.nextflow.io/">Nextflow</a></li>
+<li><a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html">AWS
+        CLI</a></li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p><strong>Subnet ID/Security Group/Shared Storage ID/Shared Storage Mount:</strong></p>
+<blockquote>
+<p>The filesystem needs to be created at <a href="https://console.aws.amazon.com/efs/">https://console.aws.amazon.com/efs/</a>, and this information will be obtained upon the creation of a shared file system.</p>
+<ul>
+<li><em>Subnet ID:</em> Identifier of the VPC subnet to be applied,
+        e.g., subnet-05222a43.</li>
+<li><em>Security Group:</em> Identifier of the security group to be
+        applied, e.g., sg-df72b9ba, which is used by default.</li>
+<li><em>Shared Storage ID:</em> Identifier of the shared file system
+        instance, e.g., fs-1803efd1.</li>
+<li><em>Shared Storage Mount:</em> Mount path of the shared file
+        system, e.g., /mnt/efs.</li>
+</ul>
+<p>Please make sure the following criteria are satisfied:</p>
+<ol>
+<li>The image used must have the directory to mount this
+        storage.</li>
+<li>The output directory must be under this mount location.</li>
+<li>The storage system must be created in the selected region,
+        and necessary rights need to be given in the console.</li>
+<li>The EC2FullAccess and S3FullAccess permissions have been
+        added.</li>
+</ol>
+<p><strong>Warning:</strong> Both the EFS and images should be located in the same location.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Default Working Directory:</strong> This is the default directory in the
+    host machine where runs will be executed. It is an optional
+    parameter for AWS. For example, you can set it to "/data/dnext".</p>
+</li>
+<li>
+<p><strong>Default Bucket Location for Publishing:</strong> This is the default
+    bucket location where Via Foundry reports will be published. It is
+    also an optional parameter for AWS. For example, you can set it to
+    <code>s3://bucket/dnext</code>.</p>
+</li>
+<li>
+<p><strong>Run Command (optional):</strong> You may specify a command or multiple
+    commands to be run before the Nextflow job starts. Separate multiple
+    commands with the &amp;&amp; sign. For example, you could use the following
+    command to load modules before running the job:
+    <code>source /etc/bashrc &amp;&amp; module load java/1.8.0_31 &amp;&amp; module load bowtie2/2.3.2</code>.</p>
+</li>
+<li>
+<p><strong>Nextflow Path (optional):</strong> If the Nextflow path is not added to
+    the $PATH environment variable, you can define the path in this
+    block. For example, you could set it to <code>/project/umw_biocore/bin</code>.</p>
+</li>
+<li>
+<p><strong>Singularity Cache Folder:</strong> This is the directory where remote
+    Singularity images are stored. By default, the home directory is
+    used. Note that when using a computing cluster, it must be a shared
+    folder that is accessible from all computing nodes.</p>
+</li>
+<li>
+<p><strong>Profile Variables:</strong> You can set commonly used pipeline variables
+    here. For instance,<code>params.DOWNDIR</code> is used in most of our public
+    pipelines to save all genome related files (fasta, index etc.), so
+    you can set this variable like this:
+    <code>params.DOWNDIR = "/share/dnext_data"</code> You can also enter multiple
+    variables by separating them with newlines.</p>
+</li>
+<li>
+<p><strong>Executor of Nextflow/Executor of Nextflow Jobs:</strong> Amazon instances
+    are automatically configured to use the Ignite executors. As such,
+    when defining an Amazon profile, you should select <code>Local</code> for
+    <strong>Executor of Nextflow</strong> and <code>Ignite</code> for <strong>Executor of Nextflow
+    Jobs.</strong></p>
+</li>
+</ul>
+<h3 id="d-defining-google-profiles">D. Defining Google Profiles:</h3>
+<ul>
+<li>
+<p><strong>SSH Keys:</strong> are saved in SSH keys tab and will be used while
+    connecting to host.</p>
+</li>
+<li>
+<p><strong>Google Keys:</strong> Google credentials that are saved in Google keys
+    tab and will allow to start/stop Google Cloud instances.</p>
+</li>
+<li>
+<p><strong>Zone:</strong> The Google zone where the computation is executed.(eg.
+    us-east1-b)</p>
+</li>
+<li>
+<p><strong>Instance Type:</strong> <a href="https://cloud.google.com/compute/docs/machine-types">Google Cloud machine
+    types</a> that
+    comprise varying combinations of CPU, memory, storage, and
+    networking capacity (eg. <code>n1-standard-4</code>).</p>
+</li>
+<li>
+<p><strong>Image Id:</strong> Virtual machine ID (eg.
+    <code>dolphinnext-193616/global/images/dolphinnext-images-v1</code>).</p>
+<blockquote>
+<p>If you want to create your own image, please install following programs:</p>
+<ul>
+<li><a href="http://singularity.lbl.gov">Singularity</a></li>
+<li><a href="https://www.docker.com/">Docker engine</a> (version 1.11 or
+        higher)</li>
+<li>Apache Ignite with Cloud-init package</li>
+<li><a href="https://www.nextflow.io/">Nextflow</a></li>
+<li><a href="https://cloud.google.com/sdk/install">gcloud</a></li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>Default Working Directory:</strong> This is the default directory in the
+    host machine where runs will be executed. It is mandatory for Google
+    Cloud profiles. (e.g., /data/dnext)</p>
+</li>
+<li>
+<p><strong>Default Bucket Location for Publishing:</strong> This is the default
+    bucket location where Via Foundry reports will be published. It is
+    mandatory for Google Cloud profiles, and you can always edit this
+    path in the run page. For example, you could set it to
+    <code>gs://bucket/dnext</code>.</p>
+</li>
+<li>
+<p><strong>Run Command (optional):</strong> You may specify a command or multiple
+    commands to be run before the Nextflow job starts. Separate multiple
+    commands with the &amp;&amp; sign. For example, you could use the following
+    command to load modules before running the job:
+    <code>source /etc/bashrc &amp;&amp; module load java/1.8.0_31 &amp;&amp; module load bowtie2/2.3.2</code>.</p>
+</li>
+<li>
+<p><strong>Nextflow Path (optional):</strong> If the Nextflow path is not added to
+    the $PATH environment variable, you can define the path in this
+    block. For example, you could set it to <code>/project/umw_biocore/bin</code>.</p>
+</li>
+<li>
+<p><strong>Singularity Cache Folder:</strong> This is the directory where remote
+    Singularity images are stored. By default, the home directory is
+    used. Note that when using a computing cluster, it must be a shared
+    folder that is accessible from all computing nodes.</p>
+</li>
+<li>
+<p><strong>Profile Variables:</strong> You can set commonly used pipeline variables
+    here. For instance,<code>params.DOWNDIR</code> is used in most of our public
+    pipelines to save all genome related files (fasta, index etc.), so
+    you can set this variable like this:
+    <code>params.DOWNDIR = "/share/dnext_data"</code> You can also enter multiple
+    variables by separating them with newlines.</p>
+</li>
+<li>
+<p><strong>Executor of Nextflow/Executor of Nextflow Jobs:</strong> Google instances
+    are automatically configured to use the Ignite executors. As such,
+    when defining a Google profile, you can select <code>Local</code> for
+    <strong>Executor of Nextflow</strong> and <code>Ignite</code> for <strong>Executor of Nextflow
+    Jobs.</strong></p>
+</li>
+</ul>
+<h2 id="github-connection">GitHub Connection</h2>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/profile_github.png" /></p>
+<p>You can enter your GitHub or Bitbucket security credentials (Username,
+E-mail, Password) by clicking on the <code>Add Account</code> button in the
+<strong>Repositories</strong> tab. Your information will be encrypted and kept
+secure. By adding a Github or Bitbucket account, you'll be able to push
+your pipeline information into a public account, where you can then
+share it with others.</p>
+<h2 id="change-password">Change Password</h2>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/profile_change_password.png" /></p>
+<p>If you're not using a Google sign-in, you can change your Via Foundry
+password by using this section.</p>
+<h2 id="support">Support</h2>
+<p>For any questions or help, please reach out to
+<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#118;&#105;&#97;&#115;&#99;&#105;&#101;&#110;&#116;&#105;&#102;&#105;&#99;&#46;&#99;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#118;&#105;&#97;&#115;&#99;&#105;&#101;&#110;&#116;&#105;&#102;&#105;&#99;&#46;&#99;&#111;&#109;</a> with your name and question.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../run/" class="btn btn-neutral float-left" title="Run Guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../faq/" class="btn btn-neutral float-right" title="Frequently Asked Questions">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>© 2023 by Jack Davis, Onur Yukselen, Alper Kucukural</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../run/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../faq/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
