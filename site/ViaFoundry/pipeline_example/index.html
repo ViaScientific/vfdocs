@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Jack Davis" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Pipeline Examples - Via Foundry Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Pipeline Examples";
+        var mkdocs_page_input_path = "ViaFoundry/pipeline_example.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Via Foundry Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../overview/">Platform Overview</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Pipeline Examples</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#rna-seq-pipeline">RNA-Seq Pipeline</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#atac-seq-and-chip-seq-pipelines">ATAC-Seq and ChIP-Seq pipelines</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#other-pipelines">Other Pipelines</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-cite-us">How To Cite Us</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#support">Support</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../cite/">How To Cite Us</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../quick/">Quick Start Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../project/">Project Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run/">Run Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../profile/">Profile Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../faq/">Frequently Asked Questions</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Via Foundry Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Getting Started &raquo;</li>
+      <li>Pipeline Examples</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="pipeline-examples">Pipeline Examples</h1>
+<p>There are numerous publicly available pipelines and processes available
+on the Via Foundry website. Please note that this document only contains
+a small sampling of the pipelines Via Foundry offers. For the full list
+of pipelines and to explore each pipeline in detail, please visit the
+<a href="https://www.viafoundry.com/pipeline">Via Foundry Pipeline page</a>.</p>
+<p>On the main page, you can click on the box containing the name of the
+pipeline you\'re interested in to view a detailed summary of the
+pipeline, including information about the minimum required inputs and a
+table of all the pipeline\'s constituent processes.</p>
+<p>Please remember that the document provided here showcases only a limited
+selection of pipelines, and for a comprehensive list, as well as
+in-depth exploration of each pipeline, we recommend visiting the <a href="https://www.viafoundry.com/pipeline">Via
+Foundry Pipeline page</a>.</p>
+<p><img alt="image" src="../../images/updated_public_pipelines.png" /></p>
+<h2 id="rna-seq-pipeline">RNA-Seq Pipeline</h2>
+<blockquote>
+<ul>
+<li><a href="https://github.com/dolphinnext/rnaseq">Github Repository for RNA-Seq
+    Pipeline</a></li>
+</ul>
+</blockquote>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/rna-seq.jpg" /></p>
+<p>The RNA-seq pipeline publicly available in Via Foundry includes several
+key steps for processing RNA-seq data:</p>
+<ol>
+<li>Quality Control: FastQC is used to generate quality control (QC)
+    outputs. Optional processes such as read quality filtering
+    (trimmomatic), read quality trimming (trimmomatic), and adapter
+    removal (cutadapt) are available.</li>
+<li>rRNA Filtering and Genome Alignment: Bowtie2, Bowtie, and STAR are
+    utilized for counting or filtering out and estimating the abundance
+    of both standard and predefined sets of genomic loci, such as rRNAs,
+    miRNAs, tRNAs, piRNAs, snoRNAs, and ERCC.</li>
+<li>Gene and Isoform Expression Estimation: RSEM is employed to align
+    RNA-seq reads to reference transcripts and estimate gene and isoform
+    expression levels.</li>
+<li>Genome Alignment: HISAT2, STAR, and Tophat2 are employed to align
+    RNA-seq reads to the genome. Optional estimation of gene and isoform
+    expression levels can be performed using featureCount.</li>
+<li>Quality Metrics and Reports: If the user opts to perform genomic
+    alignments, the pipeline generates overall quality metrics,
+    including coverage and the number of mapped reads to different
+    genomic and transcriptomic regions. These reports rely on Picard\'s
+    CollectRNASeqMetrics program (Broad Institute, n.d.) and the RSeQC
+    program (Wang, Wang, and Li 2012).</li>
+<li>Visualization: Optional generation of Integrative Genomics Viewer
+    (IGV) and Genome Browser Files (TDF and Bigwig) is available.</li>
+<li>Quantification Matrix and Analysis: The RNA-seq pipeline provides a
+    quantification matrix that includes estimated counts and transcript
+    per million (TPM) values for each gene and annotated isoform. These
+    matrices serve as input for differential gene expression analysis
+    and can be directly uploaded to an embedded instance of DEBrowser
+    software for interactive exploration of the resulting data
+    (Kucukural et al. 2019).</li>
+</ol>
+<h2 id="atac-seq-and-chip-seq-pipelines">ATAC-Seq and ChIP-Seq pipelines</h2>
+<blockquote>
+<ul>
+<li><a href="https://github.com/dolphinnext/atacseq">Github Repository for ATAC-seq
+    Pipeline</a></li>
+<li><a href="https://github.com/dolphinnext/chipseq">Github Repository for CHIP-seq
+    Pipeline</a></li>
+</ul>
+</blockquote>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/atac.jpg" /></p>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/chip.jpg" /></p>
+<p>Via Foundry offers comprehensive pipelines for the processing of
+ChIP-Seq and ATAC-Seq data, which are widely used in genomic research.
+Although these pipelines share many common processes, they exhibit
+specific differences at certain stages. Moreover, they rely on identical
+data preparation steps employed in the RNA-Seq pipeline, including read
+filtering, read quality reporting, and alignment to desired genomic
+locations.</p>
+<p>The key steps involved in the ChIP-Seq and ATAC-Seq pipelines are as
+follows:</p>
+<ol>
+<li>Quality Control: The pipelines utilize FastQC to assess the quality
+    of the sequencing reads and generate quality control outputs.
+    Additionally, optional processes such as read quality filtering
+    (trimmomatic), read quality trimming (trimmomatic), and adapter
+    removal (cutadapt) can be employed to further refine the data.</li>
+<li>Counting and Filtering: To estimate the abundance of both standard
+    and predefined sets of genomic loci (e.g., rRNAs, miRNAs, tRNAs,
+    piRNAs, snoRNAs, ERCC), the pipelines employ tools like
+    Bowtie2/Bowtie/STAR. These tools facilitate read counting or
+    filtering to obtain valuable insights into the genomic regions of
+    interest.</li>
+<li>Read Alignment: The short-read aligner Bowtie2 is employed to align
+    the sequencing reads to a reference genome (Langmead and Salzberg
+    2012). In cases where the input files are large, such as those
+    obtained from ATAC-Seq experiments, the pipeline optimizes alignment
+    speed by splitting the files into smaller chunks and performing
+    parallel alignments.</li>
+<li>PCR Duplicate Removal: The pipelines incorporate the Picard mark
+    duplicates function (Broad Institute, n.d.) and Samtools (H. Li et
+    al. 2009) to estimate and remove PCR duplicates. By employing merged
+    alignments, the duplicate reads can be efficiently identified and
+    eliminated, ensuring accurate downstream analysis.</li>
+<li>ATAC-Seq-specific Analysis: In the case of ATAC-Seq data, the
+    pipeline performs additional steps. It identifies accessible
+    chromatin regions by estimating the Tn5 transposase cut sites. This
+    estimation involves positioning on the 9th base upstream of the 5\'
+    read end and extending by 29 bases downstream. This extension
+    process is based on studies (Donnard et al. 2018; Buenrostro et
+    al. 2013) that have shown it to more accurately reflect the exact
+    positions accessible to the transposase. Subsequently, peaks are
+    called using MACS2 (Zhang et al. 2008) in both the ChIP-Seq and
+    ATAC-Seq pipelines.</li>
+<li>Consensus Peak Calling and Quantification: When processing multiple
+    samples together, the ATAC-Seq and ChIP-Seq pipelines offer the
+    option of generating consensus peak calls. This is achieved by
+    merging all peaks individually called in each sample using Bedtools
+    (Quinlan and Hall 2010). Furthermore, the pipelines quantify the
+    number of reads in each peak location using Bedtools\' coverage
+    function, facilitating comprehensive analysis of the data.</li>
+<li>Data Analysis: As a result, both the ATAC-Seq and ChIP-Seq pipelines
+    generate a matrix containing count values for each peak region and
+    sample. This matrix can be directly uploaded to the embedded version
+    of DEBrowser (Kucukural et al. 2019) for performing differential
+    analysis. Alternatively, the matrix can be downloaded for further
+    analysis using other tools or methods.</li>
+</ol>
+<h2 id="other-pipelines">Other Pipelines</h2>
+<p>Via Foundry has several other pipelines, including the Cell Ranger
+Pipeline and the Cell Ranger Multi Pipeline, currently available for
+public use, and are actively adding more to the platform. Stay tuned for
+updates.</p>
+<h2 id="how-to-cite-us">How To Cite Us</h2>
+<p>If you use Via Foundry (formerly DolphinNext) in your research, please
+cite:</p>
+<p>Yukselen, O., Turkyilmaz, O., Ozturk, A.R. et al. DolphinNext: a
+distributed data processing platform for high throughput genomics. BMC
+Genomics 21, 310 (2020). <a href="https://doi.org/10.1186/s12864-020-6714-x">https://doi.org/10.1186/s12864-020-6714-x</a></p>
+<h2 id="support">Support</h2>
+<p>For any questions or help, please reach out to
+<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#118;&#105;&#97;&#115;&#99;&#105;&#101;&#110;&#116;&#105;&#102;&#105;&#99;&#46;&#99;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#118;&#105;&#97;&#115;&#99;&#105;&#101;&#110;&#116;&#105;&#102;&#105;&#99;&#46;&#99;&#111;&#109;</a> with your name and question.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../overview/" class="btn btn-neutral float-left" title="Platform Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../about/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>© 2023 by Jack Davis, Onur Yukselen, Alper Kucukural</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../overview/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

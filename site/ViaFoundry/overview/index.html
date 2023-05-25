@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Jack Davis" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Platform Overview - Via Foundry Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Platform Overview";
+        var mkdocs_page_input_path = "ViaFoundry/overview.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Via Foundry Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Platform Overview</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-via-foundry">What is Via Foundry?</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#benefits-of-via-foundrys-design">Benefits of Via Foundry's Design</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#what-is-nextflow">What is Nextflow?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#who-is-via-foundry-for">Who is Via Foundry for?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#why-not-just-write-a-nextflow-pipeline">Why not just write a Nextflow pipeline?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#public-pipelines">Public Pipelines</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../pipeline_example/">Pipeline Examples</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../cite/">How To Cite Us</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../quick/">Quick Start Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../project/">Project Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run/">Run Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../profile/">Profile Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../faq/">Frequently Asked Questions</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Via Foundry Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Getting Started &raquo;</li>
+      <li>Platform Overview</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="short-overview">Short Overview</h1>
+<h2 id="what-is-via-foundry">What is Via Foundry?</h2>
+<p><a href="https://www.viafoundry.com//">Via Foundry</a> is the web interface of an
+intuitive and powerful bioinformatics platform designed to simplify
+pipeline design, development and maintenance, enabling analysis and
+management of mass quantities of samples on High Performance Computing
+(HPC) environments, cloud services, or personal workstations. It
+automatically builds <a href="https://www.nextflow.io/">Nextflow</a> pipelines by
+assembling components such as processes and modules, enabling seamless
+implementation of complex bioinformatics workflows.</p>
+<h3 id="benefits-of-via-foundrys-design">Benefits of Via Foundry's Design</h3>
+<ul>
+<li><strong>Build:</strong> Via Foundry's drag-and-drop interface allows for
+    effortless creation of new pipelines, without the need to write
+    commands from scratch. Existing processes/modules can be reused to
+    create new pipelines, which can then be exported as Nextflow files
+    or readily run within Via Foundry.</li>
+<li><strong>Run:</strong> Pipelines can be executed in any host environment with
+    different executors, such as SGE, LSF, SLURM, Ignite, and more. Via
+    Foundry also seamlessly integrates with Amazon/Google Cloud,
+    allowing for easy creation of a cluster in the cloud, execution of
+    the pipeline, and transfer of results to a cloud storage service
+    (Amazon Storage, S3 or Google Storage, GS).</li>
+<li><strong>Resume:</strong> Via Foundry's continuous checkpoint mechanism keeps
+    track of each step of the running pipeline, enabling partially
+    completed pipelines to be resumed at any stage, even after parameter
+    changes.</li>
+<li><strong>Analyze:</strong> Via Foundry's report section provides an execution
+    summary of each step and selected outputs, permitting easy data
+    analysis with interactive plots and custom R-Markdown reports.</li>
+<li><strong>Improve:</strong> Via Foundry's revisioning system keeps track of
+    pipeline and process versions, as well as their parameters. This
+    allows for easy editing, improvement, and customization of shared
+    pipelines according to your needs.</li>
+<li><strong>Share:</strong> Via Foundry allows for easy sharing of pipelines across
+    different platforms, with the ability to isolate pipeline-specific
+    dependencies in a container and easily replicate methods in other
+    clusters.</li>
+</ul>
+<h3 id="what-is-nextflow">What is Nextflow?</h3>
+<p><a href="https://www.nextflow.io/">Nextflow</a> is an incredibly potent and
+versatile framework. Based on the dataflow programming model, it is used
+for building parallelized, scalable and reproducible workflows using
+software containers, which provides an abstraction layer between the
+execution and the logic of the pipeline, which means that the same
+pipeline code can be executed on multiple platforms.</p>
+<h2 id="who-is-via-foundry-for">Who is Via Foundry for?</h2>
+<p>Via Foundry is designed for a wide variety of users, from bench
+biologists to expert bioinformaticians.</p>
+<p>Executing pipelines in Via Foundry requires no programming knowledge. We
+aim to provide comprehensive explanations to guide users before they
+execute their pipelines. After a run completes, we provide an overall
+execution summary of each step, gathering all of the samples in simple
+tables or interactive plots for ultimate comparison.</p>
+<p>Building pipelines in Via Foundry requires basic scripting knowledge and
+familiarization with Nextflow to effectively use its operators. You
+don't need to learn all of the Nextflow syntax; instead, you can easily
+focus on the processes where basic input and output nodes are defined.
+The rest, such as creating and linking the channels, is handled by Via
+Foundry.</p>
+<h2 id="why-not-just-write-a-nextflow-pipeline">Why not just write a Nextflow pipeline?</h2>
+<p>In many cases, building a static Nextflow pipeline is sufficient for
+achieving our goals. However, it can be difficult to maintain process
+and module revisions using simple text editors. With the help of Via
+Foundry's user interface, you can easily <strong>track the evolution of each
+process and module</strong> by accessing their previous revisions. When
+upgrading existing pipelines, it's much easier to update each process
+because all of the process-related scripts are isolated in a process
+circle, and you don't need to deal with other parameters or channel
+operations that are defined in other parts of the Nextflow script. This
+<strong>modular structure</strong> gives us more flexibility and dynamism to create
+very complex pipelines with little effort.</p>
+<p>Furthermore, Via Foundry has a built-in <strong>form creator</strong> that
+dynamically updates the run page according to the parameters defined in
+the process. This tool becomes especially powerful when creating complex
+pipelines with hundreds of optional parameters. As seen in the example
+below, you can easily isolate process-related parameters in their
+specific windows.</p>
+<p><img alt="image" src="../../images/inputs_with_rsem_edited.png" /></p>
+<p>Please feel free to reference this image, which outlines the features of
+Via Foundry and Nextflow, to better understand the ethos of Via Foundry.</p>
+<p><img alt="image" src="../../images/updated_overview_nf_vf.png" /></p>
+<h2 id="public-pipelines">Public Pipelines</h2>
+<p>Attached is a brief list of Via Foundry's current public pipelines,
+along with some important sub-modules, all of which are ready to execute
+in your environment.</p>
+<ul>
+<li>
+<p>RNA-Seq Pipelines (RSEM, HISAT, STAR, Tophat2)</p>
+</li>
+<li>
+<p>ATAC-Seq Pipeline</p>
+</li>
+<li>
+<p>ChIP Seq Pipeline</p>
+</li>
+<li>
+<p>Single Cell Pipelines (10X Genomics, Indrop)</p>
+</li>
+<li>
+<p>piRNA Pipelines (piPipes ChIP-Seq, Degradome/RAGE/CAGE, smallRNA)</p>
+</li>
+<li>
+<p><em>Sub-Modules</em>:</p>
+<ul>
+<li>Trimmer</li>
+<li>Adapter Removal</li>
+<li>Quality Filtering</li>
+<li>Common RNA Filtering</li>
+<li>ESAT</li>
+<li>FastQC,</li>
+<li>MultiQC</li>
+<li>RSeQC</li>
+<li>Picard</li>
+<li>IGV and UCSC genome browser file conversion</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../.." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../pipeline_example/" class="btn btn-neutral float-right" title="Pipeline Examples">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>© 2023 by Jack Davis, Onur Yukselen, Alper Kucukural</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../pipeline_example/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

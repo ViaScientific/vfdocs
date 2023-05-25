@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Jack Davis" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Frequently Asked Questions - Via Foundry Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Frequently Asked Questions";
+        var mkdocs_page_input_path = "ViaFoundry/faq.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Via Foundry Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../overview/">Platform Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../pipeline_example/">Pipeline Examples</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../cite/">How To Cite Us</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User Guide</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../quick/">Quick Start Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../project/">Project Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run/">Run Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../profile/">Profile Guide</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Frequently Asked Questions</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation-guide">Installation Guide</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#how-can-i-install-singularity">How can I install Singularity?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-can-i-install-docker">How can I install Docker?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-can-i-install-java">How can I install JAVA?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-can-i-install-nextflow">How can I install Nextflow?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#connection-issues">Connection Issues</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#why-cant-i-validate-my-ssh-keys">Why can't I validate my SSH Keys?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-can-i-create-ssh-keys-in-my-computer">How can I create SSH keys in my computer?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#run-questions">Run Questions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#i-cant-reach-my-files-in-the-file-window">I can't reach my files in the file window</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#error-run-directory-cannot-be-created">Error: Run directory cannot be created</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#profile-questions">Profile Questions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#how-should-i-configure-my-executor-settings">How should I configure my executor settings?</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Via Foundry Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>User Guide &raquo;</li>
+      <li>Frequently Asked Questions</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="frequently-asked-questions">Frequently Asked Questions</h1>
+<h2 id="installation-guide">Installation Guide</h2>
+<h3 id="how-can-i-install-singularity">How can I install Singularity?</h3>
+<p>Follow this link to install <a href="https://sylabs.io/guides/3.0/user-guide/installation.html#install-on-linux">Singularity (Version
+3)</a>
+for your pipelines. For your convenience, attached below are the
+commands needed to download the newest version in a Linux environment:</p>
+<pre><code>## Remove old version of Singularity
+# sudo rm -rf /usr/local/libexec/singularity /usr/local/var/singularity /usr/local/etc/singularity /usr/local/bin/singularity /usr/local/bin/run-singularity /usr/local/etc/bash_completion.d/singularity
+
+## Install Singularity Version 3
+apt-get install -y build-essential libssl-dev uuid-dev libgpgme11-dev libseccomp-dev pkg-config squashfs-tools
+wget https://dl.google.com/go/go1.12.7.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.12.7.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+export VERSION=3.2.1 
+wget https://github.com/sylabs/singularity/releases/download/v${VERSION}/singularity-${VERSION}.tar.gz
+tar -xzf singularity-${VERSION}.tar.gz
+cd singularity
+./mconfig &amp;&amp; make -C ./builddir 
+sudo make -C ./builddir install
+</code></pre>
+<h3 id="how-can-i-install-docker">How can I install Docker?</h3>
+<p>Follow this link to install
+<a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/">Docker</a> for
+pipelines, or follow the commands below:</p>
+<pre><code>## Uninstall Old Versions of Docker
+# sudo apt-get remove docker docker-engine docker.io
+
+## Install Docker
+sudo apt install docker.io
+</code></pre>
+<h3 id="how-can-i-install-java">How can I install JAVA?</h3>
+<p>Installing <a href="https://www.java.com/en/download/help/linux_x64_install.xml#install">Java
+v8+</a>
+for Nextflow:</p>
+<pre><code>apt-get install -y openjdk-8-jdk &amp;&amp; 
+apt-get install -y ant &amp;&amp; 
+apt-get clean;
+
+# Fix certificate issues
+apt-get update &amp;&amp; 
+apt-get install ca-certificates-java &amp;&amp; 
+apt-get clean &amp;&amp; 
+update-ca-certificates -f;
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+</code></pre>
+<h3 id="how-can-i-install-nextflow">How can I install Nextflow?</h3>
+<p><a href="./#how-can-i-install-java">JAVA (v8+)</a> should be installed before
+installing Nextflow. Once Java has been successfully installed, click
+this link to install <a href="https://www.nextflow.io/">Nextflow</a> or use the
+commands below:</p>
+<pre><code>## To install to your ~/bin directory:
+mkdir ~/bin
+cd ~/bin
+curl -fsSL get.nextflow.io | bash
+
+# Add Nextflow binary to your bin PATH or any accessible path in your environment:
+chmod 755 nextflow
+mv nextflow ~/bin/
+# OR system-wide installation:
+# sudo mv nextflow /usr/local/bin
+</code></pre>
+<h2 id="connection-issues">Connection Issues</h2>
+<h3 id="why-cant-i-validate-my-ssh-keys">Why can't I validate my SSH Keys?</h3>
+<p>If you're having trouble validating your SSH keys, here are a few
+things to check:</p>
+<blockquote>
+<ol>
+<li>
+<p>Make sure you copy the entire key, including the initial part
+    (e.g. "ssh-rsa"). The key should span the entire file, like in
+    the following example:</p>
+<pre><code>ssh-rsa
+AA1AB3N4nX3a....................
+................................
+................................
+...............b9Rj @viafoundry
+</code></pre>
+</li>
+<li>
+<p>The SSH protocol requires specific permissions for files and
+    directories to establish secure connections. Please execute the
+    following commands to make sure your SSH-related files are
+    properly secured:</p>
+<pre><code>chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+</code></pre>
+</li>
+<li>
+<p>Ensure that your <strong>home directory</strong> is not writable by other
+    users. Setting the permissions of your home directory to 777 can
+    create security issues and block SSH connections. Instead, set the
+    permissions to more secure options such as 750, 755 or 754.</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="how-can-i-create-ssh-keys-in-my-computer">How can I create SSH keys in my computer?</h3>
+<p>You can find your SSH key pairs on your local machine at their default
+location: <code>~/.ssh/id_rsa</code> for private and <code>~/.ssh/id_rsa.pub</code> for public
+key. If no keys exist there or you want to create new ones, then on the
+command line, enter:</p>
+<pre><code>ssh-keygen -t rsa
+</code></pre>
+<p>You will be prompted to supply a filename and a password. If you want to
+accept the default filename (and location) for your key pair, just press
+Enter without entering a filename. Your SSH keys will be generated using
+the default filename (<code>id_rsa</code> and <code>id_rsa.pub</code>), and they will be saved
+in the "~/.ssh/" directory in your machine.</p>
+<h2 id="run-questions">Run Questions</h2>
+<h3 id="i-cant-reach-my-files-in-the-file-window">I can't reach my files in the file window</h3>
+<p>There might be a connection issue. Please check to make sure you've
+followed these steps:</p>
+<blockquote>
+<ol>
+<li>
+<p>The SSH protocol requires specific permissions for files and
+    directories to establish secure connections. Please execute the
+    following commands to make sure your SSH-related files are
+    properly secured:</p>
+<pre><code>chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+</code></pre>
+</li>
+<li>
+<p>Ensure that your <strong>home directory</strong> is not writable by other
+    users. Setting the permissions of your home directory to 777 can
+    create security issues and block SSH connections. Instead, set the
+    permissions to more secure options such as 750, 755 or 754.</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="error-run-directory-cannot-be-created">Error: Run directory cannot be created</h3>
+<p>It's possible that there's an issue with your connection. Please check
+the <a href="./#why-can-t-i-validate-my-ssh-keys">Why can't I validate my SSH
+Keys</a> section to ensure
+you've followed all the necessary steps.</p>
+<h2 id="profile-questions">Profile Questions</h2>
+<h3 id="how-should-i-configure-my-executor-settings">How should I configure my executor settings?</h3>
+<p>In Via Foundry, there are four different sections to control executor
+settings: the first two are defined in <strong>Profile</strong> -&gt; <strong>Run
+Environment</strong>, and the remaining two are adjusted in the <strong>Advanced</strong>
+tab of the run page. If you select an executor other than "Local" or
+"Ignite", Via Foundry prompts you to enter additional settings, such
+as the queue/partition, memory, CPU, and time.</p>
+<blockquote>
+<p><strong>1. Executor of Nextflow (navigate to Profile -&gt; Run
+Environments)</strong>:</p>
+<blockquote>
+<p>This setting controls how Via Foundry initiates Nextflow. Currently,
+Via Foundry supports the Local, SGE, SLURM, and LSF executors to
+initiate Nextflow. For the SGE, SLURM, and LSF executors, Via
+Foundry only uses them to run Nextflow itself, so the time limit
+should be long enough to execute all processes in the pipeline. For
+local execution, DolphinNext limits the total amount of memory and
+CPU that can be used, so these values should be close to the maximum
+capacity of your computer.</p>
+<ul>
+<li>Suggested parameters for SGE/SLURM/LSF: long (queue) 8 (GB
+    Memory) 1 (CPU) 5000-8000 (min, Time)</li>
+<li>Suggested parameters for Local: 100 (GB Memory) 8 (CPU)</li>
+</ul>
+</blockquote>
+<p><strong>2. Executor of Nextflow Jobs (navigate to Profile -&gt; Run
+Environments)</strong>:</p>
+<blockquote>
+<p>This setting will be used as the default setting for submitted jobs
+by Nextflow if you don't set any parameters in the <strong>Advanced</strong>
+section of your run page.</p>
+<ul>
+<li>Suggested parameters for SGE/SLURM/LSF: short (queue) 20 (GB
+    Memory) 1 (CPU) 240 (min, Time)</li>
+<li>Suggested parameters for Local: 20 (GB Memory) 1 (CPU)</li>
+</ul>
+</blockquote>
+<p><strong>3. Executor Settings for All Processes (in the advanced tab of run
+page)</strong>:</p>
+<blockquote>
+<p>These settings will overwrite those in <strong>Executor of Nextflow Jobs</strong>
+and set default parameters for all Nextflow Jobs.</p>
+<ul>
+<li>Suggested parameters for SGE/SLURM/LSF: short (queue) 20 (GB
+    Memory) 1 (CPU) 240 (min, Time)</li>
+<li>Suggested parameters for Local: 20 (GB Memory) 1 (CPU)</li>
+</ul>
+</blockquote>
+<p><strong>4. Executor Settings for Each Process (in the advanced tab of run
+page)</strong>:</p>
+<blockquote>
+<p>If a particular process requires different parameters than the
+defaults (which are defined in the <strong>Executor Settings for All
+Processes</strong> or <strong>Executor of Nextflow Jobs</strong> sections), you can
+overwrite the general settings by clicking the checkbox of the
+process that you want to change. This will only affect the settings
+of the selected process and keep the original settings for the rest
+of the processes.</p>
+<ul>
+<li>Suggested parameters for SGE/SLURM/LSF: long (queue) 20 (GB
+    Memory) 4 (CPU) 1000-5000 (min, Time)</li>
+<li>Suggested parameters for Local: 20 (GB Memory) 4 (CPU)</li>
+</ul>
+</blockquote>
+<p><strong>Note:</strong> 
+If non-standard resources or settings are required for the executor,
+then you can specify these parameters by using <strong>Other Options</strong> box.
+For instance, to submit an SGE job with 3 CPU using parallel
+environments, you can enter <code>-pe orte 3</code> (to use MPI for
+distributed-memory machines) or <code>-pe smp 3</code> (to use OpenMP for
+shared-memory machines) in the <strong>Other Options</strong> box, leaving the CPU
+box empty.</p>
+</blockquote>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../profile/" class="btn btn-neutral float-left" title="Profile Guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>© 2023 by Jack Davis, Onur Yukselen, Alper Kucukural</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../profile/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
