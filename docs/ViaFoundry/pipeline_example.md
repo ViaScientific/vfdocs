@@ -6,24 +6,13 @@ a small sampling of the pipelines Via Foundry offers. For the full list
 of pipelines and to explore each pipeline in detail, please visit the
 [Via Foundry Pipeline page](https://www.viafoundry.com/pipeline).
 
-On the main page, you can click on the box containing the name of the
-pipeline you\'re interested in to view a detailed summary of the
-pipeline, including information about the minimum required inputs and a
-table of all the pipeline\'s constituent processes.
-
-Please remember that the document provided here showcases only a limited
-selection of pipelines, and for a comprehensive list, as well as
-in-depth exploration of each pipeline, we recommend visiting the [Via
-Foundry Pipeline page](https://www.viafoundry.com/pipeline).
+Once you navigate to the Pipelines tab, simply click on the respective pipeline's box to access a comprehensive overview. This summary provides detailed information regarding the pipeline, such as its usage instructions and example output/report sections.
 
 ![image](../images/updated_public_pipelines.png)
 
 ## RNA-Seq Pipeline
 
-> -   [Github Repository for RNA-Seq
->     Pipeline](https://github.com/dolphinnext/rnaseq)
-
-![image](../../dolphinNext/dolphinnext_images/rna-seq.jpg)
+![image](../dolphinNext/dolphinnext_images/rna-seq.jpg)
 
 The RNA-seq pipeline publicly available in Via Foundry includes several
 key steps for processing RNA-seq data:
@@ -39,13 +28,13 @@ key steps for processing RNA-seq data:
 3.  Gene and Isoform Expression Estimation: RSEM is employed to align
     RNA-seq reads to reference transcripts and estimate gene and isoform
     expression levels.
-4.  Genome Alignment: HISAT2, STAR, and Tophat2 are employed to align
+4.  Genome Alignment: HISAT2, STAR, Kallisto or Salmon are employed to align
     RNA-seq reads to the genome. Optional estimation of gene and isoform
-    expression levels can be performed using featureCount.
+    expression levels can be performed using featureCounts and Salmon.
 5.  Quality Metrics and Reports: If the user opts to perform genomic
     alignments, the pipeline generates overall quality metrics,
     including coverage and the number of mapped reads to different
-    genomic and transcriptomic regions. These reports rely on Picard\'s
+    genomic and transcriptomic regions. These reports rely on Picard's
     CollectRNASeqMetrics program (Broad Institute, n.d.) and the RSeQC
     program (Wang, Wang, and Li 2012).
 6.  Visualization: Optional generation of Integrative Genomics Viewer
@@ -58,16 +47,21 @@ key steps for processing RNA-seq data:
     software for interactive exploration of the resulting data
     (Kucukural et al. 2019).
 
+
+Presented here is the example report tab for the RNA-Seq Run. Each section within the report consists of its own set of files, allowing you to thoroughly investigate and visualize the data within each respective section.
+
+![image](../images/rnaseq_report.png)
+
+Below is a screenshot showcasing the interactive analysis of differential expression analysis using the Shiny app called DEbrowser.
+
+![image](../images/rnaseq_debrowser.png)
+
+
 ## ATAC-Seq and ChIP-Seq pipelines
 
-> -   [Github Repository for ATAC-seq
->     Pipeline](https://github.com/dolphinnext/atacseq)
-> -   [Github Repository for CHIP-seq
->     Pipeline](https://github.com/dolphinnext/chipseq)
+![image](../dolphinNext/dolphinnext_images/atac.jpg)
 
-![image](../../dolphinNext/dolphinnext_images/atac.jpg)
-
-![image](../../dolphinNext/dolphinnext_images/chip.jpg)
+![image](../dolphinNext/dolphinnext_images/chip.jpg)
 
 Via Foundry offers comprehensive pipelines for the processing of
 ChIP-Seq and ATAC-Seq data, which are widely used in genomic research.
@@ -105,7 +99,7 @@ follows:
 5.  ATAC-Seq-specific Analysis: In the case of ATAC-Seq data, the
     pipeline performs additional steps. It identifies accessible
     chromatin regions by estimating the Tn5 transposase cut sites. This
-    estimation involves positioning on the 9th base upstream of the 5\'
+    estimation involves positioning on the 9th base upstream of the 5'
     read end and extending by 29 bases downstream. This extension
     process is based on studies (Donnard et al. 2018; Buenrostro et
     al. 2013) that have shown it to more accurately reflect the exact
@@ -117,7 +111,7 @@ follows:
     option of generating consensus peak calls. This is achieved by
     merging all peaks individually called in each sample using Bedtools
     (Quinlan and Hall 2010). Furthermore, the pipelines quantify the
-    number of reads in each peak location using Bedtools\' coverage
+    number of reads in each peak location using Bedtools' coverage
     function, facilitating comprehensive analysis of the data.
 7.  Data Analysis: As a result, both the ATAC-Seq and ChIP-Seq pipelines
     generate a matrix containing count values for each peak region and
@@ -125,13 +119,6 @@ follows:
     of DEBrowser (Kucukural et al. 2019) for performing differential
     analysis. Alternatively, the matrix can be downloaded for further
     analysis using other tools or methods.
-
-## Other Pipelines
-
-Via Foundry has several other pipelines, including the Cell Ranger
-Pipeline and the Cell Ranger Multi Pipeline, currently available for
-public use, and are actively adding more to the platform. Stay tuned for
-updates.
 
 ## How To Cite Us
 

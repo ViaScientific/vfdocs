@@ -6,67 +6,19 @@ This guide will walk you through how to start using Via Foundry
 (formerly DolphinNext) pipelines. First off, you need to navigate to the
 Via Foundry web page at <https://www.viafoundry.com> and click the
 `Log in` button. You will be asked to enter your institute's log-in
-information. An email will be sent to you once your information has been
-verified.
-
-![image](../images/ssologin.png)
+information. If you don't have an account, please let us know about it 
+<support@viascientific.com>. We will set an account for you.
 
 
-## Creating Profile
 
-For information on how to set up and customize your Via Foundry profile
-to your specifications, please reference our [Profile
-Guide](../profile/profile.md).
+![Image Description](../images/ssologin.png){: width="50%" .center}
 
-## Software Dependencies
 
-In order to execute our pipelines, you have to install and validate
-certain software dependencies into your host machine.
 
-To enable proper pipeline execution, Nextflow should be installed into
-your host environment. Since most of our pipelines isolate their
-dependencies within their Docker or Singularity containers, please
-install these softwares into your machine by following the guidelines
-below. If your platform doesn't support the installation of Docker, you
-can still use our pipelines with just Singularity.
+## Run Environments
 
-> -   Installing
->     [Nextflow](https://github.com/UMMS-Biocore/dolphinnext/blob/master/docs/dolphinNext/faq.md#id6)
-> -   Installing [Singularity (Version
->     3)](https://github.com/UMMS-Biocore/dolphinnext/blob/master/docs/dolphinNext/faq.md#id4)
-> -   Installing
->     [Docker](https://github.com/UMMS-Biocore/dolphinnext/blob/master/docs/dolphinNext/faq.md#id5)
->
-> **How to Add Software to Your $PATH Environment:**
->
-> -   **JAVA Command (optional):** If JAVA is not added to the $PATH
->     environment, you can run the command (`module load java/8.0`) to
->     manipulate your $PATH environment and gain access to JAVA.
-> -   **Nextflow Path or Command (optional):** If Nextflow is not added
->     to the $PATH environment, you can either enter the path of the
->     nextflow (eg. `/project/bin`), or run the command
->     (`module load nextflow`) to manipulate your $PATH environment and
->     gain access to new software.
-> -   **Docker/Singularity Command (optional):** You can run a command
->     (eg. `module load docker/1.0.0` or
->     `module load singularity/3.0.0`) to manipulate your $PATH
->     environment in order to gain access to new software.
+To access your run environment, simply click on the Profile icon located at the top right corner and navigate to the Run Environment tab. In most cases, we automatically set up the run environment for you. However, if you require additional information on setting up and customizing your profile, please refer to our comprehensive [Profile Guide](profile.md).
 
-You can set general run settings by following the **Run Environments**
-section:
-
-> -   **Executor of Nextflow:** Nextflow itself is initiated with this
->     method, which will be only used for running Nextflow itself.
-> -   **Executor of Nextflow Jobs:** This setting will be used as the
->     default setting for submitted jobs by Nextflow.
-> -   **Download Directory:** Used to download shared pipeline files
->     such as genome indexes. If your platform already has an allocated
->     path for such files, please enter that path. Otherwise, you can
->     set any path that you have permission to write. e.g.
->     `/share/viafoundry/downloads`
-
-Once you complete these steps, you're now able to start using publicly
-available pipelines.
 
 ## Running Pipelines
 
@@ -94,37 +46,27 @@ available pipelines.
     desired run name, which will be added to your project's run list.
     Clicking `Save Run` will redirect you to the "Run Page".
 
-5.  Initially, in the header of the run page, an orange `Waiting` button
-    will be shown. In order to initiate a run, the following data need
-    to be entered:
+5.  At first, in the header of the run page, you will see an orange "Waiting" button. To start a run, you need to enter/select the following:
 
-    > ![image](../../dolphinNext/dolphinnext_images/run_header_waiting.png)
-    >
-    > A.  **Work Directory:** Full path of the directory from whence
-    >     Nextflow runs will be executed.
-    >
-    ![image](../../dolphinNext/dolphinnext_images/run_params_work.png)
-    >
-    > B.  **Run Environment:** The environment, discussed in the
-    >     [Profile](../profile/profile.md) page, within which you'd like to
-    >     conduct your run. If an [Amazon
-    >     profile](../profile/profile.md#b-defining-aws-batch-profiles) or a [Google
-    >     profile](../profile/profile.md#c-defining-google-profiles) is selected,
-    >     then the status of the profile should be "**Running**".
-    >
-    ![image](../../dolphinNext/dolphinnext_images/run_params_env.png)
-    >
-    > C.  **Inputs:** Various values and filepaths, specifying what data
-    >     will be processed and how, need to be entered. For additional
-    >     information, please check the [Adding Files
-    >     section.](../quick/quick.md#adding-files)
-    >
-    ![image](../../dolphinNext/dolphinnext_images/run_params_inputs.png)
+    ![image](../../dolphinNext/dolphinnext_images/run_header_waiting.png)
+
+    A.  **Run Environment:** The environment, discussed in the [Profile](profile.md) page, within which you'd like to conduct your run.
+    
+    ![image](../images/run_env.png)
+    
+    B. **Work Directory:** The work directory refers to the complete path of the directory from which the execution of Nextflow runs will take place. The path may be automatically filled in if a default value is provided in your run environment.
+    
+    ![image](../images/run_workdir.png)
+
+    
+    C. **Inputs:** In this section, you are required to enter various values and files that define the data to be processed and the corresponding processing instructions. For additional information, please check the [Adding Files section.](../quick/#adding-files)
+    
+    ![image](../images/run_settings.png)
 
 6.  Once all requirements are satisfied, the `Waiting` button will turn
     into a green `Run` button as shown below. You can initiate your run
     by clicking the `Run` button. Please go through the [Run
-    Guide](../run/run.md) for detailed explanation about each module is used.
+    Guide](run.md) for detailed explanation about each module is used.
 
     > ![image](../images/ready_to_run.png)
 
@@ -134,12 +76,12 @@ available pipelines.
 
 You can reach your remote files by entering:
 
-> -   Full path of a directory: eg.
+> -   Full path of a directory: e.g.
 >     `/share/data/umw_biocore/genome_data/mousetest/mm10/gz`
-> -   Web link: eg.
->     `https://galaxyweb.umassmed.edu/pub/dnext_data/test/reads`
-> -   Amazon (S3) Bucket: eg. `s3://biocore/fastq`
-> -   Google (GS) Bucket: eg. `gs://biocore/fastq`
+> -   Web link: e.g.
+>     `https://web.dolphinnext.com/umw_biocore/dnext_data/tutorial/fastq_data/pair`
+> -   Amazon (S3) Bucket: e.g. `s3://viafoundry/fastq`
+> -   Google (GS) Bucket: e.g. `gs://viafoundry/fastq`
 
 ### Geo Files
 
@@ -147,10 +89,7 @@ If you want to download and use NCBI (GEO data) in the pipeline, you can
 simply use the `GEO Files` tab. Here are the few examples for GEO ID:
 `GSM1331276`, `GSE55190`, `SRR10095965`
 
-### Upload Files
-
-If you need to upload your local files and transfer into **Target
-Directory in the Host**, you can use the `Upload Files` tab.
+![image](../images/files_geo.png)
 
 
 ## How To Cite Us

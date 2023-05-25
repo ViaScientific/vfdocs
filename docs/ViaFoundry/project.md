@@ -19,10 +19,10 @@ create a new project and add pipelines to it:
 > ![image](../images/project_dropdown.png)
 
 
-> **Note:** You can always edit or remove your projects by clicking on the project
+> **Note:** You can always edit or remove your projects by clicking `View All Projects` button or clicking on the project
 > name from the dropdown menu, navigating to the `Settings` tab, and
-> clicking the `Edit` or `Delete Project` icon.
-> :::
+> clicking the `Edit` or `Delete Project` icons.
+
 >
 > Now you are able to enter the project page by clicking the name of the project from the `Projects` dropdown menu. You will notice five tabs in the project page:
 >
@@ -30,12 +30,8 @@ create a new project and add pipelines to it:
 >         contains the `Description` box, where you can write down
 >         information about the project; and the `Analysis` section,
 >         which will contain reports on the project and its runs.
->    -   **Data Collections:** The hub of whatever data you need to add
->         in order to run your desired pipelines. Add data by clicking
->         the `Add Collection` button.
->    -   **Pipelines:** The pipeline(s) you want available for your
->         project. Click `Create Pipeline` or `Add Pipeline` to
->         customize your project's pipeline environment.
+>    -   **Data Collections:** The project files can be organized in this section. You can create collections on the run page and reorganize them here. To add data, simply click the "Add Collection" button.
+>    -   **Pipelines:** To make the desired pipeline(s) available for your project, click on the "Add Pipeline" button. From the provided list, select the pipelines you want to include. Once selected, click the run button to navigate to the run page. If you wish to create a custom pipeline, click on the "Create Pipeline" button.
 >    -   **Runs:** Table containing information about all the runs
 >         conducted in your current project (see image below). You can
 >         enter a specific run's page by clicking on the name of the
@@ -48,7 +44,7 @@ create a new project and add pipelines to it:
 >
 > -   B.  You can also create a project by clicking the `Pipelines`
 >         button on the top left of the page. Select the pipeline you
->         want to run by clicking on it. At the top right of the new
+>         want to run by clicking on it. At the top right of the
 >         pipeline page, you'll see a `Run` button; press this to
 >         initiate a run.
 >

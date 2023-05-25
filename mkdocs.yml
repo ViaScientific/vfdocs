@@ -1,8 +1,13 @@
 site_name: Via Foundry Documentation
 theme:
   name: readthedocs
-copyright: © 2023 by Jack Davis, Onur Yukselen, Alper Kucukural
-site_author: Jack Davis
+copyright: © 2023 by Via Scientific
+site_author: Via Foundry Team
+
+markdown_extensions:
+  - attr_list
+
+extra_css: [css/custom.css]
 
 nav:
   - Home: index.md

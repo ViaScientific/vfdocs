@@ -1,6 +1,6 @@
 # Run Guide
 
-In the previous tutorial ([Project Guide](../project/project.md)), we went through
+In the previous tutorial ([Project Guide](project.md)), we went through
 the process of creating a project within the Via Foundry (formerly
 DolphinNext) platform and adding pipelines to it. In this guide, we will
 look through all the relevant run settings needed to initiate a new run.
@@ -26,28 +26,24 @@ run page's header. Additionally, you can find `Delete Run`,
 `Duplicate Run`, and `Move Run` options by clicking on the three dots
 next to the status indicator.
 
-## Run Status
+## Run Settings and Status
 
 The status of your current run is displayed at the far right of the run
 page's header. Initially, you'll see an orange `Waiting` button. In
 order to initiate a run, the following data need to be entered:
 
-> 1.  **Work Directory:** Full path of the directory where Nextflow runs
->     will be executed.
-> 2.  **Run Environment:** The environment, discussed in the
->     [profile](../profile/profile.md) page, within which you'd like to conduct
->     your run. If an [Amazon
->     profile](../profile/profile.md#b-defining-aws-batch-profiles) or a [Google
->     profile](../profile/profile.md#d-defining-google-profiles) is selected, then
->     the status of the profile should be **Running**.
-> 3.  **Inputs:** Various values and filepaths, specifying which data
+> 1.  **Run Environment:** The environment, discussed in the
+>     [profile](profile.md) page, within which you'd like to conduct
+>     your run.
+> 2.  **Work Directory:** Full path of the directory where Nextflow runs
+>     will be executed. (e.g. ``/home/newuser/workdir``)
+> 3.  **Inputs:** Various values and files, specifying which data
 >     will be processed and how (i.e. whether single-end vs. paired-end
 >     data are being used), need to be entered in the **Run Settings**
 >     page. For additional information, please check the [Adding Files
->     ](../quick/quick.md#adding-files) section.
+>     ](../quick/#adding-files) section.
 
-More details on the data that must be entered prior to a run can be found in the **Run
-Settings** section of this page.
+![image](../images/run_settings.png)
 
 All possible status messages are listed here:
 
@@ -56,45 +52,23 @@ All possible status messages are listed here:
 | Waiting     | Waiting for inputs, output directory and selection of active run environment          |
 | Ready       | Ready to initiate run                                                                 |
 | Connecting  | Sending SSH queries to selected host system                                           |
-| Waits       | Job is submitted, waiting for run execution                                           |
+| Initializing| Job is submitted, waiting for run execution                                           |
 | Running     | Nextflow has executed and is running the jobs.                                        |
-| Completed   | The Nextflow job is completed.                                                        |
+| Completed   | The job is completed.                                                                 |
 | Run Error   | Error occurred before submitting the jobs or while executing the jobs.                |
 | Terminated  | User terminated the run by using the `Terminate Run` button.                          |
 
 
 
-## Run Settings
-
--   **Run Environment:** The environment, discussed in the
-    [profile](../profile/profile.md) page, within which you'd like to conduct
-    your run. Edit this via the dropdown menu on the **Run Settings**
-    page.
-
--   **Inputs:** A suite of settings governing how your data will be
-    processed during the run. Enter information like the path of your
-    reads and whether you want to run various data-filtering packages by
-    clicking on the appropriate dropdown menus.
-
--   **Work Directory:** Full path of the directory where Nextflow runs
-    will be executed. Example path:
-
-        /home/newuser/workdir
 
 ## Advanced Options
-
--   **Run Command (optional):** You may run the command or commands (by
-    seperating each command with `&&` sign) before the nextflow job
-    starts, e.g.:
-
-        source /etc/bashrc && module load java/1.8.0_31 && module load bowtie2/2.3.2
 
 -   **Publish Directory:** The Work Directory also serves as the default
     directory to which output files are sent for Via Foundry runs. If
     you want to change the path to a different directory, just enter the
     full path of your desired Publish Directory in this box. Local paths
-    (eg. `/home/user/test`), Amazon S3 paths (eg.
-    `s3://yourbucket/test`) or Google Storage paths (eg.
+    (e.g. `/home/user/test`), Amazon S3 paths (e.g.
+    `s3://yourbucket/test`) or Google Storage paths (e.g.
     `gs://yourbucket/test`) are all accepted.
 
 -   **Use Docker Image:** Nextflow supports the use of Docker

@@ -3,12 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Jack Davis" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Via Foundry Team" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
     <title>Profile Guide - Via Foundry Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../css/custom.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -76,6 +77,8 @@
     <li class="toctree-l2"><a class="reference internal" href="#groups">Groups</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#run-environments">Run Environments</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#software-dependencies">Software Dependencies</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#a-defining-host-profiles">A. Defining Host Profiles:</a>
     </li>
@@ -222,6 +225,57 @@ you have the option to delete your group by selecting the
 <code>Options &gt; Edit Group Name</code>.</p>
 <h2 id="run-environments">Run Environments</h2>
 <p><img alt="image" src="../../dolphinNext/dolphinnext_images/profile_runenv.png" /></p>
+<h2 id="software-dependencies">Software Dependencies</h2>
+<p>In order to execute our pipelines, you have to install and validate
+certain software dependencies into your host machine.</p>
+<p>To enable proper pipeline execution, Nextflow should be installed into
+your host environment. Since most of our pipelines isolate their
+dependencies within their Docker, please
+install Docker or Podman into your machine by following the guidelines
+below. If your platform doesn't support the installation of Docker, you
+can still use our pipelines with just Singularity.</p>
+<blockquote>
+<ul>
+<li>Installing
+    <a href="https://www.nextflow.io/docs/latest/getstarted.html">Nextflow</a></li>
+<li>Installing
+    <a href="https://docs.docker.com/engine/install/">Docker</a></li>
+<li>Installing <a href="https://docs.sylabs.io/guides/3.0/user-guide/installation.html">Singularity (Version
+    3)</a></li>
+</ul>
+<p><strong>How to Add Software to Your $PATH Environment:</strong></p>
+<ul>
+<li><strong>JAVA Command (optional):</strong> If JAVA is not added to the $PATH
+    environment, you can run the command (<code>module load java/8.0</code>) to
+    manipulate your $PATH environment and gain access to JAVA.</li>
+<li><strong>Nextflow Path or Command (optional):</strong> If Nextflow is not added
+    to the $PATH environment, you can either enter the path of the
+    nextflow (eg. <code>/project/bin</code>), or run the command
+    (<code>module load nextflow</code>) to manipulate your $PATH environment and
+    gain access to new software.</li>
+<li><strong>Docker/Singularity Command (optional):</strong> You can run a command
+    (eg. <code>module load docker/1.0.0</code> or
+    <code>module load singularity/3.0.0</code>) to manipulate your $PATH
+    environment in order to gain access to new software.</li>
+</ul>
+</blockquote>
+<p>You can set general run settings by following the <strong>Run Environments</strong>
+section:</p>
+<blockquote>
+<ul>
+<li><strong>Executor of Nextflow:</strong> Nextflow itself is initiated with this
+    method, which will be only used for running Nextflow itself.</li>
+<li><strong>Executor of Nextflow Jobs:</strong> This setting will be used as the
+    default setting for submitted jobs by Nextflow.</li>
+<li><strong>Download Directory:</strong> Used to download shared pipeline files
+    such as genome indexes. If your platform already has an allocated
+    path for such files, please enter that path. Otherwise, you can
+    set any path that you have permission to write. e.g.
+    <code>/share/viafoundry/downloads</code></li>
+</ul>
+</blockquote>
+<p>Once you complete these steps, you're now able to start using publicly
+available pipelines.</p>
 <p>This section is used for defining connection profiles by clicking on the
 <code>Add Environment</code> button. You can choose from three options: Host,
 Amazon or Google.</p>
@@ -662,7 +716,7 @@ password by using this section.</p>
 
   <div role="contentinfo">
     <!-- Copyright etc -->
-      <p>© 2023 by Jack Davis, Onur Yukselen, Alper Kucukural</p>
+      <p>© 2023 by Via Scientific</p>
   </div>
 
   Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.

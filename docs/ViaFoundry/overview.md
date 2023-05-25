@@ -6,12 +6,12 @@
 intuitive and powerful bioinformatics platform designed to simplify
 pipeline design, development and maintenance, enabling analysis and
 management of mass quantities of samples on High Performance Computing
-(HPC) environments, cloud services, or personal workstations. It
+(HPC) environments, cloud services (AWS, Google Cloud etc.), or personal workstations. It
 automatically builds [Nextflow](https://www.nextflow.io/) pipelines by
 assembling components such as processes and modules, enabling seamless
-implementation of complex bioinformatics workflows.
+implementation of complex bioinformatics workflows. Moreover, we offer assistance for nf-core or customized nextflow pipelines, allowing easy integration of these pipelines directly from Github or Bitbucket repositories.
 
-### Benefits of Via Foundry's Design
+## Benefits of Via Foundry's Design
 
 -   **Build:** Via Foundry's drag-and-drop interface allows for
     effortless creation of new pipelines, without the need to write
@@ -28,9 +28,11 @@ implementation of complex bioinformatics workflows.
     track of each step of the running pipeline, enabling partially
     completed pipelines to be resumed at any stage, even after parameter
     changes.
--   **Analyze:** Via Foundry's report section provides an execution
-    summary of each step and selected outputs, permitting easy data
-    analysis with interactive plots and custom R-Markdown reports.
+-   **Analyze:** Via Foundry's report section provides a concise summary of 
+each executed step, facilitating efficient data analysis. It also allows 
+for seamless exploration of reported files through interactive applications 
+like Shiny App, R-Studio (R-Markdown), Jupyter Notebook, or any other containerized app.
+
 -   **Improve:** Via Foundry's revisioning system keeps track of
     pipeline and process versions, as well as their parameters. This
     allows for easy editing, improvement, and customization of shared
@@ -38,9 +40,9 @@ implementation of complex bioinformatics workflows.
 -   **Share:** Via Foundry allows for easy sharing of pipelines across
     different platforms, with the ability to isolate pipeline-specific
     dependencies in a container and easily replicate methods in other
-    clusters.
+    environments (clusters, clouds etc.).
 
-### What is Nextflow?
+## What is Nextflow?
 
 [Nextflow](https://www.nextflow.io/) is an incredibly potent and
 versatile framework. Based on the dataflow programming model, it is used
@@ -58,7 +60,7 @@ Executing pipelines in Via Foundry requires no programming knowledge. We
 aim to provide comprehensive explanations to guide users before they
 execute their pipelines. After a run completes, we provide an overall
 execution summary of each step, gathering all of the samples in simple
-tables or interactive plots for ultimate comparison.
+tables or interactive apps/plots for ultimate comparison.
 
 Building pipelines in Via Foundry requires basic scripting knowledge and
 familiarization with Nextflow to effectively use its operators. You
@@ -101,11 +103,11 @@ Attached is a brief list of Via Foundry's current public pipelines,
 along with some important sub-modules, all of which are ready to execute
 in your environment.
 
--   RNA-Seq Pipelines (RSEM, HISAT, STAR, Tophat2)
+-   RNA-Seq Pipelines (RSEM, HISAT, STAR, Salmon, Kallisto, FeatureCounts)
 
--   ATAC-Seq Pipeline
+-   ATAC-Seq Pipeline (MACS2)
 
--   ChIP Seq Pipeline
+-   ChIP Seq Pipeline (MACS2)
 
 -   Single Cell Pipelines (10X Genomics, Indrop)
 
@@ -113,7 +115,7 @@ in your environment.
 
 -   
 
-    *Sub-Modules*:
+    Sub-Modules:
 
     -   Trimmer
     -   Adapter Removal

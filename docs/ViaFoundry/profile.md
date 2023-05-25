@@ -120,6 +120,58 @@ you have the option to delete your group by selecting the
 
 ![image](../../dolphinNext/dolphinnext_images/profile_runenv.png)
 
+
+## Software Dependencies
+
+In order to execute our pipelines, you have to install and validate
+certain software dependencies into your host machine.
+
+To enable proper pipeline execution, Nextflow should be installed into
+your host environment. Since most of our pipelines isolate their
+dependencies within their Docker, please
+install Docker or Podman into your machine by following the guidelines
+below. If your platform doesn't support the installation of Docker, you
+can still use our pipelines with just Singularity.
+
+> -   Installing
+>     [Nextflow](https://www.nextflow.io/docs/latest/getstarted.html)
+> -   Installing
+>     [Docker](https://docs.docker.com/engine/install/)
+> -   Installing [Singularity (Version
+>     3)](https://docs.sylabs.io/guides/3.0/user-guide/installation.html)
+>
+> **How to Add Software to Your $PATH Environment:**
+>
+> -   **JAVA Command (optional):** If JAVA is not added to the $PATH
+>     environment, you can run the command (`module load java/8.0`) to
+>     manipulate your $PATH environment and gain access to JAVA.
+> -   **Nextflow Path or Command (optional):** If Nextflow is not added
+>     to the $PATH environment, you can either enter the path of the
+>     nextflow (eg. `/project/bin`), or run the command
+>     (`module load nextflow`) to manipulate your $PATH environment and
+>     gain access to new software.
+> -   **Docker/Singularity Command (optional):** You can run a command
+>     (eg. `module load docker/1.0.0` or
+>     `module load singularity/3.0.0`) to manipulate your $PATH
+>     environment in order to gain access to new software.
+
+You can set general run settings by following the **Run Environments**
+section:
+
+> -   **Executor of Nextflow:** Nextflow itself is initiated with this
+>     method, which will be only used for running Nextflow itself.
+> -   **Executor of Nextflow Jobs:** This setting will be used as the
+>     default setting for submitted jobs by Nextflow.
+> -   **Download Directory:** Used to download shared pipeline files
+>     such as genome indexes. If your platform already has an allocated
+>     path for such files, please enter that path. Otherwise, you can
+>     set any path that you have permission to write. e.g.
+>     `/share/viafoundry/downloads`
+
+Once you complete these steps, you're now able to start using publicly
+available pipelines.
+
+
 This section is used for defining connection profiles by clicking on the
 `Add Environment` button. You can choose from three options: Host,
 Amazon or Google.

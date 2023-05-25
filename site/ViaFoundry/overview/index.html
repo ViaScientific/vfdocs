@@ -3,12 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Jack Davis" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Via Foundry Team" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
     <title>Platform Overview - Via Foundry Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../css/custom.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -49,12 +50,10 @@
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Platform Overview</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#what-is-via-foundry">What is Via Foundry?</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#benefits-of-via-foundrys-design">Benefits of Via Foundry's Design</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#what-is-nextflow">What is Nextflow?</a>
+    <li class="toctree-l2"><a class="reference internal" href="#benefits-of-via-foundrys-design">Benefits of Via Foundry's Design</a>
     </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-nextflow">What is Nextflow?</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#who-is-via-foundry-for">Who is Via Foundry for?</a>
     </li>
@@ -114,11 +113,11 @@
 intuitive and powerful bioinformatics platform designed to simplify
 pipeline design, development and maintenance, enabling analysis and
 management of mass quantities of samples on High Performance Computing
-(HPC) environments, cloud services, or personal workstations. It
+(HPC) environments, cloud services (AWS, Google Cloud etc.), or personal workstations. It
 automatically builds <a href="https://www.nextflow.io/">Nextflow</a> pipelines by
 assembling components such as processes and modules, enabling seamless
-implementation of complex bioinformatics workflows.</p>
-<h3 id="benefits-of-via-foundrys-design">Benefits of Via Foundry's Design</h3>
+implementation of complex bioinformatics workflows. Moreover, we offer assistance for nf-core or customized nextflow pipelines, allowing easy integration of these pipelines directly from Github or Bitbucket repositories.</p>
+<h2 id="benefits-of-via-foundrys-design">Benefits of Via Foundry's Design</h2>
 <ul>
 <li><strong>Build:</strong> Via Foundry's drag-and-drop interface allows for
     effortless creation of new pipelines, without the need to write
@@ -135,19 +134,24 @@ implementation of complex bioinformatics workflows.</p>
     track of each step of the running pipeline, enabling partially
     completed pipelines to be resumed at any stage, even after parameter
     changes.</li>
-<li><strong>Analyze:</strong> Via Foundry's report section provides an execution
-    summary of each step and selected outputs, permitting easy data
-    analysis with interactive plots and custom R-Markdown reports.</li>
-<li><strong>Improve:</strong> Via Foundry's revisioning system keeps track of
+<li>
+<p><strong>Analyze:</strong> Via Foundry's report section provides a concise summary of 
+each executed step, facilitating efficient data analysis. It also allows 
+for seamless exploration of reported files through interactive applications 
+like Shiny App, R-Studio (R-Markdown), Jupyter Notebook, or any other containerized app.</p>
+</li>
+<li>
+<p><strong>Improve:</strong> Via Foundry's revisioning system keeps track of
     pipeline and process versions, as well as their parameters. This
     allows for easy editing, improvement, and customization of shared
-    pipelines according to your needs.</li>
+    pipelines according to your needs.</p>
+</li>
 <li><strong>Share:</strong> Via Foundry allows for easy sharing of pipelines across
     different platforms, with the ability to isolate pipeline-specific
     dependencies in a container and easily replicate methods in other
-    clusters.</li>
+    environments (clusters, clouds etc.).</li>
 </ul>
-<h3 id="what-is-nextflow">What is Nextflow?</h3>
+<h2 id="what-is-nextflow">What is Nextflow?</h2>
 <p><a href="https://www.nextflow.io/">Nextflow</a> is an incredibly potent and
 versatile framework. Based on the dataflow programming model, it is used
 for building parallelized, scalable and reproducible workflows using
@@ -161,7 +165,7 @@ biologists to expert bioinformaticians.</p>
 aim to provide comprehensive explanations to guide users before they
 execute their pipelines. After a run completes, we provide an overall
 execution summary of each step, gathering all of the samples in simple
-tables or interactive plots for ultimate comparison.</p>
+tables or interactive apps/plots for ultimate comparison.</p>
 <p>Building pipelines in Via Foundry requires basic scripting knowledge and
 familiarization with Nextflow to effectively use its operators. You
 don't need to learn all of the Nextflow syntax; instead, you can easily
@@ -196,13 +200,13 @@ along with some important sub-modules, all of which are ready to execute
 in your environment.</p>
 <ul>
 <li>
-<p>RNA-Seq Pipelines (RSEM, HISAT, STAR, Tophat2)</p>
+<p>RNA-Seq Pipelines (RSEM, HISAT, STAR, Salmon, Kallisto, FeatureCounts)</p>
 </li>
 <li>
-<p>ATAC-Seq Pipeline</p>
+<p>ATAC-Seq Pipeline (MACS2)</p>
 </li>
 <li>
-<p>ChIP Seq Pipeline</p>
+<p>ChIP Seq Pipeline (MACS2)</p>
 </li>
 <li>
 <p>Single Cell Pipelines (10X Genomics, Indrop)</p>
@@ -211,7 +215,7 @@ in your environment.</p>
 <p>piRNA Pipelines (piPipes ChIP-Seq, Degradome/RAGE/CAGE, smallRNA)</p>
 </li>
 <li>
-<p><em>Sub-Modules</em>:</p>
+<p>Sub-Modules:</p>
 <ul>
 <li>Trimmer</li>
 <li>Adapter Removal</li>
@@ -238,7 +242,7 @@ in your environment.</p>
 
   <div role="contentinfo">
     <!-- Copyright etc -->
-      <p>© 2023 by Jack Davis, Onur Yukselen, Alper Kucukural</p>
+      <p>© 2023 by Via Scientific</p>
   </div>
 
   Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.

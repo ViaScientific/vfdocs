@@ -3,12 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Jack Davis" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Via Foundry Team" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
     <title>Pipeline Examples - Via Foundry Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../css/custom.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -53,8 +54,6 @@
     <li class="toctree-l2"><a class="reference internal" href="#rna-seq-pipeline">RNA-Seq Pipeline</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#atac-seq-and-chip-seq-pipelines">ATAC-Seq and ChIP-Seq pipelines</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#other-pipelines">Other Pipelines</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#how-to-cite-us">How To Cite Us</a>
     </li>
@@ -110,22 +109,9 @@ on the Via Foundry website. Please note that this document only contains
 a small sampling of the pipelines Via Foundry offers. For the full list
 of pipelines and to explore each pipeline in detail, please visit the
 <a href="https://www.viafoundry.com/pipeline">Via Foundry Pipeline page</a>.</p>
-<p>On the main page, you can click on the box containing the name of the
-pipeline you\'re interested in to view a detailed summary of the
-pipeline, including information about the minimum required inputs and a
-table of all the pipeline\'s constituent processes.</p>
-<p>Please remember that the document provided here showcases only a limited
-selection of pipelines, and for a comprehensive list, as well as
-in-depth exploration of each pipeline, we recommend visiting the <a href="https://www.viafoundry.com/pipeline">Via
-Foundry Pipeline page</a>.</p>
+<p>Once you navigate to the Pipelines tab, simply click on the respective pipeline's box to access a comprehensive overview. This summary provides detailed information regarding the pipeline, such as its usage instructions and example output/report sections.</p>
 <p><img alt="image" src="../../images/updated_public_pipelines.png" /></p>
 <h2 id="rna-seq-pipeline">RNA-Seq Pipeline</h2>
-<blockquote>
-<ul>
-<li><a href="https://github.com/dolphinnext/rnaseq">Github Repository for RNA-Seq
-    Pipeline</a></li>
-</ul>
-</blockquote>
 <p><img alt="image" src="../../dolphinNext/dolphinnext_images/rna-seq.jpg" /></p>
 <p>The RNA-seq pipeline publicly available in Via Foundry includes several
 key steps for processing RNA-seq data:</p>
@@ -141,13 +127,13 @@ key steps for processing RNA-seq data:</p>
 <li>Gene and Isoform Expression Estimation: RSEM is employed to align
     RNA-seq reads to reference transcripts and estimate gene and isoform
     expression levels.</li>
-<li>Genome Alignment: HISAT2, STAR, and Tophat2 are employed to align
+<li>Genome Alignment: HISAT2, STAR, Kallisto or Salmon are employed to align
     RNA-seq reads to the genome. Optional estimation of gene and isoform
-    expression levels can be performed using featureCount.</li>
+    expression levels can be performed using featureCounts and Salmon.</li>
 <li>Quality Metrics and Reports: If the user opts to perform genomic
     alignments, the pipeline generates overall quality metrics,
     including coverage and the number of mapped reads to different
-    genomic and transcriptomic regions. These reports rely on Picard\'s
+    genomic and transcriptomic regions. These reports rely on Picard's
     CollectRNASeqMetrics program (Broad Institute, n.d.) and the RSeQC
     program (Wang, Wang, and Li 2012).</li>
 <li>Visualization: Optional generation of Integrative Genomics Viewer
@@ -160,15 +146,11 @@ key steps for processing RNA-seq data:</p>
     software for interactive exploration of the resulting data
     (Kucukural et al. 2019).</li>
 </ol>
+<p>Presented here is the example report tab for the RNA-Seq Run. Each section within the report consists of its own set of files, allowing you to thoroughly investigate and visualize the data within each respective section.</p>
+<p><img alt="image" src="../../images/rnaseq_report.png" /></p>
+<p>Below is a screenshot showcasing the interactive analysis of differential expression analysis using the Shiny app called DEbrowser.</p>
+<p><img alt="image" src="../../images/rnaseq_debrowser.png" /></p>
 <h2 id="atac-seq-and-chip-seq-pipelines">ATAC-Seq and ChIP-Seq pipelines</h2>
-<blockquote>
-<ul>
-<li><a href="https://github.com/dolphinnext/atacseq">Github Repository for ATAC-seq
-    Pipeline</a></li>
-<li><a href="https://github.com/dolphinnext/chipseq">Github Repository for CHIP-seq
-    Pipeline</a></li>
-</ul>
-</blockquote>
 <p><img alt="image" src="../../dolphinNext/dolphinnext_images/atac.jpg" /></p>
 <p><img alt="image" src="../../dolphinNext/dolphinnext_images/chip.jpg" /></p>
 <p>Via Foundry offers comprehensive pipelines for the processing of
@@ -206,7 +188,7 @@ follows:</p>
 <li>ATAC-Seq-specific Analysis: In the case of ATAC-Seq data, the
     pipeline performs additional steps. It identifies accessible
     chromatin regions by estimating the Tn5 transposase cut sites. This
-    estimation involves positioning on the 9th base upstream of the 5\'
+    estimation involves positioning on the 9th base upstream of the 5'
     read end and extending by 29 bases downstream. This extension
     process is based on studies (Donnard et al. 2018; Buenrostro et
     al. 2013) that have shown it to more accurately reflect the exact
@@ -218,7 +200,7 @@ follows:</p>
     option of generating consensus peak calls. This is achieved by
     merging all peaks individually called in each sample using Bedtools
     (Quinlan and Hall 2010). Furthermore, the pipelines quantify the
-    number of reads in each peak location using Bedtools\' coverage
+    number of reads in each peak location using Bedtools' coverage
     function, facilitating comprehensive analysis of the data.</li>
 <li>Data Analysis: As a result, both the ATAC-Seq and ChIP-Seq pipelines
     generate a matrix containing count values for each peak region and
@@ -227,11 +209,6 @@ follows:</p>
     analysis. Alternatively, the matrix can be downloaded for further
     analysis using other tools or methods.</li>
 </ol>
-<h2 id="other-pipelines">Other Pipelines</h2>
-<p>Via Foundry has several other pipelines, including the Cell Ranger
-Pipeline and the Cell Ranger Multi Pipeline, currently available for
-public use, and are actively adding more to the platform. Stay tuned for
-updates.</p>
 <h2 id="how-to-cite-us">How To Cite Us</h2>
 <p>If you use Via Foundry (formerly DolphinNext) in your research, please
 cite:</p>
@@ -253,7 +230,7 @@ Genomics 21, 310 (2020). <a href="https://doi.org/10.1186/s12864-020-6714-x">htt
 
   <div role="contentinfo">
     <!-- Copyright etc -->
-      <p>© 2023 by Jack Davis, Onur Yukselen, Alper Kucukural</p>
+      <p>© 2023 by Via Scientific</p>
   </div>
 
   Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
