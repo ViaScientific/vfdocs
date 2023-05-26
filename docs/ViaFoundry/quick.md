@@ -27,12 +27,12 @@ To access your run environment, simply click on the Profile icon located at the 
     can investigate publicly available pipelines as shown below and
     select the pipeline you want to run by clicking on it.
 
-    > ![image](../images/public_pipelines.png)
+    ![image](../images/public_pipelines.png)
 
 2.  Once the pipeline is loaded, you will notice a `Run` button at the
     right top of the page.
 
-    > ![image](../images/run_button.png)
+    ![image](../images/run_button.png)
 
 3.  Pressing this button opens a new window, where you can create a new
     project by clicking `Create a Project`. After you enter and save the
@@ -40,7 +40,7 @@ To access your run environment, simply click on the Profile icon located at the 
     can select your project by clicking on it, as shown in the figure
     below.
 
-    > ![image](../images/project_pipe_select.png)
+    ![image](../images/project_pipe_select.png)
 
 4.  After clicking `Select Project`, you may proceed with entering your
     desired run name, which will be added to your project's run list.
@@ -68,7 +68,7 @@ To access your run environment, simply click on the Profile icon located at the 
     by clicking the `Run` button. Please go through the [Run
     Guide](run.md) for detailed explanation about each module is used.
 
-    > ![image](../images/ready_to_run.png)
+    ![image](../images/ready_to_run.png)
 
 ## Adding Files
 
@@ -76,12 +76,12 @@ To access your run environment, simply click on the Profile icon located at the 
 
 You can reach your remote files by entering:
 
-> -   Full path of a directory: e.g.
->     `/share/data/umw_biocore/genome_data/mousetest/mm10/gz`
-> -   Web link: e.g.
->     `https://web.dolphinnext.com/umw_biocore/dnext_data/tutorial/fastq_data/pair`
-> -   Amazon (S3) Bucket: e.g. `s3://viafoundry/fastq`
-> -   Google (GS) Bucket: e.g. `gs://viafoundry/fastq`
+  -   Full path of a directory: e.g.
+      `/share/data/umw_biocore/genome_data/mousetest/mm10/gz`
+  -   Web link: e.g.
+      `https://web.dolphinnext.com/umw_biocore/dnext_data/tutorial/fastq_data/pair`
+  -   Amazon (S3) Bucket: e.g. `s3://viafoundry/fastq`
+  -   Google (GS) Bucket: e.g. `gs://viafoundry/fastq`
 
 ### Geo Files
 

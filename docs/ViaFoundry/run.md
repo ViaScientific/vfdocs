@@ -32,16 +32,16 @@ The status of your current run is displayed at the far right of the run
 page's header. Initially, you'll see an orange `Waiting` button. In
 order to initiate a run, the following data need to be entered:
 
-> 1.  **Run Environment:** The environment, discussed in the
->     [profile](profile.md) page, within which you'd like to conduct
->     your run.
-> 2.  **Work Directory:** Full path of the directory where Nextflow runs
->     will be executed. (e.g. ``/home/newuser/workdir``)
-> 3.  **Inputs:** Various values and files, specifying which data
->     will be processed and how (i.e. whether single-end vs. paired-end
->     data are being used), need to be entered in the **Run Settings**
->     page. For additional information, please check the [Adding Files
->     ](../quick/#adding-files) section.
+1.  **Run Environment:** The environment, discussed in the
+     [profile](profile.md) page, within which you'd like to conduct
+     your run.
+2.  **Work Directory:** Full path of the directory where Nextflow runs
+     will be executed. (e.g. ``/home/newuser/workdir``)
+3.  **Inputs:** Various values and files, specifying which data
+     will be processed and how (i.e. whether single-end vs. paired-end
+     data are being used), need to be entered in the **Run Settings**
+     page. For additional information, please check the [Adding Files
+     ](../quick/#adding-files) section.
 
 ![image](../images/run_settings.png)
 
@@ -76,69 +76,66 @@ All possible status messages are listed here:
 
 -   **Run Container:** During the pipeline creation process, we specified the containers to be used for each process. Consequently, when you select the run environment, the corresponding run container (either Docker or Singularity) checkbox will be automatically selected, and the defined container will be populated in the image field.
 
--   **A. Use Docker Image:**  
+    -   **A. Use Docker Image:**  
 
-    > 1.  **Image:** Docker image name. Example:
-    >
-    >         viascientific/rnaseq:4.0
-    >
-    > 2.  **RunOptions (optional):** 
-Foundry has the ability to autodetect all the paths used and automounts all the required files to the container before the run starts. Moreover, you have the flexibility to enter any command line arguments supported by the Docker run command. Please click
-    >     [this Docker
-    >     link](https://docs.docker.com/engine/reference/commandline/cli/)
-    >     for details on how you can configure this section.
+        1.  **Image:** Docker image name. Example:
+    
+             viascientific/rnaseq:4.0
+    
+        2.  **RunOptions (optional):** Foundry has the ability to autodetect all the paths used and automounts all the required files to the container before the run starts. Moreover, you have the flexibility to enter any command line arguments supported by the Docker run command. Please click [this Docker link](https://docs.docker.com/engine/reference/commandline/cli/) for details on how you can configure this section.
 
--   **Use Singularity Image:** Instead of Docker, you can activate a
+    -   **Use Singularity Image:** Instead of Docker, you can activate a
     Singularity image if you wish by clicking the
     `Use Singularity Image` checkbox and entering the relevant
     information, expounded upon below. In order to use a Singularity
     image, you must first [install
     Singularity](http://singularity.lbl.gov/docs-installation/).
 
-    > 1.  **Image:** Path to your desired Singularity image. For example:
-    >
-    >           docker://viascientific/rnaseq:4.0
-    >           shub://UMMS-biocore/singularitysc
-    >           /project/umw_biocore/singularity/UMMS-Biocore-singularity-master.simg
-    >
-    > 2.  **RunOptions (optional):** Foundry automatically detects and mounts all the necessary files to the container by detecting the used paths. When using Singularity, you have the option to enter command line options supported by the Singularity exec command. One example of such an option is --bind, which allows you to mount directories. For more information about the command line arguments supported by Singularity, please refer to this
-    >     [link](http://singularity.lbl.gov/docs-usage/).
+        1.  **Image:** Path to your desired Singularity image. For example:
+    
+            `docker://viascientific/rnaseq:4.0`
 
-            --bind /project:/project --bind /nl:/nl 
+            `shub://UMMS-biocore/singularitysc`
+
+            `/project/umw_biocore/singularity/UMMS-Biocore-singularity-master.simg`
+    
+        2.  **RunOptions (optional):** Foundry automatically detects and mounts all the necessary files to the container by detecting the used paths. When using Singularity, you have the option to enter command line options supported by the Singularity exec command. One example of such an option is --bind, which allows you to mount directories. For more information about the command line arguments supported by Singularity, please refer to this [link](http://singularity.lbl.gov/docs-usage/).
+
+            `--bind /project:/project --bind /nl:/nl `
 
 -   **Executor Settings:** A series of parameters governing the
     execution of your run, including what packages to run and how much
     processing power to allocate to each package.
 
-    > **1. Executor Settings for Nextflow:** (navigate to Profile → Run Environments → Edit Run Environment): Here, you can specify the system on which Nextflow is initiated. Via Foundry currently supports various executors for running Nextflow itself, including Local, SGE, SLURM, and LSF. These executors are exclusively used for running Nextflow.
+    **1. Executor Settings for Nextflow:** (navigate to Profile → Run Environments → Edit Run Environment): Here, you can specify the system on which Nextflow is initiated. Via Foundry currently supports various executors for running Nextflow itself, including Local, SGE, SLURM, and LSF. These executors are exclusively used for running Nextflow.
 
-    > Suggested parameters for the executor settings are as follows: long, 8GB memory, 1 CPU, and a time range of 5000-8000 minutes.
-    >
-    > **2. Executor of Nextflow Jobs**: (navigate to Profile --> Run
-    > Environments --> Edit Run Environment) This setting will be
-    > used if you don't manually set any parameters in the **Advanced**
-    > section of your run page. If any option other than Local is
-    > selected, you'll be prompted to input values for `Queue`,
-    > `Memory(GB)`, `CPU` and `Time(min.)`. These parameters can be adjusted according to your needs. 
-    >
-    > Suggested parameters for this configuration are as follows: short, 20GB memory, 1 CPU, and 240 minutes of execution time.
-    >
-    > ![image](../images/edit_nextflow_executor_settings.png)
+    Suggested parameters for the executor settings are as follows: long, 8GB memory, 1 CPU, and a time range of 5000-8000 minutes.
+    
+    **2. Executor of Nextflow Jobs**: (navigate to Profile --> Run
+      Environments --  Edit Run Environment) This setting will be
+      used if you don't manually set any parameters in the **Advanced**
+      section of your run page. If any option other than Local is
+      selected, you'll be prompted to input values for `Queue`,
+      `Memory(GB)`, `CPU` and `Time(min.)`. These parameters can be adjusted according to your needs. 
+    
+      Suggested parameters for this configuration are as follows: short, 20GB memory, 1 CPU, and 240 minutes of execution time.
+    
+      ![image](../images/edit_nextflow_executor_settings.png)
  
-    >
-    > **3. Executor Settings for All Processes (in ``Advanced`` tab
-    > of run page)**: This setting will override the parameters specified in the `Executor of Nextflow Jobs` section. It allows you to define the executor settings for all processes in your run.
-    >
-    > Suggested parameters for this configuration are as follows: short, 20GB memory, 1 CPU, and 240 minutes of execution time.
-    >
-    > **4. Executor Settings for Each Process (in ``Advanced`` tab
-    > of run page)**: If a particular process needs special parameters
-    > other than **Executor settings for all processes**, you can
-    > override the default parameters by clicking on the checkbox
-    > corresponding to the process that you want to change. This will
-    > only affect the settings of the selected process while retaining
-    > the original settings for all other processes. Suggested
-    > parameters: long 20GB 4CPU 1000-5000min
+    
+      **3. Executor Settings for All Processes (in ``Advanced`` tab
+      of run page)**: This setting will override the parameters specified in the `Executor of Nextflow Jobs` section. It allows you to define the executor settings for all processes in your run.
+    
+      Suggested parameters for this configuration are as follows: short, 20GB memory, 1 CPU, and 240 minutes of execution time.
+    
+      **4. Executor Settings for Each Process (in ``Advanced`` tab
+      of run page)**: If a particular process needs special parameters
+      other than **Executor settings for all processes**, you can
+      override the default parameters by clicking on the checkbox
+      corresponding to the process that you want to change. This will
+      only affect the settings of the selected process while retaining
+      the original settings for all other processes. Suggested
+      parameters: long 20GB 4CPU 1000-5000min
 
 -   **Delete intermediate files after run:** By default, Via Foundry
     deletes any intermediate files created during a run, only retaining
@@ -213,7 +210,7 @@ icons to help you best analyze each report.
 please let us know about it at <support@viascientific.com>, and we'd be
 happy to add it for you.
 
-## -   **Shiny App - DEBrowser**
+## -   **Shiny App - DEBrowser** -
 
 DEBrowser is an R library which provides an easy way to perform and
 visualize DE (Differential Expression) analysis. This module takes count
@@ -224,7 +221,7 @@ data. You can find their documentation
 ![image](../images/rnaseq_debrowser.png)
 
 
-## -   **R-Studio - R-Markdown**
+## -   **R-Studio - R-Markdown** -
 
 The R-Studio launcher facilitates interactive analysis of the data generated from a run. We have prepared a set of R-Markdown reports that provide access to your report in HTML or PDF format immediately after the run is completed.
 
@@ -232,19 +229,19 @@ For instance, the code below performs differential expression analysis for each 
 
 ![image](../images/rstudio-app.png)
 
-## -   **Jupyter Notebook**
+## -   **Jupyter Notebook** -
 
 The Jupyter Notebook app, due to its interactive and flexible nature, it allows bioinformatics researchers to combine code, visualizations, and explanatory text in a single document. Bioinformaticians can write and execute code snippets in real-time, visualize data using various plotting libraries, and document their analyses step-by-step.
 
 ![image](../images/jupyter-app.png)
 
-## -   **Shiny App - GSEA Explorer**
+## -   **Shiny App - GSEA Explorer** -
 
 GSEA Explorer is an R library that offers a convenient method for conducting and visualizing Gene Set Enrichment Analysis (GSEA). GSEA aims to assess whether a specific gene set or pathway is enriched in gene expression data, indicating its potential biological significance in the studied condition. The GSEA Explorer application can be accessed after executing Foundry's complete RNA-sequencing pipeline or the standalone Differential Expression module. By leveraging GSEA Explorer, researchers can gain valuable insights into the functional implications of gene sets and pathways, aiding in the interpretation of RNA-seq results and facilitating a deeper understanding of biological mechanisms.
 
 ![image](../images/gsea-app.png)
 
-## -   **Shiny App - Network Explorer**
+## -   **Shiny App - Network Explorer** -
 
 The Network Explorer allows bioinformaticians to explore and analyze these complex networks, helping them uncover hidden patterns, identify key players, and understand the underlying biological mechanisms. The Network Explorer application can be launched after running Foundry's full RNA-sequencing pipeline or the stand-alone Differential Expression module.
 
@@ -252,24 +249,24 @@ The Network Explorer allows bioinformaticians to explore and analyze these compl
 
 
 
-## -   **Datatables**
+## -   **Datatables** -
 
 This module, powered by [Datatables](https://datatables.net//), allows
 you to view, sort, and search the table's content. The following two
 examples depict alignment and RSEM summaries within Datatables.
 
-> -   Alignment Summary:
->
-> ![image](../dolphinNext/dolphinnext_images/report_datatables2.png)
->
-> -   RSEM Summary:
->
-> ![image](../dolphinNext/dolphinnext_images/report_datatables.png)
+  -   Alignment Summary:
+
+  ![image](../dolphinNext/dolphinnext_images/report_datatables2.png)
+
+  -   RSEM Summary:
+
+  ![image](../dolphinNext/dolphinnext_images/report_datatables.png)
 
 You can fit the entire table in your screen by clicking the
 `Full screen` icon at the top of the module.
 
-## -   **HTML/PDF Viewer:**
+## -   **HTML/PDF Viewer** -
 
 You can easily embed HTML/PDF content in our **Report** section by using
 HTML/PDF Viewer. Reference this image, which shows MultiQC output, for an
