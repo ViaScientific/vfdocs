@@ -1,6 +1,9 @@
 site_name: Via Foundry Documentation
 theme:
-  name: readthedocs
+  name: material
+  logo: 'images/via_icon.png'
+  palette:
+    primary: white
 copyright: © 2023 by Via Scientific
 site_author: Via Foundry Team
 
