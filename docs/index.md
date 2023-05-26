@@ -10,5 +10,6 @@
 - [Quick Start Guide](ViaFoundry/quick.md)
 - [Project Guide](ViaFoundry/project.md)
 - [Run Guide](ViaFoundry/run.md)
+- [App Guide](ViaFoundry/app.md)
 - [Profile Guide](ViaFoundry/profile.md)
 - [Frequently Asked Questions](ViaFoundry/faq.md)

@@ -48,7 +48,7 @@ To access your run environment, simply click on the Profile icon located at the 
 
 5.  At first, in the header of the run page, you will see an orange "Waiting" button. To start a run, you need to enter/select the following:
 
-    ![image](../../dolphinNext/dolphinnext_images/run_header_waiting.png)
+    ![image](../dolphinNext/dolphinnext_images/run_header_waiting.png)
 
     A.  **Run Environment:** The environment, discussed in the [Profile](profile.md) page, within which you'd like to conduct your run.
     

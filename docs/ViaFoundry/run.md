@@ -60,8 +60,11 @@ All possible status messages are listed here:
 
 
 
-
 ## Advanced Options
+
+-   **Run Sharing (Permissions to View):** By default, all runs are only visible to their owners. However, you have the option to share your run with a specific group that you have created in the profile's "Groups" tab. To do this, choose "Only my group" and select the name of the desired group. Members of that group will then be able to view the run on their run status page.
+
+    Alternatively, you can set the permissions to "Everyone". With this setting, the run will only be visible to users who know the specific run link. The selected run will not appear on their run status page, but they will be able to access it if they have the link.
 
 -   **Publish Directory:** The Work Directory also serves as the default
     directory to which output files are sent for Via Foundry runs. If
@@ -71,22 +74,16 @@ All possible status messages are listed here:
     `s3://yourbucket/test`) or Google Storage paths (e.g.
     `gs://yourbucket/test`) are all accepted.
 
--   **Use Docker Image:** Nextflow supports the use of Docker
-    containers, which allow you to create fully reproducible pipelines.
-    Docker images can contain whatever software you might need to
-    execute your pipeline. It works transparently, and it creates output
-    files in the host system without requiring any additional steps. The
-    only requirement is that you [install
-    Docker](https://docs.docker.com/install/) first. To use Docker for a
-    Via Foundry run, just click the `Use Docker Image` checkbox
-    (selected by default) and enter the following information:
+-   **Run Container:** During the pipeline creation process, we specified the containers to be used for each process. Consequently, when you select the run environment, the corresponding run container (either Docker or Singularity) checkbox will be automatically selected, and the defined container will be populated in the image field.
+
+-   **A. Use Docker Image:**  
 
     > 1.  **Image:** Docker image name. Example:
     >
-    >         public.ecr.aws/t4w5x8f2/viascientific/rnaseq:4.0
+    >         viascientific/rnaseq:4.0
     >
-    > 2.  **RunOptions (optional):** You can enter any command line
-    >     arguments supported by the Docker run command. Please click
+    > 2.  **RunOptions (optional):** 
+Foundry has the ability to autodetect all the paths used and automounts all the required files to the container before the run starts. Moreover, you have the flexibility to enter any command line arguments supported by the Docker run command. Please click
     >     [this Docker
     >     link](https://docs.docker.com/engine/reference/commandline/cli/)
     >     for details on how you can configure this section.
@@ -99,51 +96,40 @@ All possible status messages are listed here:
     Singularity](http://singularity.lbl.gov/docs-installation/).
 
     > 1.  **Image:** Path to your desired Singularity image. For example:
+    >
+    >           docker://viascientific/rnaseq:4.0
+    >           shub://UMMS-biocore/singularitysc
+    >           /project/umw_biocore/singularity/UMMS-Biocore-singularity-master.simg
+    >
+    > 2.  **RunOptions (optional):** Foundry automatically detects and mounts all the necessary files to the container by detecting the used paths. When using Singularity, you have the option to enter command line options supported by the Singularity exec command. One example of such an option is --bind, which allows you to mount directories. For more information about the command line arguments supported by Singularity, please refer to this
+    >     [link](http://singularity.lbl.gov/docs-usage/).
 
-            shub://UMMS-biocore/singularitysc
-            /project/umw_biocore/singularity/UMMS-Biocore-singularity-master.simg
-    >
-    > 2.  **RunOptions (optional):** You can enter any command line
-    >     options supported by the `Singularity exec`. For instance, you
-    >     can mount directories by using `--bind command`. See below for
-    >     an example of the bind command, and please click this
-    >     [link](http://singularity.lbl.gov/docs-usage/) for more
-    >     details about the command line arguments Singularity supports.
-
-            > --bind /project:/project --bind /nl:/nl --bind
-            > /share:/share
-    >
-    >
-    > **Tip:** Mounting directories in Singularity requires you to create the
-    > directories in the image beforehand.
+            --bind /project:/project --bind /nl:/nl 
 
 -   **Executor Settings:** A series of parameters governing the
     execution of your run, including what packages to run and how much
     processing power to allocate to each package.
 
-    > **1. Executor Settings for Nextflow (navigate to Profile --> Run
-    > Environments --> Edit Run Environment)**: You can determine the
-    > system where Nextflow itself is initiated. Currently, Via Foundry
-    > supports the initiation of Nextflow via Local, SGE, SLURM and LSF
-    > executors, which will be only used for running Nextflow itself.
-    > Suggested parameters: long 8GB 1CPU 5000-8000min
+    > **1. Executor Settings for Nextflow:** (navigate to Profile → Run Environments → Edit Run Environment): Here, you can specify the system on which Nextflow is initiated. Via Foundry currently supports various executors for running Nextflow itself, including Local, SGE, SLURM, and LSF. These executors are exclusively used for running Nextflow.
+
+    > Suggested parameters for the executor settings are as follows: long, 8GB memory, 1 CPU, and a time range of 5000-8000 minutes.
     >
-    > **2. Executor of Nextflow Jobs (navigate to Profile --> Run
-    > Environments --> Edit Run Environment)**: This setting will be
+    > **2. Executor of Nextflow Jobs**: (navigate to Profile --> Run
+    > Environments --> Edit Run Environment) This setting will be
     > used if you don't manually set any parameters in the **Advanced**
     > section of your run page. If any option other than Local is
     > selected, you'll be prompted to input values for `Queue`,
-    > `Memory(GB)`, `CPU` and `Time(min.)`. You can adjust these
-    > parameters as you wish. Suggested parameters: short 20GB 1CPU
-    > 240min
+    > `Memory(GB)`, `CPU` and `Time(min.)`. These parameters can be adjusted according to your needs. 
+    >
+    > Suggested parameters for this configuration are as follows: short, 20GB memory, 1 CPU, and 240 minutes of execution time.
     >
     > ![image](../images/edit_nextflow_executor_settings.png)
  
     >
     > **3. Executor Settings for All Processes (in ``Advanced`` tab
-    > of run page)**: This setting will overwrite the parameters entered
-    > in "Executor of Nextflow Jobs". Suggested parameters: short 20GB
-    > 1CPU 240min
+    > of run page)**: This setting will override the parameters specified in the `Executor of Nextflow Jobs` section. It allows you to define the executor settings for all processes in your run.
+    >
+    > Suggested parameters for this configuration are as follows: short, 20GB memory, 1 CPU, and 240 minutes of execution time.
     >
     > **4. Executor Settings for Each Process (in ``Advanced`` tab
     > of run page)**: If a particular process needs special parameters
@@ -155,15 +141,12 @@ All possible status messages are listed here:
     > parameters: long 20GB 4CPU 1000-5000min
 
 -   **Delete intermediate files after run:** By default, Via Foundry
-    deletes any non-output files created during a run, only retaining
-    the necessary output files in the Work/Publish Directories. This
+    deletes any intermediate files created during a run, only retaining
+    the necessary files in report folder. This
     setting is aimed at minimizing the storage required for a project,
     but you can uncheck the box to keep all intermediate files.
 
--   **Permissions and Groups:** By default, all new runs can only be
-    seen by their owner. However, you can share your run with a group by
-    changing permissions to "Only my group" and choose the group you
-    want to share with from the `Group Selection` dropdown.
+
 
 ## Workflow
 
@@ -177,49 +160,49 @@ link at the top of this page.
 This section keeps track of each run. You can monitor each stage of the
 run both before and after Nextflow execution, as shown here:
 
-![image](../../dolphinNext/dolphinnext_images/run_log.png)
+![image](../dolphinNext/dolphinnext_images/run_log.png)
 
 You can view various log files, such as timeline.html, dag.html,
 trace.txt, .nextflow.log, nextflow.nf, nextflow.config, as shown here:
 
 - timeline.html:
 
-![image](../../dolphinNext/dolphinnext_images/timeline.png)
+![image](../dolphinNext/dolphinnext_images/timeline.png)
 
 - dag.html:
 
-![image](../../dolphinNext/dolphinnext_images/dag.png)
+![image](../dolphinNext/dolphinnext_images/dag.png)
 
 - trace.txt:
 
-![image](../../dolphinNext/dolphinnext_images/trace.png)
+![image](../dolphinNext/dolphinnext_images/trace.png)
 
 - .nextflow.log:
 
-![image](../../dolphinNext/dolphinnext_images/nextflowlog.png)
+![image](../dolphinNext/dolphinnext_images/nextflowlog.png)
 
 - nextflow.nf:
 
-![image](../../dolphinNext/dolphinnext_images/nextflownf.png)
+![image](../dolphinNext/dolphinnext_images/nextflownf.png)
 
 - nextflow.config:
 
-![image](../../dolphinNext/dolphinnext_images/nextflowconfig.png)
+![image](../dolphinNext/dolphinnext_images/nextflowconfig.png)
 
 If an error occurred at any point during the run, a detailed explanation
 about the error will be displayed here, and the status of the run will
 change to `Run Error`.
 
-![image](../../dolphinNext/dolphinnext_images/run_error.png)
+![image](../dolphinNext/dolphinnext_images/run_error.png)
 
 ## Report
 
 This tab will appear in the run page upon run initialization. You can
 view the output files in various modules such as R-Markdown, Datatables,
 Highcharts, HTML or PDF Viewer. For reference, check the example Report
-section of an RSEM pipeline at below.
+section of an RNA-Seq pipeline at below.
 
-![image](../../dolphinNext/dolphinnext_images/report_all.png)
+![image](../images/rnaseq_report.png)
 
 Each report row corresponds to an output parameter in the pipeline's
 workflow, and you can easily see a row's content by clicking on it. All
@@ -230,7 +213,7 @@ icons to help you best analyze each report.
 please let us know about it at <support@viascientific.com>, and we'd be
 happy to add it for you.
 
--   **DEBrowser:**
+## -   **Shiny App - DEBrowser**
 
 DEBrowser is an R library which provides an easy way to perform and
 visualize DE (Differential Expression) analysis. This module takes count
@@ -238,38 +221,38 @@ matrices as input and allows interactive exploration of the resulting
 data. You can find their documentation
 [here](https://bioconductor.org/packages/release/bioc/vignettes/debrowser/inst/doc/DEBrowser.html).
 
-![image](../../dolphinNext/dolphinnext_images/report_debrowser.png)
+![image](../images/rnaseq_debrowser.png)
 
--   **R-Markdown:**
 
-The R-Markdown feature enables interactive analysis of the
-newly-produced data from a run. We have prepared a series of R-Markdown
-reports, which will allow you to reach your report in an HTML or PDF
-format as soon as your run completes. Within an R-Markdown (.rmd) file,
-R code chunks can be embedded with the native Markdown syntax for fenced
-code regions. For example, the following code chunk computes a data
-histogram and renders a bar plot as a PNG image:
+## -   **R-Studio - R-Markdown**
 
-![image](../../dolphinNext/dolphinnext_images/report_rmarkdown.png)
+The R-Studio launcher facilitates interactive analysis of the data generated from a run. We have prepared a set of R-Markdown reports that provide access to your report in HTML or PDF format immediately after the run is completed.
 
-For more information about R-Markdown, click [rmarkdown
-link](https://rmarkdown.rstudio.com/).
+For instance, the code below performs differential expression analysis for each comparison listed in the compare file. It generates volcano and MA plots for differentially expressed genes in each comparison:
 
-At the top of the R-Markdown module, you can find various icons that
-will help you edit your .rmd file, save it as a new file, and download
-it in various formats such as RMD, PDF or HTML. In order to facilitate
-the review process, you can click "full screen" icon to fit the
-application in your screen. You can also adjust the **Auto Updating
-Output** and **Autosave** features, explained below, by clicking the
-`Settings` icon.
+![image](../images/rstudio-app.png)
 
-> -   **Auto Updating Output:** If enabled, the preview panel updates
->     automatically as you code. If disabled, use the `Run Script`
->     button to update the preview panel.
-> -   **Autosave:** If enabled, Via Foundry will automatically save the
->     file's content every 30 seconds.
+## -   **Jupyter Notebook**
 
--   **Datatables:**
+The Jupyter Notebook app, due to its interactive and flexible nature, it allows bioinformatics researchers to combine code, visualizations, and explanatory text in a single document. Bioinformaticians can write and execute code snippets in real-time, visualize data using various plotting libraries, and document their analyses step-by-step.
+
+![image](../images/jupyter-app.png)
+
+## -   **Shiny App - GSEA Explorer**
+
+GSEA Explorer is an R library that offers a convenient method for conducting and visualizing Gene Set Enrichment Analysis (GSEA). GSEA aims to assess whether a specific gene set or pathway is enriched in gene expression data, indicating its potential biological significance in the studied condition. The GSEA Explorer application can be accessed after executing Foundry's complete RNA-sequencing pipeline or the standalone Differential Expression module. By leveraging GSEA Explorer, researchers can gain valuable insights into the functional implications of gene sets and pathways, aiding in the interpretation of RNA-seq results and facilitating a deeper understanding of biological mechanisms.
+
+![image](../images/gsea-app.png)
+
+## -   **Shiny App - Network Explorer**
+
+The Network Explorer allows bioinformaticians to explore and analyze these complex networks, helping them uncover hidden patterns, identify key players, and understand the underlying biological mechanisms. The Network Explorer application can be launched after running Foundry's full RNA-sequencing pipeline or the stand-alone Differential Expression module.
+
+![image](../images/network_explorer-app.png)
+
+
+
+## -   **Datatables**
 
 This module, powered by [Datatables](https://datatables.net//), allows
 you to view, sort, and search the table's content. The following two
@@ -277,29 +260,22 @@ examples depict alignment and RSEM summaries within Datatables.
 
 > -   Alignment Summary:
 >
-> ![image](../../dolphinNext/dolphinnext_images/report_datatables2.png)
+> ![image](../dolphinNext/dolphinnext_images/report_datatables2.png)
 >
 > -   RSEM Summary:
 >
-> ![image](../../dolphinNext/dolphinnext_images/report_datatables.png)
+> ![image](../dolphinNext/dolphinnext_images/report_datatables.png)
 
 You can fit the entire table in your screen by clicking the
 `Full screen` icon at the top of the module.
 
--   **HTML Viewer:**
+## -   **HTML/PDF Viewer:**
 
-You can easily embed HTML content in our **Report** section by using
-HTML Viewer. Reference this image, which shows MultiQC output, for an
+You can easily embed HTML/PDF content in our **Report** section by using
+HTML/PDF Viewer. Reference this image, which shows MultiQC output, for an
 example:
 
-![image](../../dolphinNext/dolphinnext_images/report_html.png)
-
--   **PDF Viewer:**
-
-Similar to HTML Viewer, PDF files can be embedded in the **Report**
-section. You can see the piPipes report as an example here:
-
-![image](../../dolphinNext/dolphinnext_images/report_pdf.png)
+![image](../dolphinNext/dolphinnext_images/report_html.png)
 
 ## Support
 

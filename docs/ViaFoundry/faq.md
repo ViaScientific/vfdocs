@@ -163,7 +163,7 @@ as the queue/partition, memory, CPU, and time.
 > > initiate Nextflow. For the SGE, SLURM, and LSF executors, Via
 > > Foundry only uses them to run Nextflow itself, so the time limit
 > > should be long enough to execute all processes in the pipeline. For
-> > local execution, DolphinNext limits the total amount of memory and
+> > local execution, Via Foundry limits the total amount of memory and
 > > CPU that can be used, so these values should be close to the maximum
 > > capacity of your computer.
 > >

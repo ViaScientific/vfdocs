@@ -40,7 +40,7 @@ keys as well.
 
 ## SSH Keys
 
-![image](../../dolphinNext/dolphinnext_images/ssh_keys.png)
+![image](../dolphinNext/dolphinnext_images/ssh_keys.png)
 
 To create or enter existing SSH key pairs, navigate to the **SSH Keys**
 tab and click on the `Add SSH Key` button in the top right corner.
@@ -54,7 +54,7 @@ Next, you'll need to choose between two methods:
     copy and paste these keys into the appropriate fields in your
     browser. If these files don't exist or you want to create new ones,
     check out this 
-    [link](../faq/faq.md#how-can-i-create-ssh-keys-in-my-computer)
+    [link](../faq/#how-can-i-create-ssh-keys-in-my-computer)
     for guidance.
 -   **B. Create new keys:** To generate a new pair of SSH keys, simply
     click the "Generate Keys" button.
@@ -67,7 +67,7 @@ help with this step, feel free to contact us at
 
 ## Amazon Keys
 
-![image](../../dolphinNext/dolphinnext_images/profile_amazonkeys.png)
+![image](../dolphinNext/dolphinnext_images/profile_amazonkeys.png)
 
 To enter your AWS security credentials (access key, secret key, and
 default region), head over to the **Amazon Keys** tab and click on the
@@ -81,7 +81,7 @@ needed.
 
 ## Google Keys
 
-![image](../../dolphinNext/dolphinnext_images/profile_googlekeys.png)
+![image](../dolphinNext/dolphinnext_images/profile_googlekeys.png)
 
 To enter your Project ID and Service Account Key in the Google keys tab,
 start by clicking the `Add Google Key` button.
@@ -104,7 +104,7 @@ overwrite it with a new key or delete it if necessary.
 
 ## Groups
 
-![image](../../dolphinNext/dolphinnext_images/profile_groups.png)
+![image](../dolphinNext/dolphinnext_images/profile_groups.png)
 
 In the **Groups** tab, you can create groups by selecting the
 `Create a Group` button. Once you have created a group, you can add
@@ -118,7 +118,7 @@ you have the option to delete your group by selecting the
 
 ## Run Environments
 
-![image](../../dolphinNext/dolphinnext_images/profile_runenv.png)
+![image](../dolphinNext/dolphinnext_images/profile_runenv.png)
 
 
 ## Software Dependencies
@@ -535,7 +535,7 @@ operating system.
 
 ## GitHub Connection
 
-![image](../../dolphinNext/dolphinnext_images/profile_github.png)
+![image](../dolphinNext/dolphinnext_images/profile_github.png)
 
 You can enter your GitHub or Bitbucket security credentials (Username,
 E-mail, Password) by clicking on the `Add Account` button in the
@@ -546,7 +546,7 @@ share it with others.
 
 ## Change Password
 
-![image](../../dolphinNext/dolphinnext_images/profile_change_password.png)
+![image](../dolphinNext/dolphinnext_images/profile_change_password.png)
 
 If you're not using a Google sign-in, you can change your Via Foundry
 password by using this section.
