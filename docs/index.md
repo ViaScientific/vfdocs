@@ -13,3 +13,6 @@
 - [App Guide](ViaFoundry/app.md)
 - [Profile Guide](ViaFoundry/profile.md)
 - [Frequently Asked Questions](ViaFoundry/faq.md)
+
+# Administrator Guide
+- [Introduction](ViaFoundry/admin-intro.md)

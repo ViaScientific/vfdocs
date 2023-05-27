@@ -19,17 +19,13 @@ managing your credentials.
 -   Next, you can use the **Groups** tab to create a group and add
     members to it, allowing you to share your runs or pipelines with
     others.
--   To manage your SSH keys, you'll need to head over to the **Run
-    Environments** tab, where you can create new keys or enter existing
-    SSH key pairs in the `Edit` section to establish connections with
-    hosts.
+-   To manage your SSH keys, you'll need to head over to the **SSH Keys** tab. This section allows you to perform essential actions such as generating new keys or inputting pre-existing SSH key pairs within the Edit section. By utilizing this functionality, you can establish secure connections with various hosts. It's worth mentioning that for the majority of accounts, these keys are automatically generated,
 -   You can also add your **Amazon Keys** or **Google Keys** in order to
     execute your runs in the cloud.
--   Under the **Repositories** tab (formerly called **GitHub**), you can
-    enter your security credentials to push your pipeline information to
-    your Github or Bitbuckets account.
--   If you're not using Google sign-in, you can change your password
-    within the **Change Password** section.
+-   Under the **Repositories** tab, you can
+    enter your security credentials to pull/push pipeline information to
+    your Github or Bitbuckets accounts.
+-   If you currently rely on a password for logging into your account, you can easily modify your password by accessing the dedicated Change Password section. 
 -   Lastly, in the **Notification** tab, you can opt into receiving
     emails about completed or failed runs.
 
@@ -40,7 +36,7 @@ keys as well.
 
 ## SSH Keys
 
-![image](../dolphinNext/dolphinnext_images/ssh_keys.png)
+![image](../images/profile-ssh.png)
 
 To create or enter existing SSH key pairs, navigate to the **SSH Keys**
 tab and click on the `Add SSH Key` button in the top right corner.
@@ -59,15 +55,11 @@ Next, you'll need to choose between two methods:
 -   **B. Create new keys:** To generate a new pair of SSH keys, simply
     click the "Generate Keys" button.
 
-After you've saved your key, your information will be encrypted and
-kept secure. To establish a connection, you'll need to add your public
-key to the '~/.ssh/authorized_keys' file on the host machine. For
-help with this step, feel free to contact us at
-<support@viascientific.com>.
+Once you have saved your key, rest assured that your information will be encrypted and securely stored. To establish a connection, you need to add your public key to the '~/.ssh/authorized_keys' file on the host machine. This step ensures that your public key is recognized and authorized for secure communication with the host. If you require assistance with this step or have any questions, please don't hesitate to contact us at <support@viascientific.com>.
 
 ## Amazon Keys
 
-![image](../dolphinNext/dolphinnext_images/profile_amazonkeys.png)
+![image](../images/profile-amazon.png)
 
 To enter your AWS security credentials (access key, secret key, and
 default region), head over to the **Amazon Keys** tab and click on the
@@ -81,7 +73,7 @@ needed.
 
 ## Google Keys
 
-![image](../dolphinNext/dolphinnext_images/profile_googlekeys.png)
+![image](../images/profile-google.png)
 
 To enter your Project ID and Service Account Key in the Google keys tab,
 start by clicking the `Add Google Key` button.
@@ -104,7 +96,7 @@ overwrite it with a new key or delete it if necessary.
 
 ## Groups
 
-![image](../dolphinNext/dolphinnext_images/profile_groups.png)
+![image](../images/profile-groups.png)
 
 In the **Groups** tab, you can create groups by selecting the
 `Create a Group` button. Once you have created a group, you can add
@@ -118,66 +110,13 @@ you have the option to delete your group by selecting the
 
 ## Run Environments
 
-![image](../dolphinNext/dolphinnext_images/profile_runenv.png)
-
-
-## Software Dependencies
-
-In order to execute our pipelines, you have to install and validate
-certain software dependencies into your host machine.
-
-To enable proper pipeline execution, Nextflow should be installed into
-your host environment. Since most of our pipelines isolate their
-dependencies within their Docker, please
-install Docker or Podman into your machine by following the guidelines
-below. If your platform doesn't support the installation of Docker, you
-can still use our pipelines with just Singularity.
-
-> -   Installing
->     [Nextflow](https://www.nextflow.io/docs/latest/getstarted.html)
-> -   Installing
->     [Docker](https://docs.docker.com/engine/install/)
-> -   Installing [Singularity (Version
->     3)](https://docs.sylabs.io/guides/3.0/user-guide/installation.html)
->
-> **How to Add Software to Your $PATH Environment:**
->
-> -   **JAVA Command (optional):** If JAVA is not added to the $PATH
->     environment, you can run the command (`module load java/8.0`) to
->     manipulate your $PATH environment and gain access to JAVA.
-> -   **Nextflow Path or Command (optional):** If Nextflow is not added
->     to the $PATH environment, you can either enter the path of the
->     nextflow (eg. `/project/bin`), or run the command
->     (`module load nextflow`) to manipulate your $PATH environment and
->     gain access to new software.
-> -   **Docker/Singularity Command (optional):** You can run a command
->     (eg. `module load docker/1.0.0` or
->     `module load singularity/3.0.0`) to manipulate your $PATH
->     environment in order to gain access to new software.
-
-You can set general run settings by following the **Run Environments**
-section:
-
-> -   **Executor of Nextflow:** Nextflow itself is initiated with this
->     method, which will be only used for running Nextflow itself.
-> -   **Executor of Nextflow Jobs:** This setting will be used as the
->     default setting for submitted jobs by Nextflow.
-> -   **Download Directory:** Used to download shared pipeline files
->     such as genome indexes. If your platform already has an allocated
->     path for such files, please enter that path. Otherwise, you can
->     set any path that you have permission to write. e.g.
->     `/share/viafoundry/downloads`
-
-Once you complete these steps, you're now able to start using publicly
-available pipelines.
-
+![image](../images/profile_runenv.png)
 
 This section is used for defining connection profiles by clicking on the
 `Add Environment` button. You can choose from three options: Host,
 Amazon or Google.
 
--   **Host**: This option is for users who have access to High
-    Performance Computing (HPC) environments or personal workstations.
+-   **Host**: The "Host" option is designed for users who have access to High Performance Computing (HPC) environments or personal workstations. If you intend to submit jobs to AWS Batch, you can utilize the "Host" option as well. Whether you are working with HPC systems or leveraging the power of AWS Batch, the "Host" option provides a flexible and scalable solution for running your workflows.
 -   **Amazon**: This option is for users who have an Amazon Web Services
     (AWS) account or plan to create an EC2 instance to run jobs in the
     cloud.
@@ -186,11 +125,7 @@ Amazon or Google.
 
 ### A. Defining Host Profiles:
 
--   **Username/Hostname:** To connect to a remote host, you need to
-    provide your username and the hostname of the remote host in the
-    format "<yourusername@yourhostname>". For instance, for the
-    username "us2r" and hostname "ghpcc06.umassrc.org", you should
-    enter "<us2r@ghpcc06.umassrc.org>".
+-   **Username/Hostname:** To connect to a remote host, you will need to provide your username and the hostname of the remote host separately. For example, if your run will be submitted to `us2r@ghpcc06.umassrc.org`, you should enter `us2r` as the username and `ghpcc06.umassrc.org` as the hostname. 
 
 -   **SSH Port (optional):** By default, Via Foundry uses TCP port 22
     for SSH connections. However, you can specify a different port
@@ -198,13 +133,6 @@ Amazon or Google.
 
 -   **SSH Keys:** Via Foundry stores your SSH keys in the SSH keys tab
     and uses them to authenticate your SSH connections.
-
--   **Run Command (optional):** You can specify a command or a series of
-    commands to run before starting the Nextflow job. Separate multiple
-    commands using "&&". For example:
-
-        source /etc/bashrc && module load java/1.8.0_77 && module load
-        singularity/singularity-3.4.0
 
 -   **Nextflow Path (optional):** If the Nextflow executable is not in
     your $PATH, you can specify the path to the executable in this
@@ -214,9 +142,7 @@ Amazon or Google.
 
 -   **Singularity Cache Folder:** Via Foundry uses a local directory to
     store Singularity images downloaded from remote hosts. By default,
-    this directory is located in your home directory. However, if you
-    are using a computing cluster, you need to specify a shared
-    directory that is accessible from all computing nodes.
+    this directory is located in your home directory. 
 
 -   **Profile Variables:** To facilitate the use of genome reference and
     index files in your pipelines, you can specify a download directory
@@ -224,7 +150,7 @@ Amazon or Google.
     Foundry, it is recommended to use a shared path in your cluster. For
     example:
 
-        params.DOWNDIR="/share/dolphinnext/downloads"
+        params.DOWNDIR="/share/viafoundry"
 
 -   **Environment Variables:** You can set BASH environmental variables
     here. Note: don't use spaces to separate multiple variables; use
@@ -238,77 +164,68 @@ Amazon or Google.
     to enter additional settings, such as the queue/partition, memory,
     CPU, and time.
 
-    > **1. Executor of Nextflow (navigate to Profile -> Run
-    > Environments)**:
-    >
-    > > This setting controls how Via Foundry initiates Nextflow.
-    > > Currently, Via Foundry supports the Local, SGE, SLURM, and LSF
-    > > executors to initiate Nextflow. For the SGE, SLURM, and LSF
-    > > executors, Via Foundry only uses them to run Nextflow itself, so
-    > > the time limit should be long enough to execute all processes in
-    > > the pipeline. For local execution, DolphinNext limits the total
-    > > amount of memory and CPU that can be used, so these values
-    > > should be close to the maximum capacity of your computer.
-    > >
-    > > -   Suggested parameters for SGE/SLURM/LSF: long (queue) 8 (GB
-    > >     Memory) 1 (CPU) 5000-8000 (min, Time)
-    > > -   Suggested parameters for Local: 100 (GB Memory) 8 (CPU)
-    >
-    > **2. Executor of Nextflow Jobs (navigate to Profile -> Run
-    > Environments)**:
-    >
-    > > This setting will be used as the default setting for submitted
-    > > jobs by Nextflow if you don't set any parameters in the
-    > > **Advanced** section of your run page.
-    > >
-    > > -   Suggested parameters for SGE/SLURM/LSF: short (queue) 20 (GB
-    > >     Memory) 1 (CPU) 240 (min, Time)
-    > > -   Suggested parameters for Local: 20 (GB Memory) 1 (CPU)
-    >
-    > **3. Executor Settings for All Processes (in the advanced tab of
-    > run page)**:
-    >
-    > > These settings will overwrite those in **Executor of Nextflow
-    > > Jobs** and set default parameters for all Nextflow Jobs.
-    > >
-    > > -   Suggested parameters for SGE/SLURM/LSF: short (queue) 20 (GB
-    > >     Memory) 1 (CPU) 240 (min, Time)
-    > > -   Suggested parameters for Local: 20 (GB Memory) 1 (CPU)
-    >
-    > **4. Executor Settings for Each Process (in the advanced tab of
-    > run page)**:
-    >
-    > > If a particular process requires different parameters than the
-    > > defaults (which are defined in the **Executor Settings for All
-    > > Processes** or **Executor of Nextflow Jobs** sections), you can
-    > > overwrite the general settings by clicking the checkbox of the
-    > > process that you want to change. This will only affect the
-    > > settings of the selected process and keep the original settings
-    > > for the rest of the processes.
-    > >
-    > > -   Suggested parameters for SGE/SLURM/LSF: long (queue) 20 (GB
-    > >     Memory) 4 (CPU) 1000-5000 (min, Time)
-    > > -   Suggested parameters for Local: 20 (GB Memory) 4 (CPU)
-    >
-    > **Note:** If non-standard resources or settings are required for the
-    > executor, then you can specify these parameters by using **Other
-    > Options** box. For instance, to submit an SGE job with 3 CPU using
-    > parallel environments, you can enter `-pe orte 3` (to use MPI for
-    > distributed-memory machines) or `-pe smp 3` (to use OpenMP for
-    > shared-memory machines) in the **Other Options** box, leaving the
-    > CPU box empty.
-    > :::
+    **1. Executor of Nextflow (navigate to Profile -  Run Environments)**:
+ 
+    This setting controls how Via Foundry initiates Nextflow. Currently,
+    Via Foundry supports the Local, SGE, SLURM, and LSF executors to
+    initiate Nextflow. For the SGE, SLURM, and LSF executors, Via
+    Foundry only uses them to run Nextflow itself, so the time limit
+    should be long enough to execute all processes in the pipeline. For
+    local execution, Via Foundry limits the total amount of memory and
+    CPU that can be used, so these values should be close to the maximum
+    capacity of your computer.
+   
+    -   Suggested parameters for SGE/SLURM/LSF: long (queue) 8 (GB
+        Memory) 1 (CPU) 5000-8000 (min, Time)
+    -   Suggested parameters for Local: 100 (GB Memory) 8 (CPU)
+ 
+    **2. Executor of Nextflow Jobs (navigate to Profile -  Run Environments)**:
+ 
+    This setting will be used as the default setting for submitted jobs
+    by Nextflow if you don't set any parameters in the **Advanced**
+    section of your run page.
+   
+    -   Suggested parameters for SGE/SLURM/LSF: short (queue) 20 (GB
+        Memory) 1 (CPU) 240 (min, Time)
+    -   Suggested parameters for Local: 20 (GB Memory) 1 (CPU)
+ 
+    **3. Executor Settings for All Processes (in the advanced tab of run page)**:
+ 
+    These settings will overwrite those in **Executor of Nextflow Jobs**
+     and set default parameters for all Nextflow Jobs.
+   
+    -   Suggested parameters for SGE/SLURM/LSF: short (queue) 20 (GB
+        Memory) 1 (CPU) 240 (min, Time)
+    -   Suggested parameters for Local: 20 (GB Memory) 1 (CPU)
+ 
+    **4. Executor Settings for Each Process (in the advanced tab of run page)**:
+ 
+    If a particular process requires different parameters than the
+    defaults (which are defined in the **Executor Settings for All
+    Processes** or **Executor of Nextflow Jobs** sections), you can
+    overwrite the general settings by clicking the checkbox of the
+    process that you want to change. This will only affect the settings
+    of the selected process and keep the original settings for the rest
+    of the processes.
+   
+    -   Suggested parameters for SGE/SLURM/LSF: long (queue) 20 (GB Memory) 4 (CPU) 1000-5000 (min, Time)
+    -   Suggested parameters for Local: 20 (GB Memory) 4 (CPU)
+ 
+    **Note:** 
+    If non-standard resources or settings are required for the executor,
+  then you can specify these parameters by using **Other Options** box.
+  For instance, to submit an SGE job with 3 CPU using parallel
+  environments, you can enter `-pe orte 3` (to use MPI for
+  distributed-memory machines) or `-pe smp 3` (to use OpenMP for
+  shared-memory machines) in the **Other Options** box, leaving the CPU
+  box empty.
 
 ### B. Defining AWS Batch Profiles:
 
 Please choose type of the run environment as "Host" and enter
 following information.
 
--   **Username/Hostname:** To connect to a remote host, you need to
-    provide your username and the hostname of the remote host in the
-    format "<yourusername@yourhostname>". For instance, for the
-    username "us2r" and hostname "ghpcc06.umassrc.org", you should
-    enter "<us2r@ghpcc06.umassrc.org>".
+-   **Username/Hostname:** To connect to a remote host, you will need to provide your username and the hostname of the remote host separately. For example, if your run will be submitted to `us2r@ghpcc06.umassrc.org`, you should enter `us2r` as the username and `ghpcc06.umassrc.org` as the hostname. 
 
 -   **SSH Port (optional):** By default, Via Foundry uses TCP port 22
     for SSH connections. However, you can specify a different port
@@ -317,31 +234,19 @@ following information.
 -   **SSH Keys:** Via Foundry stores your SSH keys in the SSH keys tab
     and uses them to authenticate your SSH connections.
 
--   **Run Command (optional):** You can specify a command or a series of
-    commands to run before starting the Nextflow job. Separate multiple
-    commands using "&&". For example:
-
-        source /etc/bashrc && module load java/1.8.0_77 && module load
-        singularity/singularity-3.4.0
-
 -   **Nextflow Path (optional):** If the Nextflow executable is not in
     your $PATH, you can specify the path to the executable in this
     block. For example:
 
         /project/umw_biocore/bin
 
--   **Singularity Cache Folder:** Via Foundry uses a local directory to
-    store Singularity images downloaded from remote hosts. By default,
-    this directory is located in your home directory. However, if you
-    are using a computing cluster, you need to specify a shared
-    directory that is accessible from all computing nodes.
+-   **Profile Variables:** To facilitate the use of genome reference and
+    index files in your pipelines, you can specify a download directory
+    in which these files are stored. If multiple users are using Via
+    Foundry, it is recommended to use a shared path in your cluster. For
+    example:
 
--   **Profile Variables:** You can set commonly used pipeline variables
-    here. For instance,`params.DOWNDIR` is used in most of our public
-    pipelines to save all genome related files (fasta, index etc.), so
-    you can set this variable like this:
-    `params.DOWNDIR = "/share/dnext_data"` Also, you can enter multiple
-    variables by separating them with newlines.
+        params.DOWNDIR="/share/viafoundry"
 
 -   **Environment Variables:** You can set BASH environmental variables
     here. Note: don't use spaces to separate multiple variables; use
@@ -362,88 +267,72 @@ following information.
     the run page.
 
 -   **Amazon Keys:** AWS credentials that are saved in the **Amazon
-    Keys** tab will allow you to submit jobs to AWS Batch.
+    Keys** tab will allow you to submit jobs to AWS Batch. However, if an IAM role is already defined for the host machine, you can skip this step. The IAM role associated with the host machine grants the necessary permissions for interacting with AWS services, including AWS Batch. By either providing the AWS credentials or utilizing the existing IAM role, you can seamlessly submit your jobs to AWS Batch and leverage the power of cloud computing for your workflows.
 
 -   **Default Working Directory:** Default directory in the host machine
-    where runs will be executed. (eg. `/data/dnext`)
+    where runs will be executed. (eg. `/data/viafoundry`)
 
--   **Default Bucket Location for Publishing:** Default bucket location
-    where dolphinnext reports will be published. (e.g.
-    `s3://bucket/dnext`)
+-   **Default Bucket Location for Publishing:** The default bucket location where run reports will be published. (e.g.
+    `s3://bucket/viafoundry`)
 
 ### C. Defining Non-Batch Amazon Web Services Profiles:
 
-**SSH Keys:** These are saved in the **SSH Keys** tab and will be used
-when connecting to a host. SSH keys are a secure way to authenticate and
-encrypt connections between servers. It's recommended to generate a new
-key pair for each instance you plan to connect to. * **Amazon Keys:**
+    
+* **SSH Keys:** These are saved in the **SSH Keys** tab and will be used when connecting to a host. SSH keys are a secure way to authenticate and encrypt connections between servers. It's recommended to generate a new key pair for each instance you plan to connect to. 
+* **Amazon Keys:**
 These AWS credentials are saved in the **Amazon Keys** tab and allow you
 to start/stop Amazon EC2 instances. These credentials consist of an
-access key and a secret access key. * **Instance Type:** This refers to
-the type of [_Amazon EC2
+access key and a secret access key. 
+* **Instance Type:** This refers to
+the type of [Amazon EC2
 instance](https://aws.amazon.com/ec2/instance-types) that you will use.
 Instance types comprise varying combinations of CPU, memory, storage,
 and networking capacity. For example, "m3.xlarge" is an instance type
-that provides a balance of CPU and memory resources. * **Image ID:**
+that provides a balance of CPU and memory resources. 
+* **Image ID:**
 This is the virtual machine ID (VM ID) that you will use to launch the
 instance. The image ID is specific to the region and operating system
 that you are using. For example, "ami-032a33ebe57465518" is a sample
 image ID for an Amazon Machine Image (AMI) that is based on the Ubuntu
 operating system.
 
-> If you want to create your own image, please install the following programs:
->
->    -   [Singularity](http://singularity.lbl.gov)
->    -   [Docker engine](https://www.docker.com/) (version 1.11 or
->         higher)
->    -   Apache Ignite with Cloud-init package
->    -   [Nextflow](https://www.nextflow.io/)
->    -   [AWS
->         CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
+If you want to create your own image, please install the following programs:
+ 
+-   [Singularity](http://singularity.lbl.gov)
+-   [Docker engine](https://www.docker.com/) (version 1.11 or  higher)
+-   Apache Ignite with Cloud-init package
+-   [Nextflow](https://www.nextflow.io/)
+-   [AWS  CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
+* **Subnet ID/Security Group/Shared Storage ID/Shared Storage Mount:**
 
--   **Subnet ID/Security Group/Shared Storage ID/Shared Storage Mount:**
+     The filesystem needs to be created at <https://console.aws.amazon.com/efs/>, and this information will be obtained upon the creation of a shared file system.
+    
+    -   *Subnet ID:* Identifier of the VPC subnet to be applied,
+             e.g., subnet-05222a43.
+    -   *Security Group:* Identifier of the security group to be
+             applied, e.g., sg-df72b9ba, which is used by default.
+    -   *Shared Storage ID:* Identifier of the shared file system
+             instance, e.g., fs-1803efd1.
+    -   *Shared Storage Mount:* Mount path of the shared file
+             system, e.g., /mnt/efs.
 
-    > The filesystem needs to be created at <https://console.aws.amazon.com/efs/>, and this information will be obtained upon the creation of a shared file system.
-    >
-    >    -   *Subnet ID:* Identifier of the VPC subnet to be applied,
-    >         e.g., subnet-05222a43.
-    >    -   *Security Group:* Identifier of the security group to be
-    >         applied, e.g., sg-df72b9ba, which is used by default.
-    >    -   *Shared Storage ID:* Identifier of the shared file system
-    >         instance, e.g., fs-1803efd1.
-    >    -   *Shared Storage Mount:* Mount path of the shared file
-    >         system, e.g., /mnt/efs.
-
-    >
-    >
-    >
-    > Please make sure the following criteria are satisfied:
-    >
-    >    1.  The image used must have the directory to mount this
-    >         storage.
-    >    2.  The output directory must be under this mount location.
-    >    3.  The storage system must be created in the selected region,
-    >         and necessary rights need to be given in the console.
-    >    4.  The EC2FullAccess and S3FullAccess permissions have been
-    >         added.
-    >
-    > **Warning:** Both the EFS and images should be located in the same location.
-
+     Please make sure the following criteria are satisfied:
+    
+    1.  The image used must have the directory to mount this
+             storage.
+    2.  The output directory must be under this mount location.
+    3.  The storage system must be created in the selected region,
+             and necessary rights need to be given in the console.
+    4.  The EC2FullAccess and S3FullAccess permissions have been
+             added.
+     **Warning:** Both the EFS and images should be located in the same location.
 
 -   **Default Working Directory:** This is the default directory in the
     host machine where runs will be executed. It is an optional
-    parameter for AWS. For example, you can set it to "/data/dnext".
+    parameter for AWS. For example, you can set it to "/data/viafoundry".
 
--   **Default Bucket Location for Publishing:** This is the default
-    bucket location where Via Foundry reports will be published. It is
-    also an optional parameter for AWS. For example, you can set it to
-    `s3://bucket/dnext`.
-
--   **Run Command (optional):** You may specify a command or multiple
-    commands to be run before the Nextflow job starts. Separate multiple
-    commands with the && sign. For example, you could use the following
-    command to load modules before running the job:
-    `source /etc/bashrc && module load java/1.8.0_31 && module load bowtie2/2.3.2`.
+-   **Default Bucket Location for Publishing:** The default bucket location where run reports will be published. (e.g.
+    `s3://bucket/viafoundry`)
 
 -   **Nextflow Path (optional):** If the Nextflow path is not added to
     the $PATH environment variable, you can define the path in this
@@ -451,13 +340,13 @@ operating system.
 
 -   **Singularity Cache Folder:** This is the directory where remote
     Singularity images are stored. By default, the home directory is
-    used. Note that when using a computing cluster, it must be a shared
-    folder that is accessible from all computing nodes.
+    used. 
 
 -   **Profile Variables:** You can set commonly used pipeline variables
     here. For instance,`params.DOWNDIR` is used in most of our public
     pipelines to save all genome related files (fasta, index etc.), so
     you can set this variable like this:
+
     `params.DOWNDIR = "/share/dnext_data"` You can also enter multiple
     variables by separating them with newlines.
 
@@ -486,14 +375,13 @@ operating system.
 -   **Image ID:** Virtual machine ID (eg.
     `dolphinnext-193616/global/images/dolphinnext-images-v1`).
 
-    > If you want to create your own image, please install following programs:
-    >
-    >    -   [Singularity](http://singularity.lbl.gov)
-    >    -   [Docker engine](https://www.docker.com/) (version 1.11 or
-    >         higher)
-    >    -   Apache Ignite with Cloud-init package
-    >    -   [Nextflow](https://www.nextflow.io/)
-    >    -   [gcloud](https://cloud.google.com/sdk/install)
+     If you want to create your own image, please install following programs:
+    
+    -   [Docker engine](https://www.docker.com/) (version 1.11 or
+             higher)
+    -   Apache Ignite with Cloud-init package
+    -   [Nextflow](https://www.nextflow.io/)
+    -   [gcloud](https://cloud.google.com/sdk/install)
 
 -   **Default Working Directory:** This is the default directory in the
     host machine where runs will be executed. It is mandatory for Google
@@ -504,12 +392,6 @@ operating system.
     mandatory for Google Cloud profiles, and you can always edit this
     path in the run page. For example, you could set it to
     `gs://bucket/dnext`.
-
--   **Run Command (optional):** You may specify a command or multiple
-    commands to be run before the Nextflow job starts. Separate multiple
-    commands with the && sign. For example, you could use the following
-    command to load modules before running the job:
-    `source /etc/bashrc && module load java/1.8.0_31 && module load bowtie2/2.3.2`.
 
 -   **Nextflow Path (optional):** If the Nextflow path is not added to
     the $PATH environment variable, you can define the path in this
@@ -533,9 +415,9 @@ operating system.
     **Executor of Nextflow** and `Ignite` for **Executor of Nextflow
     Jobs.**
 
-## GitHub Connection
+## Repository Connections
 
-![image](../dolphinNext/dolphinnext_images/profile_github.png)
+![image](../images/profile-repo.png)
 
 You can enter your GitHub or Bitbucket security credentials (Username,
 E-mail, Password) by clicking on the `Add Account` button in the
@@ -544,12 +426,26 @@ secure. By adding a Github or Bitbucket account, you'll be able to push
 your pipeline information into a public account, where you can then
 share it with others.
 
+* **GitHub Credentials:** GitHub access token will be used for creating and updating GitHub repositories. Please follow [this guide](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) in GitHub to create a token. While creating token, please enable `repo` and `write:packages` in the scope section.
+
+* **Bitbucket Credentials:** To utilize SSH Key pairs for importing and updating Bitbucket repositories, you need to follow these steps:
+
+    1. In Via Foundry, navigate to your profile by clicking on your avatar and selecting "Profile."
+    2. Go to the "SSH Keys" tab within your profile.
+    3. Create a new key pair by generating a new SSH key.
+    4. Open Bitbucket and access your Personal settings by clicking on your avatar.
+    5. Within Bitbucket, select "SSH keys" and click on the "Add key" button.
+    6. Copy the generated public key from Via Foundry (DolphinNext) and paste it into the SSH Key field in Bitbucket.
+    7. Finally, make sure to select the used SSH key in the window within Via Foundry.
+
+By following these steps, you will successfully configure the SSH Key pairs between Via Foundry and Bitbucket, allowing you to manage your repositories seamlessly.
+
 ## Change Password
 
-![image](../dolphinNext/dolphinnext_images/profile_change_password.png)
+![image](../images/profile-password.png)
 
-If you're not using a Google sign-in, you can change your Via Foundry
-password by using this section.
+If you currently rely on a password for logging into your account, you can easily modify your password by accessing the dedicated Change Password section. 
+
 
 ## Support
 

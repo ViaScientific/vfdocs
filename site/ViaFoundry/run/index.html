@@ -1,120 +1,703 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Via Foundry Team" />
-      <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Run Guide - Via Foundry Documentation</title>
-    <link rel="stylesheet" href="../../css/theme.css" />
-    <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
-        <link href="../../css/custom.css" rel="stylesheet" />
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
     
-      <script>
-        // Current page data
-        var mkdocs_page_name = "Run Guide";
-        var mkdocs_page_input_path = "ViaFoundry/run.md";
-        var mkdocs_page_url = null;
-      </script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Via Foundry Team">
+      
+      
+      
+        <link rel="prev" href="../project/">
+      
+      
+        <link rel="next" href="../app/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
-    <script src="../../js/jquery-3.6.0.min.js" defer></script>
-    <!--[if lt IE 9]>
-      <script src="../../js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
-</head>
+    
+      
+        <title>Run Guide - Via Foundry Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
 
-<body class="wy-body-for-nav" role="document">
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href="../.." class="icon icon-home"> Via Foundry Documentation
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#run-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
-                </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Getting Started</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../overview/">Platform Overview</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../pipeline_example/">Pipeline Examples</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../cite/">How To Cite Us</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">User Guide</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../quick/">Quick Start Guide</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../project/">Project Guide</a>
-                  </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Run Guide</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#brief-refresher">Brief Refresher</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#basics">Basics</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#run-status">Run Status</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#run-settings">Run Settings</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#advanced-options">Advanced Options</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#workflow">Workflow</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#run-logs">Run Logs</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#report">Report</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#support">Support</a>
-    </li>
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../profile/">Profile Guide</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../faq/">Frequently Asked Questions</a>
-                  </li>
-              </ul>
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Via Foundry Documentation" class="md-header__button md-logo" aria-label="Via Foundry Documentation" data-md-component="logo">
+      
+  <img src="../../images/via_icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Via Foundry Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Run Guide
+            
+          </span>
+        </div>
       </div>
     </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../..">Via Foundry Documentation</a>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
         
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
       </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-          <li>User Guide &raquo;</li>
-      <li>Run Guide</li>
-    <li class="wy-breadcrumbs-aside">
-    </li>
-  </ul>
-  <hr/>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
               
-                <h1 id="run-guide">Run Guide</h1>
-<p>In the previous tutorial (<a href="../project/project.md">Project Guide</a>), we went through
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Via Foundry Documentation" class="md-nav__button md-logo" aria-label="Via Foundry Documentation" data-md-component="logo">
+      
+  <img src="../../images/via_icon.png" alt="logo">
+
+    </a>
+    Via Foundry Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        Platform Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipeline_example/" class="md-nav__link">
+        Pipeline Examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cite/" class="md-nav__link">
+        How To Cite Us
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          User Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          User Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick/" class="md-nav__link">
+        Quick Start Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project/" class="md-nav__link">
+        Project Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Run Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Run Guide
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#brief-refresher" class="md-nav__link">
+    Brief Refresher
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-settings-and-status" class="md-nav__link">
+    Run Settings and Status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-options" class="md-nav__link">
+    Advanced Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-logs" class="md-nav__link">
+    Run Logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report" class="md-nav__link">
+    Report
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-shiny-app-debrowser-" class="md-nav__link">
+    -   Shiny App - DEBrowser -
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-r-studio-r-markdown-" class="md-nav__link">
+    -   R-Studio - R-Markdown -
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-jupyter-notebook-" class="md-nav__link">
+    -   Jupyter Notebook -
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-shiny-app-gsea-explorer-" class="md-nav__link">
+    -   Shiny App - GSEA Explorer -
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-shiny-app-network-explorer-" class="md-nav__link">
+    -   Shiny App - Network Explorer -
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-datatables-" class="md-nav__link">
+    -   Datatables -
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-htmlpdf-viewer-" class="md-nav__link">
+    -   HTML/PDF Viewer -
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    Support
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app/" class="md-nav__link">
+        App Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../profile/" class="md-nav__link">
+        Profile Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        Frequently Asked Questions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#brief-refresher" class="md-nav__link">
+    Brief Refresher
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-settings-and-status" class="md-nav__link">
+    Run Settings and Status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-options" class="md-nav__link">
+    Advanced Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-logs" class="md-nav__link">
+    Run Logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report" class="md-nav__link">
+    Report
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-shiny-app-debrowser-" class="md-nav__link">
+    -   Shiny App - DEBrowser -
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-r-studio-r-markdown-" class="md-nav__link">
+    -   R-Studio - R-Markdown -
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-jupyter-notebook-" class="md-nav__link">
+    -   Jupyter Notebook -
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-shiny-app-gsea-explorer-" class="md-nav__link">
+    -   Shiny App - GSEA Explorer -
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-shiny-app-network-explorer-" class="md-nav__link">
+    -   Shiny App - Network Explorer -
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-datatables-" class="md-nav__link">
+    -   Datatables -
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-htmlpdf-viewer-" class="md-nav__link">
+    -   HTML/PDF Viewer -
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    Support
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="run-guide">Run Guide</h1>
+<p>In the previous tutorial (<a href="../project/">Project Guide</a>), we went through
 the process of creating a project within the Via Foundry (formerly
 DolphinNext) platform and adding pipelines to it. In this guide, we will
 look through all the relevant run settings needed to initiate a new run.</p>
@@ -133,29 +716,23 @@ are conveniently placed next to the information mentioned above in the
 run page's header. Additionally, you can find <code>Delete Run</code>,
 <code>Duplicate Run</code>, and <code>Move Run</code> options by clicking on the three dots
 next to the status indicator.</p>
-<h2 id="run-status">Run Status</h2>
+<h2 id="run-settings-and-status">Run Settings and Status</h2>
 <p>The status of your current run is displayed at the far right of the run
 page's header. Initially, you'll see an orange <code>Waiting</code> button. In
 order to initiate a run, the following data need to be entered:</p>
-<blockquote>
 <ol>
-<li><strong>Work Directory:</strong> Full path of the directory where Nextflow runs
-    will be executed.</li>
 <li><strong>Run Environment:</strong> The environment, discussed in the
-    <a href="../profile/profile.md">profile</a> page, within which you'd like to conduct
-    your run. If an <a href="../profile/profile.md#b-defining-aws-batch-profiles">Amazon
-    profile</a> or a <a href="../profile/profile.md#d-defining-google-profiles">Google
-    profile</a> is selected, then
-    the status of the profile should be <strong>Running</strong>.</li>
-<li><strong>Inputs:</strong> Various values and filepaths, specifying which data
-    will be processed and how (i.e. whether single-end vs. paired-end
-    data are being used), need to be entered in the <strong>Run Settings</strong>
-    page. For additional information, please check the <a href="../quick/quick.md#adding-files">Adding Files
-    </a> section.</li>
+     <a href="../profile/">profile</a> page, within which you'd like to conduct
+     your run.</li>
+<li><strong>Work Directory:</strong> Full path of the directory where Nextflow runs
+     will be executed. (e.g. <code>/home/newuser/workdir</code>)</li>
+<li><strong>Inputs:</strong> Various values and files, specifying which data
+     will be processed and how (i.e. whether single-end vs. paired-end
+     data are being used), need to be entered in the <strong>Run Settings</strong>
+     page. For additional information, please check the <a href="../quick/#adding-files">Adding Files
+     </a> section.</li>
 </ol>
-</blockquote>
-<p>More details on the data that must be entered prior to a run can be found in the <strong>Run
-Settings</strong> section of this page.</p>
+<p><img alt="image" src="../../images/run_settings.png" /></p>
 <p>All possible status messages are listed here:</p>
 <table>
 <thead>
@@ -178,7 +755,7 @@ Settings</strong> section of this page.</p>
 <td>Sending SSH queries to selected host system</td>
 </tr>
 <tr>
-<td>Waits</td>
+<td>Initializing</td>
 <td>Job is submitted, waiting for run execution</td>
 </tr>
 <tr>
@@ -187,7 +764,7 @@ Settings</strong> section of this page.</p>
 </tr>
 <tr>
 <td>Completed</td>
-<td>The Nextflow job is completed.</td>
+<td>The job is completed.</td>
 </tr>
 <tr>
 <td>Run Error</td>
@@ -199,151 +776,90 @@ Settings</strong> section of this page.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="run-settings">Run Settings</h2>
-<ul>
-<li>
-<p><strong>Run Environment:</strong> The environment, discussed in the
-    <a href="../profile/profile.md">profile</a> page, within which you'd like to conduct
-    your run. Edit this via the dropdown menu on the <strong>Run Settings</strong>
-    page.</p>
-</li>
-<li>
-<p><strong>Inputs:</strong> A suite of settings governing how your data will be
-    processed during the run. Enter information like the path of your
-    reads and whether you want to run various data-filtering packages by
-    clicking on the appropriate dropdown menus.</p>
-</li>
-<li>
-<p><strong>Work Directory:</strong> Full path of the directory where Nextflow runs
-    will be executed. Example path:</p>
-<pre><code>/home/newuser/workdir
-</code></pre>
-</li>
-</ul>
 <h2 id="advanced-options">Advanced Options</h2>
 <ul>
 <li>
-<p><strong>Run Command (optional):</strong> You may run the command or commands (by
-    seperating each command with <code>&amp;&amp;</code> sign) before the nextflow job
-    starts, e.g.:</p>
-<pre><code>source /etc/bashrc &amp;&amp; module load java/1.8.0_31 &amp;&amp; module load bowtie2/2.3.2
-</code></pre>
+<p><strong>Run Sharing (Permissions to View):</strong> By default, all runs are only visible to their owners. However, you have the option to share your run with a specific group that you have created in the profile's "Groups" tab. To do this, choose "Only my group" and select the name of the desired group. Members of that group will then be able to view the run on their run status page.</p>
+<p>Alternatively, you can set the permissions to "Everyone". With this setting, the run will only be visible to users who know the specific run link. The selected run will not appear on their run status page, but they will be able to access it if they have the link.</p>
 </li>
 <li>
 <p><strong>Publish Directory:</strong> The Work Directory also serves as the default
     directory to which output files are sent for Via Foundry runs. If
     you want to change the path to a different directory, just enter the
     full path of your desired Publish Directory in this box. Local paths
-    (eg. <code>/home/user/test</code>), Amazon S3 paths (eg.
-    <code>s3://yourbucket/test</code>) or Google Storage paths (eg.
+    (e.g. <code>/home/user/test</code>), Amazon S3 paths (e.g.
+    <code>s3://yourbucket/test</code>) or Google Storage paths (e.g.
     <code>gs://yourbucket/test</code>) are all accepted.</p>
 </li>
 <li>
-<p><strong>Use Docker Image:</strong> Nextflow supports the use of Docker
-    containers, which allow you to create fully reproducible pipelines.
-    Docker images can contain whatever software you might need to
-    execute your pipeline. It works transparently, and it creates output
-    files in the host system without requiring any additional steps. The
-    only requirement is that you <a href="https://docs.docker.com/install/">install
-    Docker</a> first. To use Docker for a
-    Via Foundry run, just click the <code>Use Docker Image</code> checkbox
-    (selected by default) and enter the following information:</p>
-<blockquote>
+<p><strong>Run Container:</strong> During the pipeline creation process, we specified the containers to be used for each process. Consequently, when you select the run environment, the corresponding run container (either Docker or Singularity) checkbox will be automatically selected, and the defined container will be populated in the image field.</p>
+<ul>
+<li>
+<p><strong>A. Use Docker Image:</strong>  </p>
 <ol>
 <li>
 <p><strong>Image:</strong> Docker image name. Example:</p>
-<pre><code>public.ecr.aws/t4w5x8f2/viascientific/rnaseq:4.0
-</code></pre>
+<p>viascientific/rnaseq:4.0</p>
 </li>
 <li>
-<p><strong>RunOptions (optional):</strong> You can enter any command line
-    arguments supported by the Docker run command. Please click
-    <a href="https://docs.docker.com/engine/reference/commandline/cli/">this Docker
-    link</a>
-    for details on how you can configure this section.</p>
+<p><strong>RunOptions (optional):</strong> Foundry has the ability to autodetect all the paths used and automounts all the required files to the container before the run starts. Moreover, you have the flexibility to enter any command line arguments supported by the Docker run command. Please click <a href="https://docs.docker.com/engine/reference/commandline/cli/">this Docker link</a> for details on how you can configure this section.</p>
 </li>
 </ol>
-</blockquote>
 </li>
 <li>
 <p><strong>Use Singularity Image:</strong> Instead of Docker, you can activate a
-    Singularity image if you wish by clicking the
-    <code>Use Singularity Image</code> checkbox and entering the relevant
-    information, expounded upon below. In order to use a Singularity
-    image, you must first <a href="http://singularity.lbl.gov/docs-installation/">install
-    Singularity</a>.</p>
-<blockquote>
+Singularity image if you wish by clicking the
+<code>Use Singularity Image</code> checkbox and entering the relevant
+information, expounded upon below. In order to use a Singularity
+image, you must first <a href="http://singularity.lbl.gov/docs-installation/">install
+Singularity</a>.</p>
 <ol>
-<li><strong>Image:</strong> Path to your desired Singularity image. For example:</li>
+<li>
+<p><strong>Image:</strong> Path to your desired Singularity image. For example:</p>
+<p><code>docker://viascientific/rnaseq:4.0</code></p>
+<p><code>shub://UMMS-biocore/singularitysc</code></p>
+<p><code>/project/umw_biocore/singularity/UMMS-Biocore-singularity-master.simg</code></p>
+</li>
+<li>
+<p><strong>RunOptions (optional):</strong> Foundry automatically detects and mounts all the necessary files to the container by detecting the used paths. When using Singularity, you have the option to enter command line options supported by the Singularity exec command. One example of such an option is --bind, which allows you to mount directories. For more information about the command line arguments supported by Singularity, please refer to this <a href="http://singularity.lbl.gov/docs-usage/">link</a>.</p>
+<p><code>--bind /project:/project --bind /nl:/nl</code></p>
+</li>
 </ol>
-</blockquote>
-<pre><code>    shub://UMMS-biocore/singularitysc
-    /project/umw_biocore/singularity/UMMS-Biocore-singularity-master.simg
-</code></pre>
-<blockquote>
-<ol>
-<li><strong>RunOptions (optional):</strong> You can enter any command line
-    options supported by the <code>Singularity exec</code>. For instance, you
-    can mount directories by using <code>--bind command</code>. See below for
-    an example of the bind command, and please click this
-    <a href="http://singularity.lbl.gov/docs-usage/">link</a> for more
-    details about the command line arguments Singularity supports.</li>
-</ol>
-</blockquote>
-<pre><code>    &gt; --bind /project:/project --bind /nl:/nl --bind
-    &gt; /share:/share
-</code></pre>
-<blockquote>
-<p><strong>Tip:</strong> Mounting directories in Singularity requires you to create the
-directories in the image beforehand.</p>
-</blockquote>
+</li>
+</ul>
 </li>
 <li>
 <p><strong>Executor Settings:</strong> A series of parameters governing the
     execution of your run, including what packages to run and how much
     processing power to allocate to each package.</p>
-<blockquote>
-<p><strong>1. Executor Settings for Nextflow (navigate to Profile --&gt; Run
-Environments --&gt; Edit Run Environment)</strong>: You can determine the
-system where Nextflow itself is initiated. Currently, Via Foundry
-supports the initiation of Nextflow via Local, SGE, SLURM and LSF
-executors, which will be only used for running Nextflow itself.
-Suggested parameters: long 8GB 1CPU 5000-8000min</p>
-<p><strong>2. Executor of Nextflow Jobs (navigate to Profile --&gt; Run
-Environments --&gt; Edit Run Environment)</strong>: This setting will be
-used if you don't manually set any parameters in the <strong>Advanced</strong>
-section of your run page. If any option other than Local is
-selected, you'll be prompted to input values for <code>Queue</code>,
-<code>Memory(GB)</code>, <code>CPU</code> and <code>Time(min.)</code>. You can adjust these
-parameters as you wish. Suggested parameters: short 20GB 1CPU
-240min</p>
+<p><strong>1. Executor Settings for Nextflow:</strong> (navigate to Profile → Run Environments → Edit Run Environment): Here, you can specify the system on which Nextflow is initiated. Via Foundry currently supports various executors for running Nextflow itself, including Local, SGE, SLURM, and LSF. These executors are exclusively used for running Nextflow.</p>
+<p>Suggested parameters for the executor settings are as follows: long, 8GB memory, 1 CPU, and a time range of 5000-8000 minutes.</p>
+<p><strong>2. Executor of Nextflow Jobs</strong>: (navigate to Profile --&gt; Run
+  Environments --  Edit Run Environment) This setting will be
+  used if you don't manually set any parameters in the <strong>Advanced</strong>
+  section of your run page. If any option other than Local is
+  selected, you'll be prompted to input values for <code>Queue</code>,
+  <code>Memory(GB)</code>, <code>CPU</code> and <code>Time(min.)</code>. These parameters can be adjusted according to your needs. </p>
+<p>Suggested parameters for this configuration are as follows: short, 20GB memory, 1 CPU, and 240 minutes of execution time.</p>
 <p><img alt="image" src="../../images/edit_nextflow_executor_settings.png" /></p>
 <p><strong>3. Executor Settings for All Processes (in <code>Advanced</code> tab
-of run page)</strong>: This setting will overwrite the parameters entered
-in "Executor of Nextflow Jobs". Suggested parameters: short 20GB
-1CPU 240min</p>
+  of run page)</strong>: This setting will override the parameters specified in the <code>Executor of Nextflow Jobs</code> section. It allows you to define the executor settings for all processes in your run.</p>
+<p>Suggested parameters for this configuration are as follows: short, 20GB memory, 1 CPU, and 240 minutes of execution time.</p>
 <p><strong>4. Executor Settings for Each Process (in <code>Advanced</code> tab
-of run page)</strong>: If a particular process needs special parameters
-other than <strong>Executor settings for all processes</strong>, you can
-override the default parameters by clicking on the checkbox
-corresponding to the process that you want to change. This will
-only affect the settings of the selected process while retaining
-the original settings for all other processes. Suggested
-parameters: long 20GB 4CPU 1000-5000min</p>
-</blockquote>
+  of run page)</strong>: If a particular process needs special parameters
+  other than <strong>Executor settings for all processes</strong>, you can
+  override the default parameters by clicking on the checkbox
+  corresponding to the process that you want to change. This will
+  only affect the settings of the selected process while retaining
+  the original settings for all other processes. Suggested
+  parameters: long 20GB 4CPU 1000-5000min</p>
 </li>
 <li>
 <p><strong>Delete intermediate files after run:</strong> By default, Via Foundry
-    deletes any non-output files created during a run, only retaining
-    the necessary output files in the Work/Publish Directories. This
+    deletes any intermediate files created during a run, only retaining
+    the necessary files in report folder. This
     setting is aimed at minimizing the storage required for a project,
     but you can uncheck the box to keep all intermediate files.</p>
-</li>
-<li>
-<p><strong>Permissions and Groups:</strong> By default, all new runs can only be
-    seen by their owner. However, you can share your run with a group by
-    changing permissions to "Only my group" and choose the group you
-    want to share with from the <code>Group Selection</code> dropdown.</p>
 </li>
 </ul>
 <h2 id="workflow">Workflow</h2>
@@ -389,8 +905,8 @@ change to <code>Run Error</code>.</p>
 <p>This tab will appear in the run page upon run initialization. You can
 view the output files in various modules such as R-Markdown, Datatables,
 Highcharts, HTML or PDF Viewer. For reference, check the example Report
-section of an RSEM pipeline at below.</p>
-<p><img alt="image" src="../../dolphinNext/dolphinnext_images/report_all.png" /></p>
+section of an RNA-Seq pipeline at below.</p>
+<p><img alt="image" src="../../images/rnaseq_report.png" /></p>
 <p>Each report row corresponds to an output parameter in the pipeline's
 workflow, and you can easily see a row's content by clicking on it. All
 these sections have <code>Download</code>, <code>Full Screen</code>, and <code>Open in New Window</code>
@@ -398,51 +914,30 @@ icons to help you best analyze each report.</p>
 <p><strong>Note:</strong> If you want to integrate your own visualization tool into Via Foundry,
 please let us know about it at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#118;&#105;&#97;&#115;&#99;&#105;&#101;&#110;&#116;&#105;&#102;&#105;&#99;&#46;&#99;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#118;&#105;&#97;&#115;&#99;&#105;&#101;&#110;&#116;&#105;&#102;&#105;&#99;&#46;&#99;&#111;&#109;</a>, and we'd be
 happy to add it for you.</p>
-<ul>
-<li><strong>DEBrowser:</strong></li>
-</ul>
+<h2 id="-shiny-app-debrowser-">-   <strong>Shiny App - DEBrowser</strong> -</h2>
 <p>DEBrowser is an R library which provides an easy way to perform and
 visualize DE (Differential Expression) analysis. This module takes count
 matrices as input and allows interactive exploration of the resulting
 data. You can find their documentation
 <a href="https://bioconductor.org/packages/release/bioc/vignettes/debrowser/inst/doc/DEBrowser.html">here</a>.</p>
-<p><img alt="image" src="../../dolphinNext/dolphinnext_images/report_debrowser.png" /></p>
-<ul>
-<li><strong>R-Markdown:</strong></li>
-</ul>
-<p>The R-Markdown feature enables interactive analysis of the
-newly-produced data from a run. We have prepared a series of R-Markdown
-reports, which will allow you to reach your report in an HTML or PDF
-format as soon as your run completes. Within an R-Markdown (.rmd) file,
-R code chunks can be embedded with the native Markdown syntax for fenced
-code regions. For example, the following code chunk computes a data
-histogram and renders a bar plot as a PNG image:</p>
-<p><img alt="image" src="../../dolphinNext/dolphinnext_images/report_rmarkdown.png" /></p>
-<p>For more information about R-Markdown, click <a href="https://rmarkdown.rstudio.com/">rmarkdown
-link</a>.</p>
-<p>At the top of the R-Markdown module, you can find various icons that
-will help you edit your .rmd file, save it as a new file, and download
-it in various formats such as RMD, PDF or HTML. In order to facilitate
-the review process, you can click "full screen" icon to fit the
-application in your screen. You can also adjust the <strong>Auto Updating
-Output</strong> and <strong>Autosave</strong> features, explained below, by clicking the
-<code>Settings</code> icon.</p>
-<blockquote>
-<ul>
-<li><strong>Auto Updating Output:</strong> If enabled, the preview panel updates
-    automatically as you code. If disabled, use the <code>Run Script</code>
-    button to update the preview panel.</li>
-<li><strong>Autosave:</strong> If enabled, Via Foundry will automatically save the
-    file's content every 30 seconds.</li>
-</ul>
-</blockquote>
-<ul>
-<li><strong>Datatables:</strong></li>
-</ul>
+<p><img alt="image" src="../../images/rnaseq_debrowser.png" /></p>
+<h2 id="-r-studio-r-markdown-">-   <strong>R-Studio - R-Markdown</strong> -</h2>
+<p>The R-Studio launcher facilitates interactive analysis of the data generated from a run. We have prepared a set of R-Markdown reports that provide access to your report in HTML or PDF format immediately after the run is completed.</p>
+<p>For instance, the code below performs differential expression analysis for each comparison listed in the compare file. It generates volcano and MA plots for differentially expressed genes in each comparison:</p>
+<p><img alt="image" src="../../images/rstudio-app.png" /></p>
+<h2 id="-jupyter-notebook-">-   <strong>Jupyter Notebook</strong> -</h2>
+<p>The Jupyter Notebook app, due to its interactive and flexible nature, it allows bioinformatics researchers to combine code, visualizations, and explanatory text in a single document. Bioinformaticians can write and execute code snippets in real-time, visualize data using various plotting libraries, and document their analyses step-by-step.</p>
+<p><img alt="image" src="../../images/jupyter-app.png" /></p>
+<h2 id="-shiny-app-gsea-explorer-">-   <strong>Shiny App - GSEA Explorer</strong> -</h2>
+<p>GSEA Explorer is an R library that offers a convenient method for conducting and visualizing Gene Set Enrichment Analysis (GSEA). GSEA aims to assess whether a specific gene set or pathway is enriched in gene expression data, indicating its potential biological significance in the studied condition. The GSEA Explorer application can be accessed after executing Foundry's complete RNA-sequencing pipeline or the standalone Differential Expression module. By leveraging GSEA Explorer, researchers can gain valuable insights into the functional implications of gene sets and pathways, aiding in the interpretation of RNA-seq results and facilitating a deeper understanding of biological mechanisms.</p>
+<p><img alt="image" src="../../images/gsea-app.png" /></p>
+<h2 id="-shiny-app-network-explorer-">-   <strong>Shiny App - Network Explorer</strong> -</h2>
+<p>The Network Explorer allows bioinformaticians to explore and analyze these complex networks, helping them uncover hidden patterns, identify key players, and understand the underlying biological mechanisms. The Network Explorer application can be launched after running Foundry's full RNA-sequencing pipeline or the stand-alone Differential Expression module.</p>
+<p><img alt="image" src="../../images/network_explorer-app.png" /></p>
+<h2 id="-datatables-">-   <strong>Datatables</strong> -</h2>
 <p>This module, powered by <a href="https://datatables.net//">Datatables</a>, allows
 you to view, sort, and search the table's content. The following two
 examples depict alignment and RSEM summaries within Datatables.</p>
-<blockquote>
 <ul>
 <li>Alignment Summary:</li>
 </ul>
@@ -451,70 +946,62 @@ examples depict alignment and RSEM summaries within Datatables.</p>
 <li>RSEM Summary:</li>
 </ul>
 <p><img alt="image" src="../../dolphinNext/dolphinnext_images/report_datatables.png" /></p>
-</blockquote>
 <p>You can fit the entire table in your screen by clicking the
 <code>Full screen</code> icon at the top of the module.</p>
-<ul>
-<li><strong>HTML Viewer:</strong></li>
-</ul>
-<p>You can easily embed HTML content in our <strong>Report</strong> section by using
-HTML Viewer. Reference this image, which shows MultiQC output, for an
+<h2 id="-htmlpdf-viewer-">-   <strong>HTML/PDF Viewer</strong> -</h2>
+<p>You can easily embed HTML/PDF content in our <strong>Report</strong> section by using
+HTML/PDF Viewer. Reference this image, which shows MultiQC output, for an
 example:</p>
 <p><img alt="image" src="../../dolphinNext/dolphinnext_images/report_html.png" /></p>
-<ul>
-<li><strong>PDF Viewer:</strong></li>
-</ul>
-<p>Similar to HTML Viewer, PDF files can be embedded in the <strong>Report</strong>
-section. You can see the piPipes report as an example here:</p>
-<p><img alt="image" src="../../dolphinNext/dolphinnext_images/report_pdf.png" /></p>
 <h2 id="support">Support</h2>
 <p>For any questions or help, please reach out to
 <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#118;&#105;&#97;&#115;&#99;&#105;&#101;&#110;&#116;&#105;&#102;&#105;&#99;&#46;&#99;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#118;&#105;&#97;&#115;&#99;&#105;&#101;&#110;&#116;&#105;&#102;&#105;&#99;&#46;&#99;&#111;&#109;</a> with your name and question.</p>
-              
+
+
+
+
+
+                
+              </article>
             </div>
-          </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../project/" class="btn btn-neutral float-left" title="Project Guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../profile/" class="btn btn-neutral float-right" title="Profile Guide">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-      <p>© 2023 by Via Scientific</p>
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
+          
           
         </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-    
-      <span><a href="../project/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../profile/" style="color: #fcfcfc">Next &raquo;</a></span>
-    
-  </span>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2023 by Via Scientific
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
 </div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme_extra.js" defer></script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
-
-</body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
 </html>
