@@ -4,7 +4,7 @@ To understand the basics of Foundry and run a single-cell RNA-Seq pipeline with 
 
 ## Before you start
 
-Please go to https://www.viafoundry.com and log in to your account. If you have any issues with logging in, please let us know (support@viascientific.com). We will set-up an account for you.
+Please go to <https://www.viafoundry.com> and log in to your account. If you have any issues with logging in, please let us know (support@viascientific.com). We will set-up an account for you.
 
 ![image](../sc-rnaseq_images/logging_in.png)
 

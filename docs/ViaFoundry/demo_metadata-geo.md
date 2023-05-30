@@ -4,7 +4,7 @@ To understand the basics of Metadata Tracking System, and import sample GEO meta
 
 ## Before you start
 
-Please go to https://www.viafoundry.com and login into your account. If you have an issue about login, please let us know about it (support@viascientific.com). We will set an account for you.
+Please go to <https://www.viafoundry.com> and login into your account. If you have an issue about login, please let us know about it (support@viascientific.com). We will set an account for you.
 
 ## Creating Project and Adding Metadata Tracker
 
