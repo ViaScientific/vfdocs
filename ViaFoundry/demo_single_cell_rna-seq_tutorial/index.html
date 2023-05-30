@@ -1,0 +1,1145 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Via Foundry Team">
+      
+      
+      
+        <link rel="prev" href="../demo_rna-seq_tutorial/">
+      
+      
+        <link rel="next" href="../demo_metadata-geo/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
+    
+    
+      
+        <title>Running Cellranger Pipeline - Via Foundry Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#expected-learning-outcome" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Via Foundry Documentation" class="md-header__button md-logo" aria-label="Via Foundry Documentation" data-md-component="logo">
+      
+  <img src="../../images/via_icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Via Foundry Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Running Cellranger Pipeline
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Via Foundry Documentation" class="md-nav__button md-logo" aria-label="Via Foundry Documentation" data-md-component="logo">
+      
+  <img src="../../images/via_icon.png" alt="logo">
+
+    </a>
+    Via Foundry Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        Platform Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipeline_example/" class="md-nav__link">
+        Pipeline Examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cite/" class="md-nav__link">
+        How To Cite Us
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_rna-seq_tutorial/" class="md-nav__link">
+        Running RNA-Seq Pipeline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Running Cellranger Pipeline
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Running Cellranger Pipeline
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#expected-learning-outcome" class="md-nav__link">
+    Expected learning outcome
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    Before you start
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-project" class="md-nav__link">
+    Creating a Project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-run" class="md-nav__link">
+    Creating a Run
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyzing-reports" class="md-nav__link">
+    Analyzing Reports
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executing-scrna-seurat-10x-module-optional" class="md-nav__link">
+    Executing scRNA Seurat 10x Module (Optional)
+  </a>
+  
+    <nav class="md-nav" aria-label="Executing scRNA Seurat 10x Module (Optional)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiqc" class="md-nav__link">
+    Multiqc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count-web-summary" class="md-nav__link">
+    Count Web Summary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qc-plots" class="md-nav__link">
+    Qc Plots
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtering-reports" class="md-nav__link">
+    Filtering Reports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embedding-report" class="md-nav__link">
+    Embedding Report
+  </a>
+  
+    <nav class="md-nav" aria-label="Embedding Report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prinicple-component-analysis-pca" class="md-nav__link">
+    Prinicple component analysis (PCA)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tsne-and-umap" class="md-nav__link">
+    tSNE and UMAP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-reports-marker-reports-and-markers" class="md-nav__link">
+    Cluster Reports, Marker Reports and Markers
+  </a>
+  
+    <nav class="md-nav" aria-label="Cluster Reports, Marker Reports and Markers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-reports" class="md-nav__link">
+    Cluster Reports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marker-reports" class="md-nav__link">
+    Marker Reports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markers" class="md-nav__link">
+    Markers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#singler-rmd-report" class="md-nav__link">
+    Singler Rmd Report
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annot-out-seurat-h5ad-and-shinyapp" class="md-nav__link">
+    Annot Out, Seurat H5ad and Shinyapp
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_metadata-geo/" class="md-nav__link">
+        Using Metadata Tracker - GEO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_developer_tutorial/" class="md-nav__link">
+        Developer Tutorial - Creating Pipeline
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          User Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          User Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick/" class="md-nav__link">
+        Quick Start Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project/" class="md-nav__link">
+        Project Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run/" class="md-nav__link">
+        Run Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app/" class="md-nav__link">
+        App Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../profile/" class="md-nav__link">
+        Profile Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        Frequently Asked Questions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Administrator Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Administrator Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-pipeline-testing/" class="md-nav__link">
+        Testing Pipeline
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#expected-learning-outcome" class="md-nav__link">
+    Expected learning outcome
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    Before you start
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-project" class="md-nav__link">
+    Creating a Project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-run" class="md-nav__link">
+    Creating a Run
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyzing-reports" class="md-nav__link">
+    Analyzing Reports
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executing-scrna-seurat-10x-module-optional" class="md-nav__link">
+    Executing scRNA Seurat 10x Module (Optional)
+  </a>
+  
+    <nav class="md-nav" aria-label="Executing scRNA Seurat 10x Module (Optional)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiqc" class="md-nav__link">
+    Multiqc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count-web-summary" class="md-nav__link">
+    Count Web Summary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qc-plots" class="md-nav__link">
+    Qc Plots
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtering-reports" class="md-nav__link">
+    Filtering Reports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embedding-report" class="md-nav__link">
+    Embedding Report
+  </a>
+  
+    <nav class="md-nav" aria-label="Embedding Report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prinicple-component-analysis-pca" class="md-nav__link">
+    Prinicple component analysis (PCA)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tsne-and-umap" class="md-nav__link">
+    tSNE and UMAP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-reports-marker-reports-and-markers" class="md-nav__link">
+    Cluster Reports, Marker Reports and Markers
+  </a>
+  
+    <nav class="md-nav" aria-label="Cluster Reports, Marker Reports and Markers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-reports" class="md-nav__link">
+    Cluster Reports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marker-reports" class="md-nav__link">
+    Marker Reports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markers" class="md-nav__link">
+    Markers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#singler-rmd-report" class="md-nav__link">
+    Singler Rmd Report
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annot-out-seurat-h5ad-and-shinyapp" class="md-nav__link">
+    Annot Out, Seurat H5ad and Shinyapp
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Running Cellranger Pipeline</h1>
+
+<div><h2 id="expected-learning-outcome">Expected learning outcome</h2>
+<p>To understand the basics of Foundry and run a single-cell RNA-Seq pipeline with sample data.</p>
+<h2 id="before-you-start">Before you start</h2>
+<p>Please go to https://www.viafoundry.com and log in to your account. If you have any issues with logging in, please let us know (support@viascientific.com). We will set-up an account for you.</p>
+<p><img alt="image" src="../../sc-rnaseq_images/logging_in.png"></p>
+<h2 id="creating-a-project">Creating a Project</h2>
+<p>Once logged in, (1) click on the <code>Projects</code> drop down on the top menu. This is the place to configure your projects.</p>
+<p>To create a new project, (2) select <code>Add a New Project</code>.</p>
+<p><img alt="image" src="../../sc-rnaseq_images/creating_project.png"></p>
+<p>In the <code>New Project</code> pop-up, (3) give the new project a name and (4) click save.</p>
+<p><img alt="image" src="../../sc-rnaseq_images/new_project.png"></p>
+<h2 id="creating-a-run">Creating a Run</h2>
+<p>Once a project is created, to access pipelines (1) click the <code>Pipelines</code> tab and then (2) click <code>Add Pipeline</code> in the top right. </p>
+<p><img alt="image" src="../../sc-rnaseq_images/add_pipeline.png"></p>
+<p>In the <code>Add pipeline</code> window, (3) click the <code>Add</code> button for the "Cell Ranger Pipeline" and close the window (bottom right). </p>
+<p><img alt="image" src="../../sc-rnaseq_images/add_cellranger_pipeline.png"></p>
+<p>To bring up the run page, (4) click the <code>Run</code> button of the Cell Ranger pipeline on the table.</p>
+<p><img alt="image" src="../../sc-rnaseq_images/initiate_run.png"></p>
+<hr>
+<p>[Optional] To provide a run name, (5) click inside the box next to <code>Run</code>. Provide a new name and click anywhere outside the box to exit.</p>
+<p>[Optional] To provide a run description, (6) click the pencil next to <code>Run Description</code>. Provide a description and (7) click on the checkbox to finish editing.</p>
+<hr>
+<p>Under <code>Run Environment</code>, (8) select "Via Run Environment (AWS Batch)"</p>
+<p><img alt="image" src="../../sc-rnaseq_images/run_settings.png"></p>
+<p>To add the source data, under <code>User Inputs</code> next to <code>Reads</code> (9) click <code>Enter File</code></p>
+<p><img alt="image" src="../../sc-rnaseq_images/enter_reads.png"></p>
+<p>In the <code>Select/Add Input File</code> window, (10) select the <code>Files</code> tab and then (11) click <code>+ Add File</code></p>
+<p><img alt="image" src="../../sc-rnaseq_images/select_input.png"></p>
+<hr>
+<p>Here if you need to upload your files to AWS S3, please check out the file upload video below:</p>
+<p><div class="video-container"><iframe src="https://user-images.githubusercontent.com/33356633/223840766-f00d3205-835c-4685-b10a-866722c489f6.mp4" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p>
+<hr>
+<p>In the <code>Add File</code> window, (12) select the <code>Remote Files</code> tab and in the <code>1. File Location</code> box (13) paste the following path: </p>
+<div class="highlight"><pre><span></span><code>s3://viafoundry/run_data/test_data/fastq_10x_pbmc_1k_v3
+</code></pre></div>
+<p>The <code>Amazon Keys for S3</code> box should appear. The <code>Amazon Keys for S3</code> should automatically set itself to "Via Scientific AWS Key". <code>If you prefer to use another AWS Key for another s3 bucket, please change "Amazon Keys for S3" dropdown option.</code> </p>
+<p>Click (14) <strong>search button</strong> to see the content of the s3 directory. Leave <code>2. File Type</code> as "FASTQ" and in the <code>3. Collection Type</code> dropdown, (15) select 'Paired List'. </p>
+<p><img alt="image" src="../../sc-rnaseq_images/add_file1.png"></p>
+<p>Under <code>4. File Pattern</code>, check that <code>R1 Pattern</code> is set to <code>_R1</code> and similarly that the <code>R2 Pattern</code> is set to <code>_R2</code>. For this sample, there were two sequencing lanes run (L001 and L002). To merge the two lanes, (16) hold shift while clicking on <code>pbmc_1k_v3_S1_L001_R1_001.fastq.gz</code> and (17) <code>pbmc_1k_v3_S1_L002_R1_001.fastq.gz</code>. The corresponding R2 will be automatically selected. (18) Click "Merge Selected Files" to combine the two lanes.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>For other datasets, if you don't need to merge samples, you can select the samples you want to add and click 
+<code>Add Selected Files</code> button. </li>
+<li>If you prefer to add all files that match the pattern, you can click <code>Add All Files</code> button.</li>
+</ul>
+</div>
+<p><img alt="image" src="../../sc-rnaseq_images/add_file2.png"></p>
+<p>(19) Update the 'Name' to <code>pmbc_1k_v3_S1</code>. And input <code>fastq_10x_pbmc_1k_v3</code> as the <code>5. Collection Name</code>. The final three boxes can be left blank. (21) Click "Save Files".</p>
+<p><img alt="image" src="../../sc-rnaseq_images/add_file3.png"></p>
+<p>This will return to the <code>Change Input File</code> window. (22) Click "Save" again.</p>
+<p><img alt="image" src="../../sc-rnaseq_images/add_file4.png"></p>
+<p>Since this sample has paired end reads, (23) ensure the <code>mate</code> dropdown is set to "pair". To finish the <code>Metadata</code> section (24) click "Enter File".</p>
+<p><img alt="image" src="../../sc-rnaseq_images/user_inputs1.png"></p>
+<p>Metadata can be entered in three ways: Via a path to a file in the cloud, dropping a local file into the box, or in simple cases directly in the table. Notice the sample name is pulled in from the sample selection. To finish the table (25) fill in the "Condition" column with <code>pmbc_1k_v3</code> and (26) click "Save".</p>
+<p><img alt="image" src="../../sc-rnaseq_images/metadata.png"></p>
+<p>Pick the genome by (27) selecting "human_hg38_gencode_v32_cellranger_v6" in the <code>genome_build</code> dropdown. </p>
+<hr>
+<p><strong>Optional: Adding custom genome sequence to selected genome_build</strong></p>
+<p>If you prefer to add custom genome sequence to selected genome_build, enable three inputs:</p>
+<ul>
+<li>
+<p>set <code>run_mkref</code> to "Yes" (28)</p>
+</li>
+<li>
+<p>set <code>add_sequences_to_reference</code> to "Yes" (29)</p>
+</li>
+<li>
+<p>set <code>run_Download_Genomic Sources</code> to "Yes" (30)</p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This change will add approx. 1 hour to run time since it will build new indexes with entered custom sequences. 
+If you select no to these inputs it will use prebuilt indexes. </p>
+</div>
+<p>To supply the new sequences (31) click the wrench in the <code>add_sequences_to_reference</code> section.</p>
+<p><img alt="image" src="../../sc-rnaseq_images/user_inputs2.png"></p>
+<p>In the <code>Process Settings</code> window (32) click "Enter File"</p>
+<p><img alt="image" src="../../sc-rnaseq_images/user_inputs3.png"></p>
+<p>In the <code>Enter File</code> window (33) you can drag and drop your local genome file or enter a s3 path into <code>File Location</code>:</p>
+<div class="highlight"><pre><span></span><code>s3://viafoundry/run_data/test_data/fasta_EGFP/EGFP.fa
+</code></pre></div>
+<p>and (34) click "Save" to return to the <code>Process Settings</code> window.</p>
+<p><img alt="image" src="../../sc-rnaseq_images/user_inputs4.png"></p>
+<p>(35) Click "OK" to submit the changes.</p>
+<p><img alt="image" src="../../sc-rnaseq_images/user_inputs5.png"></p>
+<p>In conclusion, all settings should be set to "yes", except <code>run_Aggregate_Libraries</code> and <code>genome_build</code> which was set to "human_hg38_gencode_v32_cellranger_v6".</p>
+<p><img alt="image" src="../../sc-rnaseq_images/user_inputs6.png"></p>
+<hr>
+<p>Finally, to submit the run (36) click "Run" in the top right and (37) select "Start"</p>
+<p><img alt="image" src="../../sc-rnaseq_images/start.png"></p>
+<h2 id="analyzing-reports">Analyzing Reports</h2>
+<ul>
+<li>RNA-Seq pipeline runs typically take 2.5 hours (if you enter custom genome sequence) to complete for this dataset.</li>
+<li>Navigate to the Log tab and click on log.txt to see progress on your run.</li>
+<li>Once the blue "Running" in the top right changes to a green "Completed" go to the Report tab to see the final reports.</li>
+<li>While waiting for the run to finish, you can check the example finalized run: https://www.viafoundry.com/run/101</li>
+</ul>
+<hr>
+<h2 id="executing-scrna-seurat-10x-module-optional">Executing scRNA Seurat 10x Module (Optional)</h2>
+<ul>
+<li>Instead of running whole 10x pipeline, you might execute only scRNA Seurat 10x Module too. This module would take 10 minutes to run.</li>
+<li>Go to your <code>new project</code> by clicking on the <code>Projects</code> drop down on the top menu and clicking on your <code>new project</code>.</li>
+<li>Click <code>Pipeline Tab</code> and click <code>Add Pipeline</code> Button.</li>
+<li>In the <code>Add pipeline</code> window, click the <code>Add</code> button for the <code>scRNA Seurat 10x</code> and close the window. </li>
+<li>Click the <code>Run</code> button of the <code>scRNA Seurat 10x</code> on the table.</li>
+<li>Choose Run Environment as <code>Via Run Environment (AWS Batch)</code></li>
+<li>Choose genome_build as <code>human_hg38_gencode_v32_cellranger_v6</code></li>
+<li>Click <code>Enter File</code> for Metadata. Fill in the "Sample" column with "pbmc_1k_v3_S1" and "Condition" column with <code>pmbc_1k_v3</code> click "Save".</li>
+<li>Enter 101 for Data_Path which is the already finished 10x pipeline run id.</li>
+<li>Click Run Button at the top right.</li>
+</ul>
+<hr>
+<h3 id="multiqc">Multiqc</h3>
+<p><a href="https://multiqc.info">multiQC</a> will aggregate the <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a> quality control report of each fastq file in the pipeline. The aggregation of multiple FastQC reports helps users to view the quality control of multiple fastq files easily.</p>
+<p><img alt="image" src="../../sc-rnaseq_images/ResultsMultiQC.png"></p>
+<h3 id="count-web-summary">Count Web Summary</h3>
+<p>The output file in this section is a html file generated by <a href="https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger">cellranger pipeline</a>.This html file is a quality control report of single cell RNA-Seq Count Matrix, which include estimated number of cells, alignment/quantification results and preliminary clustering analysis.
+<img alt="image" src="../../sc-rnaseq_images/ResultsCellrangertitle.png"></p>
+<p>In this report there is also a preliminary clustering analysis of the data. The preliminary analysis result can be used as means of quality control because it shows likely cell populations and their gene markers. However, the results from this report may not be accurate.</p>
+<p><img alt="image" src="../../sc-rnaseq_images/ResultsCellrangerAnalysis.png"></p>
+<h3 id="qc-plots">Qc Plots</h3>
+<p>The cellranger software in the pipeline will generate a count matrix from input fastq files. The count matrix will be analyzed using R package <a href="https://satijalab.org/seurat/">Seurat</a>. In this html file the number of genes and number of UMIs (<a href="https://dnatech.genomecenter.ucdavis.edu/faqs/what-are-umis-and-why-are-they-used-in-high-throughput-sequencing/">Unique Molecular Identifiers</a>) for each cell is plotted using violin plot and scatter plots.
+<img alt="image" src="../../sc-rnaseq_images/ResultsRQC.png"></p>
+<h3 id="filtering-reports">Filtering Reports</h3>
+<p>In this html file the filtering criteria will be shown and the number of cells before and after the filtering will be shown.
+<img alt="image" src="../../sc-rnaseq_images/ResultsRFilter.png">
+<img alt="image" src="../../sc-rnaseq_images/ResultsRFilter.results.png"></p>
+<h3 id="embedding-report">Embedding Report</h3>
+<p>In this html file the dimension reduction results are shown.
+In the single cell RNA-Seq analysis there are two layers of dimension reduction: Principal component analysis (PCA) and UMAP/tSNE.</p>
+<h4 id="prinicple-component-analysis-pca">Prinicple component analysis (PCA)</h4>
+<p>Prinicple component analysis (PCA) is used to reduce the dimensionality of the data. The rationale of this analysis is that not all the genes in the scRNA-Seq data are contributing to the variations in gene expression profiles of cells due to the sparsity of data. PCA uses all the genes in the data and constructs a series of artificial dimensions ("Principal components") which are linear combinations of the gene expression profiles. 
+For each Principal component the amount of variation explained and how genes contributed to the Principal component are calculated. In the figures below you can see an elbow plot of amount of variation explained: it shows that the amount of variation explained by Principal component decreases "exponentially", which means that using the top 15-20 Principal components can capture enough differences in the dataset and we can just use these Principal components in the downstream analysis.
+The heatmap in the figure below shows what and how genes contributed to different Principal components. Most of these genes in the figure are immune cell type markers, which means that the Principal components are capturing differences between immune cell populations. 
+<img alt="image" src="../../sc-rnaseq_images/ResultsRDR.PCA.png"></p>
+<h4 id="tsne-and-umap">tSNE and UMAP</h4>
+<p>Although PCA is very helpful and robust in the dimension reduction and generates biologically meaningful results, it is not good enough for the visualization. For visualization the pipeline generates <a href="https://lvdmaaten.github.io/tsne">tSNE</a> and <a href="https://arxiv.org/abs/1802.03426">UMAP</a>, which is shown in this section.</p>
+<p><img alt="image" src="../../sc-rnaseq_images/ResultsRDR.TSNE.UMAP.png"></p>
+<h3 id="cluster-reports-marker-reports-and-markers">Cluster Reports, Marker Reports and Markers</h3>
+<p>Cluster reports and Marker Reports are two html files generated by <a href="https://rmarkdown.rstudio.com">Rmarkdown</a>. The Markers section provided a tsv file of marker genes for each cluster.</p>
+<h4 id="description">Description</h4>
+<p>The unsupervised clustering is used to group cells into populations so users do not need to look at a few thousand cells one at a time. After the clustering, genes that are significantly up and down regulated in each cell population are calculated: these genes can help users to identify the identity of cell populations.</p>
+<h4 id="cluster-reports">Cluster Reports</h4>
+<p>The report will visualize the clustering results, which is shown below.
+<img alt="image" src="../../sc-rnaseq_images/ResultsRCluster.vis.png"></p>
+<p>Another important visualization is plotting QC metrics of cells against the clustering results. This is to ensure that the clustering results are not significantly biased by the different sequencing depth and coverage of cells in the dataset.
+<img alt="image" src="../../sc-rnaseq_images/ResultsRCluster.QC.png"></p>
+<h4 id="marker-reports">Marker Reports</h4>
+<p>In this section the up-regulated genes in each cell population defined by clustering algorithm are visualized using heatmap. The figure below is an example of such a heatmap.
+<img alt="image" src="../../sc-rnaseq_images/ResultsRCluster.Markers.png"></p>
+<h4 id="markers">Markers</h4>
+<p>In this section the full list of gene markers of each cell population is ready to be viewed and downloaded.
+<img alt="image" src="../../sc-rnaseq_images/ResultsRCluster.Markers.ready.png"></p>
+<h3 id="singler-rmd-report">Singler Rmd Report</h3>
+<p>Singler Rmd Report and Marker Reports is a html file generated by <a href="https://rmarkdown.rstudio.com">Rmarkdown</a>. 
+<a href="https://doi.org/10.1038/s41590-018-0276-y">SingleR</a> is an algorithm that annotates single cell RNA-Seq dataset based on gene markers of each cell population from clustering and a corresponding reference map. In this section the results of this SingleR annotation are shown.
+<img alt="image" src="../../sc-rnaseq_images/ResultsRSingleR.png"></p>
+<h3 id="annot-out-seurat-h5ad-and-shinyapp">Annot Out, Seurat H5ad and Shinyapp</h3>
+<p>In these sections the goal is to visualize end results of single cell RNA-Seq dataset using custom shiny Apps and <a href="https://cellxgene.cziscience.com">cellxgene</a>.</p></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2023 by Via Scientific
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>
