@@ -29,7 +29,7 @@ For instance, the code below performs differential expression analysis for each 
 
 ## -   **Jupyter Notebook**
 
-The Jupyter Notebook app, due to its interactive and flexible nature, it allows bioinformatics researchers to combine code, visualizations, and explanatory text in a single document. Bioinformaticians can write and execute code snippets in real-time, visualize data using various plotting libraries, and document their analyses step-by-step.
+The Jupyter Notebook app, due to its interactive and flexible nature, allows bioinformatics researchers to combine code, visualizations, and explanatory text in a single document. Bioinformaticians can write and execute code snippets in real-time, visualize data using various plotting libraries, and document their analyses step-by-step.
 
 ![image](../images/jupyter-app.png)
 

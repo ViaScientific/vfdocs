@@ -13,3 +13,7 @@
 - [App Guide](ViaFoundry/app.md)
 - [Profile Guide](ViaFoundry/profile.md)
 - [Frequently Asked Questions](ViaFoundry/faq.md)
+
+# Developer Guide
+- [Pipeline Guide](ViaFoundry/pipeline_guide.md)
+- [Process Guide](ViaFoundry/process.md)
