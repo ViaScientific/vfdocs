@@ -20,6 +20,9 @@
 - [Profile Guide](ViaFoundry/profile.md)
 - [Frequently Asked Questions](ViaFoundry/faq.md)
 
+# Developer Guide
+- [Pipeline Guide](ViaFoundry/pipeline_guide.md)
+- [Process Guide](ViaFoundry/process.md)
 ## Administrator Guide
 - [Installation](ViaFoundry/admin-installation.md)
 - [Configuration](ViaFoundry/admin-configuration.md)

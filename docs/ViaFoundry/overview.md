@@ -9,7 +9,7 @@ management of mass quantities of samples on High Performance Computing
 (HPC) environments, cloud services (AWS, Google Cloud etc.), or personal workstations. It
 automatically builds [Nextflow](https://www.nextflow.io/) pipelines by
 assembling components such as processes and modules, enabling seamless
-implementation of complex bioinformatics workflows. Moreover, we offer assistance for nf-core or customized nextflow pipelines, allowing easy integration of these pipelines directly from Github or Bitbucket repositories.
+implementation of complex bioinformatics workflows. Moreover, we offer assistance for NF-core or customized Nextflow pipelines, allowing easy integration of these pipelines directly from Github or Bitbucket repositories.
 
 ## Benefits of Via Foundry's Design
 
