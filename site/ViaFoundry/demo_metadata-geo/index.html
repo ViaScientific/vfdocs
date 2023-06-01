@@ -1,0 +1,1104 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Via Foundry Team">
+      
+      
+      
+        <link rel="prev" href="../demo_single_cell_rna-seq_tutorial/">
+      
+      
+        <link rel="next" href="../demo_developer_tutorial/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
+    
+    
+      
+        <title>Using Metadata Tracker - GEO - Via Foundry Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#expected-learning-outcome" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Via Foundry Documentation" class="md-header__button md-logo" aria-label="Via Foundry Documentation" data-md-component="logo">
+      
+  <img src="../../images/via_icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Via Foundry Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Using Metadata Tracker - GEO
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Via Foundry Documentation" class="md-nav__button md-logo" aria-label="Via Foundry Documentation" data-md-component="logo">
+      
+  <img src="../../images/via_icon.png" alt="logo">
+
+    </a>
+    Via Foundry Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        Platform Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipeline_example/" class="md-nav__link">
+        Pipeline Examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cite/" class="md-nav__link">
+        How To Cite Us
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_rna-seq_tutorial/" class="md-nav__link">
+        Running RNA-Seq Pipeline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_single_cell_rna-seq_tutorial/" class="md-nav__link">
+        Running Cellranger Pipeline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Using Metadata Tracker - GEO
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Using Metadata Tracker - GEO
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#expected-learning-outcome" class="md-nav__link">
+    Expected learning outcome
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    Before you start
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-project-and-adding-metadata-tracker" class="md-nav__link">
+    Creating Project and Adding Metadata Tracker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-metadata-tracker" class="md-nav__link">
+    Configuring Metadata Tracker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-metadata" class="md-nav__link">
+    Importing Metadata
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_developer_tutorial/" class="md-nav__link">
+        Developer Tutorial - Creating Pipeline
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          User Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          User Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick/" class="md-nav__link">
+        Quick Start Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project/" class="md-nav__link">
+        Project Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run/" class="md-nav__link">
+        Run Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app/" class="md-nav__link">
+        App Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../profile/" class="md-nav__link">
+        Profile Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        Frequently Asked Questions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Administrator Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Administrator Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-pipeline-testing/" class="md-nav__link">
+        Testing Pipeline
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#expected-learning-outcome" class="md-nav__link">
+    Expected learning outcome
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    Before you start
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-project-and-adding-metadata-tracker" class="md-nav__link">
+    Creating Project and Adding Metadata Tracker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-metadata-tracker" class="md-nav__link">
+    Configuring Metadata Tracker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-metadata" class="md-nav__link">
+    Importing Metadata
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Using Metadata Tracker - GEO</h1>
+
+<div><h2 id="expected-learning-outcome">Expected learning outcome</h2>
+<p>To understand the basics of Metadata Tracking System, and import sample GEO metadata.</p>
+<h2 id="before-you-start">Before you start</h2>
+<p>Please go to <a href="https://www.viafoundry.com">https://www.viafoundry.com</a> and login into your account. If you have an issue about login, please let us know about it (support@viascientific.com). We will set an account for you.</p>
+<h2 id="creating-project-and-adding-metadata-tracker">Creating Project and Adding Metadata Tracker</h2>
+<p>Once logged in, click on the <code>Projects</code> section at the top menu and click <code>Add a New Project</code> button. Enter your project name and click OK. This is the place to configure your project. Click on the <code>Add Metadata Tracker</code> icon to add a new <code>Metadata</code> tab into your project. </p>
+<p><img alt="image" src="../../metadata_geo_images/geo1.png"></p>
+<p>Click on the <code>Metadata</code> tab. This window is the <code>Data View</code> section of the Metadata tracker where you will insert your data. Before inserting new data, we need to configure the database structure. To start configuring click on the "Configure Metadata" button at the right. </p>
+<p><img alt="image" src="../../metadata_geo_images/geo2.png"></p>
+<h2 id="configuring-metadata-tracker">Configuring Metadata Tracker</h2>
+<ol>
+<li>
+<p>In this configuration window there are a couple of tabs available:</p>
+<ul>
+<li>All Collections: List of project collections(tables).</li>
+<li>All Events: List of events that are defined for Data view.</li>
+<li>Tree View: Shows your project collections(tables) in tree visualization.</li>
+<li>Templates: Predefined collections to import into your project</li>
+</ul>
+<p><img alt="image" src="../../metadata_geo_images/geo3.png"></p>
+</li>
+<li>
+<p>Please click the <code>Templates</code> tab to import predefined collections. Select all the collections by clicking checkboxes. After choosing them, click the <code>Import Collection</code> Button.</p>
+<p><img alt="image" src="../../metadata_geo_images/geo4.png"></p>
+</li>
+<li>
+<p>Now you can revisit <code>All Collections</code> and <code>Tree View</code> Tabs to see imported collections and their relationships.</p>
+<p><img alt="image" src="../../metadata_geo_images/geo5.png">
+  <img alt="image" src="../../metadata_geo_images/geo6.png"></p>
+</li>
+<li>
+<p>If you click each <code>Series</code> tab, you will see the columns defined for the <code>Series</code> collection. The NamingPattern feature is defined for the id column to set a unique id for each inserted value. Since the pattern is <code>SE-${AUTOINCREMENT}</code>, new data will have the following ids: SE-1, SE-2, etc.</p>
+<p><img alt="image" src="../../metadata_geo_images/series_columns.png"></p>
+</li>
+<li>
+<p>Now click on the <code>Biosamples</code> tab to see its columns. Type of the series_id column is <code>mongoose.Schema.ObjectId</code> which means that this value will be referencing data in another collection. If you scroll to the right, you will see the ref column is set to <code>{yourProjectID}_series</code>, therefore it is referencing data in series collection in this project. By using this referencing method, we don't need to enter series details each time we insert data into the <code>Biosamples</code> collection. Instead, we will reference the data in the <code>Series</code> collection.</p>
+<p><img alt="image" src="../../metadata_geo_images/biosamples_columns.png"></p>
+</li>
+<li>
+<p>Similarly <code>Samples</code> collection referencing data in <code>Biosamples</code> collection and <code>Files</code> collection referencing <code>Samples</code> collection. You can visualize their relationship in the <code>Tree View</code> tab.</p>
+<p><img alt="image" src="../../metadata_geo_images/geo6.png"></p>
+</li>
+<li>
+<p>Let's visit NCBI SRA Run Selector (https://www.ncbi.nlm.nih.gov/Traces/study/) to download sample project metadata. Enter <code>GSE196908</code> into the <code>Accession</code> field and click the search button.</p>
+<p><img alt="image" src="../../metadata_geo_images/geo7ncbi.png"></p>
+</li>
+<li>
+<p>Click on the <code>Metadata</code> button to download comma separated metadata files. </p>
+<p><img alt="image" src="../../metadata_geo_images/geo8ncbi.png"></p>
+</li>
+<li>
+<p>To visualize the file in excel or another spreadsheet viewer, change the file extension to csv.</p>
+<div class="highlight"><pre><span></span><code>SraRunTable.txt -&gt; SraRunTable.csv
+</code></pre></div>
+</li>
+<li>
+<p>Open the file to check its content.</p>
+<p><img alt="image" src="../../metadata_geo_images/geo9ncbi.png"></p>
+</li>
+<li>
+<p>Lets distribute these column headers into 4 groups (series, biosamples, samples, file) to prevent repetition and save into our project.</p>
+<table>
+<thead>
+<tr>
+<th align="center">series</th>
+<th align="center">biosamples</th>
+<th align="center">samples</th>
+<th align="center">files</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">BioProject</td>
+<td align="center">BioSample</td>
+<td align="center">Sample Name</td>
+<td align="center">Run</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">Organism</td>
+<td align="center">Assay Type</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">source_name</td>
+<td align="center">Library Name</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">TREATMENT</td>
+<td align="center">LibraryLayout</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">weeks_treatment</td>
+<td align="center">LibrarySelection</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">LibrarySource</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">Instrument</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">Platform</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Return back to Foundry Metadata tracker, and click the Series tab. Instead of auto increment values (SE-1, SE-2 etc,) using BioProject-ID for referencing would simplify our referencing strategy. While entering data, we will enter BioProject-ID into the name column and we want to save this entered value as <code>id</code>. Change the <code>NamingPattern</code> of <code>id</code> column as follows to save <code>name</code> value as <code>id</code>:</p>
+<table>
+<thead>
+<tr>
+<th align="center">Column</th>
+<th align="center">Field of change</th>
+<th align="center">Old Value</th>
+<th align="center">New Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">id</td>
+<td align="center">NamingPattern</td>
+<td align="center"><code>SE-${AUTOINCREMENT}</code></td>
+<td align="center"><code>${series.name}</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>'series' is the name of the Series collection. Please check <code>All Collections</code> tab and Name and Label columns.</p>
+</div>
+</li>
+<li>
+<p>Similarly, to make <code>name</code> column a identifier for biosamples, click on Biosamples Tab and change the <code>NamingPattern</code> of <code>id</code> column as follows: </p>
+<table>
+<thead>
+<tr>
+<th align="center">Column</th>
+<th align="center">Field of change</th>
+<th align="center">Old Value</th>
+<th align="center">New Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">id</td>
+<td align="center">NamingPattern</td>
+<td align="center"><code>B-${AUTOINCREMENT}</code></td>
+<td align="center"><code>${biosamp.name}</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>'biosamp' is the name of the Biosamples collection. All details listed in <code>All Collections</code> tab.</p>
+</div>
+</li>
+<li>
+<p>Insert new columns into Biosamples collection by clicking the plus button at the top left while in the Biosamples tab.</p>
+<table>
+<thead>
+<tr>
+<th align="center">New Column Name</th>
+<th align="center">New Column Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Organism</td>
+<td align="center">Organism</td>
+</tr>
+<tr>
+<td align="center">source_name</td>
+<td align="center">source_name</td>
+</tr>
+<tr>
+<td align="center">TREATMENT</td>
+<td align="center">TREATMENT</td>
+</tr>
+<tr>
+<td align="center">weeks_treatment</td>
+<td align="center">weeks_treatment</td>
+</tr>
+</tbody>
+</table>
+<p>Enter new name and label values using the table above and click save button. You can see the example for the <code>Organism</code> column below.</p>
+<p><img alt="image" src="../../metadata_geo_images/geo_insert_organism.png"></p>
+<p>This should create the following database structure:</p>
+<p><img alt="image" src="../../metadata_geo_images/geo_biosample_columns.png"></p>
+<div class="highlight"><pre><span></span><code>* Note: the id column has been normalized to lower case.
+</code></pre></div>
+</li>
+<li>
+<p>Click Samples Tab and change the <code>NamingPattern</code> of <code>id</code> column as follows: </p>
+<table>
+<thead>
+<tr>
+<th align="center">Column</th>
+<th align="center">Field of change</th>
+<th align="center">Old Value</th>
+<th align="center">New Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">id</td>
+<td align="center">NamingPattern</td>
+<td align="center"><code>SA-${AUTOINCREMENT}</code></td>
+<td align="center"><code>${sample.name}</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>* Note: 'sample' is the name of the Samples collection. 
+</code></pre></div>
+</li>
+<li>
+<p>Insert new columns into Samples collection by clicking the plus button at the top left. Enter new name and label values using the table below.</p>
+<table>
+<thead>
+<tr>
+<th align="center">New Column Name</th>
+<th align="center">New Column Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Assay Type</td>
+<td align="center">Assay Type</td>
+</tr>
+<tr>
+<td align="center">Library Name</td>
+<td align="center">Library Name</td>
+</tr>
+<tr>
+<td align="center">LibraryLayout</td>
+<td align="center">LibraryLayout</td>
+</tr>
+<tr>
+<td align="center">LibrarySelection</td>
+<td align="center">LibrarySelection</td>
+</tr>
+<tr>
+<td align="center">LibrarySource</td>
+<td align="center">LibrarySource</td>
+</tr>
+<tr>
+<td align="center">Instrument</td>
+<td align="center">Instrument</td>
+</tr>
+<tr>
+<td align="center">Platform</td>
+<td align="center">Platform</td>
+</tr>
+</tbody>
+</table>
+<p>Expected database structure of sample collection:</p>
+<p><img alt="image" src="../../metadata_geo_images/geo_sample_columns.png"></p>
+</li>
+<li>
+<p>Click Files Tab and change the <code>NamingPattern</code> of <code>id</code> column as follows: </p>
+<table>
+<thead>
+<tr>
+<th align="center">Column</th>
+<th align="center">Field of change</th>
+<th align="center">Old Value</th>
+<th align="center">New Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">id</td>
+<td align="center">NamingPattern</td>
+<td align="center"><code>F-${AUTOINCREMENT}</code></td>
+<td align="center"><code>${file.name}</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Now we're ready to insert metadata. Click on the "Data View" Button, Located right handside of the tabs menu. </p>
+</li>
+</ol>
+<h2 id="importing-metadata">Importing Metadata</h2>
+<ol>
+<li>
+<p>Click the <code>Collections</code> Tab and select <code>Series</code> Collection from dropdown. </p>
+<p><img alt="image" src="../../metadata_geo_images/geo_data1.png"></p>
+</li>
+<li>
+<p>Click on the <code>Insert</code> button to enter <code>PRJNA807693</code> into the name field using form. After that click the save button. </p>
+<p><img alt="image" src="../../metadata_geo_images/geo_data2.png"></p>
+</li>
+<li>
+<p>Go to the collection dropdown and change its value to <code>Biosamples</code>. Since we will insert 99 Biosamples we will use excel import. Let's download the template excel file to facilitate import. Click the <code>Download Last Viewed Page as Excel file</code> button. You will see an empty excel sheet with table headers. If you like you can <a href="metadata_geo_files/Biosamples_template.xlsx?raw=true" download="Biosamples_template.xlsx">download the biosamples template here.</a></p>
+<p><img alt="image" src="../../metadata_geo_images/geo_download_button.png"></p>
+<p><img alt="image" src="../../metadata_geo_images/geo_empty_biosamples.png"></p>
+</li>
+<li>
+<p>Copy and paste the data in SraRunTable into this empty sheet as follows:</p>
+<p><img alt="image" src="../../metadata_geo_images/geo_filled_biosamples.png"></p>
+<div class="highlight"><pre><span></span><code>Note: `BioSample` column in SraRunTable is copied to the `Name` column.
+</code></pre></div>
+</li>
+<li>
+<p>After saving this file, click on the <code>Import on Excel File</code> button. Drag and drop your Biosamples.xlsx file and click the <code>Load Table</code> button. If you prefer you can download and use <a href="metadata_geo_files/Biosamples.xlsx?raw=true" download="Biosamples.xlsx"> the pre-filled biosamples table here.</a></p>
+<p><img alt="image" src="../../metadata_geo_images/geo_load_table1.png"></p>
+</li>
+<li>
+<p>It will show the rows that are going to be inserted/updated in yellow color. Click the Save button at the top left.</p>
+<p><img alt="image" src="../../metadata_geo_images/geo_load_table2.png"></p>
+</li>
+<li>
+<p>It will insert the rows as follows and the status of the operation will be shown at the left side.</p>
+<p><img alt="image" src="../../metadata_geo_images/geo_load_table3.png"></p>
+</li>
+<li>
+<p>Now you can return to table view by clicking the button below:</p>
+<p><img alt="image" src="../../metadata_geo_images/geo_load_table4.png"></p>
+</li>
+<li>
+<p>Switch to <code>Samples</code> collection by using collection dropdown. Similar to the biosamples collection, click the <code>Download Last Viewed Page as Excel file</code> button. Copy and paste the data in SraRunTable into this empty sheet as follows or you can download the samples template <a href="metadata_geo_files/Samples_template.xlsx?raw=true" download="Samples_template.xlsx">  here.</a>:</p>
+<p><img alt="image" src="../../metadata_geo_images/geo_filled_samples.png"></p>
+<div class="highlight"><pre><span></span><code>Note: `Sample Name` column in SraRunTable is copied to the `Name` column.
+</code></pre></div>
+</li>
+<li>
+<p>After saving this file, click on the <code>Import on Excel File</code> button. If you prefer you can use samples table by <a href="metadata_geo_files/Samples.xlsx?raw=true" download="Samples.xlsx"> clicking here.</a> Drag and drop your Samples.xlsx file and click the <code>Load Table</code> button. Now you're ready to import sample data with the save button. Return back to the table view by clicking the <code>Show Table Format</code> button.</p>
+</li>
+<li>
+<p>Go to the collection dropdown and change its value to <code>Files</code>. Click the <code>Download Last Viewed Page as Excel file</code> button or download <a href="metadata_geo_files/Files_template.xlsx?raw=true" download="Files_template.xlsx"> here </a> Copy and paste the data in SraRunTable into this empty sheet as follows or <a href="metadata_geo_files/Files.xlsx?raw=true" download="Files.xlsx"> download here </a>:</p>
+<p><img alt="image" src="../../metadata_geo_images/geo_filled_files.png"></p>
+</li>
+<li>
+<p>If you prefer you can use entered files in run submission. Select the <code>Runs</code> collection and click <code>Insert</code> button. </p>
+<ul>
+<li>Name: Your run name</li>
+<li>Submission Type: Standard</li>
+<li>Server: Viafoundry Server</li>
+<li>Run Environment: Via Run Environment (AWS Batch)</li>
+<li>Template run id: Enter your previous run id or enter 1 to use our demo run as template.</li>
+<li>Inputs: Click <code>Select File</code> Button and use checkboxes to select your files.</li>
+<li>You can change other input values according to your needs.</li>
+</ul>
+<p><img alt="image" src="../../metadata_geo_images/geo_run.png"></p>
+</li>
+<li>
+<p>Click the save button. This will submit your run. You can track your run status on the dashboard.</p>
+</li>
+</ol>
+<p>Congratulations! You have configured a metadata tracker for your project and imported GEO data into Foundry!</p></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2023 by Via Scientific
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>
