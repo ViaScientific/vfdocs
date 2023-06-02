@@ -44,26 +44,26 @@ parameters via the `Add Parameter` button.
 
 -   
 
-    **Qualifier:** Four main types of qualifiers (`file`, `set`, `each`, and `val`) exist in Via Foundry:
+    **Qualifier:** Five main types of qualifiers (`file`, `set/tuple`, `each`, `env` and `val`) exist in Via Foundry:
 
-        **File:** This qualifier is used when the following
+    **File:** This qualifier is used when the following
         qualifier represents the name of a file. Example usage in a
         Nextflow file:
 
             file genome
 
-        **Set:** This qualifier enables you to handle a group of
+    **Set/Tuple:** This qualifier enables you to handle a group of
         input values with other qualifiers. Example usage:
 
             set val(name), file(genome) 
 
-        **Val:** With this qualifier, you can access the received
+    **Val:** With this qualifier, you can access the received
         input value by its name in the process script. Example
         usage:
 
             val script_path
 
-        **Each:** This qualifier enables the execution of the
+    **Each:** This qualifier enables the execution of the
         process for each entry in the input collection. Example
         usage:
 
@@ -127,8 +127,7 @@ in case the input parameter `genome` is empty. When the `genome`
 parameter is found, though, the `filter` parameter will be defined as
 `---filter ${genome}"`.
 
-    filter = genome.name.startsWith('NO_FILE') ? "" : "--filter
-    ${genome}"
+    filter = genome.name.startsWith('NO_FILE') ? "" : "--filter ${genome}"
 
 ## Outputs
 
@@ -160,7 +159,7 @@ of input and output qualifiers and names:
 Additionally, if you need to transform values emitted by a channel, you
 can click the `Add/Remove Operator` button, then select operators from
 the `Operators` dropdown menu that appears. For more detailed
-information, refer to the [Operators](process.md#id5) section.
+information, refer to the [Operators](process.md#operators) section.
 
 -   **A Note on Optional Outputs:**
 
@@ -206,17 +205,17 @@ three opening double quotes `"""`:
     name =  reads.toString() - '.fastq'  // local scope for nextflow variables
 
     """ 
-    newPath="/mypath"   // inside of """ block is used for define bash variables in local scope
-    tophat2 -o . ${newPath} ${name}  
+    newPath="/mypath"   ## inside of """ block is used to define bash variables in local scope
+    STAR -o . \${newPath} ${name}  
     """
 
 **Note:**
 
    -   The `newPath` variable is defined in the bash script and used in
-        the Tophat command as `${newPath}`. (Note that bash variables
-        need to be escaped by backslashes)
+        the STAR command as `\${newPath}`. (Note that bash variables
+        need to be escaped by backslashes in script block)
    -   The `name` variable is defined in Groovy's scope as a Nextflow
-        variable, and used in the Tophat command as `${name}`.
+        variable, and used in the STAR command as `${name}`.
 
 
 -   **Conditional Scripts:**
@@ -271,7 +270,7 @@ Here is an example use case of a Perl script block with correct syntax:
     ''' 
     #!/usr/bin/env perl // inside of ''' block you can define perl (or other language) variables in local scope
     $newPath="/mypath";
-    system("tophat2 -o . ${newPath} !{name}");
+    system("STAR -o . ${newPath} !{name}");
     '''
 
 **Note:**
@@ -430,8 +429,8 @@ certain inputs empty if they so desire. See the example below:
     params.csv_input = "" //* @input @optional @description:"CSV input for process"
 
 **@file**: You can specify the type of window that will appear for a
-selected input. By default, a value modal is used. However, if you add
-the @file tag, the file modal will be displayed. This allows users to
+selected input. By default, a `value modal` is used. However, if you add
+the @file tag, the `file modal` will be displayed. This allows users to
 upload files and use them as a parameter. Here's an example:
 
     params.tsv_input = "" //* @input @file @description:"TSV file path for process"
@@ -676,12 +675,10 @@ an example of how to use the platform tag:
 
 ## Permissions, Groups and Publish
 
-By default, all new processes can only be seen by the user that created
-them. You can share your process with your group by selecting the
-`Only my groups` option in the "Permission to View" dropdown menu. If
-you want to make it public, select the `Everyone` option in the dropdown
-menu. Once the process has been verified, it will be published to
-everyone.
+By default, all new processes are only seen by their owner. You have the option to share your process with a specific group that you have created in the profile's "Groups" tab. To do this, choose "Only my group" and select the name of the desired group. Members of that group will then be able to view the process on their pipeline page.
+
+When collaborating with multiple individuals on a shared pipeline, you have the option to grant write permission to a group by utilizing the "Group Permission to Write" dropdown. This allows you to specify a group and authorize them to make changes and modifications to the process.
+
 
 ![image](../images/process_permissions.png)
 
