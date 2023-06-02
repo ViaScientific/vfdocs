@@ -608,8 +608,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#permissions-groups-and-publish" class="md-nav__link">
-    Permissions, Groups and Publish
+  <a href="#permissions-and-groups" class="md-nav__link">
+    Permissions and Groups
   </a>
   
 </li>
@@ -838,8 +838,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#permissions-groups-and-publish" class="md-nav__link">
-    Permissions, Groups and Publish
+  <a href="#permissions-and-groups" class="md-nav__link">
+    Permissions and Groups
   </a>
   
 </li>
@@ -929,30 +929,28 @@ process circle, a figure shown here:</p>
 <p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_process.png"></p>
 <p>When working with a process in Via Foundry, you will come across several
 icons on the process circle. Here's what each icon represents:</p>
-<blockquote>
 <ul>
 <li><strong>Settings Icon</strong>: This icon is located at the top of the process
-    circle. When clicked, it opens the "Select Process Revision"
-    window. In this window, you can examine the current state of the
-    process, view its details, and navigate between different
-    revisions of the process. You can also replace the selected
-    revisions on the workplace with the chosen revision from this
-    window.</li>
+      circle. When clicked, it opens the "Select Process Revision"
+      window. In this window, you can examine the current state of the
+      process, view its details, and navigate between different
+      revisions of the process. You can also replace the selected
+      revisions on the workplace with the chosen revision from this
+      window.</li>
 <li><strong>Pencil Icon</strong>: The pencil icon is located at the center of the
-    process circle. Clicking on this icon allows you to edit the
-    process name. The process name is the name that will be used in
-    the generated Nextflow file as the process identifier. It is
-    important to ensure that process names are unique within the
-    overall pipeline, as redundancies can lead to unforeseen errors.</li>
+      process circle. Clicking on this icon allows you to edit the
+      process name. The process name is the name that will be used in
+      the generated Nextflow file as the process identifier. It is
+      important to ensure that process names are unique within the
+      overall pipeline. If there are duplicate process names, a warning will be displayed at the bottom of the workflow page to alert you about this issue.</li>
 <li><strong>Bin Icon</strong>: The bin icon is located at the bottom of the process
-    circle. Clicking on this icon will delete the current process from
-    the pipeline, so exercise caution when deleting a process.</li>
+      circle. Clicking on this icon will delete the current process from
+      the pipeline, so exercise caution when deleting a process.</li>
 </ul>
-</blockquote>
 <h2 id="input-parameters">Input Parameters</h2>
 <p>To add input files or values that will be used in the process, you can
 use the "Input parameters" circle located above the Pipelines and
-Processes sections in a pipeline's left sidebar menu in Via Foundry.
+Processes sections in a pipeline's left sidebar menu.
 Just like adding processes, you can use the drag and drop feature to add
 input parameters to your pipeline. Once you drag an input parameter, you
 will see a smaller orange circle representing the input parameter in the
@@ -961,32 +959,30 @@ workplace, as shown in the figure below:</p>
 <p>By using the <strong>Pencil</strong> icon located at the left side of the circle, you
 can edit the name of the input parameter and define additional settings
 for it. Here are the options you can configure:</p>
-<blockquote>
 <ul>
 <li><strong>Name:</strong> This represents the name of the input parameter, which
-    will be used to reference the process in the Nextflow file. It's
-    important to choose unique names for each input parameter within
-    your pipeline to avoid redundancies, which can yield unwanted
-    errors.</li>
+      will be used to reference the process in the Nextflow file. It's
+      important to choose unique names for each input parameter within
+      your pipeline to avoid redundancies, which can yield unwanted
+      errors.</li>
 <li><strong>Default value:</strong> You can specify a default value for the input
-    parameter, which will be autofilled in the run page. This is
-    useful when you have a commonly used value that can serve as a
-    default for most runs.</li>
+      parameter, which will be autofilled in the run page. This is
+      useful when you have a commonly used value that can serve as a
+      default for most runs.</li>
 <li><strong>Dropdown options:</strong> If you want the input parameter to be
-    presented as a dropdown menu on the run page, you can define the
-    dropdown options. Simply enter the options in a comma-separated
-    format. For example, if you have a yes/no parameter, you can enter
-    "yes, no" as the dropdown options.</li>
+      presented as a dropdown menu on the run page, you can define the
+      dropdown options. Simply enter the options in a comma-separated
+      format. For example, if you have a yes/no parameter, you can enter
+      "yes, no" as the dropdown options.</li>
 <li><strong>Show Settings:</strong> By clicking the checkbox for this option, you
-    can enable the display of settings for the connected process as a
-    wrench button on the run page. This allows users to access and
-    modify specific settings for that process. If you want to specify
-    alternative processes for the wrench button, you can enter their
-    process names in this field. For example, you can enter
-    "map_STAR, map_RSEM" to show the settings for either the STAR or
-    RSEM mapping process.</li>
+      can enable the display of settings for the connected process as a
+      wrench button on the run page. This allows users to access and
+      modify specific settings for that process. If you want to specify
+      alternative processes for the wrench button, you can enter their
+      process names in this field. For example, you can enter
+      "map_STAR, map_RSEM" to show the settings for either the STAR or
+      RSEM mapping process.</li>
 </ul>
-</blockquote>
 <p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_input_rename.png"></p>
 <p>Here's an example of what an input row will look like on the run page:</p>
 <p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_input_inrun.png"></p>
@@ -1021,23 +1017,21 @@ the files from different output nodes with the same output parameter
 name will be transferred to the same directory.</p>
 <h2 id="edges">Edges</h2>
 <p>There are three main reasons for creating edges:</p>
-<blockquote>
 <ol>
 <li>Establishing connections: Edges are used to connect the inputs and
-    outputs of multiple processes. This allows the data to flow from
-    one process to another, enabling the sequential execution of the
-    pipeline.</li>
+      outputs of multiple processes. This allows the data to flow from
+      one process to another, enabling the sequential execution of the
+      pipeline.</li>
 <li>Defining input files or values: By creating edges, you can specify
-    the input files or values that will be used as inputs for the
-    processes. This ensures that the required data is provided to each
-    process for its execution.</li>
+      the input files or values that will be used as inputs for the
+      processes. This ensures that the required data is provided to each
+      process for its execution.</li>
 <li>Selecting published outputs: Edges are also used to select the
-    outputs that will be published in the output directory. By
-    connecting specific output nodes to the edge, you indicate that
-    those files should be included in the final output of the
-    pipeline.</li>
+      outputs that will be published in the output directory. By
+      connecting specific output nodes to the edge, you indicate that
+      those files should be included in the final output of the
+      pipeline.</li>
 </ol>
-</blockquote>
 <p>When creating edges, the pipeline creation tool, such as Via Foundry,
 typically shows the available nodes that can be connected. This makes it
 easier to establish the desired connections between processes. The
@@ -1301,17 +1295,15 @@ if ($HOSTNAME == "ghpcc06.umassrc.org"){
 "ghpcc06.umassrc.org", the autofill feature overwrote the default
 <code>$TIME</code> value (1000) with a value of 3000.</p>
 <h2 id="pipeline-details">Pipeline Details</h2>
-<p>This section summarizes all processes and input/output parameters used
+<p>This section summarizes all processes used
 by the pipeline to give you an overarching perspective on the
 pipeline's architecture.</p>
 <p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_details.png"></p>
-<h2 id="permissions-groups-and-publish">Permissions, Groups and Publish</h2>
-<p>By default, all new pipelines are only seen by their owner. You can
-share your pipeline with your group by selecting the <code>Only my groups</code>
-option in the "Permissions to View" dropdown menu. If you want to make
-it public, you can change the <code>Publish</code> option to "Yes". Once the
-pipeline has been verified, it will be published to everyone.</p>
-<p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_perms.png"></p>
+<h2 id="permissions-and-groups">Permissions and Groups</h2>
+<p>By default, all new pipelines are only seen by their owner. You have the option to share your pipeline with a specific group that you have created in the profile's "Groups" tab. To do this, choose "Only my group" and select the name of the desired group. Members of that group will then be able to view the run on their run status page.</p>
+<p>Alternatively, you can set the permissions to "Everyone". With this setting, the pipeline will only be visible to users who know the specific run link. The selected pipeline will not appear on their pipelines page, but they will be able to access it if they have the link.</p>
+<p>When collaborating with multiple individuals on a shared pipeline, you have the option to grant write permission to a group by utilizing the "Group Permission to Write" dropdown. This allows you to specify a group and authorize them to make changes and modifications to the pipeline.</p>
+<p><img alt="image" src="../../images/pipeline_perms.png"></p>
 <h2 id="copying-and-revisions">Copying and Revisions</h2>
 <p>To make changes, new trials, improvements on your or other people's
 pipelines, you can create a duplicate of a pipeline in Via Foundry by
@@ -1355,11 +1347,6 @@ Genomics 21, 310 (2020). <a href="https://doi.org/10.1186/s12864-020-6714-x">htt
       © 2023 by Via Scientific
     </div>
   
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
   
 </div>
       

@@ -1094,29 +1094,25 @@ parameters via the <code>Add Parameter</code> button.</p>
     other processes.</p>
 </li>
 <li>
-<p><strong>Qualifier:</strong> Four main types of qualifiers (<code>file</code>, <code>set</code>, <code>each</code>, and <code>val</code>) exist in Via Foundry:</p>
-<pre><code>**File:** This qualifier is used when the following
-qualifier represents the name of a file. Example usage in a
-Nextflow file:
-
-    file genome
-
-**Set:** This qualifier enables you to handle a group of
-input values with other qualifiers. Example usage:
-
-    set val(name), file(genome)
-
-**Val:** With this qualifier, you can access the received
-input value by its name in the process script. Example
-usage:
-
-    val script_path
-
-**Each:** This qualifier enables the execution of the
-process for each entry in the input collection. Example
-usage:
-
-    each bed_list
+<p><strong>Qualifier:</strong> Five main types of qualifiers (<code>file</code>, <code>set/tuple</code>, <code>each</code>, <code>env</code> and <code>val</code>) exist in Via Foundry:</p>
+<p><strong>File:</strong> This qualifier is used when the following
+    qualifier represents the name of a file. Example usage in a
+    Nextflow file:</p>
+<pre><code>    file genome
+</code></pre>
+<p><strong>Set/Tuple:</strong> This qualifier enables you to handle a group of
+    input values with other qualifiers. Example usage:</p>
+<pre><code>    set val(name), file(genome)
+</code></pre>
+<p><strong>Val:</strong> With this qualifier, you can access the received
+    input value by its name in the process script. Example
+    usage:</p>
+<pre><code>    val script_path
+</code></pre>
+<p><strong>Each:</strong> This qualifier enables the execution of the
+    process for each entry in the input collection. Example
+    usage:</p>
+<pre><code>    each bed_list
 </code></pre>
 </li>
 <li>
@@ -1198,8 +1194,7 @@ the input parameter is not provided. Here's an example use case:</p>
 in case the input parameter <code>genome</code> is empty. When the <code>genome</code>
 parameter is found, though, the <code>filter</code> parameter will be defined as
 <code>---filter ${genome}"</code>.</p>
-<pre><code>filter = genome.name.startsWith('NO_FILE') ? "" : "--filter
-${genome}"
+<pre><code>filter = genome.name.startsWith('NO_FILE') ? "" : "--filter ${genome}"
 </code></pre>
 <h2 id="outputs">Outputs</h2>
 <p>All the output nodes for a new process are defined in this section. In a
@@ -1255,7 +1250,7 @@ of input and output qualifiers and names:</p>
 <p>Additionally, if you need to transform values emitted by a channel, you
 can click the <code>Add/Remove Operator</code> button, then select operators from
 the <code>Operators</code> dropdown menu that appears. For more detailed
-information, refer to the <a href="./#id5">Operators</a> section.</p>
+information, refer to the <a href="./#operators">Operators</a> section.</p>
 <ul>
 <li><strong>A Note on Optional Outputs:</strong></li>
 </ul>
@@ -1293,18 +1288,18 @@ three opening double quotes <code>"""</code>:</p>
 name =  reads.toString() - '.fastq'  // local scope for nextflow variables
 
 """ 
-newPath="/mypath"   // inside of """ block is used for define bash variables in local scope
-tophat2 -o . ${newPath} ${name}  
+newPath="/mypath"   ## inside of """ block is used to define bash variables in local scope
+STAR -o . \${newPath} ${name}  
 """
 </code></pre>
 <p><strong>Note:</strong></p>
 <ul>
 <li>The <code>newPath</code> variable is defined in the bash script and used in
-        the Tophat command as <code>${newPath}</code>. (Note that bash variables
-        need to be escaped by backslashes)</li>
+        the STAR command as <code>\${newPath}</code>. (Note that bash variables
+        need to be escaped by backslashes in script block)</li>
 <li>
 <p>The <code>name</code> variable is defined in Groovy's scope as a Nextflow
-        variable, and used in the Tophat command as <code>${name}</code>.</p>
+        variable, and used in the STAR command as <code>${name}</code>.</p>
 </li>
 <li>
 <p><strong>Conditional Scripts:</strong></p>
@@ -1355,7 +1350,7 @@ name =  reads.toString() - '.fastq'  //local scope for nextflow variables
 ''' 
 #!/usr/bin/env perl // inside of ''' block you can define perl (or other language) variables in local scope
 $newPath="/mypath";
-system("tophat2 -o . ${newPath} !{name}");
+system("STAR -o . ${newPath} !{name}");
 '''
 </code></pre>
 <p><strong>Note:</strong></p>
@@ -1498,8 +1493,8 @@ certain inputs empty if they so desire. See the example below:</p>
 params.csv_input = "" //* @input @optional @description:"CSV input for process"
 </code></pre>
 <p><strong>@file</strong>: You can specify the type of window that will appear for a
-selected input. By default, a value modal is used. However, if you add
-the @file tag, the file modal will be displayed. This allows users to
+selected input. By default, a <code>value modal</code> is used. However, if you add
+the @file tag, the <code>file modal</code> will be displayed. This allows users to
 upload files and use them as a parameter. Here's an example:</p>
 <pre><code>params.tsv_input = "" //* @input @file @description:"TSV file path for process"
 </code></pre>
@@ -1695,12 +1690,8 @@ $CPU  = 1
 //* autofill
 </code></pre>
 <h2 id="permissions-groups-and-publish">Permissions, Groups and Publish</h2>
-<p>By default, all new processes can only be seen by the user that created
-them. You can share your process with your group by selecting the
-<code>Only my groups</code> option in the "Permission to View" dropdown menu. If
-you want to make it public, select the <code>Everyone</code> option in the dropdown
-menu. Once the process has been verified, it will be published to
-everyone.</p>
+<p>By default, all new processes are only seen by their owner. You have the option to share your process with a specific group that you have created in the profile's "Groups" tab. To do this, choose "Only my group" and select the name of the desired group. Members of that group will then be able to view the process on their pipeline page.</p>
+<p>When collaborating with multiple individuals on a shared pipeline, you have the option to grant write permission to a group by utilizing the "Group Permission to Write" dropdown. This allows you to specify a group and authorize them to make changes and modifications to the process.</p>
 <p><img alt="image" src="../../images/process_permissions.png"></p>
 <h2 id="copying-and-revisions">Copying and Revisions</h2>
 <p>You can easily create a copy of your process by clicking the <code>Settings</code>
@@ -1749,11 +1740,6 @@ Genomics 21, 310 (2020). <a href="https://doi.org/10.1186/s12864-020-6714-x">htt
       © 2023 by Via Scientific
     </div>
   
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
   
 </div>
       
