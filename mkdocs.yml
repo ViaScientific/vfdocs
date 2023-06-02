@@ -18,6 +18,9 @@ markdown_extensions:
 
 extra_css: [css/custom.css]
 
+extra:
+  generator: false
+
 nav:
   - Home: index.md
   - Getting Started:
