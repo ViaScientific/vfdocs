@@ -64,28 +64,28 @@ process circle, a figure shown here:
 When working with a process in Via Foundry, you will come across several
 icons on the process circle. Here's what each icon represents:
 
-> -   **Settings Icon**: This icon is located at the top of the process
->     circle. When clicked, it opens the "Select Process Revision"
->     window. In this window, you can examine the current state of the
->     process, view its details, and navigate between different
->     revisions of the process. You can also replace the selected
->     revisions on the workplace with the chosen revision from this
->     window.
-> -   **Pencil Icon**: The pencil icon is located at the center of the
->     process circle. Clicking on this icon allows you to edit the
->     process name. The process name is the name that will be used in
->     the generated Nextflow file as the process identifier. It is
->     important to ensure that process names are unique within the
->     overall pipeline, as redundancies can lead to unforeseen errors.
-> -   **Bin Icon**: The bin icon is located at the bottom of the process
->     circle. Clicking on this icon will delete the current process from
->     the pipeline, so exercise caution when deleting a process.
+  -   **Settings Icon**: This icon is located at the top of the process
+      circle. When clicked, it opens the "Select Process Revision"
+      window. In this window, you can examine the current state of the
+      process, view its details, and navigate between different
+      revisions of the process. You can also replace the selected
+      revisions on the workplace with the chosen revision from this
+      window.
+  -   **Pencil Icon**: The pencil icon is located at the center of the
+      process circle. Clicking on this icon allows you to edit the
+      process name. The process name is the name that will be used in
+      the generated Nextflow file as the process identifier. It is
+      important to ensure that process names are unique within the
+      overall pipeline. If there are duplicate process names, a warning will be displayed at the bottom of the workflow page to alert you about this issue.
+  -   **Bin Icon**: The bin icon is located at the bottom of the process
+      circle. Clicking on this icon will delete the current process from
+      the pipeline, so exercise caution when deleting a process.
 
 ## Input Parameters
 
 To add input files or values that will be used in the process, you can
 use the "Input parameters" circle located above the Pipelines and
-Processes sections in a pipeline's left sidebar menu in Via Foundry.
+Processes sections in a pipeline's left sidebar menu.
 Just like adding processes, you can use the drag and drop feature to add
 input parameters to your pipeline. Once you drag an input parameter, you
 will see a smaller orange circle representing the input parameter in the
@@ -97,28 +97,28 @@ By using the **Pencil** icon located at the left side of the circle, you
 can edit the name of the input parameter and define additional settings
 for it. Here are the options you can configure:
 
-> -   **Name:** This represents the name of the input parameter, which
->     will be used to reference the process in the Nextflow file. It's
->     important to choose unique names for each input parameter within
->     your pipeline to avoid redundancies, which can yield unwanted
->     errors.
-> -   **Default value:** You can specify a default value for the input
->     parameter, which will be autofilled in the run page. This is
->     useful when you have a commonly used value that can serve as a
->     default for most runs.
-> -   **Dropdown options:** If you want the input parameter to be
->     presented as a dropdown menu on the run page, you can define the
->     dropdown options. Simply enter the options in a comma-separated
->     format. For example, if you have a yes/no parameter, you can enter
->     "yes, no" as the dropdown options.
-> -   **Show Settings:** By clicking the checkbox for this option, you
->     can enable the display of settings for the connected process as a
->     wrench button on the run page. This allows users to access and
->     modify specific settings for that process. If you want to specify
->     alternative processes for the wrench button, you can enter their
->     process names in this field. For example, you can enter
->     "map_STAR, map_RSEM" to show the settings for either the STAR or
->     RSEM mapping process.
+  -   **Name:** This represents the name of the input parameter, which
+      will be used to reference the process in the Nextflow file. It's
+      important to choose unique names for each input parameter within
+      your pipeline to avoid redundancies, which can yield unwanted
+      errors.
+  -   **Default value:** You can specify a default value for the input
+      parameter, which will be autofilled in the run page. This is
+      useful when you have a commonly used value that can serve as a
+      default for most runs.
+  -   **Dropdown options:** If you want the input parameter to be
+      presented as a dropdown menu on the run page, you can define the
+      dropdown options. Simply enter the options in a comma-separated
+      format. For example, if you have a yes/no parameter, you can enter
+      "yes, no" as the dropdown options.
+  -   **Show Settings:** By clicking the checkbox for this option, you
+      can enable the display of settings for the connected process as a
+      wrench button on the run page. This allows users to access and
+      modify specific settings for that process. If you want to specify
+      alternative processes for the wrench button, you can enter their
+      process names in this field. For example, you can enter
+      "map_STAR, map_RSEM" to show the settings for either the STAR or
+      RSEM mapping process.
 
 ![image](../dolphinNext/dolphinnext_images/pipeline_input_rename.png)
 
@@ -166,19 +166,19 @@ name will be transferred to the same directory.
 
 There are three main reasons for creating edges:
 
-> 1.  Establishing connections: Edges are used to connect the inputs and
->     outputs of multiple processes. This allows the data to flow from
->     one process to another, enabling the sequential execution of the
->     pipeline.
-> 2.  Defining input files or values: By creating edges, you can specify
->     the input files or values that will be used as inputs for the
->     processes. This ensures that the required data is provided to each
->     process for its execution.
-> 3.  Selecting published outputs: Edges are also used to select the
->     outputs that will be published in the output directory. By
->     connecting specific output nodes to the edge, you indicate that
->     those files should be included in the final output of the
->     pipeline.
+  1.  Establishing connections: Edges are used to connect the inputs and
+      outputs of multiple processes. This allows the data to flow from
+      one process to another, enabling the sequential execution of the
+      pipeline.
+  2.  Defining input files or values: By creating edges, you can specify
+      the input files or values that will be used as inputs for the
+      processes. This ensures that the required data is provided to each
+      process for its execution.
+  3.  Selecting published outputs: Edges are also used to select the
+      outputs that will be published in the output directory. By
+      connecting specific output nodes to the edge, you indicate that
+      those files should be included in the final output of the
+      pipeline.
 
 When creating edges, the pipeline creation tool, such as Via Foundry,
 typically shows the available nodes that can be connected. This makes it
@@ -198,6 +198,63 @@ applicable when connecting input parameters to multiple processes,
 providing further flexibility in the pipeline creation process.
 
 ![image](../dolphinNext/dolphinnext_images/pipeline_hover.png)
+
+## ETL pipelines and Setting Pipeline Defaults
+
+An ETL (Extract, Transform, Load) pipeline refers to a systematic process of extracting data from various sources, transforming it into a suitable format, and loading it into a target database for further analysis and interpretation. To simplify this process, Via Foundry intruduces using `paramsFiles` feature.
+
+In order to restrict user modifications, you can utilize `paramsFiles` to define specific defaults for your pipeline. These paramsFiles are JSON files that outline the default values of the pipeline. By default, these values are disabled for users to modify. This approach provides you with a clear understanding of the default values used in the pipeline when specified parameters are employed.
+
+To enable this feature, First, click on the "Advanced" tab and enable the "Use paramsFiles" option. The next step is to create two folders in the pipeline repository: first, create a folder named "via," and then within the "via" folder, create another folder named "paramsFiles."  You can use `advanced tab` -> `pipeline files` section to create these folders. Each file added to  `via/paramsFiles` folder will be an option to user to select. Lets check example below:
+
+* MolecularBiology option (Simple Settings):
+![image](../images/paramsFilesMolecular.png)
+
+* Microbiology option (Advanced Settings):
+![image](../images/paramsFilesMicrobiology.png)
+
+    ```
+    {
+        "run_RSEM" : "yes",
+        "run_Adapter_Removal":  "yes",
+        "Adapter_Trimmer_Quality_Module_Adapter_Removal": {"min_length" : 11, "Adapter_Sequence":"AGATCGGAAGAGC"},
+        "via_groups" : "microbiology",
+        "via_params_ask_only" : "reads, mate, genome_build, MultiQC.multiqc_parameters"
+        "via_params_show" : "run_Adapter_Removal"
+    }
+    ```
+
+
+
+
+In the `via/paramsFiles` folder, two JSON files named `MolecularBiology.json` and `Microbiology.json` have been added. Let's focus on the `MolecularBiology.json` file. In this file, specific values have been set for `run_RSEM` and `run_Adapter_Removal`. Instead of including all the parameters in this JSON file, you can use the `via_params_ask_only` keyword to disable all other parameters. In this example, the only parameters that can be edited are `reads`, `mate`, and `genome_build`. This allows users to focus on modifying these particular parameters while leaving the rest unchanged.
+
+In the `Microbiology.json` file, the process variables `min_length` and `Adapter_Sequence` for the `Adapter_Trimmer_Quality_Module_Adapter_Removal` step have been set. These variables define specific values for the minimum length and adapter sequence used in the adapter trimming process. In addition, the `via_groups` parameter is used to restrict the visibility of this parameter set on the user's run page. This means that only certain users or user groups will be able to view and modify these parameters during the pipeline execution, while others will not have access to them.
+
+
+* **paramsFiles Configuration**:
+
+    * **via_groups:** This parameter is used to restrict the visibility of a parameter set on the user's run page. It allows you to specify certain user groups who will be able to see that particular parameter set, while others will not have access to it.
+
+    * **via_params_ask_only:** When using this parameter, you can specify a comma-separated list of values. Only the parameters included in this list will be **editable** by the user on the run page. The rest of the parameters will be disabled and hidden (under `system inputs` section) from the user, preventing any modifications.
+
+    * **via_params_show:** By default, only the parameters defined in via_params_ask_only will be displayed to the user on the run page. All other parameters will be hidden under the "system inputs" section. However, if you want to change this behavior, you can provide a comma-separated string with via_params_show. This will move the specified parameters from the "system inputs" section to the user interface, allowing them to be visible by the user.
+
+
+
+Here are the example run pages of the RNA-Seq pipeline:
+
+* MolecularBiology option is selected:
+
+![image](../images/paramsFilesMolecularRun.png)
+
+* Microbiology option is selected:
+
+![image](../images/paramsFilesMicrobiologyRun.png)
+
+
+
+
 
 ## Pipeline Header Script
 
@@ -491,21 +548,21 @@ In this example, since the run environment is set as
 
 ## Pipeline Details
 
-This section summarizes all processes and input/output parameters used
+This section summarizes all processes used
 by the pipeline to give you an overarching perspective on the
 pipeline's architecture.
 
 ![image](../dolphinNext/dolphinnext_images/pipeline_details.png)
 
-## Permissions, Groups and Publish
+## Permissions and Groups
 
-By default, all new pipelines are only seen by their owner. You can
-share your pipeline with your group by selecting the `Only my groups`
-option in the "Permissions to View" dropdown menu. If you want to make
-it public, you can change the `Publish` option to "Yes". Once the
-pipeline has been verified, it will be published to everyone.
+By default, all new pipelines are only seen by their owner. You have the option to share your pipeline with a specific group that you have created in the profile's "Groups" tab. To do this, choose "Only my group" and select the name of the desired group. Members of that group will then be able to view the run on their run status page.
 
-![image](../dolphinNext/dolphinnext_images/pipeline_perms.png)
+Alternatively, you can set the permissions to "Everyone". With this setting, the pipeline will only be visible to users who know the specific run link. The selected pipeline will not appear on their pipelines page, but they will be able to access it if they have the link.
+
+When collaborating with multiple individuals on a shared pipeline, you have the option to grant write permission to a group by utilizing the "Group Permission to Write" dropdown. This allows you to specify a group and authorize them to make changes and modifications to the pipeline.
+
+![image](../images/pipeline_perms.png)
 
 ## Copying and Revisions
 
