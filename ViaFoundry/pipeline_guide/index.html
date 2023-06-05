@@ -573,6 +573,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#etl-pipelines-and-setting-pipeline-defaults" class="md-nav__link">
+    ETL pipelines and Setting Pipeline Defaults
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pipeline-header-script" class="md-nav__link">
     Pipeline Header Script
   </a>
@@ -798,6 +805,13 @@
         <li class="md-nav__item">
   <a href="#edges" class="md-nav__link">
     Edges
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etl-pipelines-and-setting-pipeline-defaults" class="md-nav__link">
+    ETL pipelines and Setting Pipeline Defaults
   </a>
   
 </li>
@@ -1047,6 +1061,56 @@ between compatible input and output nodes.</p>
 applicable when connecting input parameters to multiple processes,
 providing further flexibility in the pipeline creation process.</p>
 <p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_hover.png"></p>
+<h2 id="etl-pipelines-and-setting-pipeline-defaults">ETL pipelines and Setting Pipeline Defaults</h2>
+<p>An ETL (Extract, Transform, Load) pipeline refers to a systematic process of extracting data from various sources, transforming it into a suitable format, and loading it into a target database for further analysis and interpretation. To simplify this process, Via Foundry intruduces using <code>paramsFiles</code> feature.</p>
+<p>In order to restrict user modifications, you can utilize <code>paramsFiles</code> to define specific defaults for your pipeline. These paramsFiles are JSON files that outline the default values of the pipeline. By default, these values are disabled for users to modify. This approach provides you with a clear understanding of the default values used in the pipeline when specified parameters are employed.</p>
+<p>To enable this feature, you need create <code>via/paramsFiles</code> folder in pipeline repository. You can use <code>advanced tab</code> -&gt; <code>pipeline files</code> section to create these folders. Each file added to  <code>via/paramsFiles</code> folder will be an option to user to select. Lets check example below:</p>
+<ul>
+<li>
+<p>MolecularBiology option (Simple Settings):
+<img alt="image" src="../../images/paramsFilesMolecular.png"></p>
+</li>
+<li>
+<p>Microbiology option (Advanced Settings):
+<img alt="image" src="../../images/paramsFilesMicrobiology.png"></p>
+<div class="highlight"><pre><span></span><code>{
+    "run_RSEM" : "yes",
+    "run_Adapter_Removal":  "yes",
+    "Adapter_Trimmer_Quality_Module_Adapter_Removal": {"min_length" : 11, "Adapter_Sequence":"AGATCGGAAGAGC"},
+    "via_groups" : "microbiology",
+    "via_params_ask_only" : "reads, mate, genome_build, MultiQC.multiqc_parameters"
+    "via_params_show" : "run_Adapter_Removal"
+}
+</code></pre></div>
+</li>
+</ul>
+<p>In the <code>via/paramsFiles</code> folder, two JSON files named <code>MolecularBiology.json</code> and <code>Microbiology.json</code> have been added. Let's focus on the <code>MolecularBiology.json</code> file. In this file, specific values have been set for <code>run_RSEM</code> and <code>run_Adapter_Removal</code>. Instead of including all the parameters in this JSON file, you can use the <code>via_params_ask_only</code> keyword to disable all other parameters. In this example, the only parameters that can be edited are <code>reads</code>, <code>mate</code>, and <code>genome_build</code>. This allows users to focus on modifying these particular parameters while leaving the rest unchanged.</p>
+<p>In the <code>Microbiology.json</code> file, the process variables <code>min_length</code> and <code>Adapter_Sequence</code> for the <code>Adapter_Trimmer_Quality_Module_Adapter_Removal</code> step have been set. These variables define specific values for the minimum length and adapter sequence used in the adapter trimming process. In addition, the <code>via_groups</code> parameter is used to restrict the visibility of this parameter set on the user's run page. This means that only certain users or user groups will be able to view and modify these parameters during the pipeline execution, while others will not have access to them.</p>
+<ul>
+<li>
+<p><strong>paramsFiles Configuration</strong>:</p>
+<ul>
+<li>
+<p><strong>via_groups:</strong> This parameter is used to restrict the visibility of a parameter set on the user's run page. It allows you to specify certain user groups who will be able to see that particular parameter set, while others will not have access to it.</p>
+</li>
+<li>
+<p><strong>via_params_ask_only:</strong> When using this parameter, you can specify a comma-separated list of values. Only the parameters included in this list will be <strong>editable</strong> by the user on the run page. The rest of the parameters will be disabled and hidden (under <code>system inputs</code> section) from the user, preventing any modifications.</p>
+</li>
+<li>
+<p><strong>via_params_show:</strong> By default, only the parameters defined in via_params_ask_only will be displayed to the user on the run page. All other parameters will be hidden under the "system inputs" section. However, if you want to change this behavior, you can provide a comma-separated string with via_params_show. This will move the specified parameters from the "system inputs" section to the user interface, allowing them to be visible by the user.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>Here are the example run pages of the RNA-Seq pipeline:</p>
+<ul>
+<li>MolecularBiology option is selected:</li>
+</ul>
+<p><img alt="image" src="../../images/paramsFilesMolecularRun.png"></p>
+<ul>
+<li>Microbiology option is selected:</li>
+</ul>
+<p><img alt="image" src="../../images/paramsFilesMicrobiologyRun.png"></p>
 <h2 id="pipeline-header-script">Pipeline Header Script</h2>
 <p>This section, located in the <code>Advanced</code> tab of a pipeline's page,
 provides the capability to add additional inputs, scripts, or comments
