@@ -205,7 +205,7 @@ An ETL (Extract, Transform, Load) pipeline refers to a systematic process of ext
 
 In order to restrict user modifications, you can utilize `paramsFiles` to define specific defaults for your pipeline. These paramsFiles are JSON files that outline the default values of the pipeline. By default, these values are disabled for users to modify. This approach provides you with a clear understanding of the default values used in the pipeline when specified parameters are employed.
 
-To enable this feature, you need create `via/paramsFiles` folder in pipeline repository. You can use `advanced tab` -> `pipeline files` section to create these folders. Each file added to  `via/paramsFiles` folder will be an option to user to select. Lets check example below:
+To enable this feature, First, click on the "Advanced" tab and enable the "Use paramsFiles" option. The next step is to create two folders in the pipeline repository: first, create a folder named "via," and then within the "via" folder, create another folder named "paramsFiles."  You can use `advanced tab` -> `pipeline files` section to create these folders. Each file added to  `via/paramsFiles` folder will be an option to user to select. Lets check example below:
 
 * MolecularBiology option (Simple Settings):
 ![image](../images/paramsFilesMolecular.png)
