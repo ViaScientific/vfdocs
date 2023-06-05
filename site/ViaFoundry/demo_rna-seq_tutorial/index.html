@@ -653,40 +653,47 @@
 
 
 <div><h1 id="expected-learning-outcome">Expected learning outcome</h1>
-<p>To understand the basics of Foundry, and do RNA-Seq analysis with sample mouse data.</p>
+<p>To understand the basics of running a pipeline in Foundry by performing RNA-seq analysis on sample mouse data.</p>
 <h1 id="before-you-start">Before you start</h1>
-<p>Please go to <a href="https://www.viafoundry.com">https://www.viafoundry.com</a> and login into your account. If you have an issue about login, please let us know about it (support@viascientific.com). We will set an account for you.</p>
-<h1 id="creating-a-run">Creating a Run</h1>
-<p>Once logged in, click on the <code>Projects</code> section at the top menu and click <code>Add a New Project</code> button. This is the place to configure your project. To access pipelines, click <code>Pipelines</code> tab and then click <code>Add Pipeline</code> button. </p>
+<p>Please go to <a href="https://www.viafoundry.com">https://www.viafoundry.com</a> and login into your account. If you have any issues logging in, please let us know (support@viascientific.com) and we will create an account for you.</p>
+<h1 id="creating-a-project">Creating a Project</h1>
+<p>In Foundry, analysis is organized by project. Each run belongs to a project and a project can consist of multiple runs.</p>
+<p>Once logged in, to create and configure a new project click on the <code>Projects</code> tab in the top menu and select <code>Add a New Project</code> button in the dropdown. In the pop-up, give the project a name (e.g. <code>RNA-seq Tutorial</code>) and click save.</p>
+<p><img alt="image" src="../../rnaseq_images/addproject1.png"></p>
+<h1 id="attaching-pipeline-to-project">Attaching Pipeline to Project</h1>
+<p>To help with organization, pipelines used in a project are attached to that project.</p>
+<p><strong>Note:</strong> The same pipeline can be attached to multiple projects.</p>
+<p>To attach a pipeline select the <code>Pipelines</code> tab and then click the <code>Add Pipeline</code> button. </p>
 <p><img alt="image" src="../../rnaseq_images/addpipeline1.png"></p>
+<p>Locate the <code>RNA-seq Pipeline</code>, click on the <code>Add</code> button, and then close the window.</p>
+<p><img alt="image" src="../../rnaseq_images/addpipeline2.png"></p>
+<p><strong>Note:</strong> For the purposes of this tutorial, be sure to add <code>RNA-seq Pipeline</code>, and <strong>not</strong> <code>RNA-seq Pipeline (NF-Core)</code></p>
+<h1 id="creating-a-run">Creating a Run</h1>
+<p>Once the project is created and a pipeline is attached, you are ready to create a run:</p>
 <ol>
 <li>
-<p>Click on <code>Add</code> button on "RNA-Seq Pipeline" and close the window. </p>
-<p><img alt="image" src="../../rnaseq_images/addpipeline2.png"></p>
+<p>Click the <code>Run</code> button next to the <code>RNA-seq Pipeline</code> entry in the table to load the "Run Page"</p>
+<p><img alt="image" src="../../rnaseq_images/runpipeline1.png"></p>
 </li>
 <li>
-<p>Now click <code>Run</code> button of the pipeline on the table.</p>
-<p><img alt="image" src="../../rnaseq_images/addpipeline3.png"></p>
+<p>On the run page, under "Run Environment" select <code>Via Demo Environment (AWS Batch)</code></p>
 </li>
-<li>
-<p>Run page will be loaded. Under Run Environment, select "Via Demo Environment(AWS Batch)"</p>
-</li>
-<li>Under User Inputs, next to <code>reads</code>, click <code>Enter File</code></li>
-<li>Click <code>Add File</code> button to enter new files.</li>
+<li>In the Inputs section, next to <code>reads</code>, click <code>Enter File</code></li>
+<li>In the files tab, click <code>Add File</code> button to enter new files.</li>
 <li>
 <p>Next to "1. File Location", enter:</p>
 <div class="highlight"><pre><span></span><code>s3://viascientific/run_data/test_data/fastq_mouse
 </code></pre></div>
 </li>
 <li>
-<p>and click the magnifying glass icon. The box below should populate with files like so:</p>
+<p>Click the magnifying glass icon. The box below will populate with files like so:</p>
 <p><img alt="image" src="../../rnaseq_images/addfiles1.png"></p>
 </li>
 <li>
-<p>Next to <code>3. Collection Type</code>, choose <code>Paired List</code></p>
+<p>In the <code>3. Collection Type</code> dropdown, select <code>Paired List</code></p>
 </li>
 <li>
-<p>Under <code>4. File Pattern</code>, next to <code>Forward Pattern</code>, type <code>.1</code>. Similarly,  type <code>.2</code> for <code>Reverse Pattern</code>.</p>
+<p>Under <code>4. File Pattern</code>, next to <code>Forward Pattern</code>, enter <code>.1</code>. Similarly, enter <code>.2</code> for <code>Reverse Pattern</code>.</p>
 <p><img alt="image" src="../../rnaseq_images/addfiles2.png"></p>
 </li>
 <li>
@@ -694,33 +701,34 @@
 <p><img alt="image" src="../../rnaseq_images/addfiles3.png"></p>
 </li>
 <li>
-<p>Next to <code>5. Collection Name</code>, type <code>rna-seq mousetest paired</code> and Click <code>Save Files</code></p>
+<p>Next to <code>5. Collection Name</code>, enter <code>rna-seq mousetest paired</code>. The final three boxes can be left blank. Click <code>Save Files</code></p>
 </li>
-<li>On the "Select/Add Input File" screen which should now have 6 entries, click "Save".</li>
-<li>For "mate", choose "pair"</li>
-<li>For genome_build, choose "mousetest"</li>
-<li>Leave the rest as defaults</li>
-<li>Click Run in the top right. RNA-Seq pipeline runs typically take several minutes to complete for this dataset.</li>
-<li>Navigate to the Log tab and click on log.txt to see progress on your run.</li>
-<li>Once the blue "Running" in the top right changes to a green "Completed" go to the Report tab to see the final reports.</li>
+<li>The "Select/Add Input File" screen will now have 6 entries. Click "Save".</li>
+<li>For "mate", select <code>pair</code></li>
+<li>For "genome_build", select <code>mousetest_mm10</code></li>
+<li>Leave the rest of the inputs as defaults</li>
+<li>Click <code>Run</code> in the top right and then select <code>Start</code>. For this dataset, the RNA-seq pipeline run typically takes several minutes to complete.</li>
+<li>Navigate to the Log tab and click on log.txt to follow the progress of your run.</li>
+<li>Once the status bar in the top right changes from a blue "Running" status to a green "Completed" status go to the Report tab to see the final reports.</li>
 <li>
-<p>Click on MulitiQC, and scroll to find this plot, which shows aligned reads per library:</p>
+<p>Click on <code>Mulitiqc</code> to open the "MultiQC" section. Scroll down to find this plot, which shows aligned reads per library:</p>
 <p><img alt="image" src="../../rnaseq_images/report1.png"></p>
 </li>
 <li>
-<p>Click on Summary to check mapping rates:</p>
+<p>Open the <code>Overall Summary</code> section to check mapping rates:</p>
 <p><img alt="image" src="../../rnaseq_images/report2.png"></p>
 </li>
 <li>
-<p>Click on RSEM Summary to download count table:</p>
+<p>Open the <code>RSEM Module</code> section. that has a "View Format" of "Table" to download a count table:</p>
 <p><img alt="image" src="../../rnaseq_images/report3.png"></p>
 </li>
 <li>
-<p>Click on DEBrowser to do Differential Expression Analysis.</p>
+<p>Open the <code>RSEM Module</code> section. that has a "View Format" of "App" and select the "DEBrowser App" and click "Launch App" to perform Differential Expression Analysis with DEBrowser.</p>
 <p><img alt="image" src="../../rnaseq_images/report4.png"></p>
 </li>
 </ol>
-<p>Congratulations! You have run and tested a RNA-Seq pipeline on Foundry!</p></div>
+<p><strong>Note:</strong> For the purposes of speeding up the runtime of this tutorial, the demo dataset has been downsampled to only include a few genes. Differential expression analysis graphs will look very sparse with this dataset.</p>
+<p>Congratulations! You have run and tested a RNA-seq pipeline on Foundry!</p></div>
 
 
 
@@ -745,11 +753,6 @@
       © 2023 by Via Scientific
     </div>
   
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
   
 </div>
       

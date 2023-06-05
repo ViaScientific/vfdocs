@@ -199,6 +199,63 @@ providing further flexibility in the pipeline creation process.
 
 ![image](../dolphinNext/dolphinnext_images/pipeline_hover.png)
 
+## ETL pipelines and Setting Pipeline Defaults
+
+An ETL (Extract, Transform, Load) pipeline refers to a systematic process of extracting data from various sources, transforming it into a suitable format, and loading it into a target database for further analysis and interpretation. To simplify this process, Via Foundry intruduces using `paramsFiles` feature.
+
+In order to restrict user modifications, you can utilize `paramsFiles` to define specific defaults for your pipeline. These paramsFiles are JSON files that outline the default values of the pipeline. By default, these values are disabled for users to modify. This approach provides you with a clear understanding of the default values used in the pipeline when specified parameters are employed.
+
+To enable this feature, you need create `via/paramsFiles` folder in pipeline repository. You can use `advanced tab` -> `pipeline files` section to create these folders. Each file added to  `via/paramsFiles` folder will be an option to user to select. Lets check example below:
+
+* MolecularBiology option (Simple Settings):
+![image](../images/paramsFilesMolecular.png)
+
+* Microbiology option (Advanced Settings):
+![image](../images/paramsFilesMicrobiology.png)
+
+    ```
+    {
+        "run_RSEM" : "yes",
+        "run_Adapter_Removal":  "yes",
+        "Adapter_Trimmer_Quality_Module_Adapter_Removal": {"min_length" : 11, "Adapter_Sequence":"AGATCGGAAGAGC"},
+        "via_groups" : "microbiology",
+        "via_params_ask_only" : "reads, mate, genome_build, MultiQC.multiqc_parameters"
+        "via_params_show" : "run_Adapter_Removal"
+    }
+    ```
+
+
+
+
+In the `via/paramsFiles` folder, two JSON files named `MolecularBiology.json` and `Microbiology.json` have been added. Let's focus on the `MolecularBiology.json` file. In this file, specific values have been set for `run_RSEM` and `run_Adapter_Removal`. Instead of including all the parameters in this JSON file, you can use the `via_params_ask_only` keyword to disable all other parameters. In this example, the only parameters that can be edited are `reads`, `mate`, and `genome_build`. This allows users to focus on modifying these particular parameters while leaving the rest unchanged.
+
+In the `Microbiology.json` file, the process variables `min_length` and `Adapter_Sequence` for the `Adapter_Trimmer_Quality_Module_Adapter_Removal` step have been set. These variables define specific values for the minimum length and adapter sequence used in the adapter trimming process. In addition, the `via_groups` parameter is used to restrict the visibility of this parameter set on the user's run page. This means that only certain users or user groups will be able to view and modify these parameters during the pipeline execution, while others will not have access to them.
+
+
+* **paramsFiles Configuration**:
+
+    * **via_groups:** This parameter is used to restrict the visibility of a parameter set on the user's run page. It allows you to specify certain user groups who will be able to see that particular parameter set, while others will not have access to it.
+
+    * **via_params_ask_only:** When using this parameter, you can specify a comma-separated list of values. Only the parameters included in this list will be **editable** by the user on the run page. The rest of the parameters will be disabled and hidden (under `system inputs` section) from the user, preventing any modifications.
+
+    * **via_params_show:** By default, only the parameters defined in via_params_ask_only will be displayed to the user on the run page. All other parameters will be hidden under the "system inputs" section. However, if you want to change this behavior, you can provide a comma-separated string with via_params_show. This will move the specified parameters from the "system inputs" section to the user interface, allowing them to be visible by the user.
+
+
+
+Here are the example run pages of the RNA-Seq pipeline:
+
+* MolecularBiology option is selected:
+
+![image](../images/paramsFilesMolecularRun.png)
+
+* Microbiology option is selected:
+
+![image](../images/paramsFilesMicrobiologyRun.png)
+
+
+
+
+
 ## Pipeline Header Script
 
 This section, located in the `Advanced` tab of a pipeline's page,
