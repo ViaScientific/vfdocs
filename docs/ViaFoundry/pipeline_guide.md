@@ -199,6 +199,9 @@ providing further flexibility in the pipeline creation process.
 
 ![image](../dolphinNext/dolphinnext_images/pipeline_hover.png)
 
+
+
+
 ## ETL pipelines and Setting Pipeline Defaults
 
 An ETL (Extract, Transform, Load) pipeline refers to a systematic process of extracting data from various sources, transforming it into a suitable format, and loading it into a target database for further analysis and interpretation. To simplify this process, Via Foundry intruduces using `paramsFiles` feature.
@@ -253,8 +256,29 @@ Here are the example run pages of the RNA-Seq pipeline:
 ![image](../images/paramsFilesMicrobiologyRun.png)
 
 
+## Exporting Pipeline Parameters
 
+To facilitate the exporting of used parameters in a pipeline, we have implemented a process called `publish_params_as_JSON`. This process can be found by using the search bar on the pipeline page. To enable this capability in a specific pipeline, you can simply drag and drop the `publish_params_as_JSON` process into the desired location.
 
+Once you have added the process to the pipeline, please drag and drop the `output parameter` to the workflow and rename it as `logs`. The following example workflow demonstrates this process:
+
+![image](../images/publish_params_as_JSON_workflow.png)
+
+After the run completes, a file named `run_params.json` will be generated under the "logs" folder, containing the exported parameters.
+
+```
+[
+    {
+        "Adapter_Removal": {
+            "min_length" : 11, 
+            "Adapter_Sequence":"AGATCGGAAGAGC"
+        },
+        "bed": "s3://viafoundry/genome_data/mouse/mm10/refseq/genes/genes.bed", 
+        "hisat2Index": "s3://viafoundry/genome_data/mouse/mm10/refseq/Hisat2Index", 
+        "outdir": "s3://viafoundry/runs/report159"
+    }
+]
+```
 
 ## Pipeline Header Script
 
