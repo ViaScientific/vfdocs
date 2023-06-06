@@ -580,6 +580,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#exporting-pipeline-parameters" class="md-nav__link">
+    Exporting Pipeline Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pipeline-header-script" class="md-nav__link">
     Pipeline Header Script
   </a>
@@ -812,6 +819,13 @@
         <li class="md-nav__item">
   <a href="#etl-pipelines-and-setting-pipeline-defaults" class="md-nav__link">
     ETL pipelines and Setting Pipeline Defaults
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exporting-pipeline-parameters" class="md-nav__link">
+    Exporting Pipeline Parameters
   </a>
   
 </li>
@@ -1111,6 +1125,23 @@ providing further flexibility in the pipeline creation process.</p>
 <li>Microbiology option is selected:</li>
 </ul>
 <p><img alt="image" src="../../images/paramsFilesMicrobiologyRun.png"></p>
+<h2 id="exporting-pipeline-parameters">Exporting Pipeline Parameters</h2>
+<p>To facilitate the exporting of used parameters in a pipeline, we have implemented a process called <code>publish_params_as_JSON</code>. This process can be found by using the search bar on the pipeline page. To enable this capability in a specific pipeline, you can simply drag and drop the <code>publish_params_as_JSON</code> process into the desired location.</p>
+<p>Once you have added the process to the pipeline, please drag and drop the <code>output parameter</code> to the workflow and rename it as <code>logs</code>. The following example workflow demonstrates this process:</p>
+<p><img alt="image" src="../../images/publish_params_as_JSON_workflow.png"></p>
+<p>After the run completes, a file named <code>run_params.json</code> will be generated under the "logs" folder, containing the exported parameters.</p>
+<div class="highlight"><pre><span></span><code>[
+    {
+        "Adapter_Removal": {
+            "min_length" : 11, 
+            "Adapter_Sequence":"AGATCGGAAGAGC"
+        },
+        "bed": "s3://viafoundry/genome_data/mouse/mm10/refseq/genes/genes.bed", 
+        "hisat2Index": "s3://viafoundry/genome_data/mouse/mm10/refseq/Hisat2Index", 
+        "outdir": "s3://viafoundry/runs/report159"
+    }
+]
+</code></pre></div>
 <h2 id="pipeline-header-script">Pipeline Header Script</h2>
 <p>This section, located in the <code>Advanced</code> tab of a pipeline's page,
 provides the capability to add additional inputs, scripts, or comments
