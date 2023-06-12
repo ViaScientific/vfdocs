@@ -91,6 +91,31 @@ simply use the `GEO Files` tab. Here are the few examples for GEO ID:
 
 ![image](../images/files_geo.png)
 
+### Using Files Belongs to Multiple Folders
+
+When you add a star symbol (*) at the end of your search, like this:
+
+```
+s3://viascientific/s3_merge/test*
+```
+
+It indicates that you want to search for files within multiple folders. In this case, it will search for files within the "test1" and "test2" directories.
+
+Here are the files that belong to folders inside the "test1" and "test2" directories:
+
+```
+s3://viascientific/s3_merge/test1/sample1_RUN01_S1.R1.fastq.gz
+s3://viascientific/s3_merge/test1/sample1_RUN01_S1.R1.fastq.gz
+s3://viascientific/s3_merge/test2/sample1_RUN02_S1.R1.fastq.gz
+s3://viascientific/s3_merge/test2/sample1_RUN02_S1.R2.fastq.gz
+```
+
+### Auto-Merge Feature
+
+If you use a glob pattern to specify files that share a common pattern, you can use this feature to merge those files automatically. In this example, the auto-merging pattern is "_RUN*_S?". This pattern indicates that you want to merge files that have the pattern "_RUN" followed by any number of characters, then followed by "_S" and a single character.
+
+By applying this auto-merging pattern to the previous example, the files listed above would be merged into one pair of files for single sample.
+
 
 ## How To Cite Us
 
