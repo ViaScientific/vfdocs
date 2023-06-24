@@ -1,6 +1,6 @@
 # Network Explorer Tutorial
 
-<center><img src="../images/network_explorer.png" width="99%"></center>
+![image](../images/network_explorer.png)
 
 ## Launching Network Explorer
 
@@ -13,7 +13,7 @@ To launch the Network Explorer app in stand-alone mode:
 3. Search for `Network Explorer` or find the app in the table
 4. Click `Launch`
 
-<center><img src="../images/network_explorer_launch_app_stand_alone.png" width="95%"></center>
+![image](../images/network_explorer_launch_app_stand_alone.png)
 
 ### Launching from Report Tab
 
@@ -23,7 +23,7 @@ The Network Explorer app can also be launched with pre-loaded data following a c
 2. Select any file with an .Rmd extension (it doesn't matter which one)
 3. Click `Launch` in the Network Explorer box
 
-<center><img src="../images/network_explorer_launch_app_stand_alone.png" width="95%"></center>
+![image](../images/network_explorer_launch_app_stand_alone.png)
 
 ## Network Input
 
@@ -35,7 +35,7 @@ All annotated protein-protein interactions in the STRING database for a specifie
 
 The "Include Secondary Neighbors" toggle will add all annotated interactions that are two degrees away from the specified protein.
 
-<center><img src="../images/network_explorer_input_stringDB.png" width="20%"></center>
+![image](../images/network_explorer_input_stringDB.png)
 
 ### User Defined
 
@@ -48,7 +48,7 @@ where an interaction exists from the source to the target. Addition columns may 
 
 **Note: The uploaded file must contain columns that are exactly "source" and "target"**
 
-<center><img src="../images/network_explorer_input_upload.png" width="20%"></center>
+![image](../images/network_explorer_input_upload.png)
 
 ## Node Options
 
@@ -58,19 +58,19 @@ The minimal metadata file consists of a column called exactly "gene". The values
 
 The node color and size can be controlled by metadata information and calculated values (node centrality) by selecting a column. Only columns with underlying numeric data will be available.
 
-<center><img src="../images/network_explorer_node_options.png" width="20%"></center>
+![image](../images/network_explorer_node_options.png)
 
 ## Layout
 
 The network layout can be changed by selecting the desired layout from the drop down in the layout panel.
 
-<center><img src="../images/network_explorer_layout.png" width="20%"></center>
+![image](../images/network_explorer_layout.png)
 
 ## Centrality
 
 Centrality will be calculated for every node depending. The centrality algoritm can be selected in the drop-down in the centrality panel. 
 
-<center><img src="../images/network_explorer_centrality_betweenness.png" width="20%"></center>
+![image](../images/network_explorer_centrality_betweenness.png)
 
 Available algorithms are:
 
@@ -80,13 +80,13 @@ Available algorithms are:
 
 Depending on the algorithm, other parameters may be necessary.
 
-<center><img src="../images/network_explorer_centrality_closeness.png" width="20%"></center>
+![image](../images/network_explorer_centrality_closeness.png)
 
 ## Zoom
 
 The network can automatically be zoomed to fit all or the currently selected nodes in the zoom panel.
 
-<center><img src="../images/network_explorer_zoom.png" width="20%"></center>
+![image](../images/network_explorer_zoom.png)
 
 ## Node Selection
 
@@ -96,10 +96,10 @@ Nodes can be unselected by clicking on a selected node or all nodes can be unsel
 
 The "get neighboring nodes" button will select all nodes that neighbor the currently selected node(s)
 
-<center><img src="../images/network_explorer_node_selection.png" width="20%"></center>
+![image](../images/network_explorer_node_selection.png)
 
 ## Node Metadata
 
 The node data can be found by selecting the "Node Properties" tab above the graph. This will contain internally calculated values as well as any uploaded metadata.
 
-<center><img src="../images/network_explorer_node_properties.png" width="60%"></center>
+![image](../images/network_explorer_node_properties.png)

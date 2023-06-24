@@ -1,6 +1,6 @@
 # GSEA Explorer Tutorial
 
-<img src="../images/gsea_explorer.png" width="99%">
+![image](../images/gsea_explorer.png)
 
 The goal of Gene Set Enrichment Analysis (GSEA) is to determine whether a particular gene set or pathway is enriched in the gene expression data, indicating its potential biological relevance to the studied condition. It operates on the principle that biologically relevant gene sets or pathways are likely to exhibit coordinated changes in expression, rather than individual genes.
 
@@ -16,7 +16,7 @@ The GSEA Explorer application can be launched either in stand-alone mode or afte
 
 3. Click the `Launch` Button
 
-<img src="../images/gsea_explorer_launch_stand_alone.png" width="99%">
+![image](../images/gsea_explorer_launch_stand_alone.png)
 
 ### Launching from Report Tab
 
@@ -26,7 +26,7 @@ The GSEA Explorer application can be launched either in stand-alone mode or afte
 
 3. Click the `Launch` button in the GSEA Explorer card
 
-<img src="../images/gsea_explorer_launch_report_tab.png" width="99%">
+![image](../images/gsea_explorer_launch_report_tab.png)
 
 ## Inputs
 
