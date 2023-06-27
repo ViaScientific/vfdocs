@@ -103,11 +103,11 @@ ADD gsea-explorer /gsea-explorer/
 CMD ["R", "-e", "shiny::runApp('/gsea-explorer')"]
 ```
 
-In the above example, a minimal base image (rocker/shiny:4.3.0) was selected that supports shiny applications. Only the necessary system libraries and R packages are installed. The entire app directory (gsea-explorer) is copied onto the image. Finally, the app is automatically started when the app is run.
+In the above example, a minimal base image (rocker/shiny:4.3.0) was selected that supports Shiny applications. Only the necessary system libraries and R packages are installed. The entire app directory (gsea-explorer) is copied onto the image. Finally, the app is automatically started when the app is run.
 
-[Posit's Package Manager](https://packagemanager.posit.co/client/#/repos/2/packages/A3) is a useful tool in determining which system libraries are necessary for each R package. Navegate to the cran or bioconductor package of interest and look for the "Install System Prerequisities" section. Select the distribution that matches your base image.
+[Posit's Package Manager](https://packagemanager.posit.co/client/#/repos/2/packages/A3) is a useful tool in determining which system libraries are necessary for each R package. Navegate to the cran or bioconductor package of interest and look for the "Install System Prerequisites" section. Select the distribution that matches your base image.
 
-Additionally, when using `install.packages()`, setting the `repos` argument to use posit's package manager allows you to both download pre-built binariers (significantly speeding up docker build time) as well as freezing the version of each library to a specific date in time.
+Additionally, when using `install.packages()`, setting the `repos` argument to use posit's package manager allows you to both download pre-built binariers (significantly speeding up Docker's build time) as well as freezing the version of each library to a specific date in time.
 
 ### Port Selection
 

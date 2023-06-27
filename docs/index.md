@@ -23,6 +23,7 @@
 ## Developer Guide
 - [Pipeline Guide](ViaFoundry/pipeline_guide.md)
 - [Process Guide](ViaFoundry/process.md)
+- [Developer FAQ](ViaFoundry/developer_faq.md)
 
 ## Administrator Guide
 - [Installation](ViaFoundry/admin-installation.md)
