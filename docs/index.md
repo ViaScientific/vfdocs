@@ -23,6 +23,7 @@
 ## Developer Guide
 - [Pipeline Guide](ViaFoundry/pipeline_guide.md)
 - [Process Guide](ViaFoundry/process.md)
+- [Application Guide](ViaFoundry/app_developer_guide.md)
 
 ## Application Library
 - [GSEA Explorer](ViaFoundry/gsea_explorer.md)
