@@ -88,21 +88,29 @@ For help creating pipelines, you can reference [this guide](pipeline_guide.md). 
 
 ### How can I merge files from different processes?
 
-| Input(s)                                              | Input Type                                     | Input Name(s)                              | Output(s)  | Output Name   | Script                                                         | Result                                                | Result Notes                                                     |
-| ----------------------------------------------------- | ---------------------------------------------- | ------------------------------------------ | ---------- | ------------- | -------------------------------------------------------------- | ----------------------------------------------------- | ---------------------------------------------------------------- |
-| Arbitrary FastQ file                                  | FastQ file                                     | read                                       | Text file  | counts.txt    | wc -l $read \| awk '{print $0/4}' > count.txt                   | Text file with the number of reads in the Fastq file   | N/A                                                              |
-| Group of multiple single-end read files                | FastQ file                                     | read                                       | Text file  | counts.txt    | wc -l $read \| awk '{print $0/4}' > count.txt                   | Text file containing only the number of reads in the last input file | Previous files get overwritten with each successive cycle of the process |
-| Group of multiple single-end read files                | Set of ["shortened filename string", filename in directory] | val(name), file(read)                                       | Text file  | \*.counts.txt | wc -l $read \| awk '{print $0/4}' > ${(input_name)}.count.txt   | Three separate text files, each containing the read count for one of the input files | Output files are named (input filename with extension).counts.txt   |
-| Group of multiple single-end read files                | Set of ["shortened filename string", filename in directory] | val(name), file(read)                      | Text file  | \*{name}.txt  | wc -l $read \| awk '{print $0/4}' > ${name}.txt                 | Three separate text files, each containing the read count for one of the input files | Output files are named (input filename).txt                      |
-| Group of multiple paired-end read files, additional mate input set to = pair | Set of ["shortened filename string", end 1 filename, end 2 filename] | val(name), file(read)                      | Text file  | \*{name}.txt  | wc -l $read \| awk '{print $0/4}' > ${name}.txt                 | Three separate text files, containing the read counts for each of a pair of input files | N/A                                                              |
-
-Once you've created several files of the same extension, you can merge them by using an intermediate process and Nextflow's `collect` operator, which accumulates all the files given to it as input and returns them in an aggregated format. For instance, you could connect the process outlined in the bottom row of the table above to a process called "merge_tables", represented as such:
-
-| Input(s)                                              | Input Type                                     | Input Name(s)                              | Output(s)  | Output Name   | Operator | Script                                                         | Result                                                | Result Notes                                                     |
-| ----------------------------------------------------- | ---------------------------------------------- | ------------------------------------------ | ---------- | ------------- | -------- | -------------------------------------------------------------- | ----------------------------------------------------- | ---------------------------------------------------------------- |
-| Text file (representing outputs of previous process)   | Text file                                      | txtFiles                                   | TSV file   | counts.tsv    | collect  | Line 1: echo -e 'filename\tcount' > counts.tsv \| \| Line 2: cat $txtFiles >> counts.tsv | Table containing filenames and read counts for all input files | N/A                                                              |
+#### Problem
+You have multiple files of the same extension created by one or more processes and you want to combine them as inputs of a separate process.
 
 
+#### Solution
+Once you've created several files of the same extension, you can merge them by using an intermediate process and Nextflow's `collect` operator, which accumulates all the files given to it as input and returns them in an aggregated format. For instance, you could connect a process that operates on a list of Fastq files to a process called "merge_tables", represented as such:
+
+#### Sample Solution Process
+
+|                  |                  |
+| ---------------- | ---------------- |
+| **Input(s)**         | Text file (representing outputs of previous process)   |
+| **Input Type**       | .txt file                                      |
+| **Input Name(s)**    | txtFiles                                   |
+| **Output(s)**        | TSV file   |
+| **Output Name**      | counts.tsv    |
+| **Operator**         | collect  |
+| **Script**           | Line 1: echo -e 'filename\tcount' > counts.tsv \| \| Line 2: cat $txtFiles >> counts.tsv |
+| **Result**           | Table containing filenames and read counts for all input files |
+| **Result Notes**     | N/A                                                              |
+
+
+#### More Info
 For a visual aid, look at these photos of a pipeline that merges the results of the count_reads process within merge_tables:
 
 ![image](../images/merge_pipeline.png)
@@ -116,12 +124,51 @@ This cleanly merges the results into one table, counts.tsv. It's a simple exampl
 
 ### How can I parallelize processes for the files generated in one process?
 
-To parallelize processes for the files generated in one process, you can use Nextflow's `flatten` or `flatMap` operators. The former transforms a nested channel containing multiple channels or a nested collection into a single-level (flat) collection of files, which lets Nextflow send the files to separate instances of a process, enabling parallel execution of those files. Not dissimilarly, the `flatMap` operator applies some function to every item emitted by a channel, returning the outputted items as a new flat channel, which can then be passed into separate instances of a process, permitting parallelization.
+#### Problem
+A process you're using produces multiple files at once and you'd like to parallelize the outputs so they're handled independently.
+
+#### Solution
+You can use Nextflow's `flatten` or `flatMap` operators. The former transforms a nested channel containing multiple channels or a nested collection into a single-level (flat) collection of files, which lets Nextflow send the files to separate instances of a process, enabling parallel execution of those files. Not dissimilarly, the `flatMap` operator applies some function to every item emitted by a channel, returning the outputted items as a new flat channel, which can then be passed into separate instances of a process, permitting parallelization. In fact, you can parallelize in a rather similar fashion to merging; just replace the `collect` operator with `flatten` like so.
+
+#### Sample Solution Process
+|                  |                  |
+| ---------------- | ---------------- |
+| **Input(s)**         | Text file (representing outputs of previous process)   |
+| **Input Type**       | .txt file                                      |
+| **Input Name(s)**    | txtFiles                                   |
+| **Output(s)**        | TSV file   |
+| **Output Name**      | counts.tsv    |
+| **Operator**         | flatten  |
+| **Script**           | Line 1: echo -e 'filename\tcount' > counts.tsv \| \| Line 2: cat $txtFiles >> counts.tsv |
+| **Result**           | Table containing filenames and read counts for all input files |
+| **Result Notes**     | N/A                                                              |
+
+
+### How can I handle paired end files?
+
+#### Problem
+You'd like to run analysis on paired-end files where two files correspond to the same filename/read.
+
+#### Solution
+Use Foundry's built-in "set" input quantifier, where each value of an input is represented as ["abbreviated filename", (list of filenames with extension)]. For instance, a set of three single-end FastQ files could be passed into a process via the set quantifier as 
+```{["control_rep1", control_rep1.fastq], ["control_rep2", control_rep2.fastq], ["control_rep3", control_rep3.fastq]}```. Continuing with this example, if you wanted to pass in a set of paired-end reads, you'd use a format like ```{["control_rep1", control_rep1.R1.fastq, control_rep1.R2.fastq], ["control_rep2", control_rep2.R1.fastq, control_rep2.R2.fastq], ["control_rep3", control_rep3.R1.fastq, control_rep3.R2.fastq]}```. Then, you'd add a "mate" input to the process, selecting its value as "pair" on the runpage. From there, simply use a process like this:
+
+#### Sample Process
+|                  |                                               |
+| ---------------- | --------------------------------------------- |
+| **Input(s)**         | Group of multiple paired-end read files, additional mate input set to = pair   |
+| **Input Type**       | Set of FastQ filename strings and files                                      |
+| **Input Name(s)**    | val(name), file(read)                                                        |
+| **Output(s)**        | Text file                                                                    |
+| **Output Name**      | *{name}.txt                                                                  |
+| **Operator**         | N/A                                                                          |
+| **Script**           | wc -l $read \| awk '{print $0/4}' > ${name}.txt                               |
+| **Result**           | Three separate text files, each containing the read counts for each of a pair of input files |
+| **Result Notes**     | Groups both pairs of the same read into a single text file                    |
+
+
 
 ## Support
 
 For any questions or help, please reach out to
 <support@viascientific.com> with your name and question.
-
-
-
