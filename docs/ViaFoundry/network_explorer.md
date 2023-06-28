@@ -68,7 +68,7 @@ The network layout can be changed by selecting the desired layout from the drop 
 
 ## Centrality
 
-Centrality will be calculated for every node depending. The centrality algoritm can be selected in the drop-down in the centrality panel. 
+Centrality will be calculated for every node depending. The centrality algorithm can be selected in the drop-down in the centrality panel. 
 
 ![image](../images/network_explorer_centrality_betweenness.png)
 
