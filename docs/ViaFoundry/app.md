@@ -37,14 +37,13 @@ The Jupyter Notebook app, due to its interactive and flexible nature, allows bio
 
 GSEA Explorer is an R library that offers a convenient method for conducting and visualizing Gene Set Enrichment Analysis (GSEA). GSEA aims to assess whether a specific gene set or pathway is enriched in gene expression data, indicating its potential biological significance in the studied condition. The GSEA Explorer application can be accessed after executing Foundry's complete RNA-sequencing pipeline or the standalone Differential Expression module. By leveraging GSEA Explorer, researchers can gain valuable insights into the functional implications of gene sets and pathways, aiding in the interpretation of RNA-seq results and facilitating a deeper understanding of biological mechanisms.
 
-![image](../images/gsea-app.png)
+![image](../images/gsea_explorer.png)
 
 ## -   **Shiny App - Network Explorer**
 
 The Network Explorer allows bioinformaticians to explore and analyze these complex networks, helping them uncover hidden patterns, identify key players, and understand the underlying biological mechanisms. The Network Explorer application can be launched after running Foundry's full RNA-sequencing pipeline or the stand-alone Differential Expression module.
 
-![image](../images/network_explorer-app.png)
-
+![image](../images/network_explorer.png)
 
 ## Support
 
