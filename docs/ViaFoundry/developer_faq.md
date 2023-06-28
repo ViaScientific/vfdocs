@@ -149,7 +149,7 @@ Use Foundry's built-in "set" input quantifier, where each value of an input is r
 | **Run Inputs (on runpage)**         | **mate** == "pair" <br> **reads** == (set of user-chosen paired-end read files)   |
 | **Process Inputs (on process page)**  |  **Input Parameters**: reads (*fastq, set*), mate (*val*) <br> **Parameter Names**: "val(name), file(read)", "mate" <br> **Parameter Operators**: None        |
 | **Process Outputs**        | **Output Parameter**: txtFile (*txt, file*) <br> **Parameter Name**: "${name}.txt"  |
-| **Script**           | if [ '${mate} == 'pair' ]; then <br> <span style="white-space: pre;">&#9;</span>  wc -l $read \| awk '{print \$2 "\\t" \$1/4}' \| head -2 > ${name}.txt <br> else <br> <span style="white-space: pre;">&#9;</span>  wc -l $read \| awk '{print \$2 "\\t" \$1/4}' > ${name}.txt <br> fi|
+| **Script**           | if [ '${mate} == 'pair' ]; then <br> <span style="white-space: pre;">&#9;</span>  wc -l \$read \| awk '{print \$2 "\\t" \$1/4}' \| head -2 > \${name}.txt <br> else <br> <span style="white-space: pre;">&#9;</span>  wc -l $read \| awk '{print \$2 "\\t" \$1/4}' > \${name}.txt <br> fi|
 | **Result**           | Three separate text files, each containing the read counts for each of a pair of input files |
 | **Result Notes**     | Groups both pairs of the same read into a single text file                    |
 
