@@ -99,26 +99,21 @@ Once you've created several files of the same extension, you can merge them by u
 
 |                  |                  |
 | ---------------- | ---------------- |
-| **Input(s)**         | Text file (representing outputs of previous process)   |
-| **Input Type**       | .txt file                                      |
-| **Input Name(s)**    | txtFiles                                   |
-| **Output(s)**        | TSV file   |
-| **Output Name**      | counts.tsv    |
-| **Operator**         | collect  |
-| **Script**           | Line 1: echo -e 'filename\tcount' > counts.tsv \| \| Line 2: cat $txtFiles >> counts.tsv |
-| **Result**           | Table containing filenames and read counts for all input files |
-| **Result Notes**     | N/A                                                              |
+| **Process Input**   | **Input Parameter**: txtFile (*txt, file*)<br> **Parameter Name**: txtFiles <br> **Parameter Operator**: collect <br> *Note*: This input represents the .txt output of a previous process |
+| **Process Output**   | **Output Parameter**: outFileTSV (*tsv, file*) <br> **Parameter Name**: "counts.tsv"   |
+| **Script**           | echo -e 'filename\tcount' > counts.tsv <br> cat $txtFiles >> counts.tsv |
+| **Result**           | TSV-formatted table containing filenames and read counts for all input files |
 
 
 #### More Info
 For a visual aid, look at these photos of a pipeline that merges the results of the count_reads process within merge_tables:
 
 ![image](../images/merge_pipeline.png)
-![image](../images/merge_tables_process.png)
+![image](../images/updated_merge_tables.png)
 
 This cleanly merges the results into one table, counts.tsv. It's a simple example, so to reinforce the point, here's an example of a process used in the RNA-Seq pipeline, which reinforces the usefulness of merging with the `collect` operator. Merge_TSV_Files concatenates multiple TSV files containing the same header into one TSV file, as shown here:
 
-![image](../images/merge_tsv_files.png)
+![image](../images/updated_merge_tsv_files.png)
 
 **Important**: Make sure that, when you're using the `collect` operator, the output you wish to `collect` is in a file format; otherwise, the operator will not work properly.
 
@@ -133,15 +128,10 @@ You can use Nextflow's `flatten` or `flatMap` operators. The former transforms a
 #### Sample Solution Process
 |                  |                  |
 | ---------------- | ---------------- |
-| **Input(s)**         | Text file (representing outputs of previous process)   |
-| **Input Type**       | .txt file                                      |
-| **Input Name(s)**    | txtFiles                                   |
-| **Output(s)**        | TSV file   |
-| **Output Name**      | counts.tsv    |
-| **Operator**         | flatten  |
-| **Script**           | Line 1: echo -e 'filename\tcount' > counts.tsv \| \| Line 2: cat $txtFiles >> counts.tsv |
+| **Process Input**    | **Input Parameter**: txtFile (*txt, file*) <br> **Parameter Name**: txtFiles <br> **Parameter Operator**: flatten <br> *Note*: This input represents the output of a previous process, parallelized by Nextflow's *flatten* operator |
+| **Process Output**        | **Output Parameter**: outFileTSV (*tsv, file*) <br> **Parameter Name**: "counts.tsv"    |
+| **Script**           | echo -e 'filename\tcount' > counts.tsv <br> Line 2: cat $txtFiles >> counts.tsv |
 | **Result**           | Table containing filenames and read counts for all input files |
-| **Result Notes**     | N/A                                                              |
 
 
 ### How can I handle paired end files?
@@ -156,13 +146,10 @@ Use Foundry's built-in "set" input quantifier, where each value of an input is r
 #### Sample Process
 |                  |                                               |
 | ---------------- | --------------------------------------------- |
-| **Input(s)**         | Group of multiple paired-end read files, additional mate input set to = pair   |
-| **Input Type**       | Set of FastQ filename strings and files                                      |
-| **Input Name(s)**    | val(name), file(read)                                                        |
-| **Output(s)**        | Text file                                                                    |
-| **Output Name**      | *{name}.txt                                                                  |
-| **Operator**         | N/A                                                                          |
-| **Script**           | wc -l $read \| awk '{print $0/4}' > ${name}.txt                               |
+| **Run Inputs (on runpage)**         | **mate** == "pair" <br> **reads** == (set of user-chosen paired-end read files)   |
+| **Process Inputs (on process page)**  |  **Input Parameters**: reads (*fastq, set*), mate (*val*) <br> **Parameter Names**: "val(name), file(read)", "mate" <br> **Parameter Operators**: None        |
+| **Process Outputs**        | **Output Parameter**: txtFile (*txt, file*) <br> **Parameter Name**: "${name}.txt"  |
+| **Script**           | if [ '${mate} == 'pair' ]; then <br> <span style="tab-size: 4;">&nbsp;&nbsp;&nbsp;&nbsp;</span>   wc -l $read \| awk '{print \$2 "\\t" \$1/4}' \| head -2 > ${name}.txt <br> else <br> <span style="tab-size: 4;">&nbsp;&nbsp;&nbsp;&nbsp;</span>   wc -l $read \| awk '{print \$2 "\\t" \$1/4}' > ${name}.txt <br> fi|
 | **Result**           | Three separate text files, each containing the read counts for each of a pair of input files |
 | **Result Notes**     | Groups both pairs of the same read into a single text file                    |
 
