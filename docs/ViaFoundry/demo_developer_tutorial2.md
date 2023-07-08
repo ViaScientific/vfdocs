@@ -18,7 +18,7 @@ Questions to be answered:
 14. How to use my python or R script in (in bash/python or R script) process?
     import subprocess as sp
     functions_py_path = sp.getoutput("which functions.py")
-    # if you prefer you can copy script to current work folder
+    if you prefer you can copy script to current work folder
     sp.call("cp "+functions_py_path + " .", shell = True)
 15. How to convert groovy array into python or R array?
     list to ["",""] list for R and python
