@@ -27,3 +27,8 @@ Questions to be answered:
     #name = name.toString().replaceAll("\\[", "").replaceAll("\\]","")
     println name -> "a","b"
 16. How to autoscale memory and cpu if process fails?
+17. How to debug it process fails? Compare local vs aws batch env.
+18. How to create process revision and use it in the pipeline
+19. How to push pipeline to github?
+20. How to set up continuous testing (travis, etc.)?
+21. How to configure process and pipeline resources.(CPU, memory, time)
