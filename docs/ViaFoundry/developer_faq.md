@@ -140,7 +140,7 @@ You can use Nextflow's `flatten` or `flatMap` operators. The former transforms a
 You'd like to run analysis on paired-end files where two files correspond to the same filename/read.
 
 #### Solution
-Use Foundry's built-in "set" input quantifier, where each value of an input is represented as ["abbreviated filename", (list of filenames with extension)]. For instance, a set of three single-end FastQ files could be passed into a process via the set quantifier as 
+Use Foundry's built-in "set" input qualifier, where each value of an input is represented as ["abbreviated filename", (list of filenames with extension)]. For instance, a set of three single-end FastQ files could be passed into a process via the set qualifier as 
 ```{["control_rep1", control_rep1.fastq], ["control_rep2", control_rep2.fastq], ["control_rep3", control_rep3.fastq]}```. Continuing with this example, if you wanted to pass in a set of paired-end reads, you'd use a format like ```{["control_rep1", control_rep1.R1.fastq, control_rep1.R2.fastq], ["control_rep2", control_rep2.R1.fastq, control_rep2.R2.fastq], ["control_rep3", control_rep3.R1.fastq, control_rep3.R2.fastq]}```. Then, you'd add a "mate" input to the process, selecting its value as "pair" on the runpage. From there, simply use a process like this:
 
 #### Sample Process

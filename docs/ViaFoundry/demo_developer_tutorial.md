@@ -1,6 +1,6 @@
 ## Introduction
 
-Via Foundry is an easy-to-use platform for creating, deploying, and executing complex nextflow pipelines for high throughput data processing.
+Via Foundry is an easy-to-use, intuitive platform for creating, deploying, and executing complex multi-omics pipelines for high-throughput data processing.
 
 ## Foundry provides: 
 
@@ -12,7 +12,7 @@ Via Foundry is an easy-to-use platform for creating, deploying, and executing co
 6. Easy re-execution of pipelines by copying previous runs settings
 7. Integrated data analysis and reporting interface with R markdown support
 
-**Our aim is;**
+**All with the intentions of:**
 
 1. Reusability
 2. Reproducibility
@@ -24,50 +24,48 @@ Via Foundry is an easy-to-use platform for creating, deploying, and executing co
 
 ## Expected learning outcome
 
-To understand the basics of Foundry, how to use pipeline builder for different objectives and to familiarize yourself with Nextflow and some standard software packages for such analysis. This guide will walk you through how to start using Foundry pipelines and creating new pipelines.
+To understand the basics of Foundry, including how to use Foundry's pipeline builder to suit a diverse array of needs, and to familiarize yourself with Nextflow and some standard software packages for analysis therein. This guide will walk you through how to start using Foundry's comprehensive repository of ready-made pipelines, as well as the process of creating new pipelines.
 
 ## Before you start
 
-Please go to <https://viafoundry.com> and login into your account. If you have an issue about login, please let us know about it (support@viascientific.com). We will set an account for you.
+Please go to [Via Foundry's home page](https://viafoundry.com) and log into your account. If you encounter issues while logging in, please let us know about it by emailing support@viascientific.com, and we will set up an account for you.
 
 ## Exercise 1 - Creating processes
 
-Once logged in, click on the `Projects` section at the top menu and click `Add a New Project` button. This is the place to configure your project. To access pipeline builder page, click `Pipelines` tab and then click `Create Pipeline` button. 
+### Setting Up
+
+Once you're logged in, click on the `Projects` section at the top menu and click the `Add a New Project` button. Here is where you can readily configure your project. To begin editing your project, you'll need to add a pipeline to its configuration - more on that later, but for now, just follow these instructions to instantiate a simple pipeline that you'll fill in later on in the tutorial. To access the pipeline builder page, just click the `Pipelines` tab and then click the `Create Pipeline` button. 
 
 ![image](../images/build0-builderpage.png)
 
 
-Now you can write a descripton about your pipeline using `Description` tab, start developing your pipeline using `Workflow` tab, and adding extra files or setting some extra parameters using `Advanced` tab. Let's get into some details about the pipeline elements.
+Now you can write a descripton about your pipeline using the `Description` tab, start developing your pipeline with the `Workflow` tab, and add extra files or set some extra parameters using the `Advanced` tab. Now, let's get into some details about the pipeline elements themselves.
 
 ![image](../images/build1-builderpage.png)
 
 
 ### What is a "process"?
 
-Process is a basic programming element in Nextflow to run user scripts. Please [click here](https://www.nextflow.io/docs/latest/process.html) to learn more about Nextflow's processes.
+A process is a basic programming element in Nextflow, designed to run user scripts. Please [click here](https://www.nextflow.io/docs/latest/process.html) to learn more about Nextflow's processes.
 
-A process usually has inputs, outputs and script sections. In this tutorial, you will see sections that include necesseary information to define a process shown in the left side of the picture below. Please, use that information to fill "Add new process" form shown in the middle section in the picture below. Foundry will then convert this information to a nextflow process shown in the left side of the picture. Once a process created, it can be used in the pipeline builder. The example how it looks is shown in the bottom left side in the picture. The mapping between the sections shown in colored rectangles.      
+A process usually has inputs, outputs and script sections. In this tutorial, we'll go through the simple procedure needed to define a process. During this procedure, you'll see data (the necessary name, menu group, inputs, outputs, and script of a given process) formatted as it is in the top screenshot on the left side of the image below. Simply copy that information into the relevant fields of the "Add New Process" form, depicted in the middle screenshot below, and Foundry will convert the information into a Nextflow process (shown at right below), at which point it will be ready to run in your pipeline. For your convenience, the mapping between corresponding sections of the tutorial info, the Foundry process creation screen, and the automatically created Nextflow script is shown by sets of colored rectangles in the image below.   
 
 ![image](../images/build-processmapping.png)
 
 
-### The process we will create in this exercise;
+Over the course of this exercise, we'll build three processes from scratch: a FastQC process, a Hisat2 process, and an RSeqC process.
 
-1. FastQC process
-2. Hisat2 process
-3. RSeQC process
-
-You’ll notice several buttons at the left menu. New processes are created by clicking blue `New process` button ![image](../images/addprocessbutton.png){: width="4%"}.
+Once you're on the dashboard page for your new test pipeline, you’ll notice several buttons in the menu on the left-hand side of the page. New processes are created by clicking the blue `New process` button ![image](../images/addprocessbutton.png){: width="4%"}.
 
 ### 1. FastQC process
 
-**a.** First, please click, blue `New process` button ![image](../images/addprocessbutton.png){: width="4%"} in the left menu to open "Add New Process" window.
+**a.** First, please click the blue `New process` button ![image](../images/addprocessbutton.png){: width="4%"} in the left menu to open the `Add New Process` window.
 
-**b.** Please enter FastQC for the process name and define a new "Menu Group". 
+**b.** In the `Name` field, enter "FastQC", and when prompted to select a menu group, define a new one, called "Tutorial". 
 
 ![image](../images/build2-fastqc-addmenugroup.png)
 
-**c.** In the FastQC process, we have an input, an output and a line of a command we are going to use to execute the fastqc process.
+**c.** To execute the FastQC process, here are all the arguments needed for each field on the `Add New Process` screen:
 
 ```
 Name: "FastQC"
@@ -82,24 +80,28 @@ Script:
   fastqc ${reads}
 ```  
 
-**d.** Lets select input and output parameters (`reads` and `outputFileHTML`) and define their "Input Names" that we are going to use in the script section.
+**d.** Let's select input and output parameters (`reads` and `outputFileHTML`, respectively) and define their "Input Names" that we are going to reference in the script section.
 
 ![image](../images/build5-fastqc-parameters.png)
 
  
-**e.** Let's enter the script section
+**e.** In the `Script` section, enter:
+
+``` 
+fastqc ${reads}
+```
 
 ![image](../images/build6-fastqc-script.png)
 
-**f.** Press "Save changes" button at the bottom of the modal to create the process. Now this process is ready to use. We will use it in the Exercise 2.
+**f.** Press the `Save changes` button at the bottom of the module to create the process. Now, simple as that, this process is ready to use. We'll put it on the backburner for now, but rest assured, it will be used soon when creating a custom pipeline in Exercise 2.
 
 ### 2. Hisat2 process
 
-Let's create Hisat2 process. 
+Now, let's create the Hisat2 process. 
 
-**a.** First, please click, blue “New process” button to open "Add New Process" modal.
+**a.** First, as before, please click the blue `New process` button to open "Add New Process" module.
 
-**b.** Inputs, outputs and scripts should be defined like below;
+**b.** Inputs, outputs and scripts should be defined like they are here:
 
 ```
 Name: "Hisat2"
@@ -119,18 +121,18 @@ Script:
 
 ```
 
-**c.** After you select input(`reads` and `hisat2Index`) and output parameters (`mapped_reads` and `outputFileTxt`), add their names and enter the script. The page should look like this;
+**c.** After you select input (`reads` and `hisat2Index`) and output parameters (`mapped_reads` and `outputFileTxt`), add their names and enter the script. Once you've done so, the page should look like this:
 
 ![image](../images/build11-hisat2.png)
 
 
-**d.** Please save changes before you close the screen.
+**d.** Just as you did with the FastQC process, please save your changes before closing the window.
 
 ### 3. RSeQC process
 
-**a.** First, please click, blue “New process” button to open "Add New Process" modal.
+**a.** Again, please click the blue `New process` button to open the `Add New Process` module.
 
-**b.** The form should be filled using the information below;
+**b.** Fill out the `Add New Process` screen as such, making sure that the file types and qualifiers (more info [here](process.md#parameters)) are exactly as specified:
 
 ```
 Name: "RSeQC"
@@ -146,71 +148,72 @@ Script:
   read_distribution.py  -i ${bam} -r ${bed}> RSeQC.${name}.txt
 ```
 
-**c.** After you select input output parameters, enter their names and the script. The page should look like this;
+**c.** Once you enter in the information pertaining to the input parameters, output parameters, and script, the page should look like this:
 
 ![image](../images/build13-RSeQC-process.png)
 
-**d.** Please, save changes before you close the screen.
+**d.** Once the process looks like the one above, save your changes before you close the screen.
 
-Here Exercise 1 is finished. Please move to Exercise 2 to build the pipeline using the processes you created in Exercise 1. 
+Now, you've finished Exercise 1, with three shiny new processes to show for it. Keep following along with Exercise 2 to build the pipeline using the processes you just created. 
 
 ## Exercise 2 - Building a pipeline
 
-Before you start building the pipeline make sure you have the processes available in your Process Menu.
+Before you start building the pipeline, make sure you have your newly minted processes available in your Process Menu by clicking the `Tutorial` dropdown menu under the `Processes` section on the left-hand side menu.
 
 ![image](../images/processList.png){: width="20%"}
 
 
-**a.** At the top of the page, you’ll notice `Pipeline Name` box. You can rename your pipeline by clicking here. Please enter a name to your pipeline. E.g. "RNA-Seq-Tutorial" and press save button.
+**a.** At the top of the pipeline dashboard page, you’ll notice a `Pipeline Name` box. You can rename your pipeline by clicking here and entering your desired name for it (e.g. "RNA-Seq-Tutorial") and pressing the `Save` button or simply clicking outside of the box.
 
-![image](../images/build14-menu.png)
+![image](../images/build14-menu.png){: width="70%"}
 
-**b.** Please drag and drop FastQC, Hisat2 and RSeQC to your workspace;
+**b.** Click on the `Workflow` tab underneath your pipeline's name. From here, you can utilize Foundry's intuitive drag-and-drop interface to add the processes you just made to the pipeline. Click the `Tutorial` dropdown menu in the `Processes` section on the left side of your screen, where you should see each of your new processes. Now, simply drag and drop FastQC, Hisat2 and RSeQC to your workspace. The workflow should now look something like this:
 
-![image](../images/build15-drag-drop.png)
+![image](../images/build15-drag-drop.png){: width="70%"}
 
 
-**c.** Please drag and drop three `Input parameters` and change their names to `Input_Reads`, `Hisat2_Index` and `bedFile` and connect them to their processes;  
+**c.** Now, drag and drop three `Input Parameters` (shown at the top of the left-side menu) into the workflow. You can change their names by clicking the `Edit` button (shaped like a pencil and on the left of the parameter's circle) and entering a new name when prompted. Please change your new input parameters' names to `Input_Reads`, `Hisat2_Index` and `bedFile`, respectively, and connect them to their corresponding processes as such:
 
 ![image](../images/inputParameters.jpg){: width="30%"}
 ![image](../images/workflow1.png)
 
-**d.** Connect your Hisat2 process with RSeQC process using mapped_reads parameter in both. You will observe that, when the types match you can connect the two processes using their matching input and output parameters.
+**d.** Note that your Hisat2 process has a "mapped_reads" output parameter, and your RSeQC process has a "mapped_reads" input parameter. To connect parameters with compatible types, just click on the relevant nodes of each parameter. For example, to connect the Hisat2 and RSeQC processes, click on the Hisat2 "mapped_reads" output node, then the RSeQC "mapped_reads" input node. Please do so. At this stage, your workflow should look identical to the one above.
 
-**e.** Drag & Drop three `output parameters` from the sidebar 
+**e.** Next, drag and drop three `Output Parameters` from the sidebar: 
 
 ![image](../images/outputParameters.png){: width="30%"}
 
 
-and name them `FastQC_output`, `Hisat2_Summary`, and `RSeQC_output` and connect them to their corresponding processes. While naming, click their "Publish to Web Directory" and choose the right output format according to the output type of the process.
+You should name these output parameters `FastQC_output`, `Hisat2_Summary`, and `RSeQC_output`, respectively, and connect them to their corresponding processes. While naming them, check off their `Publish to Web Directory` field and choose the right output format from the dropdown menu according to the output type of the process. As shown below, the FastQC_output parameter should be in an HTML format, and both the RSeQC_output and Hisat2_summary parameters should be in a Text format.
  
 ![image](../images/build16-name1.png){: width="50%"}
 ![image](../images/build17-name2.png){: width="50%"}
 ![image](../images/build18-name3.png){: width="50%"}
 
-**f.** Overall pipeline should look like below;
+**f.** At this point, the overall pipeline should look like it does below:
 
 ![image](../images/build19-pipeline.png)
 
+Now you're ready to run your first pipeline!
+
 ## Exercise 3 - Executing a pipeline
 
-  **1.** Once a pipeline is created, you will notice “Run” button at the right top of the page.
+  **1.** Once a pipeline has been created, you'll see a green `Run` button at the top right of the page.
 
 ![image](../images/project_runbutton.png){: width="20%"}
 
 
-  **2.** This button opens a new window where you can select your project by clicking on the project.
-You will then proceed by entering run name which will be added to your run list of the project. Clicking “Save run” will redirect you to the “run page” where you can initiate your run.
+  **2.** This button opens a new window, where you can select your project by clicking on its name. At this point, you'll be prompted to enter a name for your run, which will catalog the run in your project. From here, clicking `Save run` will automatically redirect you to the run page, where you can initiate your run.
 
 ![image](../images/execute2_enter_runname.png)
 
 
-  **3.** Here, please choose your `Run Environment` (Via Demo Environment(AWS Batch))
+  **3.** Here, please choose your `Run Environment` as "Via Demo Environment(AWS Batch)"
   
 ![image](../images/runEnvSelect.png)
 
 
-  **4.** Then click the `Advanced` tab and go to `Run Container` section. Click `Use Docker Image` and enter the`Image Path` below;
+  **4.** Then, click on the `Advanced` tab at the top of the page. Under the `Run Container` header, click `Use Docker Image` and enter the `Image Path` below;
   
 ```
 Run Container:
@@ -222,7 +225,7 @@ Image Path: public.ecr.aws/t4w5x8f2/viascientific/rnaseq:3.0
 
 
   **5.** Now, we are ready to enter the inputs we defined for the pipeline. 
-  Click the `Run Settings` tab to enter bed file. Please use the **Manually** tab.
+  Click the `Run Settings` tab to enter values for all your input parameters. First, click `Enter file` next to the bedFile parameter. Click on the **Manually** tab at the top of the pop-up window and enter the following filepath:
   
 ```
 bedFile:  s3://viascientific/run_data/genome_data/mousetest/mm10/refseq_170804/genes/genes.bed
@@ -232,7 +235,7 @@ bedFile:  s3://viascientific/run_data/genome_data/mousetest/mm10/refseq_170804/g
 
 
 
-**6.** Second, enter the hisat2 index directory. Please use the **Manually** tab. 
+**6.** Once you've saved the bedFile path, enter the Hisat2_Index directory. Again, please use the **Manually** tab to enter the following filepath: 
 ```
 Hisat2_Index: s3://viascientific/run_data/genome_data/mousetest/mm10/refseq_170804/Hisat2Index
 ```
@@ -240,14 +243,13 @@ Hisat2_Index: s3://viascientific/run_data/genome_data/mousetest/mm10/refseq_1708
 ![image](../images/hisat2IndexFile.png)
 
 #### Creating Collection
-**7.**  To enter Input_Reads, click `Enter File` button. Then go to `Files` Tab and click "Add File" button.
+**7.**  To enter the appropriate Input_Reads files, click its `Enter File` button. From here, go to the **Files** Tab and click the green `Add File` button, located in the top right.
 
 ![image](../images/execute6_add_files.png)
 
 
-**8.**  Enter the location of your files and click **Search button** to get the list of files: 
-  
-File Location:
+**8.**  Enter the below file location and click the **Search** button (represented by a magnifying glass) to get the list of files: 
+
 ```
 s3://viascientific/run_data/test_data/fastq_mouse_single
 ```
@@ -255,45 +257,53 @@ s3://viascientific/run_data/test_data/fastq_mouse_single
 ![image](../images/fileLocation.png)
 
 
-**8.** Then please choose `Single List` for the **Collection Type** and press `add all files` button.
+**8.** In the **Collection Type** dropdown menu, select `Single List`, then press the `Add All Files` button at the bottom of the page.
 
-**9.** Here there is an option to change the names but we will keep them as they are. Enter a collection name and click "save files".
+**9.** Here, there's an additional option to change the file names, but for our purposes here, we'll just keep them as they are. Enter an arbitrary collection name and click `Save Files`.
 ```
-collection name: test collection
+Collection name: Test Collection (this name is arbitrary)
 ```
 ![image](../images/enter_collectionname.png)
 
-**10.** In the next screen, the user can still add or remove some samples. Let's click "Save file" button to process all samples.
+**10.** In the next screen, you can still add or remove some samples to be analyzed. Let's click the checkbox at the top left of the file table, then the `Save File` button, to process all samples.
 
 ![image](../images/execute_9_choosefiles.png)
 
-#### Running Pipeline
-**11.** After we fill the inputs, the orange "Waiting" button at the top right should turn to green "Run" button. Now, you can press that button to start your run.
+#### Running Your Pipeline
+**11.** After all the input values have been initialized, the orange `Waiting` button at the top right should change to a green `Run` button. Now, you can press that button to start your run.
 
-**12.** All run should finish in a couple of minutes. When the run finalized the log section will be look like below;
+**12.** This run should finish in only a couple of minutes. When the run ends, the `Log` section of the runpage will look something like this:
 
   **a. Logs**:
+  This constantly up-to-date log keeps track of the submission of each process and the execution of the overall pipeline, with error messages if/whenever something goes awry.
 
   ![image](../images/log_time.png)
 
 
   **b. Timeline**:
+  This visualization chronologically shows the time and memory consumed by each process.
+
   ![image](../images/timeline2.png)
 
 #### Reports
 
-**13.** In the report section, you can monitor all defined reports in the pipeline;
+**13.** In the runpage's `Report` section, you're able to see interactive and insightful reports generated based on the output parameters specified in your processes:
 
-  **a. FastQC**
+  **FastQC**
   ![image](../images/execute15_FastQC.png)
 
 
-  **b. Hisat2**
+  **Hisat2**
   ![image](../images/execute16_Hisat2.png)
 
 
-  **c. RSeQC**
+  **RSeQC**
   ![image](../images/execute17_RSeQC.png)
+
+
+## Wrapping Up
+
+And that's it! You've created your first pipeline in Via Foundry. If you have any questions, please contact us at support@viascientific.com.
 
 
 
