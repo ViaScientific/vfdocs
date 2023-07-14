@@ -89,7 +89,7 @@ Processes sections in a pipeline's left sidebar menu.
 Just like adding processes, you can use the drag and drop feature to add
 input parameters to your pipeline. Once you drag an input parameter, you
 will see a smaller orange circle representing the input parameter in the
-workplace, as shown in the figure below:
+workspace, as shown in the figure below:
 
 ![image](../dolphinNext/dolphinnext_images/pipeline_buildindex.png)
 

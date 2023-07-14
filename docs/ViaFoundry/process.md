@@ -626,7 +626,7 @@ The `$HOSTNAME` variable in Via Foundry represents the selected hostname
 in the run environment. By using this variable, you can apply specific
 executor properties based on the hostname.
 
-### Executor Properties:
+### Executor Properties
 
 There are five types of executor properties available to autofill
 **Executor Settings for All Processes**: `$TIME`, `$CPU`, `$MEMORY`,

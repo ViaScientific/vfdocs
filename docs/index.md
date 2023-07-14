@@ -21,9 +21,13 @@
 - [Frequently Asked Questions](ViaFoundry/faq.md)
 
 ## Developer Guide
-- [Pipeline Guide](ViaFoundry/pipeline_guide.md)
-- [Process Guide](ViaFoundry/process.md)
-- [Developer FAQ](ViaFoundry/developer_faq.md)
+- [Pipeline Creation Guide](ViaFoundry/pipeline_guide.md)
+- [Process Creation Guide](ViaFoundry/process.md)
+
+## Developer FAQs
+- [General FAQs](ViaFoundry/developer_faq.md)
+- [Process FAQs](ViaFoundry/process_faq.md)
+- [Third Party Software FAQs](ViaFoundry/third_party_faq.md)
 
 ## Administrator Guide
 - [Installation](ViaFoundry/admin-installation.md)
