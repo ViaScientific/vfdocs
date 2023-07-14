@@ -1,9 +1,9 @@
 demo_developer_tutorial2.md
 
-Questions to be answered:
-1. How to support paired and single end reads?
-2. How to collect process outputs
-3. How to parallize process outputs.
+Questions to be answered (**bold** means done):
+1. **How to support paired and single end reads?**
+2. **How to collect process outputs**
+3. **How to parallize process outputs.**
 4. How to publish files into multiple directories?
 5. How to install specific process to docker container we have
 6. How to make process optional? Can I skip one process and continue with the next process?
@@ -11,8 +11,8 @@ Questions to be answered:
 8. How do we use existing index files? How can I add my index file?
 9. How to configure autofill section of the pipeline?
 10. When should I use val, file or set?
-11. How to define optional input parameters? If it is optional file how do we check wheter it is defined or not?
-    filter = genome.name.startsWith('NO_FILE') ? "" : "--filter ${genome}"
+11. **How to define optional input parameters? If it is optional file how do we check wheter it is defined or not?
+    filter = genome.name.startsWith('NO_FILE') ? "" : "--filter ${genome}"**
 12. How to define process settings?
 13. How to create pipeline inputs? Compare different solutions.
 14. How to define global variable vs process specific local variable?
