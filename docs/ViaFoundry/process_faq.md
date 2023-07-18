@@ -2,6 +2,24 @@
 
 This guide will walk you through some frequently asked questions pertaining to the creation and manipulation of processes in Via Foundry. If you don't see your question here, make sure to check out our [Process Creation Guide](process.md), and as always, if you have any questions, please don't hesitate to reach out to support@viascientific.com. 
 
+## **Revision Control and Usage**
+
+Foundry boasts a utility-packed revision control system, granting users effortlessly controllable project autonomy. Here you'll find answers to some frequently asked questions related to this system.
+
+### How can I use existing processes or modules?
+
+Throughout the pipeline creation and execution process, users can simply drag and drop any of Foundry's numerous publicly available processes and modules. In a pipeline's sidebar menu, you can just click on any of the pre-configured process or module menus (for instance, Alignment) and drag the process(es) you want into your workflow.
+
+![image](../images/process_sidebar.png){: width = "30%"}
+
+You can also use the sidebar's `Search` bar to query a process, pipeline, or module by name if you don't know which menu it's under. Just type in a keyword and you'll see all the processes containing that keyword, which you can of course drag and drop into your workflow. See the image below for an example of querying all processes and modules containing "STAR":
+
+![image](../images/star_search.png)
+
+### How can I create a new process revision and use it in a pipeline?
+
+The brief answer is this: Make your desired edits to the process, then save the changes as a new revision, enter the process's page within the pipeline in which it is used, use the dropdown menu to switch revisions, then save changes as a new pipeline revision. For more detail on new revisions and revision control in general, see [How does revision control work in Via Foundry?](developer_faq.md#how-does-revision-control-work-in-via-foundry)
+
 ## **Configuring Inputs**
 
 Via Foundry supports a vast breadth of functionality when it comes to defining and fine-tuning your process inputs. Here are some helpful tips to demystify the process.
