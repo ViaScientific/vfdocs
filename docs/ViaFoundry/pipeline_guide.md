@@ -322,7 +322,7 @@ these parameters based on the defined options. Here's an example:
 
 **A. Based on Hostname:**
 
-In Via Foundry, you can use the autofill feature to specify input
+In Via Foundry, you can use the autofill feature, most commonly invoked in a base.config file in the `Advanced` tab of a pipeline, to specify input
 parameters based on the hostname of the execution environment. The
 syntax for autofilling input parameters based on hostname is as follows:
 
@@ -431,7 +431,7 @@ according to selected parameters of `params.genome_build` and
 ## Autofill Feature for Pipeline Properties
 
 To automate the filling of executor properties in Via Foundry, you can
-utilize the autofill feature. There are two types of autofill options
+also utilize the autofill feature referenced earlier (navigate to or create a base.config file in the `Advanced` section of a pipeline's page). There are two types of autofill options
 available: hostname-independent autofill and hostname-dependent
 autofill.
 

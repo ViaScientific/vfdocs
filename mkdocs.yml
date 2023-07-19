@@ -48,6 +48,7 @@ nav:
   - Developer FAQs:
     - 'General FAQs': ViaFoundry/developer_faq.md
     - 'Process FAQs': ViaFoundry/process_faq.md
+    - 'Pipeline FAQs': ViaFoundry/pipeline_faq.md
     - 'Third Party FAQs': ViaFoundry/third_party_faq.md
   - Administrator Guide:
     - 'Installation': ViaFoundry/admin-installation.md

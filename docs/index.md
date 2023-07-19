@@ -27,6 +27,7 @@
 ## Developer FAQs
 - [General FAQs](ViaFoundry/developer_faq.md)
 - [Process FAQs](ViaFoundry/process_faq.md)
+- [Pipeline FAQs](ViaFoundry/pipeline_faq.md)
 - [Third Party Software FAQs](ViaFoundry/third_party_faq.md)
 
 ## Administrator Guide
