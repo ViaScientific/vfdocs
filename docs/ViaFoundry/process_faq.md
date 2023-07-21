@@ -156,6 +156,41 @@ Click [here](process.md#process-options).
 In the `Advanced` tab of the runpage, you can specify exactly how all processes or individual processes will be queued, along with how much memory, how many CPUs, and how long they will take. By clicking the **Executor Settings for Each Process** button, you can then customize the resources allocated to each process by clicking on a process's checkbox and manipulating the desired values. For more of a brute-force approach, you can check off **Executor Settings for All Processes**, which will let you configure a group of settings that will apply to every process in the pipeline. For more information, click [here](faq.md#how-should-i-configure-my-executor-settings).
 
 
+## **Integrating Different Scripting Languages**
+
+Via Foundry is proudly compute-agnostic; we support a wide variety of scripting languages and environments. Process scripts can be made with any combination of Bash, Groovy, Perl, Python, and R, with support for the importation of many more languages. In this section, you'll find answers to some common questions about how to navigate Foundry's scripting environment.
+
+### How can I use my own Python or R script in a process?
+
+Oftentimes, users may want to use scripts they've already created while making and running Foundry pipelines. In processes whose scripts are in Bash, Python, or R, here's the code required to import preexisting scripts:
+```
+import subprocess as sp
+
+# Here, "my_functions.py" represents the function(s) you'd like to import; replace the name with those of your functions
+functions_py_path = sp.getoutput("my_functions.py")
+
+# This line copies your script(s) to the current working folder
+# The "shell = True" environment allows this command to be executed in a shell environment
+sp.call("cp " + functions_py_path + " .", shell = True)
+```
+
+### How can I convert a Groovy array into a Python or R array?
+
+Sometimes, over the course of running a Foundry pipeline, Nextflow will feed a set/array of values into a process. Since Nextflow is built on Groovy, those values will be in Groovy; if your process is in Python or R, you need some way to convert the array before running your script. For the sake of example, let's say you have an input set of multiple reads files called "reads", produced by a previous process and intended to be filtered or analyzed in the current process. Above the ```script:``` block, you should use the following command:
+```
+newreads = "[" + reads.collect{ '"' + it + '"'} + "]"
+```
+This will convert all the read names to a string enclosed by square brackets, which is the desired format. Then, in the ```script:``` section of your process, converting to R or Python is as simple as running:
+```
+reads_array = ${newreads}
+```
+
+## **Support**
+
+For any questions or help, please reach out to
+<support@viascientific.com> with your name and question.
+
+
 
 
 
