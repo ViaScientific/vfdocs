@@ -7,7 +7,7 @@ This guide will walk you through how to start using Via Foundry
 Via Foundry web page at <https://www.viafoundry.com> and click the
 `Log in` button. You will be asked to enter your institute's log-in
 information. If you don't have an account, please let us know about it 
-<support@viascientific.com>. We will set an account for you.
+<support@viascientific.com>, and we will set up an account for you.
 
 
 
