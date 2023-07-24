@@ -143,6 +143,28 @@ Within Foundry, you may have a process that produces multiple files; if you wish
 
 Again, this is a rather rudimentary process to illustrate the functionality of `flatten`; you'll likely be using it for more complex purposes, so it's best to be able to understand at the ground level first.
 
+### How can I publish files into multiple directories within one process?
+
+Due to the complex nature of the workflows you'll likely be running, you'll frequently find yourself wanting to send files from one process to multiple directories, either for downstream processing or analysis. Here, you'll find explanations of Foundry's behavior in these contexts.
+
+#### **My process creates files of different extensions. How do I send the files to directories matching each extension?**
+
+If this applies to you, you can use a technique called "globbing" to filter your output files into directories based on their extension and/or name. Globbing, a cousin of Regular Expressions, entails using an asterisk as a wildcard character to match any sequence of characters in a filename. Say, for example, you have a process that filters read files using Trimmomatic, and that outputs gzip files and log files. In the **Output Name** field of each output parameter, you'd want to enter values like `file("reads/*.gz")` or `"*.{fastx, trimmomatic}_quality.log"`, respectively.
+
+![image](../images/globbing.png)
+
+Here, the asterisks allow any file whose name contains the sequence of characters following each asterisk to be funneled into the given output (directory). As such, all gzip files produced in the process will be sent to the reads directory, whereas all files produced by Trimmomatic will be created and logged with the name specified by **Output Name**.
+
+In this example, a process takes a TSV file as input and outputs a TSV file to a globbing-specified directory, a set of directories for downstream processing, and a heatmap for data visualization. Note that different types of outputs are created, but using globbing, only TSV files produced will be sent to an actual output directory. This can be a very helpful tool for filtering only a select group of outputs to a directory.
+
+![image](../images/globbing2.png)
+
+#### **What happens if the patterns in **Output Name** don't match?**
+
+Say some process has two output parameters; one looking for an HTML file and one looking for reads files. For a given output file, behind the scenes, Foundry goes one by one, output parameter by output parameter, and checks the file's extension against that of each input. If the file is compatible with the first output parameter, it is directed to whatever location is specified by that parameter. If not, the process is repeated with the second parameter, and so on. However, as soon as a file is allocated to some output directory, it cannot also be sent to another location within that same process. 
+
+This isn't a problem for our initial example, wherein one output wants an HTML file and the other a reads file. However, in the case wherein an output document matches the criteria for more than one output directory, the document will only be published to the first of its compatible directories. Be cognizant of cases like this, where you might expect one document to publish to multiple directories; however, Foundry does not behave that way as of yet, so you may need to create a new process to direct the file as desired.
+
 ## **Defining Process Settings/Resources**
 
 Foundry processes vary in how computationally intensive they are to execute. Users have a fine-grained level of control over how to configure process settings, in addition to how many resources are allocated to a process's execution.
@@ -184,6 +206,67 @@ This will convert all the read names to a string enclosed by square brackets, wh
 ```
 reads_array = ${newreads}
 ```
+
+## **Understanding Scope in Foundry**
+
+Given the breadth of locations in which one can write scripts and functions in Foundry, it's only natural to have questions, like "If I define a variable in *x* section, can I use it in *y* section or not?" about the scope of scope, so to speak. This section is aimed at elucidating best practices for what goes where (and why) in Foundry.
+
+### What variables are global and local in a pipeline?
+
+As you're likely familiar, the **Advanced** section of a pipeline's page contains all the files and scripts necessary to run that pipeline. From top to bottom, it displays various configuration files (base.config, test.config, nextflow.config), then the Pipeline Header Script and Footer Script. Within this architecture, the nextflow.config file is superordinate to everything else in the pipeline, meaning that if you define and instantiate a variable `example` within it, you will not be able to overwrite the value of `example` anywhere else in the pipeline or its constituent processes, and attempting to do so will create unforeseen errors in your run. For this reason, it's best practice to use the `params` scope when defining variables in the nextflow.config file (e.g. instead of naming a parameter `reads`, you'd name it `params.reads`). Using the `params` scope allows you to create different variables with the same non-prefixed by `params` name; following from the previous example, defining `params.reads` in nextflow.config enables future creation of variables called `reads`, adhering to the conventions described throughout this section.
+
+![image](../images/rnaseq_nf_config.png)
+
+The header script is rather more flexible in the sense that variables defined within are not global in scope; if you define a variable `run_STAR` in the **Pipeline Header Script** section, then define another variable `run_STAR` within some process, you'll almost certainly encounter thorny overloading issues. To preempt any such issues, it's advisable to 1) use the `params` scope within the header script (to help avoid overloading) and 2) create unique variable names.
+
+Also of note: within the header script, you can define functions to be invoked by processes. For instance, in several of our pipelines, we define a pathChecker function in the **Pipeline Header Script** to safeguard against improper indices being given, calling it from within processes whenever we build an index in the pipeline's pre-processing stage.
+
+### What variables are global and local within a process?
+
+Scope is somewhat less binary within Foundry processes than it is within pipelines, though such minutiae are beyond the breadth of this guide. The points which should be impressed upon users are as follows:
+
+- Declaring a variable in the header or footer script defines it in a global scope, baring it for future unwanted manipulation. As such, while it is objectively possible to create a variable in the header or footer script, it is somewhat unnecessary. Instead, it's recommended that header scripts (footer scripts are infrequently used) be utilized for style purposes, like configuring the appearance of input fields on the runpage; or for property-dependent autofill of [computing resources](pipeline_guide.md#autofill-feature-for-pipeline-properties) or [pipeline inputs](pipeline_guide.md#autofill-feature-for-pipeline-inputs). To illustrate this point, here's the header script for an index-checking process:
+```
+build_STAR_index = false //* @checkbox @description:"If you're using custom genome and gtf please enable build_STAR_index option." 
+
+//* autofill
+if ($HOSTNAME == "default"){
+    $CPU  = 5
+    $MEMORY = 150
+}
+//* platform
+if ($HOSTNAME == "ghpcc06.umassrc.org"){
+    $TIME = 1000
+    $CPU  = 5
+    $MEMORY = 50
+    $QUEUE = "long"
+}
+//* platform
+//* autofill
+```
+
+    You'll see that the only variables it creates are for entering inputs on the runpage and for autofilling executor properties, as it is risky and ill-advised to declare variables of operational salience here.
+
+    *Note*: Similar to the header script in pipelines, you can also define functions in process header scripts, which will be usable by other processes.
+
+- Defining variables in the process's **Script** section itself creates them within a local scope, meaning that in theory, you can define a variable of the same name in the scripts of as many processes as you'd like, and they won't interfere with each other. It's best practice to define such variables under the `script:` header (as opposed to between `when:` and `script:`) but before the segment enclosed in triple quotes, as shown here:
+```
+when:
+(params.run_STAR && (params.run_STAR == "yes")) || !params.run_STAR
+
+script:
+params_STAR = "--runThreadN 10" //* @input @description:"Specify STAR input parameters"
+sense_antisense = "no" //* @dropdown @options:"yes","no"  @description:"Export sense/antisense bam files"
+
+"""
+(mapping STAR; details unimportant)
+"""
+```
+
+    In this example, `params_star` and `sense_antisense` are defined locally; their existence is null outside the process. Modeling your processes and variable declarations after this structure will prove potent in staving off any potential headache that could occur from variable overloading.
+
+
+- If you manipulate an input variable, you overwrite its value. If a process fails due to this and attempts to retry, it will "remember" the most recent value of that variable, which is the incorrect one; this issue will compound and likely cause the pipeline to exit. **Don't overwrite input variables inside the *script* section**. 
 
 ## **Support**
 

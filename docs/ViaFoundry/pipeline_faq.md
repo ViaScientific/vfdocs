@@ -62,3 +62,8 @@ To save users a lot of hassle on the back end, Via Foundry possesses a powerful 
 if $HOSTNAME == "..." {(fill parameters)}
 ``` 
 in "//* autofill" flags. For much more detail on autofilling pipeline inputs, check out [this link](pipeline_guide.md#autofill-feature-for-pipeline-inputs), and if you'd like to find out how you can autofill pipeline executor properties, go [here](pipeline_guide.md#autofill-feature-for-pipeline-properties).
+
+## **Support**
+
+For any questions or help, please reach out to
+<support@viascientific.com> with your name and question.
