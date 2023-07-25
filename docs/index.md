@@ -34,3 +34,13 @@
 - [Installation](ViaFoundry/admin-installation.md)
 - [Configuration](ViaFoundry/admin-configuration.md)
 - [Testing Pipeline](ViaFoundry/admin-pipeline-testing.md)
+
+## Vmeta Docs (Temporary)
+- [Vmeta Overview](ViaFoundry/vmeta_overview.md)
+- [Vmeta Data Guide](ViaFoundry/vmeta_data.md)
+- [Vmeta API v1](ViaFoundry/vmeta_api.md)
+- [Vmeta Project Guide](ViaFoundry/vmeta_projects.md)
+- [Vmeta Collection Guide](ViaFoundry/vmeta_collections.md)
+- [Vmeta Fields Guide](ViaFoundry/vmeta_fields.md)
+- [Vmeta Events Guide](ViaFoundry/vmeta_events.md)
+- [Vmeta Integration Guide](ViaFoundry/vmeta_integration.md)
