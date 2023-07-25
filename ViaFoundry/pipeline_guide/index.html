@@ -1,0 +1,1541 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Via Foundry Team">
+      
+      
+      
+        <link rel="prev" href="../faq/">
+      
+      
+        <link rel="next" href="../process/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
+    
+    
+      
+        <title>Pipeline Guide - Via Foundry Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pipeline-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Via Foundry Documentation" class="md-header__button md-logo" aria-label="Via Foundry Documentation" data-md-component="logo">
+      
+  <img src="../../images/via_icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Via Foundry Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pipeline Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Via Foundry Documentation" class="md-nav__button md-logo" aria-label="Via Foundry Documentation" data-md-component="logo">
+      
+  <img src="../../images/via_icon.png" alt="logo">
+
+    </a>
+    Via Foundry Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        Platform Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipeline_example/" class="md-nav__link">
+        Pipeline Examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cite/" class="md-nav__link">
+        How To Cite Us
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_rna-seq_tutorial/" class="md-nav__link">
+        Running RNA-Seq Pipeline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_single_cell_rna-seq_tutorial/" class="md-nav__link">
+        Running Cellranger Pipeline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_metadata-geo/" class="md-nav__link">
+        Using Metadata Tracker - GEO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_developer_tutorial/" class="md-nav__link">
+        Developer Tutorial - Creating Pipeline
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          User Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          User Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick/" class="md-nav__link">
+        Quick Start Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project/" class="md-nav__link">
+        Project Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run/" class="md-nav__link">
+        Run Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app/" class="md-nav__link">
+        App Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../profile/" class="md-nav__link">
+        Profile Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        Frequently Asked Questions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Developer Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Developer Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Pipeline Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Pipeline Guide
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processes" class="md-nav__link">
+    Processes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-parameters" class="md-nav__link">
+    Input Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-parameters" class="md-nav__link">
+    Output Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edges" class="md-nav__link">
+    Edges
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etl-pipelines-and-setting-pipeline-defaults" class="md-nav__link">
+    ETL pipelines and Setting Pipeline Defaults
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exporting-pipeline-parameters" class="md-nav__link">
+    Exporting Pipeline Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-header-script" class="md-nav__link">
+    Pipeline Header Script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-pipeline-inputs-by-pipeline-header-script" class="md-nav__link">
+    Adding Pipeline Inputs by Pipeline Header Script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autofill-feature-for-pipeline-inputs" class="md-nav__link">
+    Autofill Feature for Pipeline Inputs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autofill-feature-for-pipeline-properties" class="md-nav__link">
+    Autofill Feature for Pipeline Properties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-details" class="md-nav__link">
+    Pipeline Details
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions-and-groups" class="md-nav__link">
+    Permissions and Groups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copying-and-revisions" class="md-nav__link">
+    Copying and Revisions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-cite-us" class="md-nav__link">
+    How To Cite Us
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    Support
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process/" class="md-nav__link">
+        Process Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app_developer_guide/" class="md-nav__link">
+        Application Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          App Library
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          App Library
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gsea_explorer/" class="md-nav__link">
+        GSEA Explorer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network_explorer/" class="md-nav__link">
+        Network Explorer
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Administrator Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Administrator Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-pipeline-testing/" class="md-nav__link">
+        Testing Pipeline
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processes" class="md-nav__link">
+    Processes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-parameters" class="md-nav__link">
+    Input Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-parameters" class="md-nav__link">
+    Output Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edges" class="md-nav__link">
+    Edges
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etl-pipelines-and-setting-pipeline-defaults" class="md-nav__link">
+    ETL pipelines and Setting Pipeline Defaults
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exporting-pipeline-parameters" class="md-nav__link">
+    Exporting Pipeline Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-header-script" class="md-nav__link">
+    Pipeline Header Script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-pipeline-inputs-by-pipeline-header-script" class="md-nav__link">
+    Adding Pipeline Inputs by Pipeline Header Script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autofill-feature-for-pipeline-inputs" class="md-nav__link">
+    Autofill Feature for Pipeline Inputs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autofill-feature-for-pipeline-properties" class="md-nav__link">
+    Autofill Feature for Pipeline Properties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-details" class="md-nav__link">
+    Pipeline Details
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions-and-groups" class="md-nav__link">
+    Permissions and Groups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copying-and-revisions" class="md-nav__link">
+    Copying and Revisions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-cite-us" class="md-nav__link">
+    How To Cite Us
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    Support
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div><h1 id="pipeline-guide">Pipeline Guide</h1>
+<p>This guide will walk you through how to create, edit, delete and share
+pipelines on the Via Foundry platform.</p>
+<h2 id="basics">Basics</h2>
+<p>After logging into your Via Foundry account, click on the "Pipeline"
+button located at the top left of the screen. This will take you to the
+pipeline section of Via Foundry, where you'll be able to see all the
+currently available public pipelines, in addition to those you've
+created.</p>
+<p>There are currently two different ways to create an editable pipeline.
+First, you can duplicate an existing pipeline by navigating to its page
+and clicking the <code>Duplicate Pipeline</code> button, represented by an icon of
+two folded pieces of paper, to the right of the pipeline's name.</p>
+<p><img alt="image" src="../../images/duplicate_pipeline.png"></p>
+<p>This will create a copy of the pipeline, which you can then manipulate
+as your own.</p>
+<p>Alternatively, you can create a new pipeline by clicking the
+<code>New pipeline</code> button, shown as a circle of circles, located in the left
+sidebar menu of any pipeline (you'll need to navigate to any
+pipeline's page first to see this menu).</p>
+<p><img alt="image" src="../../images/process_buttons.png"></p>
+<p>Regardless of which method you choose to create your pipeline, upon
+creation, you will see an "Enter Pipeline Name" box at the top of the
+new pipeline page. Enter a name for your pipeline in this box.</p>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_name.png"></p>
+<p>As you type the pipeline name and craft its workflow, you will notice
+<code>Saving...</code> and <code>All changes saved</code> notifications appear to the right of
+the pipeline name box and buttons. Via Foundry has an autosaving feature
+enabled, which automatically saves your pipeline as you work on it.
+Additionally, you can use the <code>Save Pipeline</code> button at any time to
+manually save your pipeline.</p>
+<p><strong>Note:</strong> Via Foundry provides additional options for managing your
+pipelines. If you wish to delete a pipeline, you can do so by clicking
+the <code>Delete Pipeline</code> button. Furthermore, while creating your pipeline,
+you can always check the generated Nextflow script by clicking the
+<code>Download Pipeline</code> button.</p>
+<h2 id="processes">Processes</h2>
+<p>You can access Via Foundry's suite of available processes from the
+"Processes" section of the left sidebar menu in any pipeline's page.
+Processes are grouped according to the categories they fall within; for
+instance, within the "Summary" process menu you'll find all processes
+underlying how various data are packaged and summarized in a given run.
+To better visualize, and be able to edit, a process, simply click on the
+<code>Workflow</code> tab of the pipeline page and drag and drop the desired
+process into the workspace area. Once you've done this, you'll see the
+process circle, a figure shown here:</p>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_process.png"></p>
+<p>When working with a process in Via Foundry, you will come across several
+icons on the process circle. Here's what each icon represents:</p>
+<ul>
+<li><strong>Settings Icon</strong>: This icon is located at the top of the process
+      circle. When clicked, it opens the "Select Process Revision"
+      window. In this window, you can examine the current state of the
+      process, view its details, and navigate between different
+      revisions of the process. You can also replace the selected
+      revisions on the workplace with the chosen revision from this
+      window.</li>
+<li><strong>Pencil Icon</strong>: The pencil icon is located at the center of the
+      process circle. Clicking on this icon allows you to edit the
+      process name. The process name is the name that will be used in
+      the generated Nextflow file as the process identifier. It is
+      important to ensure that process names are unique within the
+      overall pipeline. If there are duplicate process names, a warning will be displayed at the bottom of the workflow page to alert you about this issue.</li>
+<li><strong>Bin Icon</strong>: The bin icon is located at the bottom of the process
+      circle. Clicking on this icon will delete the current process from
+      the pipeline, so exercise caution when deleting a process.</li>
+</ul>
+<h2 id="input-parameters">Input Parameters</h2>
+<p>To add input files or values that will be used in the process, you can
+use the "Input parameters" circle located above the Pipelines and
+Processes sections in a pipeline's left sidebar menu.
+Just like adding processes, you can use the drag and drop feature to add
+input parameters to your pipeline. Once you drag an input parameter, you
+will see a smaller orange circle representing the input parameter in the
+workplace, as shown in the figure below:</p>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_buildindex.png"></p>
+<p>By using the <strong>Pencil</strong> icon located at the left side of the circle, you
+can edit the name of the input parameter and define additional settings
+for it. Here are the options you can configure:</p>
+<ul>
+<li><strong>Name:</strong> This represents the name of the input parameter, which
+      will be used to reference the process in the Nextflow file. It's
+      important to choose unique names for each input parameter within
+      your pipeline to avoid redundancies, which can yield unwanted
+      errors.</li>
+<li><strong>Default value:</strong> You can specify a default value for the input
+      parameter, which will be autofilled in the run page. This is
+      useful when you have a commonly used value that can serve as a
+      default for most runs.</li>
+<li><strong>Dropdown options:</strong> If you want the input parameter to be
+      presented as a dropdown menu on the run page, you can define the
+      dropdown options. Simply enter the options in a comma-separated
+      format. For example, if you have a yes/no parameter, you can enter
+      "yes, no" as the dropdown options.</li>
+<li><strong>Show Settings:</strong> By clicking the checkbox for this option, you
+      can enable the display of settings for the connected process as a
+      wrench button on the run page. This allows users to access and
+      modify specific settings for that process. If you want to specify
+      alternative processes for the wrench button, you can enter their
+      process names in this field. For example, you can enter
+      "map_STAR, map_RSEM" to show the settings for either the STAR or
+      RSEM mapping process.</li>
+</ul>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_input_rename.png"></p>
+<p>Here's an example of what an input row will look like on the run page:</p>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_input_inrun.png"></p>
+<h2 id="output-parameters">Output Parameters</h2>
+<p>Newly created files that are defined in the
+<a href="../process/#outputs">Outputs</a> section are represented by the <strong>Output
+Parameter</strong> circle. You can find the <strong>Output Parameters</strong> section
+located just below the <strong>Input Parameters</strong> section in the left sidebar
+menu. To add an output parameter to your workspace, simply drag and drop
+it from the <strong>Output Parameters</strong> section.</p>
+<p>The name of the <strong>Output Parameters</strong> circle corresponds to the name of
+the published directory for the associated files. You can edit this name
+by clicking on the pencil icon next to the circle. This allows you to
+customize the name of the directory where the output files will be
+transferred.</p>
+<p>In the example provided, there are two separate green circles
+representing the aligned and unaligned reads. Each circle corresponds to
+a specific output parameter, and the associated files will be
+transferred to separate directories named "aligned" and "unaligned"
+respectively.</p>
+<p>By defining and configuring output parameters, you can manage the
+generated files and their respective directories within your pipeline.</p>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_tophat.png"></p>
+<p><strong>Tip:</strong> If you don't want to keep certain output files, you can simply
+leave the output nodes unconnected in your pipeline. By doing so, only
+the files that are selected as output parameters will be transferred to
+the published directory. This allows you to control which files are
+included as outputs. Additionally, If you want to transfer multiple
+outputs into the same directory, you can use the same name for the
+output parameters associated with those files. When the pipeline runs,
+the files from different output nodes with the same output parameter
+name will be transferred to the same directory.</p>
+<h2 id="edges">Edges</h2>
+<p>There are three main reasons for creating edges:</p>
+<ol>
+<li>Establishing connections: Edges are used to connect the inputs and
+      outputs of multiple processes. This allows the data to flow from
+      one process to another, enabling the sequential execution of the
+      pipeline.</li>
+<li>Defining input files or values: By creating edges, you can specify
+      the input files or values that will be used as inputs for the
+      processes. This ensures that the required data is provided to each
+      process for its execution.</li>
+<li>Selecting published outputs: Edges are also used to select the
+      outputs that will be published in the output directory. By
+      connecting specific output nodes to the edge, you indicate that
+      those files should be included in the final output of the
+      pipeline.</li>
+</ol>
+<p>When creating edges, the pipeline creation tool, such as Via Foundry,
+typically shows the available nodes that can be connected. This makes it
+easier to establish the desired connections between processes. The
+figure below shows an example of this feature in action: since the mouse
+is hovering over the output node, <code>genome_index</code> of the <strong>Build_index</strong>
+process, Via Foundry shows the available node on the <strong>Map_tophat2</strong>
+process by highlighting it.</p>
+<p><strong>Important:</strong> The filtering of available nodes for connection is often
+based on factors such as file types for set and file parameters, and the
+name for val parameters. This ensures that the connections are made
+between compatible input and output nodes.</p>
+<p>This feature of showing available nodes for connection is also
+applicable when connecting input parameters to multiple processes,
+providing further flexibility in the pipeline creation process.</p>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_hover.png"></p>
+<h2 id="etl-pipelines-and-setting-pipeline-defaults">ETL pipelines and Setting Pipeline Defaults</h2>
+<p>An ETL (Extract, Transform, Load) pipeline refers to a systematic process of extracting data from various sources, transforming it into a suitable format, and loading it into a target database for further analysis and interpretation. To simplify this process, Via Foundry intruduces using <code>paramsFiles</code> feature.</p>
+<p>In order to restrict user modifications, you can utilize <code>paramsFiles</code> to define specific defaults for your pipeline. These paramsFiles are JSON files that outline the default values of the pipeline. By default, these values are disabled for users to modify. This approach provides you with a clear understanding of the default values used in the pipeline when specified parameters are employed.</p>
+<p>To enable this feature, First, click on the "Advanced" tab and enable the "Use paramsFiles" option. The next step is to create two folders in the pipeline repository: first, create a folder named "via," and then within the "via" folder, create another folder named "paramsFiles."  You can use <code>advanced tab</code> -&gt; <code>pipeline files</code> section to create these folders. Each file added to  <code>via/paramsFiles</code> folder will be an option to user to select. Lets check example below:</p>
+<ul>
+<li>
+<p>MolecularBiology option (Simple Settings):
+<img alt="image" src="../../images/paramsFilesMolecular.png"></p>
+</li>
+<li>
+<p>Microbiology option (Advanced Settings):
+<img alt="image" src="../../images/paramsFilesMicrobiology.png"></p>
+<div class="highlight"><pre><span></span><code>{
+    "run_RSEM" : "yes",
+    "run_Adapter_Removal":  "yes",
+    "Adapter_Trimmer_Quality_Module_Adapter_Removal": {"min_length" : 11, "Adapter_Sequence":"AGATCGGAAGAGC"},
+    "via_groups" : "microbiology",
+    "via_params_ask_only" : "reads, mate, genome_build, MultiQC.multiqc_parameters"
+    "via_params_show" : "run_Adapter_Removal"
+}
+</code></pre></div>
+</li>
+</ul>
+<p>In the <code>via/paramsFiles</code> folder, two JSON files named <code>MolecularBiology.json</code> and <code>Microbiology.json</code> have been added. Let's focus on the <code>MolecularBiology.json</code> file. In this file, specific values have been set for <code>run_RSEM</code> and <code>run_Adapter_Removal</code>. Instead of including all the parameters in this JSON file, you can use the <code>via_params_ask_only</code> keyword to disable all other parameters. In this example, the only parameters that can be edited are <code>reads</code>, <code>mate</code>, and <code>genome_build</code>. This allows users to focus on modifying these particular parameters while leaving the rest unchanged.</p>
+<p>In the <code>Microbiology.json</code> file, the process variables <code>min_length</code> and <code>Adapter_Sequence</code> for the <code>Adapter_Trimmer_Quality_Module_Adapter_Removal</code> step have been set. These variables define specific values for the minimum length and adapter sequence used in the adapter trimming process. In addition, the <code>via_groups</code> parameter is used to restrict the visibility of this parameter set on the user's run page. This means that only certain users or user groups will be able to view and modify these parameters during the pipeline execution, while others will not have access to them.</p>
+<ul>
+<li>
+<p><strong>paramsFiles Configuration</strong>:</p>
+<ul>
+<li>
+<p><strong>via_groups:</strong> This parameter is used to restrict the visibility of a parameter set on the user's run page. It allows you to specify certain user groups who will be able to see that particular parameter set, while others will not have access to it.</p>
+</li>
+<li>
+<p><strong>via_params_ask_only:</strong> When using this parameter, you can specify a comma-separated list of values. Only the parameters included in this list will be <strong>editable</strong> by the user on the run page. The rest of the parameters will be disabled and hidden (under <code>system inputs</code> section) from the user, preventing any modifications.</p>
+</li>
+<li>
+<p><strong>via_params_show:</strong> By default, only the parameters defined in via_params_ask_only will be displayed to the user on the run page. All other parameters will be hidden under the "system inputs" section. However, if you want to change this behavior, you can provide a comma-separated string with via_params_show. This will move the specified parameters from the "system inputs" section to the user interface, allowing them to be visible by the user.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>Here are the example run pages of the RNA-Seq pipeline:</p>
+<ul>
+<li>MolecularBiology option is selected:</li>
+</ul>
+<p><img alt="image" src="../../images/paramsFilesMolecularRun.png"></p>
+<ul>
+<li>Microbiology option is selected:</li>
+</ul>
+<p><img alt="image" src="../../images/paramsFilesMicrobiologyRun.png"></p>
+<h2 id="exporting-pipeline-parameters">Exporting Pipeline Parameters</h2>
+<p>To facilitate the exporting of used parameters in a pipeline, we have implemented a process called <code>publish_params_as_JSON</code>. This process can be found by using the search bar on the pipeline page. To enable this capability in a specific pipeline, you can simply drag and drop the <code>publish_params_as_JSON</code> process into the desired location.</p>
+<p>Once you have added the process to the pipeline, please drag and drop the <code>output parameter</code> to the workflow and rename it as <code>logs</code>. The following example workflow demonstrates this process:</p>
+<p><img alt="image" src="../../images/publish_params_as_JSON_workflow.png"></p>
+<p>After the run completes, a file named <code>run_params.json</code> will be generated under the "logs" folder, containing the exported parameters.</p>
+<div class="highlight"><pre><span></span><code>[
+    {
+        "Adapter_Removal": {
+            "min_length" : 11, 
+            "Adapter_Sequence":"AGATCGGAAGAGC"
+        },
+        "bed": "s3://viafoundry/genome_data/mouse/mm10/refseq/genes/genes.bed", 
+        "hisat2Index": "s3://viafoundry/genome_data/mouse/mm10/refseq/Hisat2Index", 
+        "outdir": "s3://viafoundry/runs/report159"
+    }
+]
+</code></pre></div>
+<h2 id="pipeline-header-script">Pipeline Header Script</h2>
+<p>This section, located in the <code>Advanced</code> tab of a pipeline's page,
+provides the capability to add additional inputs, scripts, or comments
+before the pipeline starts. This section is useful for defining common
+functions or variables that need to be used in multiple processes within
+the pipeline.</p>
+<p>By adding inputs, scripts, or comments in this section, you can ensure
+that they are available and accessible throughout the pipeline's
+execution. This allows you to define reusable code or parameters that
+can be referenced multiple times in different processes</p>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_headerscript.png"></p>
+<h2 id="adding-pipeline-inputs-by-pipeline-header-script">Adding Pipeline Inputs by Pipeline Header Script</h2>
+<p>You can use the <strong>pipeline header script</strong> field in the <code>Advanced</code> tab
+of a pipeline's page to add pipeline inputs, similar to adding dropdown
+options for process parameters. To create inputs in the pipeline header
+script, you need to use the following syntax:</p>
+<pre><code>params.variableName = defaultValue //* @dropdown @options:"..."
+</code></pre>
+<p>It's important to note that you need to use <code>params.</code> at the beginning
+of <code>variableName</code> to define the input parameter. The <code>defaultValue</code> can
+be specified with single or double quotes (for strings) or without any
+quotes (for numbers).</p>
+<p>On the run page, these input parameters will be displayed separately in
+the <strong>Inputs</strong> section. Users will be prompted to provide values for
+these parameters based on the defined options. Here's an example:</p>
+<pre><code>params.genome_build = "" //* @dropdown @options:"human_hg19, mouse_mm10, custom"
+params.run_Tophat = "no" //* @dropdown @options:"yes","no"
+</code></pre>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_alt_input.png"></p>
+<h2 id="autofill-feature-for-pipeline-inputs">Autofill Feature for Pipeline Inputs</h2>
+<p><strong>A. Based on Hostname:</strong></p>
+<p>In Via Foundry, you can use the autofill feature to specify input
+parameters based on the hostname of the execution environment. The
+syntax for autofilling input parameters based on hostname is as follows:</p>
+<pre><code>//* autofill
+if ($HOSTNAME == "ghpcc06.umassrc.org"){
+&lt;input parameters&gt;
+}
+//* autofill
+</code></pre>
+<p>In this example, <code>$HOSTNAME</code> is a Via Foundry-specific variable that
+represents the hostname of the execution environment. You can replace
+"hostname" with the actual hostname on which you want the autofilled
+inputs to apply. Within the if statement, you can define the
+<code>&lt;input parameters&gt;</code> that should be automatically filled when the
+pipeline is executed on the specified hostname. In this example,
+<code>&lt;input parameters&gt;</code> will be filled if the pipeline runs on
+<strong>ghpcc06.umassrc.org</strong>.</p>
+<p>Here's an example that demonstrates how to autofill the TrimPath
+parameter for a specific hostname:</p>
+<pre><code>//* autofill
+if ($HOSTNAME == "garberwiki.umassmed.edu"){
+    params.TrimPath ="/project/Trimmomatic/trimmomatic-0.32.jar"
+    } 
+//* autofill
+</code></pre>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_autofill_input_host.png"></p>
+<p><strong>B. Based on Selected Input:</strong></p>
+<p>In Via Foundry, you can also use the autofill feature based on the
+selected parameters on the run page. This allows you to dynamically
+change the value of an input parameter based on the selection made by
+the user.</p>
+<p>Here's an example that demonstrates how to autofill the path of a
+program based on the selected pipeline parameter <code>method</code>:</p>
+<pre><code>params.method = "" //* @dropdown @options:"trimmomatic, fastqx"
+//* autofill
+if (params.method == "trimmomatic"){
+    params.TrimPath ="/project/Trimmomatic/trimmomatic-0.32.jar"
+}
+else if (params.method == "fastqx"){
+    params.TrimPath ="/project/fastqx/fastqx"
+}
+//* autofill
+</code></pre>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_autofill_input_param.png"></p>
+<p><strong>C. Dynamic Autofill:</strong></p>
+<p>To autofill parameters that follow a specific pattern based on
+conditions, you can use the dynamic autofill feature in Via Foundry.
+This allows you to define variable parts of the pattern - using
+underscores; for example, <code>_species</code> or <code>_build</code> - and assign values to
+them based on the fulfillment of if conditions. You can then activate
+the autofill feature by checking the existence of your host. Here's an
+example of how to use dynamic autofill with proper syntax:</p>
+<pre><code>if (params.variableName &amp;&amp; $HOSTNAME){
+    &lt;input parameters&gt;
+}
+
+or
+
+if ($HOSTNAME){
+    &lt;input parameters&gt;
+}
+</code></pre>
+<p>For further clarification, reference the example below where the
+<code>params.genome</code> and <code>params.genomeIndexPath</code> parameters are filled
+according to selected parameters of <code>params.genome_build</code> and
+<code>$HOSTNAME</code>:</p>
+<pre><code>params.genome_build = "" //* @dropdown @options:"human_hg19, mouse_mm10"
+def _species;
+def _build;
+def _share;
+//* autofill
+if (params.genome_build == "human_hg19"){
+    _species = "human"
+    _build = "hg19"
+} else if (params.genome_build == "mouse_mm10"){
+    _species = "mouse"
+    _build = "mm10"
+}
+
+if ($HOSTNAME == "garberwiki.umassmed.edu"){
+    _share = "/share/dolphin_data/genome_data"
+} else if ($HOSTNAME == "ghpcc06.umassrc.org"){
+    _share = "/project/data/genome_data"
+}
+if (params.genome_build &amp;&amp; $HOSTNAME){
+    params.genome ="${_share}/${_species}/${_build}/${_build}.fa"
+    params.genomeIndexPath ="${_share}/${_species}/${_build}/${_build}"
+}
+if ($HOSTNAME){
+    params.TrimPath ="${_share}/Trimmomatic/trimmomatic-0.32.jar"
+}
+//* autofill
+</code></pre>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_autofill_input_dynamic.png"></p>
+<h2 id="autofill-feature-for-pipeline-properties">Autofill Feature for Pipeline Properties</h2>
+<p>To automate the filling of executor properties in Via Foundry, you can
+utilize the autofill feature. There are two types of autofill options
+available: hostname-independent autofill and hostname-dependent
+autofill.</p>
+<p><strong>Hostname-Independent Autofill:</strong></p>
+<p>To define executor properties that will be automatically filled
+regardless of the hostname, you can use the following syntax:</p>
+<pre><code>//* autofill
+&lt;executor properties&gt;
+//* autofill
+</code></pre>
+<p><strong>Hostname-Dependent Autofill:</strong></p>
+<p>If you need to overwrite the default executor properties based on
+specific hostnames, you can use hostname-dependent executor properties.
+Here's the syntax:</p>
+<pre><code>//* autofill
+&lt;executor properties&gt;
+if ($HOSTNAME == "ghpcc06.umassrc.org"){
+&lt;hostname dependent executor properties&gt;
+}
+//* autofill
+</code></pre>
+<p>In this example, the <code>&lt;executor properties&gt;</code> section will be filled for
+all hostnames. However, if the hostname is "ghpcc06.umassrc.org", the
+<code>&lt;hostname dependent executor properties&gt;</code> section will be additionally
+filled.</p>
+<p>The <code>$HOSTNAME</code> variable in Via Foundry represents the selected hostname
+in the run environment. By using this variable, you can apply specific
+executor properties based on the hostname.</p>
+<p><strong>Executor Properties:</strong></p>
+<p>There are five types of executor properties available to autofill
+<strong>Executor Settings for All Processes</strong>: <code>$TIME</code>, <code>$CPU</code>, <code>$MEMORY</code>,
+<code>$QUEUE</code>, <code>$EXEC_OPTIONS</code> which respectively define the Time, CPU,
+Memory, Queue/Partition and Other Options fields in the executor
+settings. You can set pipeline defaults by using the
+<code>$HOSTNAME == "default"</code> condition. Reference the example below:</p>
+<pre><code>//* autofill
+if ($HOSTNAME == "default"){
+    $MEMORY = 32
+    $CPU  = 1
+}
+if ($HOSTNAME == "ghpcc06.umassrc.org"){
+    $TIME = 3000
+    $CPU  = 4
+    $MEMORY = 100
+    $QUEUE = "long"
+    $EXEC_OPTIONS = '-E "file /home/garberlab"'
+}
+//* autofill
+</code></pre>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_autofill.png"></p>
+<p><strong>Singularity/Docker Images:</strong> There are four types of image properties
+able to be autofilled: <code>$DOCKER_IMAGE</code>, <code>$DOCKER_OPTIONS</code>,
+<code>$SINGULARITY_IMAGE</code>, <code>$SINGULARITY_OPTIONS</code>, which automatically fill
+the <code>image path</code> and <code>RunOptions</code> fields of Docker and Singularity. See
+the example below for the appropriate syntax of autofilling Docker image
+properties:</p>
+<pre><code>//* autofill
+if ($HOSTNAME == "ghpcc06.umassrc.org"){
+    $DOCKER_IMAGE = "docker://UMMS-Biocore/docker"
+    $DOCKER_OPTIONS = "-v /export:/export"
+}
+//* autofill
+</code></pre>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_autofill_docker.png"></p>
+<p>Likewise, here's the syntax needed when autofilling Singularity image
+properties:</p>
+<pre><code>//* autofill
+if ($HOSTNAME == "ghpcc06.umassrc.org"){
+    $SINGULARITY_IMAGE = "shub://UMMS-Biocore/singularity"
+    $SINGULARITY_OPTIONS = "--bind /project"
+}
+//* autofill
+</code></pre>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_autofill_singu.png"></p>
+<p>When you want to define both Singularity and Docker images, you can set
+the <code>$DEFAULT_IMAGE</code> tag to either <code>"docker"</code> or <code>"singularity"</code>,
+depending on your desired use. In this example, a Docker image is set by
+default, but if the user's hostname is "<a href="mailto:ghpcc06@umassrc.org">ghpcc06@umassrc.org</a>," a
+Singularity image will be set:</p>
+<pre><code>//* autofill
+if ($HOSTNAME == "default"){
+    $DEFAULT_IMAGE = "docker"
+    $DOCKER_IMAGE = "dolphinnext/rnaseq:1.0"
+    $SINGULARITY_IMAGE = "https://galaxyweb.umassmed.edu/pub/dnext_data/singularity/UMMS-Biocore-rna-seq-1.0.img"
+}
+if ($HOSTNAME == "ghpcc06.umassrc.org"){
+    $DEFAULT_IMAGE = "singularity"
+    $DOCKER_IMAGE = "dolphinnext/rnaseq:1.0"
+    $SINGULARITY_IMAGE = "https://galaxyweb.umassmed.edu/pub/dnext_data/singularity/UMMS-Biocore-rna-seq-1.0.img"
+}
+//* autofill
+</code></pre>
+<p>Please note that Google Cloud accounts will overwrite the
+<code>$DEFAULT_IMAGE</code> tag, since Google Cloud accounts only support the use
+of Docker images.</p>
+<p><strong>Platform Tag:</strong></p>
+<p>To isolate platform-dependent parameters in Via Foundry, you can use the
+<strong>platform</strong> tag. This allows you to exclude platform-specific
+parameters from the exported pipeline, and when the pipeline is
+imported, existing platform-dependent parameters will not be
+overwritten. Here's an example of how to use the platform tag:</p>
+<pre><code>//* autofill
+if ($HOSTNAME == "default"){
+    $MEMORY = 32
+    $CPU  = 1
+}
+//* platform
+if ($HOSTNAME == "ghpcc06.umassrc.org"){
+    $TIME = 3000
+    $CPU  = 4
+    $MEMORY = 100
+    $QUEUE = "long"
+    $EXEC_OPTIONS = '-E "file /home/garberlab"'
+}
+//* platform
+//* autofill
+</code></pre>
+<p>In this example, since the run environment is set as
+"ghpcc06.umassrc.org", the autofill feature overwrote the default
+<code>$TIME</code> value (1000) with a value of 3000.</p>
+<h2 id="pipeline-details">Pipeline Details</h2>
+<p>This section summarizes all processes used
+by the pipeline to give you an overarching perspective on the
+pipeline's architecture.</p>
+<p><img alt="image" src="../../dolphinNext/dolphinnext_images/pipeline_details.png"></p>
+<h2 id="permissions-and-groups">Permissions and Groups</h2>
+<p>By default, all new pipelines are only seen by their owner. You have the option to share your pipeline with a specific group that you have created in the profile's "Groups" tab. To do this, choose "Only my group" and select the name of the desired group. Members of that group will then be able to view the run on their run status page.</p>
+<p>Alternatively, you can set the permissions to "Everyone". With this setting, the pipeline will only be visible to users who know the specific run link. The selected pipeline will not appear on their pipelines page, but they will be able to access it if they have the link.</p>
+<p>When collaborating with multiple individuals on a shared pipeline, you have the option to grant write permission to a group by utilizing the "Group Permission to Write" dropdown. This allows you to specify a group and authorize them to make changes and modifications to the pipeline.</p>
+<p><img alt="image" src="../../images/pipeline_perms.png"></p>
+<h2 id="copying-and-revisions">Copying and Revisions</h2>
+<p>To make changes, new trials, improvements on your or other people's
+pipelines, you can create a duplicate of a pipeline in Via Foundry by
+clicking the <code>Duplicate Pipeline</code> button within a pipeline's page. When
+your pipeline has been set to public or used/edited by other group
+members, you're not allowed to make changes that alter that same
+revision of the pipeline. As such, duplicating a pipeline allows you to
+make changes and improvements without affecting the original pipeline or
+other users' work. It's a convenient way to experiment and iterate on
+pipelines while keeping the original version intact.</p>
+<h2 id="how-to-cite-us">How To Cite Us</h2>
+<p>If you use Via Foundry (formerly DolphinNext) in your research, please
+cite:</p>
+<p>Yukselen, O., Turkyilmaz, O., Ozturk, A.R. et al. DolphinNext: a
+distributed data processing platform for high throughput genomics. BMC
+Genomics 21, 310 (2020). <a href="https://doi.org/10.1186/s12864-020-6714-x">https://doi.org/10.1186/s12864-020-6714-x</a></p>
+<h2 id="support">Support</h2>
+<p>For any questions or help, please reach out to
+<a href="mailto:support@viascientific.com">support@viascientific.com</a> with your name and question.</p></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2023 by Via Scientific
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
