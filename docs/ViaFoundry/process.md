@@ -588,7 +588,7 @@ will combine all the features just discussed.
 
 ![image](../dolphinNext/dolphinnext_images/process_array_multi_condi.png)
 
-## Autofill Feature for Process
+## Autofill Feature for Processes
 
 To automate the filling of executor properties in Via Foundry, you can
 utilize the autofill feature. There are two types of autofill options

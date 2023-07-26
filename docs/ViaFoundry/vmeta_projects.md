@@ -1,38 +1,25 @@
 # Project Guide
 
-Projects are platforms to keep all of your collection and field data. At
-the top, there are three action buttons to manage projects: **insert**,
-**edit** and **delete**.
+Within Via Foundry and Vmeta, projects serve as platforms for managing your collection and field data. At the top of the projects section, you'll find three action buttons with which you can manage your projects: `Insert`, `Edit` and `Delete`.
 
-## Insert Project
+## Creating Projects
 
-In order to insert a new project, you need to click on the insert button
-which will open new project form. Here you can enter following fields:
+To create a new project, simply click on the `Insert` button, and it will open a new project form. Here, you can fill in the following fields:
 
--   **Name:** Project name is entered in this field.
--   **Label:** Long version of the project name is entered in this
-    field.
--   **RestrictTo:** User or groups are selected who are allowed to
-    **insert a new collection into project**. You may add new
-    user/groups by clicking **insert** button. Afterwards, you may
-    choose user/group/role to insert permission. If you want to remove
-    the permission, please click **options -\> delete** button.
--   **Permissions:** User or groups are selected who are allowed to
-    **view or edit the project**. You may add new user/groups by
-    clicking **share** button. Afterwards, please choose user/group and
-    read/write permission and click **save** button. If you want to
-    edit/remove the permission, please click **options** button.
+-   **Name:** Enter your project's name in this field.
+-   **Label:** Provide a longer description or label for the project.
+-   **RestrictTo:** Select users or groups who are allowed to insert new collections into the project. You can add new users/groups by clicking the `Insert` button and then choosing the appropriate user/group/role for insert permission. If you wish to remove this permission, click on `Options` and then the `Delete` button.
+-   **Permissions:** Select users or groups who are allowed to view or edit the project. To add new users/groups, click on the `Share` button, choose the desired user/group, set read/write permissions, and then click `Save`. If you need to edit or remove these permissions, click on the `Options` button.
 
 ![image](../images/projects_insert.png){.align-center width="99.0%"}
 
-## Edit Project
+## Editing Projects
 
-After clicking one of the checkboxes, you can start editing by clicking
-the edit button. A similar form window will open for editing.
+After clicking the checkbox corresponding to the project you'd like to edit, you can start editing by clicking
+the `Edit` button. A window similar to `Insert Project` will open, in which you can edit aspects of your metadata, including all those listed above in [Creating Projects](vmeta_projects.md#creating-projects).
 
 ![image](../images/projects_edit.png){.align-center width="99.0%"}
 
 ## Delete Project
 
-In order to remove project, you can select one or multiple items with
-checkboxes and click the delete button.
+To remove a project, just select its checkbox on the Projects dashboard and click `Delete`.

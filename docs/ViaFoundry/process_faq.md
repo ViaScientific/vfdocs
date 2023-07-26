@@ -217,7 +217,7 @@ As you're likely familiar, the **Advanced** section of a pipeline's page contain
 
 ![image](../images/rnaseq_nf_config.png)
 
-The header script is rather more flexible in the sense that variables defined within are not global in scope; if you define a variable `run_STAR` in the **Pipeline Header Script** section, then define another variable `run_STAR` within some process, you'll almost certainly encounter thorny overloading issues. To preempt any such issues, it's advisable to 1) use the `params` scope within the header script (to help avoid overloading) and 2) create unique variable names.
+Variables defined within the header script are global in scope; if you define a variable `run_STAR` in the **Pipeline Header Script** section, then define another variable `run_STAR` within some process, you'll almost certainly encounter thorny overloading issues. To preempt any such issues, it's advisable to 1) use the `params` scope within the header script (to help avoid overloading) and 2) create unique variable names.
 
 Also of note: within the header script, you can define functions to be invoked by processes. For instance, in several of our pipelines, we define a pathChecker function in the **Pipeline Header Script** to safeguard against improper indices being given, calling it from within processes whenever we build an index in the pipeline's pre-processing stage.
 

@@ -3,7 +3,7 @@
 This guide will walk you through the details of fields of the
 collections.
 
-Dmeta stores the records as field-and-value pairs in the MongoDB
+Vmeta stores the records as field-and-value pairs in the MongoDB
 database. Therefore after creating collection, we need to specify its
 fields and by doing that we state the type of data we want to store in
 each field. Also fields allows you to create parent-child relationships

@@ -2,7 +2,7 @@
 
 This guide will show how to create, edit, and delete collections.
 
-Collections are tables to keep all of your data. Dmeta allows you to
+Collections are tables to keep all of your data. Vmeta allows you to
 create parent-child relationships between collections using referencing
 techniques. Here we will go through basic of the collections.
 

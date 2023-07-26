@@ -1,15 +1,13 @@
-# DolphinNext Integration Guide
+# Via Foundry Integration Guide
 
-This guide will walk you through the details of starting DolphinNext run
-through Dmeta and then sending back the pipeline results to Dmeta.
+This guide will walk you through the details of starting a Via Foundry run through Vmeta and shuttling the pipeline results back to Vmeta.
 
-DolphinNext is an intuitive web interface designed to analyze and manage
-large numbers of samples in various run environments. Simply by entering
-data to file collection in Dmeta, you\'re ready to use those files in
-Dolphinnext Pipelines. Please click the `New Run` event or select `Run`
+Via Foundry is an intuitive web interface designed to analyze and manage
+large numbers of biological samples in various run environments. Simply by entering
+data to a file collection in Vmeta, it's ready to use in
+Via Foundry pipelines. In order to configure a Foundry run within Vmeta, navigate to the `Events` tab of your project's dashboard. From the `Select Event` dropdown menu, click the `New Run` event or select `Run`
 collection and click the `insert` button. To create `New Run` event
-please [check here.](vmeta_events.md#insert-new-run-event) The following
-page will appear to submit your run:
+please [check here.](vmeta_events.md#insert-new-run-event) The following page will appear to submit your run:
 
 ![image](../images/dmeta_run.png){.align-center width="99.0%"}
 
@@ -29,33 +27,33 @@ page will appear to submit your run:
 -   **Server ID:** Dolphinnext server where run-related data will be
     pulled.
 
--   **Run Environment:** User\'s Run Environments in DolphinNext are
+-   **Run Environment:** User's Run Environments in Via Foundry are
     listed in this dropdown.
 
--   **Template Run ID:** User\'s Runs are listed here. To submit a new
+-   **Template Run ID:** User's Runs are listed here. To submit a new
     run in dolphinnext, a template ID is required. After selecting a
     template run, the following Inputs and Outputs sections will appear.
 
 -   **Inputs:** Inputs of template run. You overwrite the run defaults
     or choose a new set of files in this section.
 
--   **Outputs:** Dmeta outputs of the template run. While creating a
+-   **Outputs:** Vmeta outputs of the template run. While creating a
     pipeline in dolphinnext, developers are allowed to select certain
-    files to send Dmeta. To do this, pipeline developers need to click
+    files to send Vmeta. To do this, pipeline developers need to click
     the edit icon of the green output circle and click the
-    `Publish to Dmeta` checkbox. After that following options need to be
+    `Publish to Vmeta` checkbox. After that following options need to be
     selected:
 
     > 1.  **Location of the Sample Name:** (Row Header, Column Header,
     >     Filename)
     > 2.  **Location of the Features:** (Row Header, Column Header, Both
     >     Headers)
-    > 3.  **Target Collection:** Any Dmeta collection name where output
+    > 3.  **Target Collection:** Any Vmeta collection name where output
     >     data will be saved. (e.g. summary, analysis)
 
-Dolphinnext sends back the run outputs to Dmeta after run completes.
+Dolphinnext sends back the run outputs to Vmeta after run completes.
 Each data or file associated with each sample separately. Therefore
-there are three ways to create output in the pipeline for Dmeta.
+there are three ways to create output in the pipeline for Vmeta.
 
 > -   **Option A.** Keeping sample names as table headers in TSV/CSV
 >     file.
@@ -84,9 +82,9 @@ there are three ways to create output in the pipeline for Dmeta.
 > ![image](../images/dnext_dmeta_output2.png){.align-center width="99.0%"}
 
 After saving these settings, selected collection name will appear in the
-outputs section in Dmeta.
+outputs section in Vmeta.
 
 -   **Work Directory:** Directory where the run will be executed.
 -   **Run URL:** If you want to enter an already executed run into
-    Dmeta, please enter the run URL here. This will prevent new run
+    Vmeta, please enter the run URL here. This will prevent new run
     submission.

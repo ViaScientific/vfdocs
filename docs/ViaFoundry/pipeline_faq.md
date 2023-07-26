@@ -16,7 +16,7 @@ Once you've added an input parameter to your workflow, you can edit it by pressi
 
 See the "mate" parameter on the left side of that image? Here's a look at how that parameter is filled.
 
-![image](../images/updated_mate_param.png)
+![image](../images/updated_mate_param.png){.align-center width="50.0%"}
 
 Note that its **Dropdown Options** are "single" and "pair", separated by a comma; and that its **Description** is "Single-End or Paired-End Data". Now, let's take a look at the runpage for RNA-Seq.
 
@@ -57,11 +57,17 @@ Here, we've presented three different ways to create pipeline inputs. Feel free 
 
 ### How can I configure the autofill section of my pipeline?
 
-To save users a lot of hassle on the back end, Via Foundry possesses a powerful autofill feature, wherein one can automatically fill input and executor property values, thus streamlining the pipeline execution process, based on simple conditions, such as whether the execution environment has a specific hostname and whether a given parameter has value *x*. Essentially, when writing scripts that automatically fill input values or executor properties, you simply want to enclose all your conditionals (for example:) 
+To save users a lot of hassle on the back end, Via Foundry possesses a powerful autofill feature, wherein one can automatically fill input and executor property values, thus streamlining the pipeline execution process, based on simple conditions, such as whether the execution environment has a specific hostname and whether a given parameter has value *x*. Essentially, when writing scripts that automatically fill input values or executor properties, you simply want to enclose all your conditionals in "//* autofill" flags. For example: 
+
 ```
-if $HOSTNAME == "..." {(fill parameters)}
+//* autofill
+if $HOSTNAME == "..." {
+    (fill parameters)
+}
+//* autofill
 ``` 
-in "//* autofill" flags. For much more detail on autofilling pipeline inputs, check out [this link](pipeline_guide.md#autofill-feature-for-pipeline-inputs), and if you'd like to find out how you can autofill pipeline executor properties, go [here](pipeline_guide.md#autofill-feature-for-pipeline-properties).
+
+For much more detail on autofilling pipeline inputs, check out [this link](pipeline_guide.md#autofill-feature-for-pipeline-inputs), and if you'd like to find out how you can autofill pipeline executor properties, go [here](pipeline_guide.md#autofill-feature-for-pipeline-properties).
 
 ## **Support**
 
