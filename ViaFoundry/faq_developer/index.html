@@ -11,17 +11,13 @@
       
       
       
-        <link rel="prev" href="../news/">
-      
-      
-        <link rel="next" href="../demo_single_cell_rna-seq_tutorial/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>Running RNA-Seq Pipeline - Via Foundry Documentation</title>
+        <title>Faq developer - Via Foundry Documentation</title>
       
     
     
@@ -71,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#expected-learning-outcome" class="md-skip">
+        <a href="#frequently-asked-questions-for-developers" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Running RNA-Seq Pipeline
+              Faq developer
             
           </span>
         </div>
@@ -291,16 +287,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
       
       
       
@@ -309,7 +303,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Tutorials
@@ -320,21 +314,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../demo_rna-seq_tutorial/" class="md-nav__link">
         Running RNA-Seq Pipeline
       </a>
-      
     </li>
   
 
@@ -741,8 +725,47 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#frequently-asked-questions-for-developers" class="md-nav__link">
+    Frequently Asked Questions for Developers
+  </a>
+  
+    <nav class="md-nav" aria-label="Frequently Asked Questions for Developers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process-guide" class="md-nav__link">
+    Process Guide
+  </a>
+  
+    <nav class="md-nav" aria-label="Process Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax-errors" class="md-nav__link">
+    Syntax Errors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -757,83 +780,22 @@
                   
 
 
-<div><h1 id="expected-learning-outcome">Expected learning outcome</h1>
-<p>To understand the basics of running a pipeline in Foundry by performing RNA-seq analysis on sample mouse data.</p>
-<h1 id="before-you-start">Before you start</h1>
-<p>Please go to <a href="https://www.viafoundry.com">https://www.viafoundry.com</a> and login into your account. If you have any issues logging in, please let us know (support@viascientific.com) and we will create an account for you.</p>
-<h1 id="creating-a-project">Creating a Project</h1>
-<p>In Foundry, analysis is organized by project. Each run belongs to a project and a project can consist of multiple runs.</p>
-<p>Once logged in, to create and configure a new project click on the <code>Projects</code> tab in the top menu and select <code>Add a New Project</code> button in the dropdown. In the pop-up, give the project a name (e.g. <code>RNA-seq Tutorial</code>) and click save.</p>
-<p><img alt="image" src="../../rnaseq_images/addproject1.png"></p>
-<h1 id="attaching-pipeline-to-project">Attaching Pipeline to Project</h1>
-<p>To help with organization, pipelines used in a project are attached to that project.</p>
-<p><strong>Note:</strong> The same pipeline can be attached to multiple projects.</p>
-<p>To attach a pipeline select the <code>Pipelines</code> tab and then click the <code>Add Pipeline</code> button. </p>
-<p><img alt="image" src="../../rnaseq_images/addpipeline1.png"></p>
-<p>Locate the <code>RNA-seq Pipeline</code>, click on the <code>Add</code> button, and then close the window.</p>
-<p><img alt="image" src="../../rnaseq_images/addpipeline2.png"></p>
-<p><strong>Note:</strong> For the purposes of this tutorial, be sure to add <code>RNA-seq Pipeline</code>, and <strong>not</strong> <code>RNA-seq Pipeline (NF-Core)</code></p>
-<h1 id="creating-a-run">Creating a Run</h1>
-<p>Once the project is created and a pipeline is attached, you are ready to create a run:</p>
+  <h1>Faq developer</h1>
+
+<div><h2 id="frequently-asked-questions-for-developers">Frequently Asked Questions for Developers</h2>
+<h3 id="process-guide">Process Guide</h3>
 <ol>
-<li>
-<p>Click the <code>Run</code> button next to the <code>RNA-seq Pipeline</code> entry in the table to load the "Run Page"</p>
-<p><img alt="image" src="../../rnaseq_images/runpipeline1.png"></p>
-</li>
-<li>
-<p>On the run page, under "Run Environment" select <code>Via Demo Environment (AWS Batch)</code></p>
-</li>
-<li>In the Inputs section, next to <code>reads</code>, click <code>Enter File</code></li>
-<li>In the files tab, click <code>Add File</code> button to enter new files.</li>
-<li>
-<p>Next to "1. File Location", enter:</p>
-<div class="highlight"><pre><span></span><code>s3://viascientific/run_data/test_data/fastq_mouse
-</code></pre></div>
-</li>
-<li>
-<p>Click the magnifying glass icon. The box below will populate with files like so:</p>
-<p><img alt="image" src="../../rnaseq_images/addfiles1.png"></p>
-</li>
-<li>
-<p>In the <code>3. Collection Type</code> dropdown, select <code>Paired List</code></p>
-</li>
-<li>
-<p>Under <code>4. File Pattern</code>, next to <code>Forward Pattern</code>, enter <code>.1</code>. Similarly, enter <code>.2</code> for <code>Reverse Pattern</code>.</p>
-<p><img alt="image" src="../../rnaseq_images/addfiles2.png"></p>
-</li>
-<li>
-<p>Click <code>Add All Files</code> button. You should now see 6 entries below.</p>
-<p><img alt="image" src="../../rnaseq_images/addfiles3.png"></p>
-</li>
-<li>
-<p>Next to <code>5. Collection Name</code>, enter <code>rna-seq mousetest paired</code>. The final three boxes can be left blank. Click <code>Save Files</code></p>
-</li>
-<li>The "Select/Add Input File" screen will now have 6 entries. Click "Save".</li>
-<li>For "mate", select <code>pair</code></li>
-<li>For "genome_build", select <code>mousetest_mm10</code></li>
-<li>Leave the rest of the inputs as defaults</li>
-<li>Click <code>Run</code> in the top right and then select <code>Start</code>. For this dataset, the RNA-seq pipeline run typically takes several minutes to complete.</li>
-<li>Navigate to the Log tab and click on log.txt to follow the progress of your run.</li>
-<li>Once the status bar in the top right changes from a blue "Running" status to a green "Completed" status go to the Report tab to see the final reports.</li>
-<li>
-<p>Click on <code>Mulitiqc</code> to open the "MultiQC" section. Scroll down to find this plot, which shows aligned reads per library:</p>
-<p><img alt="image" src="../../rnaseq_images/report1.png"></p>
-</li>
-<li>
-<p>Open the <code>Overall Summary</code> section to check mapping rates:</p>
-<p><img alt="image" src="../../rnaseq_images/report2.png"></p>
-</li>
-<li>
-<p>Open the <code>RSEM Module</code> section. that has a "View Format" of "Table" to download a count table:</p>
-<p><img alt="image" src="../../rnaseq_images/report3.png"></p>
-</li>
-<li>
-<p>Open the <code>RSEM Module</code> section. that has a "View Format" of "App" and select the "DEBrowser App" and click "Launch App" to perform Differential Expression Analysis with DEBrowser.</p>
-<p><img alt="image" src="../../rnaseq_images/report4.png"></p>
-</li>
+<li>we cannot run another docker command inside the script block since it is already running inside docker. We can change the docker that the process will use.</li>
 </ol>
-<p><strong>Note:</strong> For the purposes of speeding up the runtime of this tutorial, the demo dataset has been downsampled to only include a few genes. Differential expression analysis graphs will look very sparse with this dataset.</p>
-<p>Congratulations! You have run and tested a RNA-seq pipeline on Foundry!</p></div>
+<h4 id="syntax-errors">Syntax Errors</h4>
+<ol>
+<li>We need to escape dollar characters with slash \ . </li>
+</ol>
+<div class="highlight"><pre><span></span><code>So this part star_w_chimeric_helper($library, $star_index, $genome, $file, $name) needs to be star_w_chimeric_helper(\$library, \$star_index, \$genome, \$file, \$name)
+</code></pre></div>
+<ol>
+<li>We need to escape \ characters with another slash \ . </li>
+</ol></div>
 
 
 
