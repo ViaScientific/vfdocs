@@ -7,8 +7,8 @@ automated data processing pipelines and data analysis and visualization
 modules to support a wide variety of use cases from basic to complex,
 multi-organization/lab-based projects. It seamlessly communicates with
 data processing servers (e.g.
-[DolphinNext](https://dolphinnext.umassmed.edu/)) and analysis and
-visualization servers (e.g. Dportal)
+[Via Foundry](https://viafoundry.com)) and analysis and
+visualization servers (e.g. ViaPortal)
 
 ### Benefits of the design
 

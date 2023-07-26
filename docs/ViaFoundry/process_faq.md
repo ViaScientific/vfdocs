@@ -10,11 +10,11 @@ Foundry boasts a utility-packed revision control system, granting users effortle
 
 Throughout the pipeline creation and execution process, users can simply drag and drop any of Foundry's numerous publicly available processes and modules. In a pipeline's sidebar menu, you can just click on any of the pre-configured process or module menus (for instance, Alignment) and drag the process(es) you want into your workflow.
 
-![image](../images/process_sidebar.png){: width = "30%"}
+![image](../images/process_sidebar.png){.align-center width="20.0%"}
 
 You can also use the sidebar's `Search` bar to query a process, pipeline, or module by name if you don't know which menu it's under. Just type in a keyword and you'll see all the processes containing that keyword, which you can of course drag and drop into your workflow. See the image below for an example of querying all processes and modules containing "STAR":
 
-![image](../images/star_search.png)
+![image](../images/star_search.png){.align-center width="20.0%"}
 
 ### How can I create a new process revision and use it in a pipeline?
 
@@ -225,7 +225,7 @@ Also of note: within the header script, you can define functions to be invoked b
 
 Scope is somewhat less binary within Foundry processes than it is within pipelines, though such minutiae are beyond the breadth of this guide. The points which should be impressed upon users are as follows:
 
-- Declaring a variable in the header or footer script defines it in a global scope, baring it for future unwanted manipulation. As such, while it is objectively possible to create a variable in the header or footer script, it is somewhat unnecessary. Instead, it's recommended that header scripts (footer scripts are infrequently used) be utilized for style purposes, like configuring the appearance of input fields on the runpage; or for property-dependent autofill of [computing resources](pipeline_guide.md#autofill-feature-for-pipeline-properties) or [pipeline inputs](pipeline_guide.md#autofill-feature-for-pipeline-inputs). To illustrate this point, here's the header script for an index-checking process:
+- Declaring a variable in the header or footer script defines it in a global scope, exposing it for future unwanted manipulation. As such, while it is objectively possible to create a variable in the header or footer script, it is somewhat unnecessary. Instead, it's recommended that header scripts (footer scripts are infrequently used) be utilized for style purposes, like configuring the appearance of input fields on the runpage; or for property-dependent autofill of [computing resources](pipeline_guide.md#autofill-feature-for-pipeline-properties) or [pipeline inputs](pipeline_guide.md#autofill-feature-for-pipeline-inputs). To illustrate this point, here's the header script for an index-checking process:
 ```
 build_STAR_index = false //* @checkbox @description:"If you're using custom genome and gtf please enable build_STAR_index option." 
 

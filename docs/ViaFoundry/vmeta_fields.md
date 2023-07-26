@@ -146,7 +146,7 @@ fields:
 
 Consider the following hierarchy of collections:
 
-![image](images/fields_reference.png){.align-center width="25.0%"}
+![image](../images/fields_reference.png){.align-center width="25.0%"}
 
 In this example, **Patient Visit** is the child collection of the
 **Patient** collection. Therefore each **Patient Visit** data will have
@@ -154,7 +154,7 @@ a reference for **Patient** collection. In order to achive this
 hierarchy, following `patient_id` field could be added in the **Patient
 Visit** collection:
 
-![image](images/fields_reference_example.png){.align-center
+![image](../images/fields_reference_example.png){.align-center
 width="90.0%"}
 
 -   **Enum:** Array, creates a validator that checks if the value is in
@@ -182,14 +182,14 @@ width="90.0%"}
     read/write permission and click **save** button. If you want to
     edit/remove the permission, please click **options** button.
 
-![image](images/fields_insert.png){.align-center width="99.0%"}
+![image](../images/fields_insert.png){.align-center width="99.0%"}
 
 ## Edit Fields
 
 After clicking one of the checkboxes, you can start editing by clicking
 the edit button. A similar form window will open for collection editing.
 
-![image](images/fields_edit.png){.align-center width="99.0%"}
+![image](../images/fields_edit.png){.align-center width="99.0%"}
 
 ## Delete Fields
 

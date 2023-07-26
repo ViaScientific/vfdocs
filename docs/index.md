@@ -10,7 +10,9 @@
 - [Running RNA-Seq Pipeline](ViaFoundry/demo_rna-seq_tutorial.md)
 - [Running Cellranger Pipeline](ViaFoundry/demo_single_cell_rna-seq_tutorial.md)
 - [Using Metadata Tracker - GEO](ViaFoundry/demo_metadata-geo.md)
-- [Developer Tutorial - Creating Pipeline](ViaFoundry/demo_developer_tutorial.md)
+- [Developer Tutorial - Pipeline Creation (novice)](ViaFoundry/demo_developer_tutorial.md)
+- [Developer Tutorial 2 - Pipeline Creation (Advanced)](ViaFoundry/hisat_dev_tutorial.md)
+    - [Developer Tutorial 2 - Hisat2 Scripts](ViaFoundry/hisat_scripts.md)
 
 ## User Guide
 - [Quick Start Guide](ViaFoundry/quick.md)

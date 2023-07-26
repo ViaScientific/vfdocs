@@ -8,10 +8,10 @@ large numbers of samples in various run environments. Simply by entering
 data to file collection in Dmeta, you\'re ready to use those files in
 Dolphinnext Pipelines. Please click the `New Run` event or select `Run`
 collection and click the `insert` button. To create `New Run` event
-please [check here.](events.html#insert-new-run-event) The following
+please [check here.](vmeta_events.md#insert-new-run-event) The following
 page will appear to submit your run:
 
-![image](images/dmeta_run.png){.align-center width="99.0%"}
+![image](../images/dmeta_run.png){.align-center width="99.0%"}
 
 -   **Name:** Run name. If you select the `batch` submission type, you
     can append sample names using the `${name}` variable. e.g.
@@ -79,9 +79,9 @@ there are three ways to create output in the pipeline for Dmeta.
 > -   **Option C.** Keeping sample name on the filename. (e.g.
 >     VB75_rep1.png, VB75_rep1.tsv)
 >
-> ![image](images/dnext_dmeta_output1.png){.align-center width="99.0%"}
+> ![image](../images/dnext_dmeta_output1.png){.align-center width="99.0%"}
 >
-> ![image](images/dnext_dmeta_output2.png){.align-center width="99.0%"}
+> ![image](../images/dnext_dmeta_output2.png){.align-center width="99.0%"}
 
 After saving these settings, selected collection name will appear in the
 outputs section in Dmeta.

@@ -31,14 +31,14 @@ following fields:
     read/write permission and click **save** button. If you want to
     edit/remove the permission, please click **options** button.
 
-![image](images/collections_insert.png){.align-center width="99.0%"}
+![image](../images/collections_insert.png){.align-center width="99.0%"}
 
 ## Edit Collection
 
 After clicking one of the checkboxes, you can start editing by clicking
 the edit button. A similar form window will open for collection editing.
 
-![image](images/collections_edit.png){.align-center width="99.0%"}
+![image](../images/collections_edit.png){.align-center width="70.0%"}
 
 ## Delete Collection
 

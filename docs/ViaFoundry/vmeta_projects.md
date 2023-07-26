@@ -23,14 +23,14 @@ which will open new project form. Here you can enter following fields:
     read/write permission and click **save** button. If you want to
     edit/remove the permission, please click **options** button.
 
-![image](images/projects_insert.png){.align-center width="99.0%"}
+![image](../images/projects_insert.png){.align-center width="99.0%"}
 
 ## Edit Project
 
 After clicking one of the checkboxes, you can start editing by clicking
 the edit button. A similar form window will open for editing.
 
-![image](images/projects_edit.png){.align-center width="99.0%"}
+![image](../images/projects_edit.png){.align-center width="99.0%"}
 
 ## Delete Project
 

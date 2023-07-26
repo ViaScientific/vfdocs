@@ -23,7 +23,7 @@ basics of the event section.
 8.  Read/Write permission of this form could be adjusted with the
     Permissions section at the bottom.
 
-![image](images/insert-events.png){.align-center width="99.0%"}
+![image](../images/insert-events.png){.align-center width="99.0%"}
 
 ## Insert New Run Event
 
@@ -55,4 +55,4 @@ the expected values for this event.
 
 Example From from Dmeta User Interface:
 
-![image](images/insert-run-event.png){.align-center width="99.0%"}
+![image](../images/insert-run-event.png){.align-center width="99.0%"}
