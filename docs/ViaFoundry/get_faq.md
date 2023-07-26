@@ -84,15 +84,15 @@ Via Foundry provides a robust and scalable environment to run complex machine le
 
 Our structured and unstructured data supports document differences by automatic versioning.  Foundry follows these general steps:
 
-**1. Data Schema Design:** Platform ensures that the data schema includes fields to store metadata about each document's version, such as a timestamp or and a unique hash for that entry. We also keep metadata of metadata in the collections in MongoDB as well rather than as static json objects required to be loaded while starting an app.
+**1. Data Schema Design:** Platform ensures that the data schema includes fields to store metadata about each document's version, such as a timestamp or and a unique hash for that entry. Metadata of metadata is also kept in the collections in MongoDB as well rather than as static json objects required to be loaded while starting an app.
 
-**2. Store/Backup Complete Versions:** Instead of directly updating documents, Foundry  saves complete copies (snapshots) of the documents. Additionally Foundry does not delete any fields if they are removed, we deprecate them to allow supporting old documents.
+**2. Store/Backup Complete Versions:** Instead of directly updating documents, Foundry  saves complete copies (snapshots) of the documents. Additionally Foundry does not delete any fields if they are removed, those fields are deprecated to allow supporting continuity and backward compatibility.
 
-**3. Audit Trail:** Foundry creates an "audit trail" in separate log files to store the history of changes made to the documents. We track the changes with timestamps, user identifiers, and any other relevant metadata.
+**3. Audit Trail:** Foundry creates an "audit trail" in separate log files to store the history of changes made to the documents. The changes are tracked with timestamps, user identifiers, and any other relevant metadata.
 
 **4. Querying the History:** When there is a need to retrieve historical data or show the diff indications, Foundry enables the user to query the audit trail logs to fetch the relevant versions of the document and compare them to identify the differences.
 
-**5. Displaying Diffs:** Currently the Foundry UI does not support  displaying differences, however, in our roadmap, we added tasks such as adding algorithms like the "Longest Common Subsequence" (LCS) to efficiently compute the differences between two versions of a document. These differences can then be presented as "diff indications" to the users, showing what has been added, deleted, or modified.
+**5. Displaying Diffs:** Currently the Foundry UI does not support  displaying differences, however, in our roadmap, the algorithms such as the "Longest Common Subsequence" (LCS) are going to be used to efficiently compute the differences between two versions of a document. These differences can then be presented as "diff indications" to the users, showing what has been added, deleted, or modified.
 
 **6. Managing Storage:** Foundry manages storage, periodic archival and / or cleanup of older versions. Foundry also has manual two step delete and prune options if the user chooses to remove data.
 
@@ -112,7 +112,7 @@ Foundry’s metadata system ensures compliance with NCBI's GEO submission requir
 
 **1.** The challenge of metadata organization lies in the complexity and variability of the data. For genomics and other biological research data, there is a need to capture a wide range of metadata including not just the raw data, but also factors such as experimental conditions, processing methods, and other relevant details. This creates a complex matrix of data to manage and organize.
 
-The metadata is not only derived from the equipment being integrated. While the majority of metadata comes from the sequencing machinery and associated software, other crucial metadata sources include the biological source material, reagents, lab conditions, and even the researcher's notes and observations. In addition, post-processing of data can also generate its own metadata. Therefore, the metadata can come from a variety of sources, both human and machine-generated.
+The metadata is not only derived from the user entries. While the majority of metadata comes from the sequencing machinery and associated software, other crucial metadata sources include the biological source material, reagents, lab conditions, and even the researcher's notes and observations. In addition, post-processing of data can also generate its own metadata. Therefore, the metadata can come from a variety of sources, both human and machine-generated.
 
 The propagation of new metadata across all samples is a dynamic process. Our system updates the metadata repository in real time as new data comes in. This helps ensure that the metadata for all samples remains up-to-date and consistent, even as new data is added.
 
@@ -120,13 +120,13 @@ The propagation of new metadata across all samples is a dynamic process. Our sys
 
 Our normalization process typically involves the following steps: 
 
-- First, we map the data to a common data model which provides a standard structure for the data. 
-- Then, we use various data transformation techniques to make the data more consistent, such as converting measurements to a standard unit or mapping variable names to a standard nomenclature.
-- Lastly, we perform quality checks to ensure the consistency and reliability of the data.
+- First, the data is mapped to a common data model which provides a standard structure for the data. 
+- Then, various the data transformation techniques are used to make the data more consistent, such as converting measurements to a standard unit or mapping variable names to a standard nomenclature.
+- Lastly, quality checks are pefromed to ensure the consistency and reliability of the data.
 
-To further enhance our data integration capabilities, we have developed common normalized template metadata collections that serve as a starting point for every project. These templates contain the minimum information required to integrate different omic fields, providing a foundation for future expansion if needed. 
+To further enhance our data integration capabilities, wcommon normalized template metadata collections are used to serve as a starting point for every project. These templates contain the minimum information required to integrate different omic fields, providing a foundation for future expansion if needed. 
 
-Moreover, to ensure that our metadata is both interoperable and accurately interpreted across different systems, we incorporate ontology support into our fields. This means that the terms used in our metadata fields are linked to controlled vocabularies and standards used in the broader scientific community. This also allows users to add additional, specialized metadata fields to the system to meet their specific needs, while ensuring that this new data remains compliant with the established standards.
+Moreover, to ensure the metadata is both interoperable and accurately interpreted across different systems, ontology support is incorprated into our fields. This means that the terms used in the metadata fields are linked to controlled vocabularies and standards used in the broader scientific community. This also allows users to add additional, specialized metadata fields to the system to meet their specific needs, while ensuring that this new data remains compliant with the established standards.
 
 ### How does Foundry enhance pipeline development and support interoperability in bioinformatics?
 
