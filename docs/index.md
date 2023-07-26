@@ -5,6 +5,7 @@
 - [Pipeline Examples](ViaFoundry/pipeline_example.md)
 - [About](ViaFoundry/about.md)
 - [How To Cite Us](ViaFoundry/cite.md)
+- [Frequently Asked Questions](ViaFoundry/get_faq.md)
 
 ## Tutorials
 - [Running RNA-Seq Pipeline](ViaFoundry/demo_rna-seq_tutorial.md)
