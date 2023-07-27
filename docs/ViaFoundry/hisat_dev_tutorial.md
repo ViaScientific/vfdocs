@@ -556,27 +556,7 @@ if (params.genome_build == "mousetest_mm10"){
     _species = "mouse"
     _build = "mm10"
 }
-if ($HOSTNAME == "garberwiki.umassmed.edu"){
-    _share = "/share/dolphin/genome_data"
-    $SINGULARITY_IMAGE = "shub://UMMS-Biocore/singularitysc"
-    $SINGULARITY_OPTIONS = "--bind /project --bind /share --bind /nl"
-} else if ($HOSTNAME == "ghpcc06.umassrc.org"){
-    _share = "/share/data/umw_biocore/genome_data"
-    $SINGULARITY_IMAGE = "/project/umw_biocore/singularity/UMMS-Biocore-singularitysc-master-latest.simg"
-	$SINGULARITY_OPTIONS = "--bind /project --bind /share --bind /nl"
-    $TIME = 500
-    $CPU  = 1
-    $MEMORY = 32 
-    $QUEUE = "long"
-} else if ($HOSTNAME == "fs-e8be58a0"){
-    _share = "/mnt/efs/share/genome_data"
-    $SINGULARITY_IMAGE = "shub://UMMS-Biocore/singularitysc"
-    $SINGULARITY_OPTIONS = "--bind /mnt"
-} else if ($HOSTNAME == "fs-bb7510f0"){
-    _share = "/mnt/efs/share/genome_data"
-    $SINGULARITY_IMAGE = "shub://UMMS-Biocore/singularitysc"
-    $SINGULARITY_OPTIONS = "--bind /mnt"
-}
+
 if (params.genome_build && $HOSTNAME){
     params.genomeDir ="${_share}/${_species}/${_build}/"
     params.genome ="${_share}/${_species}/${_build}/${_build}.fa"

@@ -12,7 +12,6 @@
 - [Using Metadata Tracker - GEO](ViaFoundry/demo_metadata-geo.md)
 - [Developer Tutorial - Pipeline Creation (novice)](ViaFoundry/demo_developer_tutorial.md)
 - [Developer Tutorial 2 - Pipeline Creation (Advanced)](ViaFoundry/hisat_dev_tutorial.md)
-    - [Developer Tutorial 2 - Hisat2 Scripts](ViaFoundry/hisat_scripts.md)
 
 ## User Guide
 - [Quick Start Guide](ViaFoundry/quick.md)
