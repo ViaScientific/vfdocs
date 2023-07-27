@@ -175,7 +175,8 @@ Before you start building the pipeline, make sure you have your newly minted pro
 **c.** Now, drag and drop three `Input Parameters` (shown at the top of the left-side menu) into the workflow. You can change their names by clicking the `Edit` button (shaped like a pencil and on the left of the parameter's circle) and entering a new name when prompted. Please change your new input parameters' names to `Input_Reads`, `Hisat2_Index` and `bedFile`, respectively, and connect them to their corresponding processes as such:
 
 ![image](../images/inputParameters.jpg){: width="30%"}
-![image](../images/workflow1.png)
+
+![image](../images/workflow1.png){.align-center width="50.0%"}
 
 **d.** Note that your Hisat2 process has a "mapped_reads" output parameter, and your RSeQC process has a "mapped_reads" input parameter. To connect parameters with compatible types, just click on the relevant nodes of each parameter. For example, to connect the Hisat2 and RSeQC processes, click on the Hisat2 "mapped_reads" output node, then the RSeQC "mapped_reads" input node. Please do so. At this stage, your workflow should look identical to the one above.
 

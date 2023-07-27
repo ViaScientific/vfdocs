@@ -52,7 +52,7 @@ Presented here is the example report tab for the RNA-Seq Run. Each section withi
 
 ![image](../images/rnaseq_report.png)
 
-Below is a screenshot showcasing the interactive analysis of differential expression analysis using the Shiny app called DEbrowser.
+Below is a screenshot showcasing the interactive analysis of differential expression analysis using the Shiny app DEbrowser.
 
 ![image](../images/rnaseq_debrowser.png)
 
@@ -77,8 +77,8 @@ follows:
 1.  Quality Control: The pipelines utilize FastQC to assess the quality
     of the sequencing reads and generate quality control outputs.
     Additionally, optional processes such as read quality filtering
-    (trimmomatic), read quality trimming (trimmomatic), and adapter
-    removal (cutadapt) can be employed to further refine the data.
+    (Trimmomatic), read quality trimming (Trimmomatic), and adapter
+    removal (CutAdapt) can be employed to further refine the data.
 2.  Counting and Filtering: To estimate the abundance of both standard
     and predefined sets of genomic loci (e.g., rRNAs, miRNAs, tRNAs,
     piRNAs, snoRNAs, ERCC), the pipelines employ tools like

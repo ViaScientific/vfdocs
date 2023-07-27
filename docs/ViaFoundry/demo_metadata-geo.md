@@ -1,10 +1,10 @@
-## Expected learning outcome
+## Expected Learning Outcome
 
-To understand the basics of Metadata Tracking System, and import sample GEO metadata.
+To understand the basics of Via's Metadata Tracking System, and import sample GEO metadata.
 
-## Before you start
+## Before You Start
 
-Please go to <https://www.viafoundry.com> and login into your account. If you have an issue about login, please let us know about it (support@viascientific.com). We will set an account for you.
+Please go to <https://www.viafoundry.com> and log into your account. If you have an issue about login, please let us know about it by emailing support@viascientific.com, and we will set up an account for you.
 
 ## Creating Project and Adding Metadata Tracker
 
@@ -212,7 +212,7 @@ Click on the `Metadata` tab. This window is the `Data View` section of the Metad
 
 8. Now you can return to table view by clicking the button below:
 
-      ![image](../metadata_geo_images/geo_load_table4.png)
+      ![image](../metadata_geo_images/geo_load_table4.png){.align-center width="50.0%"}
 
 
 9. Switch to `Samples` collection by using collection dropdown. Similar to the biosamples collection, click the `Download Last Viewed Page as Excel file` button. Copy and paste the data in SraRunTable into this empty sheet as follows or you can download the samples template <a href="metadata_geo_files/Samples_template.xlsx?raw=true" download="Samples_template.xlsx">  here.</a>:
@@ -220,11 +220,11 @@ Click on the `Metadata` tab. This window is the `Data View` section of the Metad
       ![image](../metadata_geo_images/geo_filled_samples.png)
 
 
-      ```
-      Note: `Sample Name` column in SraRunTable is copied to the `Name` column.
-      ```
+      
+      *Note*: The `Sample Name` column in SraRunTable is copied to the `Name` column.
+      
 
-10. After saving this file, click on the `Import on Excel File` button. If you prefer you can use samples table by <a href="metadata_geo_files/Samples.xlsx?raw=true" download="Samples.xlsx"> clicking here.</a> Drag and drop your Samples.xlsx file and click the `Load Table` button. Now you're ready to import sample data with the save button. Return back to the table view by clicking the `Show Table Format` button.
+10. After saving this file, click on the `Import on Excel File` button. If you prefer, you can use samples table by <a href="metadata_geo_files/Samples.xlsx?raw=true" download="Samples.xlsx"> clicking here.</a> Drag and drop your Samples.xlsx file and click the `Load Table` button. Now you're ready to import sample data with the save button. Return back to the table view by clicking the `Show Table Format` button.
 
 11. Go to the collection dropdown and change its value to `Files`. Click the `Download Last Viewed Page as Excel file` button or download <a href="metadata_geo_files/Files_template.xlsx?raw=true" download="Files_template.xlsx"> here </a> Copy and paste the data in SraRunTable into this empty sheet as follows or <a href="metadata_geo_files/Files.xlsx?raw=true" download="Files.xlsx"> download here </a>:
 
@@ -234,9 +234,9 @@ Click on the `Metadata` tab. This window is the `Data View` section of the Metad
 12. If you prefer you can use entered files in run submission. Select the `Runs` collection and click `Insert` button. 
       - Name: Your run name
       - Submission Type: Standard
-      - Server: Viafoundry Server
-      - Run Environment: Via Run Environment (AWS Batch)
-      - Template run id: Enter your previous run id or enter 1 to use our demo run as template.
+      - Server: ViaFoundry Server
+      - Run Environment: Via Demo Environment (AWS Batch)
+      - Template Run ID: Enter your previous run id or enter 1 to use our demo run as template.
       - Inputs: Click `Select File` Button and use checkboxes to select your files.
       - You can change other input values according to your needs.
 

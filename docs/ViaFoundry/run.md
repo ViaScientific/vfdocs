@@ -26,7 +26,9 @@ run page's header. Additionally, you can find `Delete Run`,
 `Duplicate Run`, and `Move Run` options by clicking on the three dots
 next to the status indicator.
 
-## Run Settings and Status
+## Runpage Tabs
+
+### Run Settings and Status
 
 The status of your current run is displayed at the far right of the run
 page's header. Initially, you'll see an orange `Waiting` button. In
@@ -35,7 +37,7 @@ order to initiate a run, the following data need to be entered:
 1.  **Run Environment:** The environment, discussed in the
      [profile](profile.md) page, within which you'd like to conduct
      your run.
-2.  **Work Directory:** Full path of the directory where Nextflow runs
+2.  **Work Directory:** Full path of the directory where Foundry runs
      will be executed. (e.g. ``/home/newuser/workdir``)
 3.  **Inputs:** Various values and files, specifying which data
      will be processed and how (i.e. whether single-end vs. paired-end
@@ -55,12 +57,12 @@ All possible status messages are listed here:
 | Initializing| Job is submitted, waiting for run execution                                           |
 | Running     | Nextflow has executed and is running the jobs.                                        |
 | Completed   | The job is completed.                                                                 |
-| Run Error   | Error occurred before submitting the jobs or while executing the jobs.                |
+| Run Error   | An error occurred before submitting the jobs or while executing the jobs.                |
 | Terminated  | User terminated the run by using the `Terminate Run` button.                          |
 
 
 
-## Advanced Options
+### Advanced Options
 
 -   **Run Sharing (Permissions to View):** By default, all runs are only visible to their owners. However, you have the option to share your run with a specific group that you have created in the profile's "Groups" tab. To do this, choose "Only my group" and select the name of the desired group. Members of that group will then be able to view the run on their run status page.
 
@@ -78,10 +80,10 @@ All possible status messages are listed here:
 
     -   **A. Use Docker Image:**  
 
-        1.  **Image:** Docker image name. Example:
-    
-             viascientific/rnaseq:4.0
-    
+        1.  **Image:** The path of the [Docker](app.md#dockerfile) image you're using. Example:
+    ```
+    viascientific/rnaseq:4.0
+    ```
         2.  **RunOptions (optional):** Foundry has the ability to autodetect all the paths used and automounts all the required files to the container before the run starts. Moreover, you have the flexibility to enter any command line arguments supported by the Docker run command. Please click [this Docker link](https://docs.docker.com/engine/reference/commandline/cli/) for details on how you can configure this section.
 
     -   **Use Singularity Image:** Instead of Docker, you can activate a
@@ -120,7 +122,7 @@ All possible status messages are listed here:
     
       Suggested parameters for this configuration are as follows: short, 20GB memory, 1 CPU, and 240 minutes of execution time.
     
-      ![image](../images/edit_nextflow_executor_settings.png)
+      ![image](../images/edit_nextflow_executor_settings.png){.align-center width="77.7%"}
  
     
       **3. Executor Settings for All Processes (in ``Advanced`` tab
@@ -145,7 +147,7 @@ All possible status messages are listed here:
 
 
 
-## Workflow
+### Workflow
 
 To provide a visualization of the current run's architecture, the
 selected pipeline and its modules are showed on this page. To see more
@@ -192,7 +194,7 @@ change to `Run Error`.
 
 ![image](../dolphinNext/dolphinnext_images/run_error.png)
 
-## Report
+### Report
 
 This tab will appear in the run page upon run initialization. You can
 view the output files in various modules such as R-Markdown, Datatables,
@@ -210,7 +212,7 @@ icons to help you best analyze each report.
 please let us know about it at <support@viascientific.com>, and we'd be
 happy to add it for you.
 
-## -   **Shiny App - DEBrowser** -
+#### -   **Shiny App - DEBrowser** -
 
 DEBrowser is an R library which provides an easy way to perform and
 visualize DE (Differential Expression) analysis. This module takes count
@@ -221,7 +223,7 @@ data. You can find their documentation
 ![image](../images/rnaseq_debrowser.png)
 
 
-## -   **R-Studio - R-Markdown** -
+#### -   **R-Studio - R-Markdown** -
 
 The R-Studio launcher facilitates interactive analysis of the data generated from a run. We have prepared a set of R-Markdown reports that provide access to your report in HTML or PDF format immediately after the run is completed.
 
@@ -229,19 +231,19 @@ For instance, the code below performs differential expression analysis for each 
 
 ![image](../images/rstudio-app.png)
 
-## -   **Jupyter Notebook** -
+#### -   **Jupyter Notebook** -
 
 The Jupyter Notebook app, due to its interactive and flexible nature, it allows bioinformatics researchers to combine code, visualizations, and explanatory text in a single document. Bioinformaticians can write and execute code snippets in real-time, visualize data using various plotting libraries, and document their analyses step-by-step.
 
 ![image](../images/jupyter-app.png)
 
-## -   **Shiny App - GSEA Explorer** -
+#### -   **Shiny App - GSEA Explorer** -
 
 GSEA Explorer is an R library that offers a convenient method for conducting and visualizing Gene Set Enrichment Analysis (GSEA). GSEA aims to assess whether a specific gene set or pathway is enriched in gene expression data, indicating its potential biological significance in the studied condition. The GSEA Explorer application can be accessed after executing Foundry's complete RNA-sequencing pipeline or the standalone Differential Expression module. By leveraging GSEA Explorer, researchers can gain valuable insights into the functional implications of gene sets and pathways, aiding in the interpretation of RNA-seq results and facilitating a deeper understanding of biological mechanisms.
 
 ![image](../images/gsea-app.png)
 
-## -   **Shiny App - Network Explorer** -
+#### -   **Shiny App - Network Explorer** -
 
 The Network Explorer allows bioinformaticians to explore and analyze these complex networks, helping them uncover hidden patterns, identify key players, and understand the underlying biological mechanisms. The Network Explorer application can be launched after running Foundry's full RNA-sequencing pipeline or the stand-alone Differential Expression module.
 
@@ -249,7 +251,7 @@ The Network Explorer allows bioinformaticians to explore and analyze these compl
 
 
 
-## -   **Datatables** -
+#### -   **Datatables** -
 
 This module, powered by [Datatables](https://datatables.net//), allows
 you to view, sort, and search the table's content. The following two
@@ -266,7 +268,7 @@ examples depict alignment and RSEM summaries within Datatables.
 You can fit the entire table in your screen by clicking the
 `Full screen` icon at the top of the module.
 
-## -   **HTML/PDF Viewer** -
+#### -   **HTML/PDF Viewer** -
 
 You can easily embed HTML/PDF content in our **Report** section by using
 HTML/PDF Viewer. Reference this image, which shows MultiQC output, for an

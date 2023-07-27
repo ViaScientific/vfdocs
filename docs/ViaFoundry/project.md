@@ -9,12 +9,14 @@ Projects are platforms to categorize all of your runs and files. To run
 a pipeline, you must add it into your project. There are two ways to
 create a new project and add pipelines to it:
 
-  -   A.  First, click the "Projects" button in the top of the screen.
-          From the dropdown menu, you can create a new project by
-          clicking `Add a New Project`. After saving the name of the
-          project, it will be added to your Projects table, which is
-          accessible from the dropdown menu, as shown in the image
-          below:
+### Option A: Creating a Project, Then Adding a Pipeline
+
+First, click the `Projects` button in the top of the screen.
+From the dropdown menu, you can create a new project by
+clicking `Add a New Project`. After saving the name of the
+project, it will be added to your Projects table, which is
+accessible from the dropdown menu, as shown in the image
+below:
 
   ![image](../images/project_dropdown.png)
 
@@ -38,11 +40,13 @@ create a new project and add pipelines to it:
         given project, as mentioned above.
     ![image](../images/project_runs_page.png)
 
-  -   B.  You can also create a project by clicking the `Pipelines`
-          button on the top left of the page. Select the pipeline you
-          want to run by clicking on it. At the top right of the
-          pipeline page, you'll see a `Run` button; press this to
-          initiate a run.
+
+### Option B: Creating a Run, Then Adding It to a New Project
+You can also create a project by clicking the `Pipelines`
+button on the top left of the page. Select the pipeline you
+want to run by clicking on it. At the top right of the
+pipeline page, you'll see a `Run` button; press this to
+initiate a run.
 
   ![image](../images/run_button.png)
 
@@ -55,7 +59,7 @@ create a new project and add pipelines to it:
 
   You can proceed by entering the run name, which will subsequently be
   added to your project's run list. Clicking `Save Run` will redirect
-  you to the "Run Page", where you can initiate your run.
+  you to the runpage, where you can initiate your run.
 
 ## Support
 

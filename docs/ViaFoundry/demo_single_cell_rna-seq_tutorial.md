@@ -62,7 +62,10 @@ In the `Select/Add Input File` window, (10) select the `Files` tab and then (11)
 
 Here if you need to upload your files to AWS S3, please check out the file upload video below:
 
-![type:video](https://user-images.githubusercontent.com/33356633/223840766-f00d3205-835c-4685-b10a-866722c489f6.mp4)
+
+<video controls>
+    <source src="https://user-images.githubusercontent.com/33356633/223840766-f00d3205-835c-4685-b10a-866722c489f6.mp4" type="video/mp4">
+</video>
 
 ***
 
@@ -127,7 +130,7 @@ If you prefer to add custom genome sequence to selected genome_build, enable thr
 
 !!! warning
 
-    This change will add approx. 1 hour to run time since it will build new indexes with entered custom sequences. 
+    This change will add approx. 1 hour to the run time since it will build new indexes with entered custom sequences. 
     If you select no to these inputs it will use prebuilt indexes. 
 
 To supply the new sequences (31) click the wrench in the `add_sequences_to_reference` section.
@@ -178,7 +181,7 @@ Finally, to submit the run (36) click "Run" in the top right and (37) select "St
 4. Click the `Run` button of the `scRNA Seurat 10x` on the table.
 5. Choose Run Environment as `Via Run Environment (AWS Batch)`
 6. Choose genome_build as `human_hg38_gencode_v32_cellranger_v6`
-7. Click `Enter File` for Metadata. Fill in the "Sample" column with "pbmc_1k_v3_S1" and "Condition" column with `pmbc_1k_v3` click "Save".
+7. Click `Enter File` for Metadata. Fill in the "Sample" column with "pbmc_1k_v3_S1" and "Condition" column with `pmbc_1k_v3`. Click "Save".
 8. Enter 101 for Data_Path which is the already finished 10x pipeline run id.
 9. Click Run Button at the top right.
 

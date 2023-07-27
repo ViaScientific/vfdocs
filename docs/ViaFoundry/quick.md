@@ -86,12 +86,12 @@ You can reach your remote files by entering:
 ### Geo Files
 
 If you want to download and use NCBI (GEO data) in the pipeline, you can
-simply use the `GEO Files` tab. Here are the few examples for GEO ID:
-`GSM1331276`, `GSE55190`, `SRR10095965`
+simply use the `GEO Files` tab. Here are a few examples for GEO IDs you can enter:
+`GSM1331276`, `GSE55190`, `SRR10095965`.
 
 ![image](../images/files_geo.png)
 
-### Using Files Belongs to Multiple Folders
+### Using Files Belonging to Multiple Folders
 
 When you add a star symbol (*) at the end of your search, like this:
 
@@ -112,7 +112,7 @@ s3://viascientific/s3_merge/test2/sample1_RUN02_S1.R2.fastq.gz
 
 ### Auto-Merge Feature
 
-If you use a glob pattern to specify files that share a common pattern, you can use this feature to merge those files automatically. In this example, the auto-merging pattern is "_RUN*_S?". This pattern indicates that you want to merge files that have the pattern "_RUN" followed by any number of characters, then followed by "_S" and a single character.
+If you use a glob pattern (more on that [here](process_faq.md#my-process-creates-files-of-different-extensions-how-do-i-send-the-files-to-directories-matching-each-extension)) to specify files that share a common pattern, you can use this feature to merge those files automatically. In this example, the auto-merging pattern is "_RUN*_S?". This pattern indicates that you want to merge files that have the pattern "_RUN" followed by any number of characters, then followed by "_S" and a single character.
 
 By applying this auto-merging pattern to the previous example, the files listed above would be merged into one pair of files for single sample.
 

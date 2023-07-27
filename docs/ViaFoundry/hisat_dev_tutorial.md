@@ -715,13 +715,13 @@ Simply click the green `Run` button at the top right of the runpage, then select
 
 You'll have to wait a few minutes, but once the run has completed, here's how some important files in the Log and Report section will look:
 
-- **log.txt**: This file tracks the submission and execution of the pipeline's processes, as well as any warnings and errors that occur.
+**log.txt**: This file tracks the submission and execution of the pipeline's processes, as well as any warnings and errors that occur.
     ![image](../images/hisat_log.txt.png)
 
-- **timeline.html**: This file provides a graphical representation of which processes were executed at what time, for how long, and with how much memory.
+**timeline.html**: This file provides a graphical representation of which processes were executed at what time, for how long, and with how much memory.
     ![image](../images/hisat_timeline.png)
 
-- **hisat2_alignment_sum.tsv**: Found in the `Report` section, this file contains information about the total reads, multimapped reads aligned, and unique reads aligned from the input reads files.
+**hisat2_alignment_sum.tsv**: Found in the `Report` section, this file contains information about the total reads, multimapped reads aligned, and unique reads aligned from the input reads files.
     ![image](../images/hisat_run_report.png)
 
 
