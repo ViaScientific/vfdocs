@@ -1,4 +1,4 @@
-# Events Guide
+# Event Creation Guide
 
 This guide will walk you through the details of creating an event in a
 project.
@@ -27,32 +27,31 @@ basics of the event section.
 
 ## Insert New Run Event
 
-You can create an `New Run` event to simply run submissions. Here are
+You can create an `New Run` event to simplify run submissions. Here are
 the expected values for this event.
 
 -   **Event Name:** New Run
 -   **Collection:** Runs
 
   -----------------------------------------------------------------------
-  Fields
+  - **Fields**
+    - Name (required)
+
+    - Server ID (requiredref.)
+
+    - Run Environment
+
+    - Template Run ID
+
+    - Inputs
+
+    - Outputs
+
+    - Work Directory
+
+    - Run URL
   -----------------------------------------------------------------------
-  Name (required)
 
-  Server ID (requiredref.)
-
-  Run Environment
-
-  Template Run ID
-
-  Inputs
-
-  Outputs
-
-  Work Directory
-
-  Run URL
-  -----------------------------------------------------------------------
-
-Example From from Vmeta User Interface:
+Example From V-Meta User Interface:
 
 ![image](../images/insert-run-event.png){.align-center width="99.0%"}

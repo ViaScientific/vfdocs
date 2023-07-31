@@ -1,6 +1,6 @@
 # Project Guide
 
-Within Via Foundry and Vmeta, projects serve as platforms for managing your collection and field data. At the top of the projects section, you'll find three action buttons with which you can manage your projects: `Insert`, `Edit` and `Delete`.
+Within Via Foundry and V-Meta, projects serve as platforms for managing your collection and field data. At the top of the projects section, you'll find three action buttons with which you can manage your projects: `Insert`, `Edit` and `Delete`.
 
 ## Creating Projects
 

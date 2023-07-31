@@ -1,12 +1,12 @@
 # Via Foundry Integration Guide
 
-This guide will walk you through the details of starting a Via Foundry run through Vmeta and shuttling the pipeline results back to Vmeta.
+This guide will walk you through the details of starting a Via Foundry run through V-Meta and shuttling the pipeline results back to V-Meta.
 
 Via Foundry is an intuitive web interface designed to analyze and manage
 large numbers of biological samples in various run environments. Simply by entering
-data to a file collection in Vmeta, it's ready to use in
-Via Foundry pipelines. In order to configure a Foundry run within Vmeta, navigate to the `Events` tab of your project's dashboard. From the `Select Event` dropdown menu, click the `New Run` event or select `Run`
-collection and click the `insert` button. To create `New Run` event
+data to a file collection in V-Meta, it's ready to use in
+Via Foundry pipelines. In order to configure a Foundry run within V-Meta, navigate to the `Events` tab of your project's dashboard. From the `Select Event` dropdown menu, click the `New Run` event or select the `Run`
+collection and click the `Insert` button. To create `New Run` event
 please [check here.](vmeta_events.md#insert-new-run-event) The following page will appear to submit your run:
 
 ![image](../images/dmeta_run.png){.align-center width="99.0%"}
@@ -37,23 +37,23 @@ please [check here.](vmeta_events.md#insert-new-run-event) The following page wi
 -   **Inputs:** Inputs of template run. You overwrite the run defaults
     or choose a new set of files in this section.
 
--   **Outputs:** Vmeta outputs of the template run. While creating a
+-   **Outputs:** V-Meta outputs of the template run. While creating a
     pipeline in dolphinnext, developers are allowed to select certain
-    files to send Vmeta. To do this, pipeline developers need to click
+    files to send V-Meta. To do this, pipeline developers need to click
     the edit icon of the green output circle and click the
-    `Publish to Vmeta` checkbox. After that following options need to be
+    `Publish to V-Meta` checkbox. After that following options need to be
     selected:
 
     > 1.  **Location of the Sample Name:** (Row Header, Column Header,
     >     Filename)
     > 2.  **Location of the Features:** (Row Header, Column Header, Both
     >     Headers)
-    > 3.  **Target Collection:** Any Vmeta collection name where output
+    > 3.  **Target Collection:** Any V-Meta collection name where output
     >     data will be saved. (e.g. summary, analysis)
 
-Dolphinnext sends back the run outputs to Vmeta after run completes.
+Dolphinnext sends back the run outputs to V-Meta after run completes.
 Each data or file associated with each sample separately. Therefore
-there are three ways to create output in the pipeline for Vmeta.
+there are three ways to create output in the pipeline for V-Meta.
 
 > -   **Option A.** Keeping sample names as table headers in TSV/CSV
 >     file.
@@ -82,9 +82,9 @@ there are three ways to create output in the pipeline for Vmeta.
 > ![image](../images/dnext_dmeta_output2.png){.align-center width="99.0%"}
 
 After saving these settings, selected collection name will appear in the
-outputs section in Vmeta.
+outputs section in V-Meta.
 
 -   **Work Directory:** Directory where the run will be executed.
 -   **Run URL:** If you want to enter an already executed run into
-    Vmeta, please enter the run URL here. This will prevent new run
+    V-Meta, please enter the run URL here. This will prevent new run
     submission.
