@@ -1,37 +1,28 @@
-# Event Creation Guide
+# V-Meta Events Guide
 
-This guide will walk you through the details of creating an event in a
-project.
+V-Meta Events in Via Foundry provide a powerful framework for performing various actions, such as uploading data or initiating runs, within your projects. Events are like neatly packaged scaffoldings that allow you to interact with your data and collections seamlessly. This guide will walk you through the details of creating events and how to utilize them effectively.
 
-After defining fields, you're now ready to create event forms to
-insert/update fields from multiple collections. Let's go through the
-basics of the event section.
+## Creating Events
 
-## Insert Events
+After defining V-Meta fields to specify the structure of your data, you can proceed to create event forms that enable you to insert or update fields across multiple collections. Let's explore the basic steps to create events:
 
-1.  Please click the `Admin` button at the top and select your project.
-2.  Click the `All Events` tab of your project.
-3.  Click the `Insert` button and enter the `Event Name`.
-4.  Choose your target collection from the dropdown and choose the
-    behavior of the form. Insert, Update, or Multiple (for Multiple
-    Insert) options are available.
-5.  Choose the field to belong to the selected collection.
-6.  Click the "Plus" button to insert a new field into the event form
-    and choose a new field.
-7.  To insert another collection of data, please click the
-    `Insert Group` button.
-8.  Read/Write permission of this form could be adjusted with the
-    Permissions section at the bottom.
+1. Using the **Projects** dropdown menu at the top of Foundry, click on the project in which you'd like to create an event.
+2. Navigate to the `Metadata -> Configure Metadata -> All Events` tab specific to your project.
+3. Click the `Insert` button to start creating a new event, and provide a meaningful `Event Name`.
+4. Choose the target collection from the dropdown list and define the behavior of the form. You can choose between `Insert`, `Update`, or `Multiple` (for Multiple Insert) options.
+5. Select the specific fields that should be associated with the chosen collection.
+6. To add additional fields to the event form, click the "Plus" button and choose from the available fields.
+7. If you want to include data from another collection, you can use the `Insert Group` button to add more collections.
+8. The permissions for the form can be adjusted using the `Permissions` section at the bottom.
 
 ![image](../images/insert-events.png){.align-center width="99.0%"}
 
-## Insert New Run Event
+## Creating "New Run" Event
 
-You can create an `New Run` event to simplify run submissions. Here are
-the expected values for this event.
+One particularly useful event is the "New Run" event, which simplifies the process of submitting runs within Foundry. Here are the key details for creating this event:
 
--   **Event Name:** New Run
--   **Collection:** Runs
+- **Event Name:** New Run
+- **Collection:** Runs
 
   -----------------------------------------------------------------------
   - **Fields**
@@ -52,6 +43,8 @@ the expected values for this event.
     - Run URL
   -----------------------------------------------------------------------
 
-Example From V-Meta User Interface:
+For reference, here's what a newly created `New Run` event would look like in the V-Meta user interface:
 
-![image](../images/insert-run-event.png){.align-center width="99.0%"}
+![image](../images/insert-run-event.png)
+
+With V-Meta Events, you can streamline data uploads, perform complex actions, and initiate runs with ease. These events offer a structured and efficient way to interact with your data, empowering you to make the most of Via Foundry. Whether you are uploading new data or orchestrating complex workflows, V-Meta Events provide the flexibility and organization you need to handle your projects effectively.

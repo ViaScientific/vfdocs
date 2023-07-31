@@ -19,11 +19,13 @@
 - [Run Guide](ViaFoundry/run.md)
 - [App Guide](ViaFoundry/app.md)
 - [Profile Guide](ViaFoundry/profile.md)
+- [Metadata Guide](ViaFoundry/metadata_guide.md)
 - [Frequently Asked Questions](ViaFoundry/faq.md)
 
 ## Developer Guide
 - [Pipeline Creation Guide](ViaFoundry/pipeline_guide.md)
 - [Process Creation Guide](ViaFoundry/process.md)
+- [V-Meta API v1](ViaFoundry/vmeta_api.md)
 
 ## Developer FAQs
 - [General FAQs](ViaFoundry/developer_faq.md)
@@ -35,13 +37,3 @@
 - [Installation](ViaFoundry/admin-installation.md)
 - [Configuration](ViaFoundry/admin-configuration.md)
 - [Testing Pipeline](ViaFoundry/admin-pipeline-testing.md)
-
-## Vmeta Docs (Temporary)
-- [Vmeta Overview](ViaFoundry/vmeta_overview.md)
-- [Vmeta Data Guide](ViaFoundry/vmeta_data.md)
-- [Vmeta API v1](ViaFoundry/vmeta_api.md)
-- [Vmeta Project Guide](ViaFoundry/vmeta_projects.md)
-- [Vmeta Collection Guide](ViaFoundry/vmeta_collections.md)
-- [Vmeta Fields Guide](ViaFoundry/vmeta_fields.md)
-- [Vmeta Events Guide](ViaFoundry/vmeta_events.md)
-- [Vmeta Integration Guide](ViaFoundry/vmeta_integration.md)
