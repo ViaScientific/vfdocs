@@ -8,6 +8,70 @@ This document will walk you through some common questions related to integrating
 
 Like [this](developer_faq#how-can-i-build-a-docker-containerimage-for-my-project)!
 
+### How can I create my own Dockerfile and embed it in a pipeline?
+
+To read up more on syntax and best practices for Dockerfiles, we recommend you reference [this link](developer_faq#how-can-i-build-a-docker-containerimage-for-my-project). Once you've done so, the process of adding a Dockerfile to a pipeline in Foundry is exquisitely simple. Under the `Advanced` header of your pipeline's dashboard, you'll want to create two files by clicking the `Add File` icon (represented by a plus sign) in the top left of the **Pipeline Files** screen. Name the files Dockerfile and environment.yml, respectively. The Dockerfile, which you can read up on [here](app.md#dockerfile), contains all (and, ideally, only) the necessary components and dependencies your pipeline and its applications need. Here, you'll find a template for how to structure your Dockerfile:
+
+```
+# Set the base image to Ubuntu version 22.04
+FROM ubuntu:22.04
+
+# Define metadata labels for the image
+LABEL author="onur@viascientific.com" description="Docker image containing all requirements via pipeline"
+
+# Set environment variables for character encoding and PATH
+ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
+ENV PATH /opt/conda/bin:$PATH
+
+# Update the package list and install various packages using apt-get
+RUN apt-get update --fix-missing && \
+    apt-get install -y vim wget bzip2 unzip ca-certificates curl git libtbb-dev gcc g++ libcairo2-dev pandoc libhdf5-dev cmake
+
+# Download and install Miniconda for package management
+RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
+    /bin/bash ~/miniconda.sh -b -p /opt/conda && \
+    rm ~/miniconda.sh && \
+    ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
+    echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
+    echo "conda activate base" >> ~/.bashrc
+
+# Update the package list, download AWS CLI, and install it
+RUN apt-get update && \
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.0.30.zip" -o "awscliv2.zip" && \
+    unzip awscliv2.zip && ./aws/install && aws --version
+
+# Copy the environment definition file and create a Conda environment
+COPY environment.yml /
+RUN . /opt/conda/etc/profile.d/conda.sh && \ 
+    conda activate base && \
+    conda update conda && \
+    conda install -c conda-forge mamba && \
+    mamba env create -f /environment.yml && \
+    mamba clean -a
+
+# Create directories for project and various paths, and update PATH
+RUN mkdir -p /project /nl /mnt /share /pi
+ENV PATH /opt/conda/envs/via/bin:$PATH
+```
+
+As you can see, this Dockerfile has a block beginning with "`COPY environment.yml`". This is a crucial inclusion that will enable you to add all your desired packages to your run environment. `COPY environment.yml` wraps everything contained within your environment.yml file into the Dockerfile. Knowing that, navigate to the environment.yml file you just created. Here's a simple template we recommend you use and build upon according to your specifications:
+
+```
+# You can use this file to create a conda environment for this pipeline:
+#   conda env create -f environment.yml
+name: via
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - rseqc=4.0.0
+  - samtools
+```
+
+The `channels` section here, which you can of course iterate upon, specifies the Conda channels from whence packages will be sourced as the "via" Conda environment is created. The `dependencies` section, as you might imagine, imports the dependencies you'll be able to use in your pipeline (naturally, contingent on the inclusion of "`COPY environment.yml`" in your Dockerfile). Employing this strategy naturally grants you an infinitely generalizable way to craft individualized Dockerfiles for any Foundry project you wish.
+
+
 ### How can I install a specific script to a pre-existing Docker container?
 
 There are two main strategies you can utilize to integrate a third-party script into your run environment: importing it into a **bin** folder and adding the path to your Dockerfile. Below, we'll expound upon both of these tactics:
