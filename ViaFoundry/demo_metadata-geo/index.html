@@ -11,17 +11,17 @@
       
       
       
-        <link rel="prev" href="../demo_single_cell_rna-seq_tutorial/">
+        <link rel="prev" href="../demo_metadata-basics/">
       
       
-        <link rel="next" href="../demo_developer_tutorial/">
+        <link rel="next" href="../demo_metadata-portal/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>Using Metadata Tracker - GEO - Via Foundry Documentation</title>
+        <title>Metadata Tracker - NCBI-GEO - Via Foundry Documentation</title>
       
     
     
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Using Metadata Tracker - GEO
+              Metadata Tracker - NCBI-GEO
             
           </span>
         </div>
@@ -348,6 +348,34 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../demo_developer_tutorial/" class="md-nav__link">
+        Developer Tutorial - Creating Pipeline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_metadata-basics/" class="md-nav__link">
+        Metadata Tracker - Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -358,12 +386,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Using Metadata Tracker - GEO
+          Metadata Tracker - NCBI-GEO
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Using Metadata Tracker - GEO
+        Metadata Tracker - NCBI-GEO
       </a>
       
         
@@ -429,8 +457,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../demo_developer_tutorial/" class="md-nav__link">
-        Developer Tutorial - Creating Pipeline
+      <a href="../demo_metadata-portal/" class="md-nav__link">
+        Metadata Portal
       </a>
     </li>
   
@@ -853,7 +881,7 @@
                   
 
 
-  <h1>Using Metadata Tracker - GEO</h1>
+  <h1>Metadata Tracker - NCBI-GEO</h1>
 
 <div><h2 id="expected-learning-outcome">Expected learning outcome</h2>
 <p>To understand the basics of Metadata Tracking System, and import sample GEO metadata.</p>
@@ -1164,7 +1192,7 @@
 <p><img alt="image" src="../../metadata_geo_images/geo_data2.png"></p>
 </li>
 <li>
-<p>Go to the collection dropdown and change its value to <code>Biosamples</code>. Since we will insert 99 Biosamples we will use excel import. Let's download the template excel file to facilitate import. Click the <code>Download Last Viewed Page as Excel file</code> button. You will see an empty excel sheet with table headers. If you like you can <a href="metadata_geo_files/Biosamples_template.xlsx?raw=true" download="Biosamples_template.xlsx">download the biosamples template here.</a></p>
+<p>Go to the collection dropdown and change its value to <code>Biosamples</code>. Since we will insert 99 Biosamples we will use excel import. Let's download the template excel file to facilitate import. Click the <code>Download Last Viewed Page as Excel file</code> button. You will see an empty excel sheet with table headers. If you like you can <a href="../../metadata_geo_files/Biosamples_template.xlsx?raw=true" download="Biosamples_template.xlsx">download the biosamples template here.</a></p>
 <p><img alt="image" src="../../metadata_geo_images/geo_download_button.png"></p>
 <p><img alt="image" src="../../metadata_geo_images/geo_empty_biosamples.png"></p>
 </li>
@@ -1175,7 +1203,7 @@
 </code></pre></div>
 </li>
 <li>
-<p>After saving this file, click on the <code>Import on Excel File</code> button. Drag and drop your Biosamples.xlsx file and click the <code>Load Table</code> button. If you prefer you can download and use <a href="metadata_geo_files/Biosamples.xlsx?raw=true" download="Biosamples.xlsx"> the pre-filled biosamples table here.</a></p>
+<p>After saving this file, click on the <code>Import on Excel File</code> button. Drag and drop your Biosamples.xlsx file and click the <code>Load Table</code> button. If you prefer you can download and use <a href="../../metadata_geo_files/Biosamples.xlsx?raw=true" download="Biosamples.xlsx"> the pre-filled biosamples table here.</a></p>
 <p><img alt="image" src="../../metadata_geo_images/geo_load_table1.png"></p>
 </li>
 <li>
@@ -1191,16 +1219,16 @@
 <p><img alt="image" src="../../metadata_geo_images/geo_load_table4.png"></p>
 </li>
 <li>
-<p>Switch to <code>Samples</code> collection by using collection dropdown. Similar to the biosamples collection, click the <code>Download Last Viewed Page as Excel file</code> button. Copy and paste the data in SraRunTable into this empty sheet as follows or you can download the samples template <a href="metadata_geo_files/Samples_template.xlsx?raw=true" download="Samples_template.xlsx">  here.</a>:</p>
+<p>Switch to <code>Samples</code> collection by using collection dropdown. Similar to the biosamples collection, click the <code>Download Last Viewed Page as Excel file</code> button. Copy and paste the data in SraRunTable into this empty sheet as follows or you can download the samples template <a href="../../metadata_geo_files/Samples_template.xlsx?raw=true" download="Samples_template.xlsx">  here.</a>:</p>
 <p><img alt="image" src="../../metadata_geo_images/geo_filled_samples.png"></p>
 <div class="highlight"><pre><span></span><code>Note: `Sample Name` column in SraRunTable is copied to the `Name` column.
 </code></pre></div>
 </li>
 <li>
-<p>After saving this file, click on the <code>Import on Excel File</code> button. If you prefer you can use samples table by <a href="metadata_geo_files/Samples.xlsx?raw=true" download="Samples.xlsx"> clicking here.</a> Drag and drop your Samples.xlsx file and click the <code>Load Table</code> button. Now you're ready to import sample data with the save button. Return back to the table view by clicking the <code>Show Table Format</code> button.</p>
+<p>After saving this file, click on the <code>Import on Excel File</code> button. If you prefer you can use samples table by <a href="../../metadata_geo_files/Samples.xlsx?raw=true" download="Samples.xlsx"> clicking here.</a> Drag and drop your Samples.xlsx file and click the <code>Load Table</code> button. Now you're ready to import sample data with the save button. Return back to the table view by clicking the <code>Show Table Format</code> button.</p>
 </li>
 <li>
-<p>Go to the collection dropdown and change its value to <code>Files</code>. Click the <code>Download Last Viewed Page as Excel file</code> button or download <a href="metadata_geo_files/Files_template.xlsx?raw=true" download="Files_template.xlsx"> here </a> Copy and paste the data in SraRunTable into this empty sheet as follows or <a href="metadata_geo_files/Files.xlsx?raw=true" download="Files.xlsx"> download here </a>:</p>
+<p>Go to the collection dropdown and change its value to <code>Files</code>. Click the <code>Download Last Viewed Page as Excel file</code> button or download <a href="../../metadata_geo_files/Files_template.xlsx?raw=true" download="Files_template.xlsx"> here </a> Copy and paste the data in SraRunTable into this empty sheet as follows or <a href="../../metadata_geo_files/Files.xlsx?raw=true" download="Files.xlsx"> download here </a>:</p>
 <p><img alt="image" src="../../metadata_geo_images/geo_filled_files.png"></p>
 </li>
 <li>
