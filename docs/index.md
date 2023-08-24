@@ -13,8 +13,10 @@
 
 - [Running RNA-Seq Pipeline](ViaFoundry/demo_rna-seq_tutorial.md)
 - [Running Cellranger Pipeline](ViaFoundry/demo_single_cell_rna-seq_tutorial.md)
-- [Using Metadata Tracker - GEO](ViaFoundry/demo_metadata-geo.md)
 - [Developer Tutorial - Creating Pipeline](ViaFoundry/demo_developer_tutorial.md)
+- [Metadata Tracker - Basics](ViaFoundry/demo_metadata-basics.md)
+- [Metadata Tracker - NCBI-GEO](ViaFoundry/demo_metadata-geo.md)
+- [Metadata Portal](ViaFoundry/demo_metadata-portal.md)
 
 ## User Guide
 
