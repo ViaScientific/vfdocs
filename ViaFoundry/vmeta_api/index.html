@@ -1,0 +1,2284 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Via Foundry Team">
+      
+      
+      
+        <link rel="prev" href="../app_developer_guide/">
+      
+      
+        <link rel="next" href="../gsea_explorer/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
+    
+    
+      
+        <title>Metadata API Guide - Via Foundry Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-v1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Via Foundry Documentation" class="md-header__button md-logo" aria-label="Via Foundry Documentation" data-md-component="logo">
+      
+  <img src="../../images/via_icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Via Foundry Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Metadata API Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Via Foundry Documentation" class="md-nav__button md-logo" aria-label="Via Foundry Documentation" data-md-component="logo">
+      
+  <img src="../../images/via_icon.png" alt="logo">
+
+    </a>
+    Via Foundry Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        Platform Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipeline_example/" class="md-nav__link">
+        Pipeline Examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cite/" class="md-nav__link">
+        How To Cite Us
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get_faq/" class="md-nav__link">
+        Frequently Asked Questions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../news/" class="md-nav__link">
+        News
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_rna-seq_tutorial/" class="md-nav__link">
+        Running RNA-Seq Pipeline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_single_cell_rna-seq_tutorial/" class="md-nav__link">
+        Running Cellranger Pipeline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_developer_tutorial/" class="md-nav__link">
+        Developer Tutorial - Creating Pipeline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_metadata-basics/" class="md-nav__link">
+        Metadata Tracker - Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_metadata-geo/" class="md-nav__link">
+        Metadata Tracker - NCBI-GEO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_metadata-portal/" class="md-nav__link">
+        Metadata Portal
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          User Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          User Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick/" class="md-nav__link">
+        Quick Start Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project/" class="md-nav__link">
+        Project Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run/" class="md-nav__link">
+        Run Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app/" class="md-nav__link">
+        App Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metadata_guide/" class="md-nav__link">
+        Metadata Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../profile/" class="md-nav__link">
+        Profile Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        Frequently Asked Questions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Developer Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Developer Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipeline_guide/" class="md-nav__link">
+        Pipeline Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process/" class="md-nav__link">
+        Process Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app_developer_guide/" class="md-nav__link">
+        Application Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Metadata API Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Metadata API Guide
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-and-authorization" class="md-nav__link">
+    Authentication and authorization
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication and authorization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-login" class="md-nav__link">
+    User Login
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projects" class="md-nav__link">
+    Projects
+  </a>
+  
+    <nav class="md-nav" aria-label="Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-all-projects" class="md-nav__link">
+    Get All Projects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-a-project" class="md-nav__link">
+    Get a Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-project" class="md-nav__link">
+    Create a Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-a-project" class="md-nav__link">
+    Update a Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-project" class="md-nav__link">
+    Delete a Project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collections" class="md-nav__link">
+    Collections
+  </a>
+  
+    <nav class="md-nav" aria-label="Collections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-all-collections" class="md-nav__link">
+    Get All Collections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-a-collection" class="md-nav__link">
+    Get a Collection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-collection" class="md-nav__link">
+    Create a Collection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-a-collection" class="md-nav__link">
+    Update a Collection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-collection" class="md-nav__link">
+    Delete a Collection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fields" class="md-nav__link">
+    Fields
+  </a>
+  
+    <nav class="md-nav" aria-label="Fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-all-fields" class="md-nav__link">
+    Get All Fields
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-a-field" class="md-nav__link">
+    Get a Field
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-field" class="md-nav__link">
+    Create a Field
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-a-field" class="md-nav__link">
+    Update a Field
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-field" class="md-nav__link">
+    Delete a Field
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pull-all-data-of-a-projects-collection" class="md-nav__link">
+    Pull All Data of a Project's Collection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-a-data-value" class="md-nav__link">
+    Get a Data Value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-data-value" class="md-nav__link">
+    Create a Data Value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-a-data-field" class="md-nav__link">
+    Update a Data Field
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-data-field" class="md-nav__link">
+    Delete a Data Field
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          App Library
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          App Library
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gsea_explorer/" class="md-nav__link">
+        GSEA Explorer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network_explorer/" class="md-nav__link">
+        Network Explorer
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Administrator Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Administrator Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-pipeline-testing/" class="md-nav__link">
+        Testing Pipeline
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-and-authorization" class="md-nav__link">
+    Authentication and authorization
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication and authorization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-login" class="md-nav__link">
+    User Login
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projects" class="md-nav__link">
+    Projects
+  </a>
+  
+    <nav class="md-nav" aria-label="Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-all-projects" class="md-nav__link">
+    Get All Projects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-a-project" class="md-nav__link">
+    Get a Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-project" class="md-nav__link">
+    Create a Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-a-project" class="md-nav__link">
+    Update a Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-project" class="md-nav__link">
+    Delete a Project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collections" class="md-nav__link">
+    Collections
+  </a>
+  
+    <nav class="md-nav" aria-label="Collections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-all-collections" class="md-nav__link">
+    Get All Collections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-a-collection" class="md-nav__link">
+    Get a Collection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-collection" class="md-nav__link">
+    Create a Collection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-a-collection" class="md-nav__link">
+    Update a Collection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-collection" class="md-nav__link">
+    Delete a Collection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fields" class="md-nav__link">
+    Fields
+  </a>
+  
+    <nav class="md-nav" aria-label="Fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-all-fields" class="md-nav__link">
+    Get All Fields
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-a-field" class="md-nav__link">
+    Get a Field
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-field" class="md-nav__link">
+    Create a Field
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-a-field" class="md-nav__link">
+    Update a Field
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-field" class="md-nav__link">
+    Delete a Field
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pull-all-data-of-a-projects-collection" class="md-nav__link">
+    Pull All Data of a Project's Collection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-a-data-value" class="md-nav__link">
+    Get a Data Value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-data-value" class="md-nav__link">
+    Create a Data Value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-a-data-field" class="md-nav__link">
+    Update a Data Field
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-data-field" class="md-nav__link">
+    Delete a Data Field
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div><h1 id="api-v1">API v1</h1>
+<p>This guide is aimed at introducing users to the Metadata Tracker API, with which one can interact with Metadata Tracker through the command line as opposed to the console/user interface. You'll find sample requests and responses related to <a href="./#projects">projects</a>, <a href="./#collections">collections</a>, <a href="./#fields">fields</a>, and <a href="./#data">data</a>.</p>
+<p>The Metadata Tracker API utilizes REST (Representational State Transfer) architecture for its communication. All API requests pull information from HTML pages, and all responses, including errors, are returned in JSON format. HTTP response status codes are used to indicate the success or failure of the API calls.</p>
+<h2 id="authentication-and-authorization">Authentication and authorization</h2>
+<p>Requests to the Metadata Tracker API are for both public and private information, so all
+endpoints require authentication.</p>
+<h3 id="user-login">User Login</h3>
+<p>After getting their access token, users can make a request to the Metadata Tracker
+API with the <code>Authorization</code> HTTP header. This header can be specified with the
+<code>Bearer &lt;your-access-token</code> flag to authenticate a command as being given by a specific user and to confer the same permissions that that user already has onto the current request.</p>
+<p>Here's how Metadata Tracker API users can retrieve an access token for the currently logged-in user.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl -X POST 'https://viafoundry.com/vmeta/api/v1/users/login' \
+-H 'Content-Type: application/json' \
+-d '
+    {
+        "email":"your-email@mail.com",
+        "password":"your-password"
+    }'
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code>JSON
+{
+    "status": "success",
+    "token": "eyJhbGciOiJSUz....",
+    "data": {
+        "user": {
+            "role": "user",
+            "_id": "b6c9a200168a225f39add38d",
+            "email": "your-email@mail.com",
+            "name": "test user",
+            "scope": "*",
+            "username": "yukseleo"
+        }
+    }
+}
+</code></pre></div>
+<h2 id="projects">Projects</h2>
+<p>In Metadata Tracker, projects serve as your analysis hubs, acting as silos for your data and collections. Some important and frequently-used API requests include retrieving a user's project(s), as well as creating, updating, and deleting projects.</p>
+<h3 id="get-all-projects">Get All Projects</h3>
+<p>This request retrieves a list of all the projects for the currently logged in user.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl -X GET 'https://viafoundry.com/vmeta/api/v1/projects' \
+-H 'Authorization: Bearer &lt;your-access-token'
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code>JSON
+{
+    "status": "success",
+    "results": 1,
+    "data": {
+        "data": [
+            {
+                "active": true,
+                "creationDate": "2020-11-17T19:36:49.048Z",
+                "lastUpdateDate": "2020-11-17T19:36:49.048Z",
+                "_id": "5fb2b395c8c1e577fcb8ce6c",
+                "restrictTo": {
+                    "role": [
+                        "admin"
+                    ]
+                },
+                "name": "vitiligo",
+                "label": "Vitiligo",
+                "lastUpdatedUser": "5f39add38db6c9a200168a22",
+                "owner": "5f39add38db6c9a200168a22",
+                "perms": {
+                    "read": {
+                        "group": [
+                            "5fb4575faa5adff6f407f2d1"
+                        ]
+                    },
+                    "write": {
+                        "group": [
+                            "5fb45793aa5adff6f407f2d2"
+                        ]
+                    }
+                },
+            }
+        ]
+    }
+}
+</code></pre></div>
+<h3 id="get-a-project">Get a Project</h3>
+<p>Retrieve the metadata associated with a single project.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl -X GET \
+'https://viafoundry.com/vmeta/api/v1/projects/5fb2b395c8c1e577fcb8ce6c' \
+-H 'Authorization: Bearer &lt;your-access-token'
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code>JSON
+{
+    "status": "success",
+    "results": 1,
+    "data": {
+        "data": [
+            {
+                "active": true,
+                "creationDate": "2020-11-17T19:36:49.048Z",
+                "lastUpdateDate": "2020-11-17T19:36:49.048Z",
+                "_id": "5fb2b395c8c1e577fcb8ce6c",
+                "restrictTo": {
+                    "role": [
+                        "admin"
+                    ]
+                },
+                "name": "vitiligo",
+                "label": "Vitiligo",
+                "lastUpdatedUser": "5f39add38db6c9a200168a22",
+                "owner": "5f39add38db6c9a200168a22",
+                "perms": {
+                    "read": {
+                        "group": [
+                            "5fb4575faa5adff6f407f2d1"
+                        ]
+                    },
+                    "write": {
+                        "group": [
+                            "5fb45793aa5adff6f407f2d2"
+                        ]
+                    }
+                },
+            }
+        ]
+    }
+}
+</code></pre></div>
+<h3 id="create-a-project">Create a Project</h3>
+<p>This POST request is only enabled for users with the Admin role.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl -X POST \
+'https://viafoundry.com/vmeta/api/v1/projects' \
+-H 'Authorization: Bearer &lt;your-access-token' \
+-H 'Content-Type: application/json' \
+-d '
+    {
+        "name": "vitiligo",
+        "label": "Vitiligo"
+    }'
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code>JSON
+{
+    "status": "success",
+    "data": {
+        "data": {
+            "active": true,
+            "creationDate": "2021-03-31T02:04:27.474Z",
+            "lastUpdateDate": "2021-03-31T02:04:27.474Z",
+            "_id": "6063dbcfa50bb5fa9eb9cfba",
+            "name": "vitiligo",
+            "label": "Vitiligo",
+            "lastUpdatedUser": "5f39add38db6c9a200168a22",
+            "owner": "5f39add38db6c9a200168a22"
+        }
+    }
+}
+</code></pre></div>
+<h3 id="update-a-project">Update a Project</h3>
+<p>Update one or more metadata fields of an existing project.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl \
+  -X PATCH \
+  -H "Authorization: Bearer &lt;token" \
+  https://viafoundry.com/vmeta/api/v1/projects/5fb2b395c8c1e577fcb8ce6c \
+  -H "Content-Type: application/json" \
+  -d '
+      {
+        "label": "Vitiligo"
+      }'
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code>JSON
+{
+    "status": "success",
+    "data": {
+        "data": {
+            "active": true,
+            "creationDate": "2020-11-17T19:36:49.048Z",
+            "lastUpdateDate": "2020-11-17T19:36:49.048Z",
+            "_id": "5fb2b395c8c1e577fcb8ce6c",
+            "restrictTo": {
+                "role": [
+                    "admin"
+                ]
+            },
+            "name": "vitiligo",
+            "label": "Vitiligo",
+            "lastUpdatedUser": "5f39add38db6c9a200168a22",
+            "owner": "5f39add38db6c9a200168a22",
+            "perms": {
+                "read": {
+                    "group": [
+                        "5fb4575faa5adff6f407f2d1"
+                    ]
+                },
+                "write": {
+                    "group": [
+                        "5fb45793aa5adff6f407f2d2"
+                    ]
+                }
+            }
+        }
+    }
+}
+</code></pre></div>
+<h3 id="delete-a-project">Delete a Project</h3>
+<p>Delete an existing project. NOTE: This action is irreversible, and should only be executed when absolutely certain of its intentions.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl \
+  -X DELETE \
+  -H "Authorization: Bearer &lt;token" \
+  https://viafoundry.com/vmeta/api/v1/projects/5fb2b395c8c1e577fcb8ce6c 
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code>JSON
+{
+    "status": "success",
+    "data": {
+        "doc": "Deleted!"
+    }
+}
+</code></pre></div>
+<h2 id="collections">Collections</h2>
+<h3 id="get-all-collections">Get All Collections</h3>
+<p>Retrieve a list of all the collections owned by the currently logged-in user.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl -X GET 'https://viafoundry.com/vmeta/api/v1/collections' \
+-H 'Authorization: Bearer &lt;your-access-token'
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code>JSON
+{"status": "success",
+    "results": 10,
+    "data": {
+        "data": [
+            {
+                "version": 1,
+                "required": false,
+                "active": true,
+                "creationDate": "2020-09-08T21:56:35.301Z",
+                "lastUpdateDate": "2020-09-08T21:56:35.301Z",
+                "_id": "5f57ffba35db5980ba020ff3",
+                "restrictTo": {
+                    "group": [
+                        "5fb45793aa5adff6f407f2d2"
+                    ]
+                },
+                "name": "exp_series",
+                "label": "Experiment Series",
+                "lastUpdatedUser": "5f39add38db6c9a200168a22",
+                "owner": "5f39add38db6c9a200168a22",
+                "projectID": "5fb2b395c8c1e577fcb8ce6c",
+                "perms": {
+                    "read": {
+                        "group": [
+                            "5fb4575faa5adff6f407f2d1"
+                        ]
+                    },
+                    "write": {
+                        "group": [
+                            "5fb45793aa5adff6f407f2d2"
+                        ]
+                    }
+                },
+                "id": "5f57ffba35db5980ba020ff3"
+            },
+            {
+                "version": 1,
+                "required": false,
+                "active": true,
+                "creationDate": "2020-09-08T21:56:35.301Z",
+                "lastUpdateDate": "2020-09-08T21:56:35.301Z",
+                "_id": "5f57ffe635db5980ba020ff4",
+                "restrictTo": {
+                    "group": [
+                        "5fb45793aa5adff6f407f2d2"
+                    ]
+                },
+                "name": "exp",
+                "label": "Experiments",
+                "lastUpdatedUser": "5f39add38db6c9a200168a22",
+                "owner": "5f39add38db6c9a200168a22",
+                "projectID": "5fb2b395c8c1e577fcb8ce6c",
+                "perms": {
+                    "read": {
+                        "group": [
+                            "5fb4575faa5adff6f407f2d1"
+                        ]
+                    },
+                    "write": {
+                        "group": [
+                            "5fb45793aa5adff6f407f2d2"
+                        ]
+                    }
+                },
+                "id": "5f57ffe635db5980ba020ff4"
+            }]
+    }
+}
+</code></pre></div>
+<h3 id="get-a-collection">Get a Collection</h3>
+<p>Retrieve the details of a single collection.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl -X GET \
+'https://viafoundry.com/vmeta/api/v1/collections/5f57ffe635db5980ba020ff4' \
+-H 'Authorization: Bearer &lt;your-access-token'
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code>JSON
+{
+    "status": "success",
+    "data": {
+        "data": [
+            {
+                "version": 1,
+                "required": false,
+                "active": true,
+                "creationDate": "2020-09-08T21:56:35.301Z",
+                "lastUpdateDate": "2020-09-08T21:56:35.301Z",
+                "_id": "5f57ffe635db5980ba020ff4",
+                "restrictTo": {
+                    "group": [
+                        "5fb45793aa5adff6f407f2d2"
+                    ]
+                },
+                "name": "exp",
+                "label": "Experiments",
+                "lastUpdatedUser": "5f39add38db6c9a200168a22",
+                "owner": "5f39add38db6c9a200168a22",
+                "projectID": "5fb2b395c8c1e577fcb8ce6c",
+                "perms": {
+                    "read": {
+                        "group": [
+                            "5fb4575faa5adff6f407f2d1"
+                        ]
+                    },
+                    "write": {
+                        "group": [
+                            "5fb45793aa5adff6f407f2d2"
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}
+</code></pre></div>
+<h3 id="create-a-collection">Create a Collection</h3>
+<p>This POST request is only allowed for users with the project-admin role.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl -X POST \
+'https://viafoundry.com/vmeta/api/v1/collections' \
+-H 'Authorization: Bearer &lt;your-access-token' \
+-H 'Content-Type: application/json' \
+-d '
+    {
+        "name": "analysis",
+        "label": "Analysis",
+        "projectID":"5fb2b395c8c1e577fcb8ce6c",
+        "restrictTo": {"group":["5fb45793aa5adff6f407f2d2"]},
+    }'
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code>JSON
+{
+    "status": "success",
+    "data": {
+        "data": {
+            "version": 1,
+            "required": false,
+            "active": true,
+            "creationDate": "2021-03-31T02:26:17.087Z",
+            "lastUpdateDate": "2021-03-31T02:26:17.087Z",
+            "_id": "6063e3a33c195afbe6d5e036",
+            "name": "analysis",
+            "label": "Analysis",
+            "restrictTo": {
+                "group": [
+                    "5fb45793aa5adff6f407f2d2"
+                ]
+            },
+            "projectID": "5fb2b395c8c1e577fcb8ce6c",
+            "lastUpdatedUser": "5f39add38db6c9a200168a22",
+            "owner": "5f39add38db6c9a200168a22",
+            "perms": {
+                "read": {
+                    "group": [
+                        "5fb4575faa5adff6f407f2d1"
+                    ]
+                },
+                "write": {
+                    "group": [
+                        "5fb45793aa5adff6f407f2d2"
+                    ]
+                }
+            }
+        }
+    }
+}
+</code></pre></div>
+<h3 id="update-a-collection">Update a Collection</h3>
+<p>Update an existing collection.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl \
+  -X PATCH \
+  -H "Authorization: Bearer &lt;your-access-token" \
+  https://viafoundry.com/vmeta/api/v1/collections/6063e3a33c195afbe6d5e036 \
+  -H "Content-Type: application/json" \
+  -d '
+      {
+        "label": "Analysis"
+      }'
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code>JSON
+{
+    "status": "success",
+    "data": {
+        "data": {
+            "version": 1,
+            "required": false,
+            "active": true,
+            "creationDate": "2021-03-31T02:26:17.087Z",
+            "lastUpdateDate": "2021-03-31T02:26:17.087Z",
+            "_id": "6063e3a33c195afbe6d5e036",
+            "name": "analysis",
+            "label": "Analysis",
+            "restrictTo": {
+                "group": [
+                    "5fb45793aa5adff6f407f2d2"
+                ]
+            },
+            "projectID": "5fb2b395c8c1e577fcb8ce6c",
+            "lastUpdatedUser": "5f39add38db6c9a200168a22",
+            "owner": "5f39add38db6c9a200168a22",
+            "perms": {
+                "read": {
+                    "group": [
+                        "5fb4575faa5adff6f407f2d1"
+                    ]
+                },
+                "write": {
+                    "group": [
+                        "5fb45793aa5adff6f407f2d2"
+                    ]
+                }
+            }
+        }
+    }
+}
+</code></pre></div>
+<h3 id="delete-a-collection">Delete a Collection</h3>
+<p>Delete an existing collection. NOTE: This action is irreversible, and should only be executed when absolutely certain of its intentions.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl \
+  -X DELETE \
+  -H "Authorization: Bearer &lt;your-access-token" \
+  https://viafoundry.com/vmeta/api/v1/collections/6063e3a33c195afbe6d5e036 
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code>JSON
+{
+    "status": "success",
+    "data": {
+        "doc": "Deleted!"
+    }
+}
+</code></pre></div>
+<h2 id="fields">Fields</h2>
+<h3 id="get-all-fields">Get All Fields</h3>
+<p>Retrieve a list of fields for the currently logged in user.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl -X GET 'https://viafoundry.com/vmeta/api/v1/fields' \
+-H 'Authorization: Bearer &lt;your-access-token'
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code>JSON
+{
+    "status": "success",
+    "results": 2,
+    "data": {
+        "data": [
+            {
+                "type": "String",
+                "required": true,
+                "active": true,
+                "creationDate": "2020-09-08T21:56:35.406Z",
+                "lastUpdateDate": "2020-09-08T21:56:35.406Z",
+                "_id": "5f58518835db5980ba020ff7",
+                "name": "name",
+                "label": "Name",
+                "collectionID": "5f57ffba35db5980ba020ff3",
+                "lastUpdatedUser": "5f39add38db6c9a200168a22",
+                "owner": "5f39add38db6c9a200168a22",
+                "perms": {
+                    "read": {
+                        "group": [
+                            "5fb4575faa5adff6f407f2d1"
+                        ]
+                    },
+                    "write": {
+                        "group": [
+                            "5fb45793aa5adff6f407f2d2"
+                        ]
+                    }
+                },
+                "unique": true
+            },
+            {
+                "type": "String",
+                "required": false,
+                "active": true,
+                "creationDate": "2020-09-08T21:56:35.406Z",
+                "lastUpdateDate": "2020-09-08T21:56:35.406Z",
+                "_id": "5f58559f35db5980ba020ff8",
+                "name": "design",
+                "label": "Design",
+                "collectionID": "5f57ffba35db5980ba020ff3",
+                "lastUpdatedUser": "5f39add38db6c9a200168a22",
+                "owner": "5f39add38db6c9a200168a22",
+                "perms": {
+                    "read": {
+                        "group": [
+                            "5fb4575faa5adff6f407f2d1"
+                        ]
+                    },
+                    "write": {
+                        "group": [
+                            "5fb45793aa5adff6f407f2d2"
+                        ]
+                    }
+                }
+            }]
+        }
+    }
+</code></pre></div>
+<h3 id="get-a-field">Get a Field</h3>
+<p>Retrieve details of a single field.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl -X GET \
+'https://viafoundry.com/vmeta/api/v1/fields/5f58559f35db5980ba020ff8' \
+-H 'Authorization: Bearer &lt;your-access-token'
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code>JSON
+{
+    "status": "success",
+    "data": {
+        "data": [
+            {
+                "type": "String",
+                "required": false,
+                "active": true,
+                "creationDate": "2020-09-08T21:56:35.406Z",
+                "lastUpdateDate": "2020-09-08T21:56:35.406Z",
+                "_id": "5f58559f35db5980ba020ff8",
+                "name": "design",
+                "label": "Design",
+                "collectionID": "5f57ffba35db5980ba020ff3",
+                "lastUpdatedUser": "5f39add38db6c9a200168a22",
+                "owner": "5f39add38db6c9a200168a22",
+                "perms": {
+                    "read": {
+                        "group": [
+                            "5fb4575faa5adff6f407f2d1"
+                        ]
+                    },
+                    "write": {
+                        "group": [
+                            "5fb45793aa5adff6f407f2d2"
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}
+</code></pre></div>
+<h3 id="create-a-field">Create a Field</h3>
+<p>This POST request is only enabled for users with the project-admin role.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl -X POST \
+'https://viafoundry.com/vmeta/api/v1/fields' \
+-H 'Authorization: Bearer &lt;your-access-token' \
+-H 'Content-Type: application/json' \
+-d '
+    {
+        "name": "clin_pheno",
+        "label": "Clinical Phenotype",
+        "type": "String",
+        "collectionID":"5f74a0e05443973d2bfd870c"
+    }'
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code>JSON
+{
+    "status": "success",
+    "data": {
+        "data": {
+            "type": "String",
+            "required": false,
+            "active": true,
+            "creationDate": "2021-03-31T02:57:02.771Z",
+            "lastUpdateDate": "2021-03-31T02:57:02.771Z",
+            "_id": "6063e7c91bfc89fd1960ae5b",
+            "name": "clin_pheno",
+            "label": "Clinical Phenotype",
+            "collectionID": "5f74a0e05443973d2bfd870c",
+            "lastUpdatedUser": "5f39add38db6c9a200168a22",
+            "owner": "5f39add38db6c9a200168a22",
+            "perms": {
+                "read": {
+                    "group": [
+                        "5fb4575faa5adff6f407f2d1"
+                    ]
+                },
+                "write": {
+                    "group": [
+                        "5fb45793aa5adff6f407f2d2"
+                    ]
+                }
+            },
+            "id": "6063e7c91bfc89fd1960ae5b"
+        }
+    }
+}
+</code></pre></div>
+<h3 id="update-a-field">Update a Field</h3>
+<p>Update an existing field.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl \
+  -X PATCH \
+  -H "Authorization: Bearer &lt;your-access-token" \
+  https://viafoundry.com/vmeta/api/v1/fields/6063e7c91bfc89fd1960ae5b \
+  -H "Content-Type: application/json" \
+  -d '
+      {
+        "ontology": {
+            "create": true,
+            "include": [
+                "Dermatomyositis",
+                "GVHD",
+                "Healthy Control",
+                "Lupus",
+                "Psoriasis",
+                "Vitiligo"
+            ]
+        }
+      }'
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code>JSON
+{
+    "status": "success",
+    "data": {
+        "data": {
+            "type": "String",
+            "required": false,
+            "active": true,
+            "creationDate": "2021-03-31T02:57:02.771Z",
+            "lastUpdateDate": "2021-03-31T02:57:02.771Z",
+            "_id": "6063e7c91bfc89fd1960ae5b",
+            "name": "clin_pheno",
+            "label": "Clinical Phenotype",
+            "collectionID": "5f74a0e05443973d2bfd870c",
+            "lastUpdatedUser": "5f39add38db6c9a200168a22",
+            "owner": "5f39add38db6c9a200168a22",
+            "perms": {
+                "read": {
+                    "group": [
+                        "5fb4575faa5adff6f407f2d1"
+                    ]
+                },
+                "write": {
+                    "group": [
+                        "5fb45793aa5adff6f407f2d2"
+                    ]
+                }
+            },
+            "ontology": {
+                "create": true,
+                "include": [
+                    "Dermatomyositis",
+                    "GVHD",
+                    "Healthy Control",
+                    "Lupus",
+                    "Psoriasis",
+                    "Vitiligo"
+                    ]
+            }
+        }
+    }
+}
+</code></pre></div>
+<h3 id="delete-a-field">Delete a Field</h3>
+<p>Delete an existing field. NOTE: This action is irreversible, and should only be executed when absolutely certain of its intentions.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl \
+  -X DELETE \
+  -H "Authorization: Bearer &lt;your-access-token" \
+  https://viafoundry.com/vmeta/api/v1/fields/6063e7c91bfc89fd1960ae5b 
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code>JSON
+{
+    "status": "success",
+    "data": {
+        "doc": "Deleted!"
+    }
+}
+</code></pre></div>
+<h2 id="data">Data</h2>
+<h3 id="pull-all-data-of-a-projects-collection">Pull All Data of a Project's Collection</h3>
+<p>Retrieve all data associated with a given collection in a project for the currently
+ logged-in user.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl -X GET 'https://viafoundry.com/vmeta/api/v1/projects/vitiligo/data/sample' \
+-H 'Authorization: Bearer &lt;your-access-token'
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code>JSON
+{
+    "status": "success",
+    "results": 2,
+    "data": {
+        "data": [
+            {
+                "creationDate": "2020-12-17T16:42:06.252Z",
+                "lastUpdateDate": "2020-12-17T16:42:06.252Z",
+                "_id": "5fdb8c6ad6330eb80d503fe2",
+                "name": "CL067_L2_V1_Bst_sc_iD",
+                "sample_type": "scRNAseq",
+                "technology": "inDrop",
+                "status": "Processed",
+                "contract": "scRNAseq",
+                "bead_occup": "65-70%",
+                "biosamp_id": "5fdb8820d6330eb80d503a31",
+                "lastUpdatedUser": "5f92529b89c7d0b3bf31ac27",
+                "owner": "5f92529b89c7d0b3bf31ac27",
+                "perms": {
+                    "write": {
+                        "group": [
+                            "5fb45793aa5adff6f407f2d2"
+                        ]
+                    },
+                    "read": {
+                        "group": [
+                            "5fb4575faa5adff6f407f2d1"
+                        ]
+                    }
+                },
+                "DID": 1
+            },
+            {
+                "creationDate": "2020-12-17T16:42:06.252Z",
+                "lastUpdateDate": "2020-12-17T16:42:06.252Z",
+                "_id": "5fdb8c6ad6330eb80d503fe4",
+                "name": "VB071_L1_V1_Bst_sc_iD",
+                "sample_type": "scRNAseq",
+                "technology": "inDrop",
+                "status": "Processed",
+                "contract": "scRNAseq",
+                "bead_occup": "33/50 (~65%)",
+                "biosamp_id": "5fdb8820d6330eb80d503a33",
+                "lastUpdatedUser": "5f92529b89c7d0b3bf31ac27",
+                "owner": "5f92529b89c7d0b3bf31ac27",
+                "perms": {
+                    "write": {
+                        "group": [
+                            "5fb45793aa5adff6f407f2d2"
+                        ]
+                    },
+                    "read": {
+                        "group": [
+                            "5fb4575faa5adff6f407f2d1"
+                        ]
+                    }
+                },
+                "DID": 2
+            }]
+        }
+    }
+</code></pre></div>
+<h3 id="get-a-data-value">Get a Data Value</h3>
+<p>Retrieve details of a single data field.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl -X GET \
+'https://viafoundry.com/vmeta/api/v1/projects/vitiligo/data/sample/5fdb8c6ad6330eb80d503fe2' \
+-H 'Authorization: Bearer &lt;your-access-token'
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code>JSON
+{
+    "status": "success",
+    "data": {
+        "data": [
+                    {
+                "creationDate": "2020-12-17T16:42:06.252Z",
+                "lastUpdateDate": "2020-12-17T16:42:06.252Z",
+                "_id": "5fdb8c6ad6330eb80d503fe2",
+                "name": "CL067_L2_V1_Bst_sc_iD",
+                "sample_type": "scRNAseq",
+                "technology": "inDrop",
+                "status": "Processed",
+                "contract": "scRNAseq",
+                "bead_occup": "65-70%",
+                "biosamp_id": "5fdb8820d6330eb80d503a31",
+                "lastUpdatedUser": "5f92529b89c7d0b3bf31ac27",
+                "owner": "5f92529b89c7d0b3bf31ac27",
+                "perms": {
+                    "write": {
+                        "group": [
+                            "5fb45793aa5adff6f407f2d2"
+                        ]
+                    },
+                    "read": {
+                        "group": [
+                            "5fb4575faa5adff6f407f2d1"
+                        ]
+                    }
+                },
+                "DID": 1
+            }
+        ]
+    }
+}
+</code></pre></div>
+<h3 id="create-a-data-value">Create a Data Value</h3>
+<p>This POST request is only allowed for the users with Write
+ permission.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl -X POST \
+'https://viafoundry.com/vmeta/api/v1/projects/vitiligo/data/sample' \
+-H 'Authorization: Bearer &lt;your-access-token' \
+-H 'Content-Type: application/json' \
+-d '
+    {
+        "name": "CL070_L2_V1_Bst_sc_iD",
+        "sample_type": "scRNAseq",
+        "technology": "inDrop",
+        "status": "Sequenced",
+        "contract": "scRNAseq",
+        "bead_occup": "65-70%",
+        "biosamp_id":"5fdb8820d6330eb80d503a31"
+    }'
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code>JSON
+{
+    "status": "success",
+    "data": {
+        "data": {
+            "creationDate": "2021-03-31T03:16:58.503Z",
+            "lastUpdateDate": "2021-03-31T03:16:58.503Z",
+            "_id": "606453c0cb44bcfdbb84c6a2",
+            "name": "CL070_L2_V1_Bst_sc_iD",
+            "sample_type": "scRNAseq",
+            "technology": "inDrop",
+            "status": "Sequenced",
+            "contract": "scRNAseq",
+            "bead_occup": "65-70%",
+            "biosamp_id": "5fdb8820d6330eb80d503a31",
+            "lastUpdatedUser": "5f39add38db6c9a200168a22",
+            "owner": "5f39add38db6c9a200168a22",
+            "perms": {
+                "read": {
+                    "group": [
+                        "5fb4575faa5adff6f407f2d1"
+                    ]
+                },
+                "write": {
+                    "group": [
+                        "5fb45793aa5adff6f407f2d2"
+                    ]
+                }
+            },
+            "DID": 135
+        }
+    }
+}
+</code></pre></div>
+<h3 id="update-a-data-field">Update a Data Field</h3>
+<p>Update an existing data field.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl \
+  -X PATCH \
+  -H "Authorization: Bearer &lt;your-access-token" \
+  https://viafoundry.com/vmeta/api/v1/projects/vitiligo/data/sample/606453c0cb44bcfdbb84c6a2 \
+  -H "Content-Type: application/json" \
+  -d '
+      {
+        "status":"Processed"
+      }'
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code>JSON
+{
+    "status": "success",
+    "data": {
+        "data": {
+            "creationDate": "2021-03-31T03:16:58.503Z",
+            "lastUpdateDate": "2021-03-31T03:16:58.503Z",
+            "_id": "606453c0cb44bcfdbb84c6a2",
+            "name": "CL070_L2_V1_Bst_sc_iD",
+            "sample_type": "scRNAseq",
+            "technology": "inDrop",
+            "status": "Processed",
+            "contract": "scRNAseq",
+            "bead_occup": "65-70%",
+            "biosamp_id": "5fdb8820d6330eb80d503a31",
+            "lastUpdatedUser": "5f39add38db6c9a200168a22",
+            "owner": "5f39add38db6c9a200168a22",
+            "perms": {
+                "read": {
+                    "group": [
+                        "5fb4575faa5adff6f407f2d1"
+                    ]
+                },
+                "write": {
+                    "group": [
+                        "5fb45793aa5adff6f407f2d2"
+                    ]
+                }
+            },
+            "DID": 135
+        }
+    }
+}
+</code></pre></div>
+<h3 id="delete-a-data-field">Delete a Data Field</h3>
+<p>Delete an existing data value. NOTE: This action is irreversible, and should only be executed when absolutely certain of its intentions.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl \
+  -X DELETE \
+  -H "Authorization: Bearer &lt;your-access-token" \
+  https://viafoundry.com/vmeta/api/v1/projects/vitiligo/data/sample/606453c0cb44bcfdbb84c6a2 
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code>JSON
+{
+    "status": "success",
+    "data": {
+        "doc": "Deleted!"
+    }
+}
+</code></pre></div></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2023 by Via Scientific
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>
