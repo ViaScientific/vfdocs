@@ -24,6 +24,7 @@
 - [Project Guide](ViaFoundry/project.md)
 - [Run Guide](ViaFoundry/run.md)
 - [App Guide](ViaFoundry/app.md)
+- [Metadata Guide](ViaFoundry/metadata_guide.md)
 - [Profile Guide](ViaFoundry/profile.md)
 - [Frequently Asked Questions](ViaFoundry/faq.md)
 
@@ -32,6 +33,7 @@
 - [Pipeline Guide](ViaFoundry/pipeline_guide.md)
 - [Process Guide](ViaFoundry/process.md)
 - [App Guide](ViaFoundry/app_developer_guide.md)
+- [Metadata API Guide](ViaFoundry/vmeta_api.md)
 
 ## App Library
 

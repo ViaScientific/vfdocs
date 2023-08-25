@@ -42,12 +42,14 @@ nav:
       - "Project Guide": ViaFoundry/project.md
       - "Run Guide": ViaFoundry/run.md
       - "App Guide": ViaFoundry/app.md
+      - "Metadata Guide": ViaFoundry/metadata_guide.md
       - "Profile Guide": ViaFoundry/profile.md
       - "Frequently Asked Questions": ViaFoundry/faq.md
   - Developer Guide:
       - "Pipeline Guide": ViaFoundry/pipeline_guide.md
       - "Process Guide": ViaFoundry/process.md
       - "Application Guide": ViaFoundry/app_developer_guide.md
+      - "Metadata API Guide": ViaFoundry/vmeta_api.md
   - App Library:
       - "GSEA Explorer": ViaFoundry/gsea_explorer.md
       - "Network Explorer": ViaFoundry/network_explorer.md
