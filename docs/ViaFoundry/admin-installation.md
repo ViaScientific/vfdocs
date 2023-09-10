@@ -9,12 +9,12 @@ Via Foundry's main server is located at <https://viafoundry.com>. Via Foundry ca
 
 ## Recommended Computer Specifications:
 
-- Hard disk: 50-100GB (root)
-- 4-8 CPUs
-- 16-32 GB of memory. 
-- e.g. AWS instance type  m6i.2xlarge+
+- Hard disk: 100-200GB (root)
+- 16-32 CPUs
+- 64-128 GB of memory. 
+- e.g. AWS instance type  m6i.4xlarge+, GCP VM type n2-standard-16+
 - Operating System: Ubuntu 22.04
-- 1-2TB EBS mounted drive
+- 1-2TB EBS (AWS) / Persistent SSD Disk (GCP) mounted drive
 
 
 ## Software Dependencies for Pipeline Execution
@@ -35,7 +35,8 @@ can still use our pipelines with just Singularity.
      [Docker](https://docs.docker.com/engine/install/)
  -   Installing [Singularity (Version
      3)](https://docs.sylabs.io/guides/3.0/user-guide/installation.html)
- -   AWS CLI v2 
+ -   AWS CLI v2 for AWS resources access
+ -   GCloud/GSUtil CLI for GCP resources access 
  -   Java v11+ (for nextflow)
 
 
