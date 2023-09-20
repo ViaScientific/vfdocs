@@ -1,9 +1,8 @@
 # Configuration
 
-
 ## Configuration of Vpipe:
 
-Vpipe configuration file found in /export/vpipe/config/.sec file. 
+Vpipe configuration file found in /export/vpipe/config/.sec file.
 
 By default, localhost:8080 is used for domain name. Please use static IP address or domain name and please update BASE_PATH and PUBWEB_URL as follows:
 
@@ -16,13 +15,12 @@ to
 
 ```
 BASE_PATH=https://your_domain/vpipe
-PUBWEB_URL=https://your_domain/vpipe/tmp/pub 
+PUBWEB_URL=https://your_domain/vpipe/tmp/pub
 ```
 
 All of the configuration directive details can be found [here](../admin-configuration/#vpipe-config-file-details)
 
 **Note:** If you were using Standalone Vpipe (or DolphinNext) before, please check the SALT and PEPPER config parameters in /export/vpipe/config/.sec file. These values should be the same for /export/vsso/config.env. So, you need to update /export/vsso/config.env with Vpipe parameters.
-
 
 ## Configuration of Vsso:
 
@@ -114,10 +112,42 @@ SSO_USER_INFO_URL="https://your_domain/vsso/api/v1/users/info"
 
 All of the configuration directive details can be found [here](../admin-configuration/#vmetavportalvfoundry-config-file-details)
 
+## Configuration of OKTA:
 
+If you're integrating OKTA for user authentication, you can use the SAML method. Below are the URLs and settings you'll need to input in your OKTA configuration:
+
+```
+Single Sign-On URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
+Recipient URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
+Destination URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
+Audience Restriction: https://viafoundry.{hostname}/vsso/auth/saml/callback
+Default Relay State: https://viafoundry.{hostname}/vsso/auth/saml
+```
+
+Make sure to replace `{hostname}` with your actual server's hostname.
+
+### Sending User Attributes
+
+In your OKTA setup, configure it to send the user's first name (`firstName`) and last name (`lastName`) when they log in.
+
+### Metadata File
+
+Download the `metadata.xml` file from OKTA and place it in the specified location `SSO_SAML_METADATA`.
+
+### Configuration File
+
+Finally, update your configuration file located at `/export/vsso/config.env` with the following parameters:
+
+```
+OKTA_SAML_LOGIN=true
+SSO_ISSUER=http://www.okta.com/{ISSUER_ID}
+SSO_SAML_METADATA=/export/vsso/certs/metadata.xml
+SSO_SAML_DESTINATION_URL=https://viafoundry.{hostname}
+```
+
+Here, `{ISSUER_ID}` should be replaced with the actual issuer ID provided by OKTA, and `{hostname}` with your server's hostname.
 
 ## Apache Configuration for the Tools:
-
 
 To configure Apache, you need to enable the mod_ssl and mod_proxy modules. Please follow the instructions below:
 
@@ -128,8 +158,6 @@ To configure Apache, you need to enable the mod_ssl and mod_proxy modules. Pleas
 3. Replace "Your_Domain.com" and "Your_Email": In the Apache configuration, you need to replace "Your_Domain.com" with your actual domain name. This is the domain name that will be used for accessing the Tools.
 
 4. Adjust SSL certificate locations: You need to specify the correct SSL certificate locations for the subdomain used by the Tools. This typically involves specifying the paths to the SSL certificate file and the SSL certificate key file.
-
-
 
 ```
 <IfModule mod_ssl.c>
@@ -142,7 +170,7 @@ To configure Apache, you need to enable the mod_ssl and mod_proxy modules. Pleas
         # Some rewrite rules in this file were disabled on your HTTPS site,
         # because they have the potential to create redirection loops.
         SSLCertificateFile /etc/letsencrypt/live/Your_Domain.com/cert.pem
-        SSLCertificateKeyFile /etc/letsencrypt/live/Your_Domain.com/privkey.pem 
+        SSLCertificateKeyFile /etc/letsencrypt/live/Your_Domain.com/privkey.pem
         SSLCertificateChainFile /etc/letsencrypt/live/Your_Domain.com/chain.pem
         SSLProxyEngine on
 
@@ -163,28 +191,25 @@ To configure Apache, you need to enable the mod_ssl and mod_proxy modules. Pleas
 </IfModule>
 ```
 
-
 ## After Configuration
 
-1. After changing the configurations, please restart vfoundry, vmeta, vportal and vsso. 
+1. After changing the configurations, please restart vfoundry, vmeta, vportal and vsso.
 
-    ```
-    pm2 restart all
-    ```
+   ```
+   pm2 restart all
+   ```
 
-2. Enter Vsso (https://your_domain/vsso) and login with any username and password. The first user will be assigned as admin. 
-3. Enter Vmeta (https://your_domain/vmeta). Click the profile button at the top right and click the Servers tab. Here you can insert multiple foundry servers after clicking the “add a server” button. Enter any name for your vpipe server and select type as “vpipe”. 
-    - URL Client: https://your_domain/vpipe 
-    - URL Server: http://localhost:8080/vpipe
-    - Type: vpipe
-
+2. Enter Vsso (https://your_domain/vsso) and login with any username and password. The first user will be assigned as admin.
+3. Enter Vmeta (https://your_domain/vmeta). Click the profile button at the top right and click the Servers tab. Here you can insert multiple foundry servers after clicking the “add a server” button. Enter any name for your vpipe server and select type as “vpipe”.
+   - URL Client: https://your_domain/vpipe
+   - URL Server: http://localhost:8080/vpipe
+   - Type: vpipe
 
 ## Advanced Configuration:
 
 ### Vpipe Config File Details
 
-
-All of the configuration directive details can be found below: 
+All of the configuration directive details can be found below:
 
 **[Vpipe] Section:**
 
@@ -206,17 +231,15 @@ All of the configuration directive details can be found below:
 
 - **JWT_COOKIE_EXPIRES_IN**: This specifies the expiration time for the JWT cookie. Once the specified time period has passed, the cookie will expire, and the user will need to log in again for authentication. The value is usually set in terms of days.
 
-    
-
 **[CONFIG] Section**:
 
 - **ENV_PATH**: This is an optional file path that can be specified to be sourced before starting the application's run. It could be a file like "/home/.bashrc" and is used to load environment variables or configuration settings.
 
 - **TIMEZONE**: It sets the default timezone used by all date and time functions in the application. It ensures that the application works with the correct time representation based on the specified timezone.
 
-- **RUNPATH**: This is the relative path where run logs are stored. 
+- **RUNPATH**: This is the relative path where run logs are stored.
 
-- **TEMPPATH**: Similarly, this is the relative path where temporary files created during the application's runtime are stored. 
+- **TEMPPATH**: Similarly, this is the relative path where temporary files created during the application's runtime are stored.
 
 - **API_URL**: This is the Vpipe URL used inside the Docker container. It is the endpoint that the application will use to make API calls when it receives requests.
 
@@ -234,24 +257,23 @@ All of the configuration directive details can be found below:
 
 - **EMAIL_TYPE**: This configuration parameter determines the type of email sending mechanism to be used by the Vpipe application. There are three options:
 
-    - **DEFAULT (sendMail):** This option uses the default email sending method available in the system.
-    - **SMTP:** This option utilizes the Simple Mail Transfer Protocol (SMTP) to send emails. It requires additional parameters for SMTP configuration.
-    - **HTTP:** This option uses an HTTP-based email sending mechanism. It requires additional parameters for configuring the HTTP endpoint.
+  - **DEFAULT (sendMail):** This option uses the default email sending method available in the system.
+  - **SMTP:** This option utilizes the Simple Mail Transfer Protocol (SMTP) to send emails. It requires additional parameters for SMTP configuration.
+  - **HTTP:** This option uses an HTTP-based email sending mechanism. It requires additional parameters for configuring the HTTP endpoint.
 
 - **Required Parameters for EMAIL_TYPE=DEFAULT/SMTP**:
-   
-    - **EMAIL_HOST**: This parameter specifies the hostname or IP address of the email server to be used for sending emails.
-    - **EMAIL_USERNAME**: This parameter represents the username or account name used for authentication when connecting to the email server.
-    - **EMAIL_PASSWORD**: This parameter is the password associated with the email account used for authentication.
-    - **EMAIL_PORT**: This parameter indicates the port number used to establish a connection with the email server.
+
+  - **EMAIL_HOST**: This parameter specifies the hostname or IP address of the email server to be used for sending emails.
+  - **EMAIL_USERNAME**: This parameter represents the username or account name used for authentication when connecting to the email server.
+  - **EMAIL_PASSWORD**: This parameter is the password associated with the email account used for authentication.
+  - **EMAIL_PORT**: This parameter indicates the port number used to establish a connection with the email server.
 
 - **Required Parameters for EMAIL_TYPE=HTTP**:
-    - **EMAIL_URL**: This parameter represents the URL of the HTTP endpoint used for sending emails.
-    - **EMAIL_HEADER_KEY**: This parameter specifies the header key required by the HTTP endpoint for authentication or identification purposes.
-    - **EMAIL_HEADER_VALUE**: This parameter represents the value associated with the header key mentioned above. It is provided for successful communication with the HTTP endpoint.
+  - **EMAIL_URL**: This parameter represents the URL of the HTTP endpoint used for sending emails.
+  - **EMAIL_HEADER_KEY**: This parameter specifies the header key required by the HTTP endpoint for authentication or identification purposes.
+  - **EMAIL_HEADER_VALUE**: This parameter represents the value associated with the header key mentioned above. It is provided for successful communication with the HTTP endpoint.
 
-
-**[UICONFIG] Section:** 
+**[UICONFIG] Section:**
 
 - **COMPANY_NAME**: This setting defines the name of the company or organization that will be displayed on the webpage.
 
@@ -299,12 +321,9 @@ All of the configuration directive details can be found below:
 
 - **ENABLE_SHARE_WITH_EVERYONE_PIPELINE**: This parameter enables or disables the option to share pipelines with everyone.
 
-- **CUSTOM_HELP_MESSAGE**: This setting allows the customization of a help message to be displayed in the support section of the webpage. 
+- **CUSTOM_HELP_MESSAGE**: This setting allows the customization of a help message to be displayed in the support section of the webpage.
 
-- **CUSTOM_FILE_LOCATION_MESSAGE**: This setting allows the customization of a message to be displayed in the "add file" window on the run page. 
-
-
-  
+- **CUSTOM_FILE_LOCATION_MESSAGE**: This setting allows the customization of a message to be displayed in the "add file" window on the run page.
 
 **[SSOCONFIG] Section:**
 
@@ -314,25 +333,8 @@ All of the configuration directive details can be found below:
 
 - **CLIENT_ID, CLIENT_SECRET**: These parameters represent the client credentials required for SSO integration. They are obtained from the SSO server. The `CLIENT_ID` is a unique identifier assigned to the Vpipe application, and the `CLIENT_SECRET` is a secure key used for authentication and authorization purposes.
 
-
-**[OKTACONFIG] Section**:
-
-- **SSO_LOGIN**: This setting determines whether Okta Single Sign-On (SSO) login is enabled or disabled for the application. Set it to `true` to enable Okta SSO login and `false` to disable it.
-
-- **OKTA_METHOD**: This parameter specifies the method to be used for Okta SSO integration. It can be either SAML (Security Assertion Markup Language) or OIDC (OpenID Connect).
-
-For SAML:
-
-- **OKTA_METADATA**: This variable is required when using SAML as the Okta SSO method. It represents the SAML 2.0 metadata, which contains the configuration information for integrating with Okta. You can provide either the full path or the web URL to the metadata file.
-
-For OIDC:
-
-- **ISSUER**: This parameter is used in OIDC (OpenID Connect) integration. It represents the issuer URL of the Okta authorization server.
-- **CLIENT_ID**: This parameter represents the client ID associated with the Okta application.
-- **CLIENT_SECRET**: This parameter is the client secret or client password associated with the Okta application.
-- **OKTA_API_TOKEN**: This parameter is the Okta API token used for session deletion upon signing out. It allows the Vpipe application to interact with the Okta API for managing user sessions.
-
 **[VIACONFIG] Section:**
+
 - **VFOUNDRY_URL**: This parameter represents the URL of the Via Foundry server. The VFOUNDRY_URL setting allows the Vpipe application to connect and interact with the Via Foundry server.
 
 ### Vmeta/Vportal/Vfoundry Config File Details
@@ -375,9 +377,6 @@ All of the configuration directive details can be found below. By configuring th
 
 - **CLIENT_ID, CLIENT_SECRET**: These parameters represent the client credentials retrieved from the SSO server for authentication and authorization.
 
-
-
-
 ### Vsso Config File Details
 
 All of the configuration directive details can be found below. By configuring these settings, you can customize various aspects of the application, including the environment, server configuration, database connection, authentication options, email settings, SSO integration, SSL/TLS certificates, and session management.
@@ -388,7 +387,7 @@ All of the configuration directive details can be found below. By configuring th
 
 - **PROTOCOL**: This parameter determines the protocol to be used for communication.
 
-- **BASE_URL**: This parameter represents the base URL of the application. If the application is running under a subfolder of another application, the SUBFOLDER parameter should be defined. 
+- **BASE_URL**: This parameter represents the base URL of the application. If the application is running under a subfolder of another application, the SUBFOLDER parameter should be defined.
 
 - **SUBFOLDER**: This parameter is used when the application is running under a subfolder of another application. It specifies the subfolder path, which is "/vsso" in this case.
 

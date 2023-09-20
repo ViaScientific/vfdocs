@@ -1,18 +1,18 @@
 # Pipeline Testing
 
-## Configuration of Run Environment 
+## Configuration of Run Environment
 
-Once logged in, click on the profile tab in the top right of the screen. You'll notice several tabs to explore in profile page. 
+Once logged in, click on the profile tab in the top right of the screen. You'll notice several tabs to explore in profile page.
 
-* **Run environments:** This is your main segment for creating connection profiles for users. 
-* **SSH Keys:** where you can create new or enter existing SSH key pairs to establish connection to any kind of host. 
-Before creating run environment, SSH Keys needed to be created in SSH Keys tab. For more details to define the cluster please check the [documentation](../profile)
+- **Run environments:** This is your main segment for creating connection profiles for users.
+- **SSH Keys:** where you can create new or enter existing SSH key pairs to establish connection to any kind of host.
+  Before creating run environment, SSH Keys needed to be created in SSH Keys tab. For more details to define the cluster please check the [documentation](../profile)
 
-## Executing Test Run 
+## Executing Test Run
 
 To test a pipeline, you can follow these steps:
 
-1. Visit the following link: [RNA-Seq pipeline](https://www.viafoundry.com/pipeline/150).
+1. Visit the following link: [RNA-Seq pipeline](https://www.viafoundry.com/pipeline/219).
 
 2. On the webpage, locate the "download pipeline" button and click on it. This will initiate the download of a zip file.
 

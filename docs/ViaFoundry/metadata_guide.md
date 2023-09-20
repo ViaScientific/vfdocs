@@ -8,29 +8,28 @@ Welcome to metadata tracking system designed to support a wide range of use case
 
 ### Benefits of Metadata Tracker's Design
 
--   **Flexible Design:** Define project collection and fields flexibly
-    with a software architecture developed by the MongoDB data management system. MongoDB supports a flexible data field schema where users can efficiently update the data fields of any entry or the information of the associated metadata.
--   **Web APIs:** Metadata Tracker also incorporates extensive and secure
-    token-based Web APIs to make the metadata and processed data
-    available to its users in accordance with FAIR standards.
--   **Event-based Management:** Events are specific types of insertion,
-    deletion and edit operations defined by the project
-    administrators to allow internal users to manage multiple specifically permitted fields and collections in an organized manner.
--   **Validation with Ontology Servers:** Data fields are linked to ontology servers or user admin-specified dictionaries, which allows the standardized collection of information from each user.
--   **Share:** Each project, collection, field, and document in Metadata Tracker
-    has dynamic permission controls, enabling project admins to update or submit operations to, and limit the access of specified groups or users.
+- **Flexible Design:** Define project collection and fields flexibly
+  with a software architecture developed by the MongoDB data management system. MongoDB supports a flexible data field schema where users can efficiently update the data fields of any entry or the information of the associated metadata.
+- **Web APIs:** Metadata Tracker also incorporates extensive and secure
+  token-based Web APIs to make the metadata and processed data
+  available to its users in accordance with FAIR standards.
+- **Event-based Management:** Events are specific types of insertion,
+  deletion and edit operations defined by the project
+  administrators to allow internal users to manage multiple specifically permitted fields and collections in an organized manner.
+- **Validation with Ontology Servers:** Data fields are linked to ontology servers or user admin-specified dictionaries, which allows the standardized collection of information from each user.
+- **Share:** Each project, collection, field, and document in Metadata Tracker
+  has dynamic permission controls, enabling project admins to update or submit operations to, and limit the access of specified groups or users.
 
 ### **Who is Metadata Tracker for?**
 
 Metadata Tracker is designed for a wide variety of users, from bench biologists to expert bioinformaticians.
 
--   **Data submission** requires no programming knowledge whatsoever. We've created an intuitive event-based process to simplify and streamline this process.
--   **Metadata setup** only requires basic database knowledge and
-    familiarity with MongoDB to effectively use its operators. You
-    don't need to learn all of MongoDB's syntax; instead, you can
-    easily focus on the field settings. The rest (e.g. creating parent-child relationships with collections,
-    delivering data from ontology servers, etc.) is handled by Metadata Tracker.
-    
+- **Data submission** requires no programming knowledge whatsoever. We've created an intuitive event-based process to simplify and streamline this process.
+- **Metadata setup** only requires basic database knowledge and
+  familiarity with MongoDB to effectively use its operators. You
+  don't need to learn all of MongoDB's syntax; instead, you can
+  easily focus on the field settings. The rest (e.g. creating parent-child relationships with collections,
+  delivering data from ontology servers, etc.) is handled by Metadata Tracker.
 
 ## **Data Guide**
 
@@ -71,7 +70,7 @@ Once you've made a selection, the blank form fields will be automatically filled
 
 ![image](../images/events_update_patient_visit.png){.align-center width="99.0%"}
 
-Here, a Patient Visit event has been updated. You'll find that much more is possible with Metadata Tracker events, so for more information on how to create and customize events, check out [this section](#all-events). 
+Here, a Patient Visit event has been updated. You'll find that much more is possible with Metadata Tracker events, so for more information on how to create and customize events, check out [this section](#all-events).
 
 ### **All Collections**
 
@@ -98,7 +97,7 @@ below, in which a Biosample is being inserted, with associated values for such d
 After clicking one of the checkboxes, you can start editing your collection member by clicking
 the `Edit` button. If you
 check off multiple items at the same time, Metadata Tracker lets you update
-only certain fields of the selected data, leaving other fields unique and untouched for all the checked-off items. 
+only certain fields of the selected data, leaving other fields unique and untouched for all the checked-off items.
 
 ##### Single Data Edit
 
@@ -140,7 +139,7 @@ After clicking the **Save Changes** button at the top, the highlighted cells are
 synchronized with Metadata Tracker's database, and the update's status is tracked:
 
 ![image](../images/allcollections_visit_spreadsheet3.png){.align-center width="99.0%"}
- 
+
 Table view:
 
 ![image](../images/allcollections_visit_spreadsheet4.png){.align-center width="71.0%"}
@@ -159,8 +158,6 @@ the **Import Excel File** button.
 
 ![image](../images/allcollections_visit_excel_import.png){.align-center width="99.0%"}
 
-
-
 ## **Collection Guide**
 
 This guide explains how to create, edit, and delete collections in Metadata Tracker.
@@ -171,33 +168,32 @@ First, navigate to a project in Via Foundry. At the top of the `Metadata` tab in
 
 ![image](../images/foundry_all_collections.png)
 
-
 ### **Inserting Collections**
 
 In order to insert a new collection, you need to click on the `Insert`
 button, which will open the `Insert Collection` window, as shown below. Here, you can fill in the
 following fields:
 
--   **Name (required):** Name of your collection. This will *not* appear in Metadata Tracker's dropdown menus, but is simply for back-end storage purposes.
--   **Label (required):** Long version of your collection name. This *will* be displayed as your collection's "name" in Metadata Tracker.
--   **Project (required):** Choose the project you'd like the collection to go into.
--   **Version (required):** Version of the collection.
--   **RestrictTo:** Select users or groups who are allowed to
-    **Insert new data into collection**. You can grant this permission to new users/groups
-    by clicking the `Insert` button. If you later want to remove that
-    permission, just click **options -\> delete**.
--   **Permissions:** User or groups are selected who are allowed to
-    **view or edit the collection**. You may add new user/groups by
-    clicking `Share` button. Afterwards, please choose user/group and
-    read/write permission and click `Save`. If you want to
-    edit/remove the permission, please click **options** button.
--   **Other fields**: If you've configured your collection to have additional fields, you'll be able to fill them in in this window as well.
+- **Name (required):** Name of your collection. This will _not_ appear in Metadata Tracker's dropdown menus, but is simply for back-end storage purposes.
+- **Label (required):** Long version of your collection name. This _will_ be displayed as your collection's "name" in Metadata Tracker.
+- **Project (required):** Choose the project you'd like the collection to go into.
+- **Version (required):** Version of the collection.
+- **RestrictTo:** Select users or groups who are allowed to
+  **Insert new data into collection**. You can grant this permission to new users/groups
+  by clicking the `Insert` button. If you later want to remove that
+  permission, just click **options -\> delete**.
+- **Permissions:** User or groups are selected who are allowed to
+  **view or edit the collection**. You may add new user/groups by
+  clicking `Share` button. Afterwards, please choose user/group and
+  read/write permission and click `Save`. If you want to
+  edit/remove the permission, please click **options** button.
+- **Other fields**: If you've configured your collection to have additional fields, you'll be able to fill them in in this window as well.
 
 ![image](../images/collections_insert.png){.align-center width="99.0%"}
 
 ### **Editing Collections**
 
-If you'd like to edit a collection, simply click the checkbox next to its name, then click the `Edit` button at the top of the window. 
+If you'd like to edit a collection, simply click the checkbox next to its name, then click the `Edit` button at the top of the window.
 
 ![image](../images/metadata_select_edit.png)
 
@@ -207,13 +203,11 @@ You'll see an `Edit Collection` window, wherein you can manipulate any of the pr
 
 ### **Deleting Collections**
 
-If you'd like to remove a collection, you can click the checkbox next to its name, then the `Delete` button. 
+If you'd like to remove a collection, you can click the checkbox next to its name, then the `Delete` button.
 
 ![image](../images/metadata_select_delete.png)
 
 You'll be prompted to confirm your intents, at which point you can click `Remove`. NOTE: Collection deletion is irrevocable, so make sure you absolutely want to delete a collection before doing so.
-
-
 
 ## **Fields Guide**
 
@@ -227,7 +221,7 @@ Similarly, if you're dealing with biosamples, you can define fields like Organis
 
 Basically, Metadata Tracker fields are the building blocks that enable you to customize and organize your data in a structured manner. By defining these fields for different data classes, you can ensure that your data is well-organized and easy to access.
 
-In Metadata Tracker, all metadata is stored as key-value pairs in the MongoDB database. When creating a collection, it's essential to specify its fields, which determine the type of data to be stored behind the scenes. Fields also facilitate the establishment of parent-child relationships between collections. Since fields are integral to the creation of events, developing an understanding of fields will be incredibly useful moving forward in your Metadata Tracker and overall Via Foundry experience. 
+In Metadata Tracker, all metadata is stored as key-value pairs in the MongoDB database. When creating a collection, it's essential to specify its fields, which determine the type of data to be stored behind the scenes. Fields also facilitate the establishment of parent-child relationships between collections. Since fields are integral to the creation of events, developing an understanding of fields will be incredibly useful moving forward in your Metadata Tracker and overall Via Foundry experience.
 
 Let's explore the basics of working with fields in Metadata Tracker. You'll want to navigate to the `Configure Metadata` view of the `Metadata` tab in Via Foundry, then to the tab of the collection whose fields you'd like to work with. At the top of the interface, you will find three action buttons to manage fields: `Insert`, `Edit`, and `Delete`.
 
@@ -238,26 +232,26 @@ To insert a new field in Metadata Tracker, follow these steps:
 1. Click on the **Insert** button, which will open a new form to add a field.
 2. Enter the following details for the field:
 
-    - **Name (required):** Name of the field.
-    - **Label (required):** Long version of the field name.
-    - **Type (required):** The main configuration parameter for MongoDB fields, with the following available options:
-        - **String:** To declare a field as a string.
-        - **Number:** To declare a field as a number.
-        - **Boolean:** To declare a field as a boolean.
-        - **Array:** To declare a field as an array. They implicitly have a default value of an empty array (`[]`).
-        - **Date:** To declare a field as a date.
-        - **Mixed:** Anything goes into this field.
-        - **ObjectId:** An ObjectId is a special type typically used when child reference is defined.
+   - **Name (required):** Name of the field.
+   - **Label (required):** Long version of the field name.
+   - **Type (required):** The main configuration parameter for MongoDB fields, with the following available options:
+     - **String:** To declare a field as a string.
+     - **Number:** To declare a field as a number.
+     - **Boolean:** To declare a field as a boolean.
+     - **Array:** To declare a field as an array. They implicitly have a default value of an empty array (`[]`).
+     - **Date:** To declare a field as a date.
+     - **Mixed:** Anything goes into this field.
+     - **ObjectId:** An ObjectId is a special type typically used when child reference is defined.
    - **Collection:** Choose the target collection in which to insert the field.
    - **Description:** Description of the field, shown in the form when inserting new data.
    - **Unique:** A boolean value to define a unique index on this field.
    - **Hidden:** A boolean value to determine whether to show this field to users.
    - **Required:** A boolean (e.g., `true`) or an array (e.g., `[true, "Patient must have a name."]`) to specify if the field is mandatory. When an array is used, a warning message is defined at the second index of the array to show a message when the field is not entered.
    - **Ontology:** This option shows dropdown options from an ontology API or entered Keyword Array. It is configured with the following parameters:
-       - **url:** URL of the ontology API used to query available options.
-       - **authorization:** Optional authorization header of the API request. Typically, a token could be entered for authorization.
-       - **filter:** Additional query parameters to filter out retrieved data. For example, to only retrieve specific (EFO) ontology data, you can use "&ontologies=EFO".
-       - **field:** Describes the location of the keyword in the result of the API. Commonly, APIs return an array of objects. By using dot notation, the location of the keyword (e.g., `collection.prefLabel`) can be described for the following example:
+     - **url:** URL of the ontology API used to query available options.
+     - **authorization:** Optional authorization header of the API request. Typically, a token could be entered for authorization.
+     - **filter:** Additional query parameters to filter out retrieved data. For example, to only retrieve specific (EFO) ontology data, you can use "&ontologies=EFO".
+     - **field:** Describes the location of the keyword in the result of the API. Commonly, APIs return an array of objects. By using dot notation, the location of the keyword (e.g., `collection.prefLabel`) can be described for the following example:
 
 ```
 JSON
@@ -283,57 +277,53 @@ JSON
     }
 }
 ```
-    
+
 - **include:** Declare possible options for the dropdown.
 - **exclude:** Exclude certain options from the dropdown.
 - **create:** Declare if users are allowed to insert new options into this field (other than specified **include** keywords or API results). If this option is set to true, new options will be saved into the **include** array.
 
-    
-      
-    
-     **API example:** **Experiment Type** options can be delivered
-     from the ontology server (NCBO -- Experimental Factor Ontology) by
-     using the following configuration:
-    
-     ``` 
-     JSON
-     {
-         "url":"http://data.bioontology.org/search/?q=",
-         "authorization":"apikey token=39a74770-b709-4c1c-a69d-45d8e117e87a",
-         "include":["ChIP-seq"],
-         "field":"collection.prefLabel",
-         "create":true,
-         "filter":"&ontologies=EFO&suggest=true"
-     }
-     ```
-    
-     **Keyword Array example:** **Clinical Phenotype** options can also
-     be delivered from the **include** array:
-    
-     ``` 
-     JSON
-     {   
-         "create":true,
-         "include":["GVHD","Healthy Control","Lichen Planus","Lupus","Vitiligo"],
-         "exclude":["Control"]
-    
-     }
-     ```
+  **API example:** **Experiment Type** options can be delivered
+  from the ontology server (NCBO -- Experimental Factor Ontology) by
+  using the following configuration:
 
--   **CheckValid:** A function or an array that adds a validator function for this property. When an array is used, a warning message is defined at the second index of the array to show a message when the entered value is not valid. You can use validators from third-party libraries ([see
-    examples here](https://www.npmjs.com/package/validator)) inside these
-    functions. Some examples of CheckValid include:
+  ```
+  JSON
+  {
+      "url":"http://data.bioontology.org/search/?q=",
+      "authorization":"apikey token=39a74770-b709-4c1c-a69d-45d8e117e87a",
+      "include":["ChIP-seq"],
+      "field":"collection.prefLabel",
+      "create":true,
+      "filter":"&ontologies=EFO&suggest=true"
+  }
+  ```
 
-     -   `["(function(v){ return validator.isEmail(v) })", "It is not a valid E-mail"]`
-     -   `["(function(v){ return validator.isAlphanumeric(v) })", "Only letters and numbers."]`
-     -   `["(function(v){ return validator.isURL(v) })", "It is not a valid URL"]`
-     -   `["(function(v){ return v.length  2 })", "Field must be longer than 2 characters"]`
-     -   `["(function(v){ return !v.search(/^[a-zA-Z0-9-_/]+$/)})","The field must not contain any whitespace or special characters"]`
+  **Keyword Array example:** **Clinical Phenotype** options can also
+  be delivered from the **include** array:
+
+  ```
+  JSON
+  {
+      "create":true,
+      "include":["GVHD","Healthy Control","Lichen Planus","Lupus","Vitiligo"],
+      "exclude":["Control"]
+
+  }
+  ```
+
+- **CheckValid:** A function or an array that adds a validator function for this property. When an array is used, a warning message is defined at the second index of the array to show a message when the entered value is not valid. You can use validators from third-party libraries ([see
+  examples here](https://www.npmjs.com/package/validator)) inside these
+  functions. Some examples of CheckValid include:
+
+  - `["(function(v){ return validator.isEmail(v) })", "It is not a valid E-mail"]`
+  - `["(function(v){ return validator.isAlphanumeric(v) })", "Only letters and numbers."]`
+  - `["(function(v){ return validator.isURL(v) })", "It is not a valid URL"]`
+  - `["(function(v){ return v.length  2 })", "Field must be longer than 2 characters"]`
+  - `["(function(v){ return !v.search(/^[a-zA-Z0-9-_/]+$/)})","The field must not contain any whitespace or special characters"]`
 
 - **Default:** Sets a default value for the field. You can specify a default value, which will be used when a new record is created and no value is provided for this field.
 
 - **Ref:** `${ProjectName}_${CollectionName}`. This field is used for child referencing.
-
 
 Consider the following hierarchy of collections:
 
@@ -380,7 +370,6 @@ the `Edit` button, and a window similar to this one will open, enabling you to e
 
 In order to remove a field, you can check off one or multiple items and click the `Delete` button.
 
-
 ## **Events Guide**
 
 Metadata Tracker Events in Via Foundry provide a powerful framework for performing various actions, such as uploading data or initiating runs, within your projects. Events are like neatly packaged scaffoldings that allow you to interact with your data and collections seamlessly. This guide will walk you through the details of creating events and how to utilize them effectively.
@@ -407,8 +396,10 @@ One particularly useful event is the "New Run" event, which simplifies the proce
 - **Event Name:** New Run
 - **Collection:** Runs
 
-  -----------------------------------------------------------------------
+  ***
+
   - **Fields**
+
     - Name (required)
 
     - Server ID (requiredref.)
@@ -424,11 +415,11 @@ One particularly useful event is the "New Run" event, which simplifies the proce
     - Work Directory
 
     - Run URL
-  -----------------------------------------------------------------------
+
+  ***
 
 For reference, here's what a newly created `New Run` event would look like in the Metadata Tracker user interface:
 
 ![image](../images/insert-run-event.png)
 
 With Metadata Tracker Events, you can streamline data uploads, perform complex actions, and initiate runs with ease. These events offer a structured and efficient way to interact with your data, empowering you to make the most of Via Foundry. Whether you are uploading new data or orchestrating complex workflows, Metadata Tracker Events provide the flexibility and organization you need to handle your projects effectively.
-
