@@ -1,6 +1,6 @@
 # Pipeline Testing
 
-## Downloading Genome Index files
+## Downloading Genome files
 
 ```
 # Set localdownload directory
@@ -25,12 +25,12 @@ wget https://web.dolphinnext.com/umw_biocore/dnext_data/genome_data/s_pombe/ASM2
 wget https://web.dolphinnext.com/umw_biocore/dnext_data/genome_data/zebrafish/GRCz11/ -P ${genomedata}/genome_data/zebrafish/GRCz11/ -l inf -nc -nH --cut-dirs=4 -r --no-parent -R "index.html*"
 
 
-# Sync data with AWS S3 bucket
-aws s3 sync -r ${genomedata} gs://DEST_BUCKET/viafoundry/run_data/genome_data
+# If you're using AWS Cloud, Sync data with S3 bucket
+aws s3 sync -r ${genomedata} s3://DEST_BUCKET/viafoundry/run_data/genome_data
 # Remove the local data after syncing with AWS S3
 rm -rf ${genomedata}
 
-# Sync data with Google Cloud Storage bucket
+# If you're using Google Cloud, Sync data with Google Cloud Storage bucket
 gsutil rsync -r ${genomedata} gs://DEST_BUCKET/viafoundry/run_data/genome_data
 # Remove the local data after syncing with Google Cloud Storage
 rm -rf ${genomedata}
@@ -91,4 +91,3 @@ To test a pipeline, you can follow these steps:
 
 7. The pipeline will be imported, and you can proceed with further customization and execution.
 
-```
