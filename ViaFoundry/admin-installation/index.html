@@ -772,6 +772,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#preparation-steps" class="md-nav__link">
+    Preparation Steps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#software-dependencies-for-pipeline-execution" class="md-nav__link">
     Software Dependencies for Pipeline Execution
   </a>
@@ -874,6 +881,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#preparation-steps" class="md-nav__link">
+    Preparation Steps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#software-dependencies-for-pipeline-execution" class="md-nav__link">
     Software Dependencies for Pipeline Execution
   </a>
@@ -922,11 +936,21 @@
 <ul>
 <li>Hard disk: 100-200GB (root)</li>
 <li>16-32 CPUs</li>
-<li>64-128 GB of memory. </li>
-<li>e.g. AWS instance type  m6i.4xlarge+, GCP VM type n2-standard-16+</li>
+<li>64-128 GB of memory.</li>
+<li>e.g. AWS instance type m6i.4xlarge+, GCP VM type n2-standard-16+</li>
 <li>Operating System: Ubuntu 22.04</li>
 <li>1-2TB EBS (AWS) / Persistent SSD Disk (GCP) mounted drive</li>
 </ul>
+<h2 id="preparation-steps">Preparation Steps</h2>
+<p>Before you begin, it is recommended to follow these best practices:</p>
+<ol>
+<li>
+<p>Create a user named <code>viafoundry</code> on the target machine.</p>
+</li>
+<li>
+<p>Configure the directory and perform the installation while logged in as the <code>viafoundry</code> user.</p>
+</li>
+</ol>
 <h2 id="software-dependencies-for-pipeline-execution">Software Dependencies for Pipeline Execution</h2>
 <p>In order to execute Via Foundry pipelines, you have to install and validate
 certain software dependencies into your host machine.</p>
@@ -938,29 +962,28 @@ below. If your platform doesn't support the installation of Docker, you
 can still use our pipelines with just Singularity.</p>
 <ul>
 <li>Installing
-     <a href="https://www.nextflow.io/docs/latest/getstarted.html">Nextflow</a></li>
-<li>Installing
-     <a href="https://docs.docker.com/engine/install/">Docker</a></li>
-<li>Installing <a href="https://docs.sylabs.io/guides/3.0/user-guide/installation.html">Singularity (Version
-     3)</a></li>
-<li>AWS CLI v2 for AWS resources access</li>
-<li>GCloud/GSUtil CLI for GCP resources access </li>
+  <a href="https://www.nextflow.io/docs/latest/getstarted.html">Nextflow</a></li>
 <li>Java v11+ (for nextflow)</li>
+<li>Installing
+  <a href="https://docs.docker.com/engine/install/">Docker</a></li>
+<li>Installing <a href="https://docs.sylabs.io/guides/3.0/user-guide/installation.html">Singularity (Version 3)</a> (required when docker is not available)</li>
+<li>AWS CLI v2 for AWS resources access</li>
+<li>GCloud/GSUtil CLI for GCP resources access</li>
 </ul>
 <p><strong>How to Add Software to Your $PATH Environment:</strong></p>
 <ul>
 <li><strong>JAVA Command (optional):</strong> If JAVA is not added to the $PATH
-     environment, you can run the command (<code>module load java/8.0</code>) to
-     manipulate your $PATH environment and gain access to JAVA.</li>
+  environment, you can run the command (<code>module load java/8.0</code>) to
+  manipulate your $PATH environment and gain access to JAVA.</li>
 <li><strong>Nextflow Path or Command (optional):</strong> If Nextflow is not added
-     to the $PATH environment, you can either enter the path of the
-     nextflow (eg. <code>/project/bin</code>), or run the command
-     (<code>module load nextflow</code>) to manipulate your $PATH environment and
-     gain access to new software.</li>
+  to the $PATH environment, you can either enter the path of the
+  nextflow (eg. <code>/project/bin</code>), or run the command
+  (<code>module load nextflow</code>) to manipulate your $PATH environment and
+  gain access to new software.</li>
 <li><strong>Docker/Singularity Command (optional):</strong> You can run a command
-     (eg. <code>module load docker/1.0.0</code> or
-     <code>module load singularity/3.0.0</code>) to manipulate your $PATH
-     environment in order to gain access to new software.</li>
+  (eg. <code>module load docker/1.0.0</code> or
+  <code>module load singularity/3.0.0</code>) to manipulate your $PATH
+  environment in order to gain access to new software.</li>
 </ul>
 <h2 id="software-dependencies-for-foundry-installation">Software Dependencies for Foundry Installation</h2>
 <ul>
@@ -970,14 +993,14 @@ can still use our pipelines with just Singularity.</p>
 <h2 id="installation">Installation</h2>
 <ol>
 <li>
-<p>We install the database and software outside of the container to be able to keep the changes in the database and software every time you start the container. Therefore, please choose a directory in your machine to mount. Then replace <code>/path/to/mount</code> with your path to create a directory.  Please remove s permission from the directory for proper installation.</p>
+<p>We install the database and software outside of the container to be able to keep the changes in the database and software every time you start the container. Therefore, please choose a directory in your machine to mount. Then replace <code>/path/to/mount</code> with your path to create a directory. Please remove s permission from the directory for proper installation.</p>
 <pre><code>chmod ug-s /path/to/mount
 mkdir -p /path/to/mount
 </code></pre>
 </li>
 <li>
 <p>Use docker to download Foundry container from a private ViaScientific repository.</p>
-<pre><code>docker login 
+<pre><code>docker login
 # username:viasdock
 # password: will be sent with separate email
 docker pull viascientific/vfoundry-docker

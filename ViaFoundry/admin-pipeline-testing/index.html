@@ -788,6 +788,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#downloading-genome-index-files" class="md-nav__link">
+    Downloading Genome Index files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuration-of-run-environment" class="md-nav__link">
     Configuration of Run Environment
   </a>
@@ -843,6 +850,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#downloading-genome-index-files" class="md-nav__link">
+    Downloading Genome Index files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuration-of-run-environment" class="md-nav__link">
     Configuration of Run Environment
   </a>
@@ -872,12 +886,73 @@
 
 
 <div><h1 id="pipeline-testing">Pipeline Testing</h1>
+<h2 id="downloading-genome-index-files">Downloading Genome Index files</h2>
+<div class="highlight"><pre><span></span><code># Set localdownload directory
+genomedata="/opt/viafoundry/run_data"
+
+## Main Genomes
+wget https://web.dolphinnext.com/umw_biocore/dnext_data/genome_data/human/hg38/ -P ${genomedata}/genome_data/human/hg38/ -l inf -nc -nH --cut-dirs=4 -r --no-parent -R "index.html*"
+wget https://web.dolphinnext.com/umw_biocore/dnext_data/genome_data/mouse/mm10/ -P ${genomedata}/genome_data/mouse/mm10/ -l inf -nc -nH --cut-dirs=4 -r --no-parent -R "index.html*"
+wget https://web.dolphinnext.com/umw_biocore/dnext_data/genome_data/mousetest/mm10/ -P ${genomedata}/genome_data/mousetest/mm10/ -l inf -nc -nH --cut-dirs=4 -r --no-parent -R "index.html*"
+
+
+## Optional Genomes
+wget https://web.dolphinnext.com/umw_biocore/dnext_data/genome_data/human/hg19/ -P ${genomedata}/genome_data/human/hg19/ -l inf -nc -nH --cut-dirs=4 -r --no-parent -R "index.html*"
+wget https://web.dolphinnext.com/umw_biocore/dnext_data/genome_data/rat/rn6/ -P ${genomedata}/genome_data/rat/rn6/ -l inf -nc -nH --cut-dirs=4 -r --no-parent -R "index.html*"
+wget https://web.dolphinnext.com/umw_biocore/dnext_data/genome_data/c_elegans/ce11/ -P ${genomedata}/genome_data/c_elegans/ce11/ -l inf -nc -nH --cut-dirs=4 -r --no-parent -R "index.html*"
+wget https://web.dolphinnext.com/umw_biocore/dnext_data/genome_data/d_melanogaster/BDGP6_32/ -P ${genomedata}/genome_data/d_melanogaster/BDGP6_32/ -l inf -nc -nH --cut-dirs=4 -r --no-parent -R "index.html*"
+wget https://web.dolphinnext.com/umw_biocore/dnext_data/genome_data/dog/canFam3/ -P ${genomedata}/genome_data/dog/canFam3/ -l inf -nc -nH --cut-dirs=4 -r --no-parent -R "index.html*"
+wget https://web.dolphinnext.com/umw_biocore/dnext_data/genome_data/e_coli/ASM584v2_NC_000913_3/ -P ${genomedata}/genome_data/e_coli/ASM584v2_NC_000913_3/ -l inf -nc -nH --cut-dirs=4 -r --no-parent -R "index.html*"
+wget https://web.dolphinnext.com/umw_biocore/dnext_data/genome_data/n_vectensis/jaNemVect1_1/ -P ${genomedata}/genome_data/n_vectensis/jaNemVect1_1/ -l inf -nc -nH --cut-dirs=4 -r --no-parent -R "index.html*"
+wget https://web.dolphinnext.com/umw_biocore/dnext_data/genome_data/s_cerevisiae/sacCer3/ -P ${genomedata}/genome_data/s_cerevisiae/sacCer3/ -l inf -nc -nH --cut-dirs=4 -r --no-parent -R "index.html*"
+wget https://web.dolphinnext.com/umw_biocore/dnext_data/genome_data/s_pombe/ASM294v2/ -P ${genomedata}/genome_data/s_pombe/ASM294v2/ -l inf -nc -nH --cut-dirs=4 -r --no-parent -R "index.html*"
+wget https://web.dolphinnext.com/umw_biocore/dnext_data/genome_data/zebrafish/GRCz11/ -P ${genomedata}/genome_data/zebrafish/GRCz11/ -l inf -nc -nH --cut-dirs=4 -r --no-parent -R "index.html*"
+
+
+# Sync data with AWS S3 bucket
+aws s3 sync -r ${genomedata} gs://DEST_BUCKET/viafoundry/run_data/genome_data
+# Remove the local data after syncing with AWS S3
+rm -rf ${genomedata}
+
+# Sync data with Google Cloud Storage bucket
+gsutil rsync -r ${genomedata} gs://DEST_BUCKET/viafoundry/run_data/genome_data
+# Remove the local data after syncing with Google Cloud Storage
+rm -rf ${genomedata}
+</code></pre></div>
 <h2 id="configuration-of-run-environment">Configuration of Run Environment</h2>
 <p>Once logged in, click on the profile tab in the top right of the screen. You'll notice several tabs to explore in profile page.</p>
 <ul>
-<li><strong>Run environments:</strong> This is your main segment for creating connection profiles for users.</li>
-<li><strong>SSH Keys:</strong> where you can create new or enter existing SSH key pairs to establish connection to any kind of host.
-  Before creating run environment, SSH Keys needed to be created in SSH Keys tab. For more details to define the cluster please check the <a href="../profile">documentation</a></li>
+<li><strong>SSH Keys:</strong> Needs to be configured to setup a <a href="../profile/#ssh-keys">connection</a></li>
+<li>
+<p><strong>Run environments:</strong> This is your main segment for creating connection profiles for users.</p>
+</li>
+<li>
+<p><strong>Run environments:</strong> -&gt; <strong>Profile Variables</strong> : Set the following directory for DOWNDIR:</p>
+<div class="highlight"><pre><span></span><code>## A. For Google Cloud:
+## if genome_data located at gs://DEST_BUCKET/viafoundry/run_data/genome_data
+params.DOWNDIR = "gs://DEST_BUCKET/viafoundry/run_data"
+
+## B. For AWS Cloud:
+## if genome_data located at s3://DEST_BUCKET/viafoundry/run_data/genome_data
+params.DOWNDIR = "s3://DEST_BUCKET/viafoundry/run_data"
+
+## C. For Local Execution (eg. clusters):
+## if genome_data located at /opt/viafoundry/run_data/genome_data
+params.DOWNDIR = "/opt/viafoundry/run_data"
+</code></pre></div>
+</li>
+<li>
+<p><strong>Run environments:</strong> -&gt; <strong>Default Working Directory</strong> : Set the following directory for runs:
+  </p><div class="highlight"><pre><span></span><code>/opt/runs
+</code></pre></div>
+</li>
+<li>
+<p><strong>Run environments:</strong> -&gt; <strong>Default Bucket Location for Publishing</strong> : Set the following directory for cloud environmets:
+    </p><div class="highlight"><pre><span></span><code>s3://DEST_BUCKET/viafoundry/runs
+or
+gs://DEST_BUCKET/viafoundry/runs
+</code></pre></div>
+</li>
 </ul>
 <h2 id="executing-test-run">Executing Test Run</h2>
 <p>To test a pipeline, you can follow these steps:</p>
@@ -901,20 +976,10 @@
 <p>In the pipeline creation interface, you will find an option to import a pipeline. Drag and drop the <code>main.dn</code> file that you extracted earlier into the designated area.</p>
 </li>
 <li>
-<p>The pipeline will be imported, and you can proceed with further customization or execution as needed.</p>
+<p>The pipeline will be imported, and you can proceed with further customization and execution.</p>
 </li>
 </ol>
-<p>To enable the necessary inputs for each selected genome in the RNA-Seq pipeline:</p>
-<ul>
-<li>Enable <code>run_Download_Genomic_Sources</code> step.</li>
-<li>For Sequential mapping, enable <code>download_build_sequential_mapping_indexes</code>.</li>
-<li>For STAR, enable <code>build_STAR_index</code>.</li>
-<li>For RSEM, enable <code>build_RSEM_index</code>.</li>
-<li>For HISAT2, enable <code>build_Hisat2_index</code>.</li>
-<li>For Tophat, enable <code>build_Bowtie2_index</code>.</li>
-<li>For Kallisto, enable <code>build_Kallisto_index</code>.</li>
-</ul>
-<p>Enabling these options ensures that the required indexes for each selected genome are built and utilized in the RNA-Seq pipeline.</p></div>
+<p>```</p></div>
 
 
 
