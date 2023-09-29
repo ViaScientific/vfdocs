@@ -788,8 +788,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#downloading-genome-index-files" class="md-nav__link">
-    Downloading Genome Index files
+  <a href="#downloading-genome-files" class="md-nav__link">
+    Downloading Genome files
   </a>
   
 </li>
@@ -850,8 +850,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#downloading-genome-index-files" class="md-nav__link">
-    Downloading Genome Index files
+  <a href="#downloading-genome-files" class="md-nav__link">
+    Downloading Genome files
   </a>
   
 </li>
@@ -886,7 +886,7 @@
 
 
 <div><h1 id="pipeline-testing">Pipeline Testing</h1>
-<h2 id="downloading-genome-index-files">Downloading Genome Index files</h2>
+<h2 id="downloading-genome-files">Downloading Genome files</h2>
 <div class="highlight"><pre><span></span><code># Set localdownload directory
 genomedata="/opt/viafoundry/run_data"
 
@@ -909,12 +909,12 @@ wget https://web.dolphinnext.com/umw_biocore/dnext_data/genome_data/s_pombe/ASM2
 wget https://web.dolphinnext.com/umw_biocore/dnext_data/genome_data/zebrafish/GRCz11/ -P ${genomedata}/genome_data/zebrafish/GRCz11/ -l inf -nc -nH --cut-dirs=4 -r --no-parent -R "index.html*"
 
 
-# Sync data with AWS S3 bucket
-aws s3 sync -r ${genomedata} gs://DEST_BUCKET/viafoundry/run_data/genome_data
+# If you're using AWS Cloud, Sync data with S3 bucket
+aws s3 sync -r ${genomedata} s3://DEST_BUCKET/viafoundry/run_data/genome_data
 # Remove the local data after syncing with AWS S3
 rm -rf ${genomedata}
 
-# Sync data with Google Cloud Storage bucket
+# If you're using Google Cloud, Sync data with Google Cloud Storage bucket
 gsutil rsync -r ${genomedata} gs://DEST_BUCKET/viafoundry/run_data/genome_data
 # Remove the local data after syncing with Google Cloud Storage
 rm -rf ${genomedata}
@@ -978,8 +978,7 @@ gs://DEST_BUCKET/viafoundry/runs
 <li>
 <p>The pipeline will be imported, and you can proceed with further customization and execution.</p>
 </li>
-</ol>
-<p>```</p></div>
+</ol></div>
 
 
 
