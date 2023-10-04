@@ -1,6 +1,6 @@
 # Configuration
 
-## Configuration of Amazon RDS/Cloud SQL for MySQL:
+## Configuration of Amazon RDS/Cloud SQL for MySQL (optional):
 
 Create `vpipe` database and load initial database file with following commands:
 
