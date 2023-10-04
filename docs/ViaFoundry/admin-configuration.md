@@ -1,5 +1,23 @@
 # Configuration
 
+## Configuration of Amazon RDS/Cloud SQL for MySQL:
+
+Create `vpipe` database and load initial database file with following commands:
+
+```
+mysql -h hostname -u root -p -e 'CREATE DATABASE IF NOT EXISTS vpipe;'
+mysql -h hostname -u root -p vpipe < /export/vpipe/db/db.sql
+mysql -h hostname -u root -p -e "CREATE USER 'viafoundry'@'%' IDENTIFIED BY 'change_password';"
+mysql -h hostname -u root -p -e "GRANT ALL PRIVILEGES ON vpipe.* TO 'viafoundry'@'%';"
+```
+
+After that please update DBUSER, DBPASS, DBHOST and DBPORT parameters in `/export/vpipe/config/.sec` file  and then execute the following command:
+
+```
+cd /export/vpipe/scripts && python updateDN.py
+```
+
+
 ## Configuration of Vpipe:
 
 Vpipe configuration file found in /export/vpipe/config/.sec file.
