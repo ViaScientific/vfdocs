@@ -776,6 +776,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#configuration-of-amazon-rdscloud-sql-for-mysql-optional" class="md-nav__link">
+    Configuration of Amazon RDS/Cloud SQL for MySQL (optional):
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuration-of-vpipe" class="md-nav__link">
     Configuration of Vpipe:
   </a>
@@ -948,6 +955,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#configuration-of-amazon-rdscloud-sql-for-mysql-optional" class="md-nav__link">
+    Configuration of Amazon RDS/Cloud SQL for MySQL (optional):
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuration-of-vpipe" class="md-nav__link">
     Configuration of Vpipe:
   </a>
@@ -1080,6 +1094,16 @@
 
 
 <div><h1 id="configuration">Configuration</h1>
+<h2 id="configuration-of-amazon-rdscloud-sql-for-mysql-optional">Configuration of Amazon RDS/Cloud SQL for MySQL (optional):</h2>
+<p>Create <code>vpipe</code> database and load initial database file with following commands:</p>
+<div class="highlight"><pre><span></span><code>mysql -h hostname -u root -p -e 'CREATE DATABASE IF NOT EXISTS vpipe;'
+mysql -h hostname -u root -p vpipe &lt; /export/vpipe/db/db.sql
+mysql -h hostname -u root -p -e "CREATE USER 'viafoundry'@'%' IDENTIFIED BY 'change_password';"
+mysql -h hostname -u root -p -e "GRANT ALL PRIVILEGES ON vpipe.* TO 'viafoundry'@'%';"
+</code></pre></div>
+<p>After that please update DBUSER, DBPASS, DBHOST and DBPORT parameters in <code>/export/vpipe/config/.sec</code> file  and then execute the following command:</p>
+<div class="highlight"><pre><span></span><code>cd /export/vpipe/scripts &amp;&amp; python updateDN.py
+</code></pre></div>
 <h2 id="configuration-of-vpipe">Configuration of Vpipe:</h2>
 <p>Vpipe configuration file found in /export/vpipe/config/.sec file.</p>
 <p>By default, localhost:8080 is used for domain name. Please use static IP address or domain name and please update BASE_PATH and PUBWEB_URL as follows:</p>
