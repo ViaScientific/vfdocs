@@ -1,5 +1,28 @@
 # Foundry News
 
+## 14.10.2023
+### Foundry Version 1.6.4 Released
+#### Features:
+- Google Cloud Batch support has been implemented.
+- An import pipeline feature is now accessible to all users.
+- Foundry pipelines now generate Nextflow DSL2 workflows.
+- Metadata Tracker feature added to projects.
+- The Metadata tab on the run page now allows bulk file insertion and submitting runs with selected files.
+- Introduced a retry feature for SSH queries when submitting a job.
+#### Bug Fixes:
+- Fixed the Download Pipeline button for nf-core/nextflow pipelines.
+- Emails updating on run status now include a link to the Foundry platform.
+- Addressed a bug affecting the initial runs for triple and quadruple samples.
+- Resolved issues with downloading the same report files multiple times in apps.
+
+### Pipeline Releases:
+- TE Transcripts Pipeline is now available.
+
+### App Releases:
+- IGV Browser is now released.
+- TCGA App is now released.
+
+
 ## 14.07.2023
 
 ### Foundry Version 1.6.3 Released
