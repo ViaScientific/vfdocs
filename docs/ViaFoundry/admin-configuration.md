@@ -165,18 +165,13 @@ SSO_SAML_DESTINATION_URL=https://viafoundry.{hostname}
 
 Here, `{ISSUER_ID}` should be replaced with the actual issuer ID provided by OKTA, and `{hostname}` with your server's hostname.
 
-## Apache Configuration for the Tools:
+## Apache Configuration for the Foundry Server:
 
 To configure Apache, you need to enable the mod_ssl and mod_proxy modules. Please follow the instructions below:
 
-1. Enable mod_ssl: You need to make sure that the mod_ssl module is enabled in your Apache configuration. This module provides support for SSL/TLS encryption.
+1. Create certificate files (SSLCertificateFile and SSLCertificateKeyFile) in PEM format. SSLCertificateChainFile file is optional.
 
-2. Enable mod_proxy: You also need to enable the mod_proxy module in your Apache configuration. This module allows Apache to act as a proxy server.
-
-3. Replace "Your_Domain.com" and "Your_Email": In the Apache configuration, you need to replace "Your_Domain.com" with your actual domain name. This is the domain name that will be used for accessing the Tools.
-
-4. Adjust SSL certificate locations: You need to specify the correct SSL certificate locations for the subdomain used by the Tools. This typically involves specifying the paths to the SSL certificate file and the SSL certificate key file.
-
+2. Save the following text into /etc/apache2/sites-enabled/viafoundry.conf file
 ```
 <IfModule mod_ssl.c>
     <VirtualHost *:443>
@@ -201,13 +196,41 @@ To configure Apache, you need to enable the mod_ssl and mod_proxy modules. Pleas
 
         ProxyRequests Off
 
-        CustomLog /var/log/httpd/access_vfnext.log "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
+        CustomLog /var/log/apache2/access_vf.log "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
     </VirtualHost>
 
 
-    ErrorLog /var/log/httpd/error_vfnext.log
+    ErrorLog /var/log/apache2/error_vf.log
 </IfModule>
 ```
+
+3.  Enable mod_ssl: You need to make sure that the mod_ssl module is enabled in your Apache configuration. This module provides support for SSL/TLS encryption.
+    Enable mod_proxy: You also need to enable the mod_proxy module in your Apache configuration. This module allows Apache to act as a proxy server.
+
+```
+a2enmod ssl rewrite proxy requestheader headers proxy_http
+```
+
+4. Replace "Your_Domain.com", "Your_Email", ProxyPass and ProxyPassReverse: In the Apache configuration, you need to replace "Your_Domain.com" with your actual domain name. 
+
+5. Adjust SSL certificate locations: You need to specify the correct SSL certificate locations for the subdomain used by the apps. 
+
+6. Check the apache config syntax.
+```
+apache2ctl configtest
+```
+
+7. Restart Apache 2 web server,
+```
+/etc/init.d/apache2 restart
+or 
+sudo /etc/init.d/apache2 restart
+or 
+sudo service apache2 restart
+```
+
+
+
 
 ## After Configuration
 
