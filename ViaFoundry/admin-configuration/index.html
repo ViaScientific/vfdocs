@@ -852,8 +852,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#apache-configuration-for-the-tools" class="md-nav__link">
-    Apache Configuration for the Tools:
+  <a href="#apache-configuration-for-the-foundry-server" class="md-nav__link">
+    Apache Configuration for the Foundry Server:
   </a>
   
 </li>
@@ -1031,8 +1031,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#apache-configuration-for-the-tools" class="md-nav__link">
-    Apache Configuration for the Tools:
+  <a href="#apache-configuration-for-the-foundry-server" class="md-nav__link">
+    Apache Configuration for the Foundry Server:
   </a>
   
 </li>
@@ -1191,23 +1191,15 @@ SSO_SAML_METADATA=/export/vsso/certs/metadata.xml
 SSO_SAML_DESTINATION_URL=https://viafoundry.{hostname}
 </code></pre></div>
 <p>Here, <code>{ISSUER_ID}</code> should be replaced with the actual issuer ID provided by OKTA, and <code>{hostname}</code> with your server's hostname.</p>
-<h2 id="apache-configuration-for-the-tools">Apache Configuration for the Tools:</h2>
+<h2 id="apache-configuration-for-the-foundry-server">Apache Configuration for the Foundry Server:</h2>
 <p>To configure Apache, you need to enable the mod_ssl and mod_proxy modules. Please follow the instructions below:</p>
 <ol>
 <li>
-<p>Enable mod_ssl: You need to make sure that the mod_ssl module is enabled in your Apache configuration. This module provides support for SSL/TLS encryption.</p>
+<p>Create certificate files (SSLCertificateFile and SSLCertificateKeyFile) in PEM format. SSLCertificateChainFile file is optional.</p>
 </li>
 <li>
-<p>Enable mod_proxy: You also need to enable the mod_proxy module in your Apache configuration. This module allows Apache to act as a proxy server.</p>
-</li>
-<li>
-<p>Replace "Your_Domain.com" and "Your_Email": In the Apache configuration, you need to replace "Your_Domain.com" with your actual domain name. This is the domain name that will be used for accessing the Tools.</p>
-</li>
-<li>
-<p>Adjust SSL certificate locations: You need to specify the correct SSL certificate locations for the subdomain used by the Tools. This typically involves specifying the paths to the SSL certificate file and the SSL certificate key file.</p>
-</li>
-</ol>
-<div class="highlight"><pre><span></span><code>&lt;IfModule mod_ssl.c&gt;
+<p>Save the following text into /etc/apache2/sites-enabled/viafoundry.conf file
+</p><div class="highlight"><pre><span></span><code>&lt;IfModule mod_ssl.c&gt;
     &lt;VirtualHost *:443&gt;
         ServerAdmin Your_Email
         ServerName Your_Domain.com
@@ -1230,13 +1222,43 @@ SSO_SAML_DESTINATION_URL=https://viafoundry.{hostname}
 
         ProxyRequests Off
 
-        CustomLog /var/log/httpd/access_vfnext.log "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
+        CustomLog /var/log/apache2/access_vf.log "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
     &lt;/VirtualHost&gt;
 
 
-    ErrorLog /var/log/httpd/error_vfnext.log
+    ErrorLog /var/log/apache2/error_vf.log
 &lt;/IfModule&gt;
 </code></pre></div>
+</li>
+<li>
+<p>Enable mod_ssl: You need to make sure that the mod_ssl module is enabled in your Apache configuration. This module provides support for SSL/TLS encryption.
+    Enable mod_proxy: You also need to enable the mod_proxy module in your Apache configuration. This module allows Apache to act as a proxy server.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>a2enmod ssl rewrite proxy requestheader headers proxy_http
+</code></pre></div>
+<ol>
+<li>
+<p>Replace "Your_Domain.com", "Your_Email", ProxyPass and ProxyPassReverse: In the Apache configuration, you need to replace "Your_Domain.com" with your actual domain name. </p>
+</li>
+<li>
+<p>Adjust SSL certificate locations: You need to specify the correct SSL certificate locations for the subdomain used by the apps. </p>
+</li>
+<li>
+<p>Check the apache config syntax.
+</p><div class="highlight"><pre><span></span><code>apache2ctl configtest
+</code></pre></div>
+</li>
+<li>
+<p>Restart Apache 2 web server,
+</p><div class="highlight"><pre><span></span><code>/etc/init.d/apache2 restart
+or 
+sudo /etc/init.d/apache2 restart
+or 
+sudo service apache2 restart
+</code></pre></div>
+</li>
+</ol>
 <h2 id="after-configuration">After Configuration</h2>
 <ol>
 <li>After changing the configurations, please restart vfoundry, vmeta, vportal and vsso.</li>
