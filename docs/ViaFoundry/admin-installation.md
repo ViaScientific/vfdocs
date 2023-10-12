@@ -23,7 +23,8 @@ Before you begin, it is recommended to follow these best practices:
 
 2. Configure the directory and perform the installation while logged in as the `viafoundry` user.
 
-3. Ensure that the default shell for the 'viafoundry' user is set to 'bash'. This involves specifying '/bin/bash' (not '/bin/sh') in the '/etc/passwd' file.
+3. Ensure that the default shell for the 'viafoundry' user is set to 'bash'. Use `echo $SHELL` to validate the current SHELL, if not, use `chsh` to update the SHELL to `/bin/bash`.
+   
 ## Software Dependencies for Pipeline Execution
 
 In order to execute Via Foundry pipelines, you have to install and validate
