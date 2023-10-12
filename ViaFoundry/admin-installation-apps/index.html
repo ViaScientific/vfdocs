@@ -19,7 +19,7 @@
     
     
       
-        <title>Installation - APP Support - Via Foundry Documentation</title>
+        <title>APP Section - Via Foundry Documentation</title>
       
     
     
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installation - APP Support
+              APP Section
             
           </span>
         </div>
@@ -778,12 +778,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Installation - APP Support
+          APP Section
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Installation - APP Support
+        APP Section
       </a>
       
         
@@ -818,6 +818,13 @@
         <li class="md-nav__item">
   <a href="#minikube-setup" class="md-nav__link">
     Minikube Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-vtunnel" class="md-nav__link">
+    Install VTunnel
   </a>
   
 </li>
@@ -894,6 +901,13 @@
         <li class="md-nav__item">
   <a href="#minikube-setup" class="md-nav__link">
     Minikube Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-vtunnel" class="md-nav__link">
+    Install VTunnel
   </a>
   
 </li>
@@ -1014,6 +1028,23 @@ $<span class="w"> </span>minikube<span class="w"> </span>delete
  RewriteCond %{SERVER_NAME} =Your_APP_Domain.com
  RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,QSA,R=permanent]
 &lt;/VirtualHost&gt;
+</code></pre></div>
+</li>
+</ol>
+<h2 id="install-vtunnel">Install VTunnel</h2>
+<ol>
+<li>
+<p>Using root user change the owner of vtunnel directory.
+</p><div class="highlight"><pre><span></span><code>sudo su - root
+chown -R viafoundry /opt/vfoundry/vtunnel
+</code></pre></div>
+</li>
+<li>
+<p>Switch to viafoundry user and install VTunnel
+</p><div class="highlight"><pre><span></span><code>sudo su - viafoundry
+cd /opt/vfoundry/vtunnel
+yarn install &amp; yarn build
+pm2 start pm2-process.json
 </code></pre></div>
 </li>
 </ol>
