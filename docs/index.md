@@ -45,5 +45,5 @@
 - [Installation](ViaFoundry/admin-installation.md)
 - [Configuration](ViaFoundry/admin-configuration.md)
 - [Testing Pipeline](ViaFoundry/admin-pipeline-testing.md)
-- [Installation - APP Support](ViaFoundry/admin-installation-apps.md)
+- [APP Section](ViaFoundry/admin-installation-apps.md)
 

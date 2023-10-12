@@ -93,6 +93,22 @@ v16.20.1
 
    ```
 
+## Install VTunnel
+
+1. Using root user change the owner of vtunnel directory.
+```
+sudo su - root
+chown -R viafoundry /opt/vfoundry/vtunnel
+```
+
+2. Switch to viafoundry user and install VTunnel
+```
+sudo su - viafoundry
+cd /opt/vfoundry/vtunnel
+yarn install & yarn build
+pm2 start pm2-process.json
+```
+
 ## Upgrade VTunnel Config
 1. Change the kubectl alias:
    ```bash
