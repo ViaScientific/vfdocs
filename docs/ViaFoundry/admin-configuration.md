@@ -206,7 +206,6 @@ To configure Apache, you need to enable the mod_ssl and mod_proxy modules. Pleas
 
 3.  Enable mod_ssl: You need to make sure that the mod_ssl module is enabled in your Apache configuration. This module provides support for SSL/TLS encryption.
     Enable mod_proxy: You also need to enable the mod_proxy module in your Apache configuration. This module allows Apache to act as a proxy server.
-
 ```
 a2enmod ssl rewrite proxy requestheader headers proxy_http
 ```
