@@ -4,7 +4,7 @@ Via Foundry's main server is located at <https://viafoundry.com>. Via Foundry ca
 
 - Via Scientific Access Keys
 - Via Scientific Docker Hub Access Keys
-- SSL Certificates (e.g. Let’s Encrypt)
+- Two Separate SSL Certificates for foundry and foundry-apps (e.g. Let’s Encrypt)
 
 ## Recommended Computer Specifications:
 
