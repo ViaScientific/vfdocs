@@ -1232,12 +1232,10 @@ SSO_SAML_DESTINATION_URL=https://viafoundry.{hostname}
 </li>
 <li>
 <p>Enable mod_ssl: You need to make sure that the mod_ssl module is enabled in your Apache configuration. This module provides support for SSL/TLS encryption.
-    Enable mod_proxy: You also need to enable the mod_proxy module in your Apache configuration. This module allows Apache to act as a proxy server.</p>
-</li>
-</ol>
-<div class="highlight"><pre><span></span><code>a2enmod ssl rewrite proxy requestheader headers proxy_http
+    Enable mod_proxy: You also need to enable the mod_proxy module in your Apache configuration. This module allows Apache to act as a proxy server.
+</p><div class="highlight"><pre><span></span><code>a2enmod ssl rewrite proxy requestheader headers proxy_http
 </code></pre></div>
-<ol>
+</li>
 <li>
 <p>Replace "Your_Domain.com", "Your_Email", ProxyPass and ProxyPassReverse: In the Apache configuration, you need to replace "Your_Domain.com" with your actual domain name. </p>
 </li>
