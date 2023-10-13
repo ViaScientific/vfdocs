@@ -816,6 +816,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#install-nodejs-pm2-and-modules" class="md-nav__link">
+    Install Node.js PM2 and modules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#minikube-setup" class="md-nav__link">
     Minikube Setup
   </a>
@@ -899,6 +906,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#install-nodejs-pm2-and-modules" class="md-nav__link">
+    Install Node.js PM2 and modules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#minikube-setup" class="md-nav__link">
     Minikube Setup
   </a>
@@ -953,7 +967,7 @@
 <p>Use the following commands to install Node.js and npm:
      </p><div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
 sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--no-install-recommends<span class="w"> </span>nodejs<span class="w"> </span>npm
-sudo<span class="w"> </span>npm<span class="w"> </span>install<span class="w"> </span>pm2<span class="w"> </span>npm@8.19.4<span class="w"> </span>-g
+sudo<span class="w"> </span>npm<span class="w"> </span>install<span class="w"> </span>pm2<span class="w"> </span>npm@8.19.4<span class="w"> </span>n<span class="w"> </span>-g
 sudo<span class="w"> </span>n<span class="w"> </span><span class="m">16</span>.20.1
 </code></pre></div>
 </li>
@@ -966,6 +980,12 @@ sudo<span class="w"> </span>n<span class="w"> </span><span class="m">16</span>.2
 
 $<span class="w"> </span>node<span class="w"> </span>-v
 v16.20.1
+</code></pre></div>
+<h2 id="install-nodejs-pm2-and-modules">Install Node.js PM2 and modules</h2>
+<p>Assume your vtunnel is install under /opt/viafoundry folder
+</p><div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/opt/viafoundry/vtunnel
+sudo<span class="w"> </span>npm<span class="w"> </span>install<span class="w"> </span>pm2<span class="w"> </span>-g
+npm<span class="w"> </span>install<span class="w"> </span>
 </code></pre></div>
 <h2 id="minikube-setup">Minikube Setup</h2>
 <ol>
