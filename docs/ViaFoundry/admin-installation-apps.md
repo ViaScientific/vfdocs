@@ -120,13 +120,13 @@ pm2 start pm2-process.json
    ```
 3. Deploy VTunnel using kustomize:
    ```bash
-   $ cd /export/vtunnel/tools/shinyproxy-operator/docs/deployment/overlays/1-namespaced/
+   $ cd /export/vtunnel/tools/*/docs/deployment/*/1*
    $ kustomize build . | kubectl apply -f - --server-side
    $ # Repeat the command if CRD could not be created on the first attempt
    $ kustomize build . | kubectl apply -f - --server-side
    ```
 
-6. Check the status of pods in the shinyproxy namespace:
+6. Check the status of pods:
    ```bash
    $ kubectl get pods -n shinyproxy
    ```

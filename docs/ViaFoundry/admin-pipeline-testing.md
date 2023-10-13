@@ -41,9 +41,10 @@ rm -rf ${genomedata}
 
 Once logged in, click on the profile tab in the top right of the screen. You'll notice several tabs to explore in profile page.
 
-- **SSH Keys:** Needs to be configured to setup a [connection](../profile/#ssh-keys)
+- **SSH Keys:** Needs to be configured to setup a [connection](../profile/#ssh-keys) and click hide from user button. 
 - **Run environments:** This is your main segment for creating connection profiles for users.
 
+  - **Run environments:** -> **SSH Keys** : Select SSH Keys.
   - **Run environments:** -> **Profile Variables** : Set the following directory for DOWNDIR:
 
     ```
@@ -73,6 +74,7 @@ Once logged in, click on the profile tab in the top right of the screen. You'll 
     ```
 
 
+
 ## Executing Test Run
 
 To test a pipeline, you can follow these steps:
@@ -91,3 +93,13 @@ To test a pipeline, you can follow these steps:
 
 7. The pipeline will be imported, and you can proceed with further customization and execution.
 
+## Automating Run Environment Creation:
+
+1. Access the Foundry profile page and navigate to the "Run Environment" section.
+2. Identify the ID of the run environment that was utilized in a successful test run.
+3. Update the `DEFAULT_RUN_ENVIRONMENT` parameter located within the `[CONFIG]` section of the `/export/vpipe/config/.sec` file. This specific run environment will serve as the template for generating new run environments once a new user registers.
+
+```
+[CONFIG]
+DEFAULT_RUN_ENVIRONMENT=YOUR_RUN_ENV_ID
+```
