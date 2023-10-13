@@ -13,7 +13,7 @@ Before you begin, ensure that you have the following prerequisites ready on your
      ```bash
      sudo apt-get update
      sudo apt-get install -y --no-install-recommends nodejs npm
-     sudo npm install pm2 npm@8.19.4 -g
+     sudo npm install pm2 npm@8.19.4 n -g
      sudo n 16.20.1
      ```
 3. Download and install Minikube from [https://minikube.sigs.k8s.io/docs/start/](https://minikube.sigs.k8s.io/docs/start/).
