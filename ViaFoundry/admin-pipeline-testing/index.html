@@ -810,6 +810,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#automating-run-environment-creation" class="md-nav__link">
+    Automating Run Environment Creation:
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -886,6 +893,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#automating-run-environment-creation" class="md-nav__link">
+    Automating Run Environment Creation:
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -938,9 +952,12 @@ rm -rf ${genomedata}
 <h2 id="configuration-of-run-environment">Configuration of Run Environment</h2>
 <p>Once logged in, click on the profile tab in the top right of the screen. You'll notice several tabs to explore in profile page.</p>
 <ul>
-<li><strong>SSH Keys:</strong> Needs to be configured to setup a <a href="../profile/#ssh-keys">connection</a></li>
+<li><strong>SSH Keys:</strong> Needs to be configured to setup a <a href="../profile/#ssh-keys">connection</a> and click hide from user button. </li>
 <li>
 <p><strong>Run environments:</strong> This is your main segment for creating connection profiles for users.</p>
+</li>
+<li>
+<p><strong>Run environments:</strong> -&gt; <strong>SSH Keys</strong> : Select SSH Keys.</p>
 </li>
 <li>
 <p><strong>Run environments:</strong> -&gt; <strong>Profile Variables</strong> : Set the following directory for DOWNDIR:</p>
@@ -994,7 +1011,16 @@ gs://DEST_BUCKET/viafoundry/runs
 <li>
 <p>The pipeline will be imported, and you can proceed with further customization and execution.</p>
 </li>
-</ol></div>
+</ol>
+<h2 id="automating-run-environment-creation">Automating Run Environment Creation:</h2>
+<ol>
+<li>Access the Foundry profile page and navigate to the "Run Environment" section.</li>
+<li>Identify the ID of the run environment that was utilized in a successful test run.</li>
+<li>Update the <code>DEFAULT_RUN_ENVIRONMENT</code> parameter located within the <code>[CONFIG]</code> section of the <code>/export/vpipe/config/.sec</code> file. This specific run environment will serve as the template for generating new run environments once a new user registers.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>[CONFIG]
+DEFAULT_RUN_ENVIRONMENT=YOUR_RUN_ENV_ID
+</code></pre></div></div>
 
 
 
