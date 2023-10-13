@@ -1231,6 +1231,8 @@ SSO_SAML_DESTINATION_URL=https://viafoundry.{hostname}
             Allow from localhost
         &lt;/Proxy&gt;
 
+        ProxyPass /vtunnel https://localhost:6000/vtunnel
+            ProxyPassReverse /vtunnel https://localhost:6000/vtunnel
         ProxyPass / http://localhost:8080/
         ProxyPassReverse / http://localhost:8080/
 
