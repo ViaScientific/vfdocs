@@ -113,7 +113,7 @@ chown -R viafoundry /opt/vfoundry/vtunnel
 ```
 sudo su - viafoundry
 cd /opt/vfoundry/vtunnel
-yarn install & yarn build
+npm install
 pm2 start pm2-process.json
 ```
 
