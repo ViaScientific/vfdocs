@@ -28,7 +28,7 @@ $ node -v
 v16.20.1
 ```
 
-4. Install Node.js modules of VTunnel
+## Install Node.js modules of VTunnel
 Assume your vtunnel is install under /opt/viafoundry folder
 ```bash
 cd /opt/viafoundry/vtunnel
