@@ -28,6 +28,13 @@ $ node -v
 v16.20.1
 ```
 
+4. Install Node.js modules of VTunnel
+Assume your vtunnel is install under /opt/viafoundry folder
+```bash
+cd /opt/viafoundry/vtunnel
+npm install 
+```
+
 ## Minikube Setup
 1. Stop and delete any existing outdated Minikube instance (if previously installed):
    ```bash
