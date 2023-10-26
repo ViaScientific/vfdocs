@@ -244,8 +244,9 @@ sudo service apache2 restart
 2. Enter Vsso (https://your_domain/vsso) and login with any username and password. The first user will be assigned as admin.
 3. Enter Vmeta (https://your_domain/vmeta). Click the profile button at the top right and click the Servers tab. Here you can insert multiple foundry servers after clicking the “add a server” button. Enter any name for your vpipe server and select type as “vpipe”.
    - URL Client: https://your_domain/vpipe
-   - URL Server: http://localhost:8080/vpipe
+   - URL Server: https://your_domain/vpipe
    - Type: vpipe
+   - Main Server: checked
 
 ## Advanced Configuration:
 
