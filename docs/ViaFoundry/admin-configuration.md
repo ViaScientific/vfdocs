@@ -191,8 +191,8 @@ To configure Apache, you need to enable the mod_ssl and mod_proxy modules. Pleas
             Allow from localhost
         </Proxy>
 
-        ProxyPass /vtunnel https://localhost:6000/vtunnel
-		    ProxyPassReverse /vtunnel https://localhost:6000/vtunnel
+        ProxyPass /vtunnel http://localhost:6000/vtunnel
+        ProxyPassReverse /vtunnel http://localhost:6000/vtunnel
         ProxyPass / http://localhost:8080/
         ProxyPassReverse / http://localhost:8080/
 
