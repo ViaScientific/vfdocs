@@ -33,7 +33,7 @@
 - [Pipeline Guide](ViaFoundry/pipeline_guide.md)
 - [Process Guide](ViaFoundry/process.md)
 - [App Guide](ViaFoundry/app_developer_guide.md)
-- [Metadata API Guide](ViaFoundry/vmeta_api.md)
+- [API Guide](ViaFoundry/api.md)
 
 ## App Library
 

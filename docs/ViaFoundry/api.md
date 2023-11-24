@@ -1,6 +1,6 @@
-# API v1
+# Foundry API v1
 
-This guide is aimed at introducing users to the Metadata Tracker API, with which one can interact with Metadata Tracker through the command line as opposed to the console/user interface. You'll find sample requests and responses related to [projects](vmeta_api.md#projects), [collections](vmeta_api.md#collections), [fields](vmeta_api.md#fields), and [data](vmeta_api.md#data).
+This guide is aimed at introducing users to the Foundry API, with which one can interact with Metadata Tracker and Run Submission/Tracking through the command line as opposed to the console/user interface. You'll find sample requests and responses related to [runs](api.md#runs), [projects](api.md#projects), [collections](api.md#collections), [fields](api.md#fields), and [data](api.md#data).
 
 The Metadata Tracker API utilizes REST (Representational State Transfer) architecture for its communication. All API requests pull information from HTML pages, and all responses, including errors, are returned in JSON format. HTTP response status codes are used to indicate the success or failure of the API calls.
 
@@ -49,6 +49,172 @@ Here's how Metadata Tracker API users can retrieve an access token for the curre
      }
  }
  ```
+
+## Runs
+
+In Foundry, you can submit runs, track their statuses and get their run reports.
+
+### Get All Runs
+
+ This request retrieves a list of all the runs for the currently logged in user.
+
+ **Example request**:
+
+``` 
+ bash
+ $ curl -X GET 'https://viafoundry.com/vpipe/api/service.php?data=getRuns' \
+-H 'Authorization: Bearer <your-access-token>'
+```
+
+ **Example response**:
+
+``` 
+ {
+    "status": "success",
+    "data": {
+        "data": [
+            {
+                "name": "Build index (amazon)",
+                "_id": "234"
+            },
+            {
+                "name": "UMIextract",
+                "_id": "249"
+            },
+            {
+                "name": "test",
+                "_id": "250"
+            }
+        ]
+    }
+}
+```
+
+### Get a Run
+
+ Retrieve details of a single run.
+
+ **Example request**:
+
+``` 
+bash
+$ curl -X GET \
+'https://viafoundry.com/vpipe/api/service.php?data=getRun&id=4311' \
+-H 'Authorization: Bearer <your-access-token>'
+```
+
+ **Example response**:
+
+``` 
+ {
+    "status": "success",
+    "data": {
+        "data": {
+            "inputs": [
+                {
+                    "name": "gtfFilePath",
+                    "type": "val",
+                    "val": "/share/data/umw_biocore/genome_data/human/hg38_gencode_v34/ucsc.gtf"
+                },
+                {
+                    "name": "mate",
+                    "type": "val",
+                    "val": "triple"
+                },
+                {
+                    "name": "genome_build",
+                    "type": "val",
+                    "val": "human_hg38_gencode_v34"
+                }
+            ],
+            "dmetaOutput": [
+                {
+                    "filename": "filename",
+                    "feature": "row",
+                    "target": "analysis",
+                    "id": "g-109",
+                    "name": "UMI_count_final_after_star"
+                },
+                {
+                    "filename": "row",
+                    "feature": "column",
+                    "target": "sample_summary",
+                    "id": "g-124",
+                    "name": "summary"
+                }
+            ]
+        }
+    }
+}
+```
+
+### Create a Run
+
+ In this example, the term `tmplt_id` is used for template run id, `reads` represents an illustration for defining a collection as input. The global pipeline inputs include the parameters `mate`, `genome`, and `run_STAR`. Specifically, `STAR_Module_Map_STAR.params_STAR` is associated with the `STAR_Module_Map_STAR` process parameter. Notably, the process name (STAR_Module_Map_STAR) and variable name (params_STAR) are separated by the "." symbol.
+
+In this illustration, the remaining pipeline parameters will be derived from the template run parameters.
+
+ **Example request**:
+
+``` 
+ bash
+ $ curl -X POST \
+'https://viafoundry.com/vpipe/api/service.php?run=startRun' \
+-H 'Authorization: Bearer <your-access-token>' \
+-H 'Content-Type: application/json' \
+-d '
+    {
+        "doc": {
+            "name": "New Run Name",
+            "tmplt_id": 1314,
+            "in": {
+                "mate": "pair",
+                "genome": "s3://viafoundry/run_data/genome_data/human/hg38/ensembl_v110/main/genome.fa",
+                "run_STAR": "yes",
+                "STAR_Module_Map_STAR.params_STAR": "--outSAMtype BAM SortedByCoordinate",
+                "reads": [
+                      {
+                          "name": "exper_rep3",
+                          "file_used": [[ "exper_rep3.1.gz","exper_rep3.2.gz"]],
+                          "file_dir": [[ "/share/data/umw_biocore/genome_data/mousetest/mm10/gz"]], 
+                          "google_cre_id": "",
+                          "amazon_cre_id": "",
+                          "file_type": "fastq",
+                          "collection_type": "pair",
+                          "archive_dir": ""
+                      },
+                      {
+                          "name": "exper_rep2",
+                          "file_used": [["exper_rep2.1.gz","exper_rep2.2.gz"]],
+                          "file_dir": [["/share/data/umw_biocore/genome_data/mousetest/mm10/gz"]],
+                          "google_cre_id": "",
+                          "amazon_cre_id": "",
+                          "file_type": "fastq",
+                          "collection_type": "pair",
+                          "archive_dir": ""
+                      }]
+            }
+        }
+    }'
+```
+
+ **Example response**:
+
+``` 
+ {
+    "status": "success",
+    "data": {
+        "data": {
+            "status": "submitted",
+            "id": 354,
+            "creationDate": "2021-04-13T05:32:16.505Z",
+            "message": "Run successfully submitted."
+        }
+    }
+}
+```
+
+
 
 ## Projects
 
@@ -163,7 +329,7 @@ In Metadata Tracker, projects serve as your analysis hubs, acting as silos for y
 
 ### Create a Project
 
- This POST request is only enabled for users with the Admin role.
+POST request for creating a project:
 
  **Example request**:
 

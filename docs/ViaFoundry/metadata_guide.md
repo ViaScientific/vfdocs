@@ -2,7 +2,7 @@
 
 Welcome to metadata tracking system designed to support a wide range of use cases, from basic to complex, for multi-organization and lab-based projects. Metadata Tracker seamlessly integrates automated data processing pipelines, data analysis, and visualization modules, making it a powerful tool for managing and organizing your project's metadata. This guide will take you through all you need to know about Metadata Tracker and its integration with Via Foundry, including a comprehensive overview of Metadata Tracker projects, collections, fields, and events.
 
-(For information about Metadata Tracker's API, we invite you to reference [this document](vmeta_api.md)).
+(For information about Metadata Tracker's API, we invite you to reference [this document](api.md)).
 
 ## **Brief Overview**
 
