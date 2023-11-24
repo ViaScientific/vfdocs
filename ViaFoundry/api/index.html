@@ -21,7 +21,7 @@
     
     
       
-        <title>Metadata API Guide - Via Foundry Documentation</title>
+        <title>API Guide - Via Foundry Documentation</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#api-v1" class="md-skip">
+        <a href="#foundry-api-v1" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Metadata API Guide
+              API Guide
             
           </span>
         </div>
@@ -626,12 +626,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Metadata API Guide
+          API Guide
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Metadata API Guide
+        API Guide
       </a>
       
         
@@ -660,6 +660,40 @@
           <li class="md-nav__item">
   <a href="#user-login" class="md-nav__link">
     User Login
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runs" class="md-nav__link">
+    Runs
+  </a>
+  
+    <nav class="md-nav" aria-label="Runs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-all-runs" class="md-nav__link">
+    Get All Runs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-a-run" class="md-nav__link">
+    Get a Run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-run" class="md-nav__link">
+    Create a Run
   </a>
   
 </li>
@@ -1077,6 +1111,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#runs" class="md-nav__link">
+    Runs
+  </a>
+  
+    <nav class="md-nav" aria-label="Runs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-all-runs" class="md-nav__link">
+    Get All Runs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-a-run" class="md-nav__link">
+    Get a Run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-run" class="md-nav__link">
+    Create a Run
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#projects" class="md-nav__link">
     Projects
   </a>
@@ -1283,8 +1351,8 @@
                   
 
 
-<div><h1 id="api-v1">API v1</h1>
-<p>This guide is aimed at introducing users to the Metadata Tracker API, with which one can interact with Metadata Tracker through the command line as opposed to the console/user interface. You'll find sample requests and responses related to <a href="./#projects">projects</a>, <a href="./#collections">collections</a>, <a href="./#fields">fields</a>, and <a href="./#data">data</a>.</p>
+<div><h1 id="foundry-api-v1">Foundry API v1</h1>
+<p>This guide is aimed at introducing users to the Foundry API, with which one can interact with Metadata Tracker and Run Submission/Tracking through the command line as opposed to the console/user interface. You'll find sample requests and responses related to <a href="./#runs">runs</a>, <a href="./#projects">projects</a>, <a href="./#collections">collections</a>, <a href="./#fields">fields</a>, and <a href="./#data">data</a>.</p>
 <p>The Metadata Tracker API utilizes REST (Representational State Transfer) architecture for its communication. All API requests pull information from HTML pages, and all responses, including errors, are returned in JSON format. HTTP response status codes are used to indicate the success or failure of the API calls.</p>
 <h2 id="authentication-and-authorization">Authentication and authorization</h2>
 <p>Requests to the Metadata Tracker API are for both public and private information, so all
@@ -1317,6 +1385,143 @@ $ curl -X POST 'https://viafoundry.com/vmeta/api/v1/users/login' \
             "name": "test user",
             "scope": "*",
             "username": "yukseleo"
+        }
+    }
+}
+</code></pre></div>
+<h2 id="runs">Runs</h2>
+<p>In Foundry, you can submit runs, track their statuses and get their run reports.</p>
+<h3 id="get-all-runs">Get All Runs</h3>
+<p>This request retrieves a list of all the runs for the currently logged in user.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code> bash
+ $ curl -X GET 'https://viafoundry.com/vpipe/api/service.php?data=getRuns' \
+-H 'Authorization: Bearer &lt;your-access-token&gt;'
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code> {
+    "status": "success",
+    "data": {
+        "data": [
+            {
+                "name": "Build index (amazon)",
+                "_id": "234"
+            },
+            {
+                "name": "UMIextract",
+                "_id": "249"
+            },
+            {
+                "name": "test",
+                "_id": "250"
+            }
+        ]
+    }
+}
+</code></pre></div>
+<h3 id="get-a-run">Get a Run</h3>
+<p>Retrieve details of a single run.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code>bash
+$ curl -X GET \
+'https://viafoundry.com/vpipe/api/service.php?data=getRun&amp;id=4311' \
+-H 'Authorization: Bearer &lt;your-access-token&gt;'
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code> {
+    "status": "success",
+    "data": {
+        "data": {
+            "inputs": [
+                {
+                    "name": "gtfFilePath",
+                    "type": "val",
+                    "val": "/share/data/umw_biocore/genome_data/human/hg38_gencode_v34/ucsc.gtf"
+                },
+                {
+                    "name": "mate",
+                    "type": "val",
+                    "val": "triple"
+                },
+                {
+                    "name": "genome_build",
+                    "type": "val",
+                    "val": "human_hg38_gencode_v34"
+                }
+            ],
+            "dmetaOutput": [
+                {
+                    "filename": "filename",
+                    "feature": "row",
+                    "target": "analysis",
+                    "id": "g-109",
+                    "name": "UMI_count_final_after_star"
+                },
+                {
+                    "filename": "row",
+                    "feature": "column",
+                    "target": "sample_summary",
+                    "id": "g-124",
+                    "name": "summary"
+                }
+            ]
+        }
+    }
+}
+</code></pre></div>
+<h3 id="create-a-run">Create a Run</h3>
+<p>In this example, the term <code>tmplt_id</code> is used for template run id, <code>reads</code> represents an illustration for defining a collection as input. The global pipeline inputs include the parameters <code>mate</code>, <code>genome</code>, and <code>run_STAR</code>. Specifically, <code>STAR_Module_Map_STAR.params_STAR</code> is associated with the <code>STAR_Module_Map_STAR</code> process parameter. Notably, the process name (STAR_Module_Map_STAR) and variable name (params_STAR) are separated by the "." symbol.</p>
+<p>In this illustration, the remaining pipeline parameters will be derived from the template run parameters.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight"><pre><span></span><code> bash
+ $ curl -X POST \
+'https://viafoundry.com/vpipe/api/service.php?run=startRun' \
+-H 'Authorization: Bearer &lt;your-access-token&gt;' \
+-H 'Content-Type: application/json' \
+-d '
+    {
+        "doc": {
+            "name": "New Run Name",
+            "tmplt_id": 1314,
+            "in": {
+                "mate": "pair",
+                "genome": "s3://viafoundry/run_data/genome_data/human/hg38/ensembl_v110/main/genome.fa",
+                "run_STAR": "yes",
+                "STAR_Module_Map_STAR.params_STAR": "--outSAMtype BAM SortedByCoordinate",
+                "reads": [
+                      {
+                          "name": "exper_rep3",
+                          "file_used": [[ "exper_rep3.1.gz","exper_rep3.2.gz"]],
+                          "file_dir": [[ "/share/data/umw_biocore/genome_data/mousetest/mm10/gz"]], 
+                          "google_cre_id": "",
+                          "amazon_cre_id": "",
+                          "file_type": "fastq",
+                          "collection_type": "pair",
+                          "archive_dir": ""
+                      },
+                      {
+                          "name": "exper_rep2",
+                          "file_used": [["exper_rep2.1.gz","exper_rep2.2.gz"]],
+                          "file_dir": [["/share/data/umw_biocore/genome_data/mousetest/mm10/gz"]],
+                          "google_cre_id": "",
+                          "amazon_cre_id": "",
+                          "file_type": "fastq",
+                          "collection_type": "pair",
+                          "archive_dir": ""
+                      }]
+            }
+        }
+    }'
+</code></pre></div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight"><pre><span></span><code> {
+    "status": "success",
+    "data": {
+        "data": {
+            "status": "submitted",
+            "id": 354,
+            "creationDate": "2021-04-13T05:32:16.505Z",
+            "message": "Run successfully submitted."
         }
     }
 }
@@ -1415,7 +1620,7 @@ $ curl -X GET \
 }
 </code></pre></div>
 <h3 id="create-a-project">Create a Project</h3>
-<p>This POST request is only enabled for users with the Admin role.</p>
+<p>POST request for creating a project:</p>
 <p><strong>Example request</strong>:</p>
 <div class="highlight"><pre><span></span><code>bash
 $ curl -X POST \
