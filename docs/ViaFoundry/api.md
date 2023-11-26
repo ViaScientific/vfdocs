@@ -21,7 +21,7 @@ Here's how Metadata Tracker API users can retrieve an access token for the curre
 
  ``` 
  bash
- $ curl -X POST 'https://viafoundry.com/vmeta/api/v1/users/login' \
+ $ curl -X POST 'https://www.viafoundry.com/vmeta/api/v1/users/login' \
  -H 'Content-Type: application/json' \
  -d '
      {
@@ -62,7 +62,7 @@ In Foundry, you can submit runs, track their statuses and get their run reports.
 
 ``` 
  bash
- $ curl -X GET 'https://viafoundry.com/vpipe/api/service.php?data=getRuns' \
+ $ curl -X GET 'https://www.viafoundry.com/vpipe/api/service.php?data=getRuns' \
 -H 'Authorization: Bearer <your-access-token>'
 ```
 
@@ -99,7 +99,7 @@ In Foundry, you can submit runs, track their statuses and get their run reports.
 ``` 
 bash
 $ curl -X GET \
-'https://viafoundry.com/vpipe/api/service.php?data=getRun&id=4311' \
+'https://www.viafoundry.com/vpipe/api/service.php?data=getRun&id=4311' \
 -H 'Authorization: Bearer <your-access-token>'
 ```
 
@@ -159,7 +159,7 @@ In this illustration, the remaining pipeline parameters will be derived from the
 ``` 
  bash
  $ curl -X POST \
-'https://viafoundry.com/vpipe/api/service.php?run=startRun' \
+'https://www.viafoundry.com/vpipe/api/service.php?run=startRun' \
 -H 'Authorization: Bearer <your-access-token>' \
 -H 'Content-Type: application/json' \
 -d '
@@ -228,7 +228,7 @@ In Metadata Tracker, projects serve as your analysis hubs, acting as silos for y
 
  ``` 
  bash
- $ curl -X GET 'https://viafoundry.com/vmeta/api/v1/projects' \
+ $ curl -X GET 'https://www.viafoundry.com/vmeta/api/v1/projects' \
  -H 'Authorization: Bearer <your-access-token'
  ```
 
@@ -282,7 +282,7 @@ In Metadata Tracker, projects serve as your analysis hubs, acting as silos for y
  ``` 
  bash
  $ curl -X GET \
- 'https://viafoundry.com/vmeta/api/v1/projects/5fb2b395c8c1e577fcb8ce6c' \
+ 'https://www.viafoundry.com/vmeta/api/v1/projects/5fb2b395c8c1e577fcb8ce6c' \
  -H 'Authorization: Bearer <your-access-token'
  ```
 
@@ -336,7 +336,7 @@ POST request for creating a project:
  ``` 
  bash
  $ curl -X POST \
- 'https://viafoundry.com/vmeta/api/v1/projects' \
+ 'https://www.viafoundry.com/vmeta/api/v1/projects' \
  -H 'Authorization: Bearer <your-access-token' \
  -H 'Content-Type: application/json' \
  -d '
@@ -378,7 +378,7 @@ POST request for creating a project:
  $ curl \
    -X PATCH \
    -H "Authorization: Bearer <token" \
-   https://viafoundry.com/vmeta/api/v1/projects/5fb2b395c8c1e577fcb8ce6c \
+   https://www.viafoundry.com/vmeta/api/v1/projects/5fb2b395c8c1e577fcb8ce6c \
    -H "Content-Type: application/json" \
    -d '
        {
@@ -435,7 +435,7 @@ POST request for creating a project:
  $ curl \
    -X DELETE \
    -H "Authorization: Bearer <token" \
-   https://viafoundry.com/vmeta/api/v1/projects/5fb2b395c8c1e577fcb8ce6c 
+   https://www.viafoundry.com/vmeta/api/v1/projects/5fb2b395c8c1e577fcb8ce6c 
  ```
 
  **Example response**:
@@ -460,7 +460,7 @@ POST request for creating a project:
 
  ``` 
  bash
- $ curl -X GET 'https://viafoundry.com/vmeta/api/v1/collections' \
+ $ curl -X GET 'https://www.viafoundry.com/vmeta/api/v1/collections' \
  -H 'Authorization: Bearer <your-access-token'
  ```
 
@@ -547,7 +547,7 @@ POST request for creating a project:
  ``` 
  bash
  $ curl -X GET \
- 'https://viafoundry.com/vmeta/api/v1/collections/5f57ffe635db5980ba020ff4' \
+ 'https://www.viafoundry.com/vmeta/api/v1/collections/5f57ffe635db5980ba020ff4' \
  -H 'Authorization: Bearer <your-access-token'
  ```
 
@@ -603,7 +603,7 @@ POST request for creating a project:
  ``` 
  bash
  $ curl -X POST \
- 'https://viafoundry.com/vmeta/api/v1/collections' \
+ 'https://www.viafoundry.com/vmeta/api/v1/collections' \
  -H 'Authorization: Bearer <your-access-token' \
  -H 'Content-Type: application/json' \
  -d '
@@ -667,7 +667,7 @@ POST request for creating a project:
  $ curl \
    -X PATCH \
    -H "Authorization: Bearer <your-access-token" \
-   https://viafoundry.com/vmeta/api/v1/collections/6063e3a33c195afbe6d5e036 \
+   https://www.viafoundry.com/vmeta/api/v1/collections/6063e3a33c195afbe6d5e036 \
    -H "Content-Type: application/json" \
    -d '
        {
@@ -727,7 +727,7 @@ POST request for creating a project:
  $ curl \
    -X DELETE \
    -H "Authorization: Bearer <your-access-token" \
-   https://viafoundry.com/vmeta/api/v1/collections/6063e3a33c195afbe6d5e036 
+   https://www.viafoundry.com/vmeta/api/v1/collections/6063e3a33c195afbe6d5e036 
  ```
 
  **Example response**:
@@ -752,7 +752,7 @@ POST request for creating a project:
 
  ``` 
  bash
- $ curl -X GET 'https://viafoundry.com/vmeta/api/v1/fields' \
+ $ curl -X GET 'https://www.viafoundry.com/vmeta/api/v1/fields' \
  -H 'Authorization: Bearer <your-access-token'
  ```
 
@@ -829,7 +829,7 @@ POST request for creating a project:
  ``` 
  bash
  $ curl -X GET \
- 'https://viafoundry.com/vmeta/api/v1/fields/5f58559f35db5980ba020ff8' \
+ 'https://www.viafoundry.com/vmeta/api/v1/fields/5f58559f35db5980ba020ff8' \
  -H 'Authorization: Bearer <your-access-token'
  ```
 
@@ -880,7 +880,7 @@ POST request for creating a project:
  ``` 
  bash
  $ curl -X POST \
- 'https://viafoundry.com/vmeta/api/v1/fields' \
+ 'https://www.viafoundry.com/vmeta/api/v1/fields' \
  -H 'Authorization: Bearer <your-access-token' \
  -H 'Content-Type: application/json' \
  -d '
@@ -940,7 +940,7 @@ POST request for creating a project:
  $ curl \
    -X PATCH \
    -H "Authorization: Bearer <your-access-token" \
-   https://viafoundry.com/vmeta/api/v1/fields/6063e7c91bfc89fd1960ae5b \
+   https://www.viafoundry.com/vmeta/api/v1/fields/6063e7c91bfc89fd1960ae5b \
    -H "Content-Type: application/json" \
    -d '
        {
@@ -1016,7 +1016,7 @@ POST request for creating a project:
  $ curl \
    -X DELETE \
    -H "Authorization: Bearer <your-access-token" \
-   https://viafoundry.com/vmeta/api/v1/fields/6063e7c91bfc89fd1960ae5b 
+   https://www.viafoundry.com/vmeta/api/v1/fields/6063e7c91bfc89fd1960ae5b 
  ```
 
  **Example response**:
@@ -1042,7 +1042,7 @@ POST request for creating a project:
 
  ``` 
  bash
- $ curl -X GET 'https://viafoundry.com/vmeta/api/v1/projects/vitiligo/data/sample' \
+ $ curl -X GET 'https://www.viafoundry.com/vmeta/api/v1/projects/vitiligo/data/sample' \
  -H 'Authorization: Bearer <your-access-token'
  ```
 
@@ -1122,7 +1122,7 @@ POST request for creating a project:
  ``` 
  bash
  $ curl -X GET \
- 'https://viafoundry.com/vmeta/api/v1/projects/vitiligo/data/sample/5fdb8c6ad6330eb80d503fe2' \
+ 'https://www.viafoundry.com/vmeta/api/v1/projects/vitiligo/data/sample/5fdb8c6ad6330eb80d503fe2' \
  -H 'Authorization: Bearer <your-access-token'
  ```
 
@@ -1176,7 +1176,7 @@ POST request for creating a project:
  ``` 
  bash
  $ curl -X POST \
- 'https://viafoundry.com/vmeta/api/v1/projects/vitiligo/data/sample' \
+ 'https://www.viafoundry.com/vmeta/api/v1/projects/vitiligo/data/sample' \
  -H 'Authorization: Bearer <your-access-token' \
  -H 'Content-Type: application/json' \
  -d '
@@ -1240,7 +1240,7 @@ POST request for creating a project:
  $ curl \
    -X PATCH \
    -H "Authorization: Bearer <your-access-token" \
-   https://viafoundry.com/vmeta/api/v1/projects/vitiligo/data/sample/606453c0cb44bcfdbb84c6a2 \
+   https://www.viafoundry.com/vmeta/api/v1/projects/vitiligo/data/sample/606453c0cb44bcfdbb84c6a2 \
    -H "Content-Type: application/json" \
    -d '
        {
@@ -1297,7 +1297,7 @@ POST request for creating a project:
  $ curl \
    -X DELETE \
    -H "Authorization: Bearer <your-access-token" \
-   https://viafoundry.com/vmeta/api/v1/projects/vitiligo/data/sample/606453c0cb44bcfdbb84c6a2 
+   https://www.viafoundry.com/vmeta/api/v1/projects/vitiligo/data/sample/606453c0cb44bcfdbb84c6a2 
  ```
 
  **Example response**:

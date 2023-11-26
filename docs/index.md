@@ -17,6 +17,7 @@
 - [Metadata Tracker - Basics](ViaFoundry/demo_metadata-basics.md)
 - [Metadata Tracker - NCBI-GEO](ViaFoundry/demo_metadata-geo.md)
 - [Metadata Portal](ViaFoundry/demo_metadata-portal.md)
+- [Run Submission through API](ViaFoundry/demo_run_submission_api.md)
 
 ## User Guide
 
