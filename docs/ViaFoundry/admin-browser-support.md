@@ -4,10 +4,10 @@ Last Updated: December 1, 2023
 ### Via Foundry officially supports the following browsers on Windows and macOS desktop:
 - Google Chrome (current version)
 - Firefox (current version)
-- Safari (current version)
 - Microsoft Edge (current version). You might see performance degradation for some features on Microsoft Edge.
 
-### The following browsers are not supported:
+### The following browsers are not officially supported:
+- Safari
 - Internet Explorer
 - Mobile browsers
 - Beta, "preview", or other pre-release versions of desktop browsers
