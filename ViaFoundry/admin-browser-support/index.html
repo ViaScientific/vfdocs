@@ -11,13 +11,15 @@
       
       
       
+        <link rel="prev" href="../admin-installation-apps/">
+      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>demo TETranscripts tutorial - Via Foundry Documentation</title>
+        <title>Browser Support - Via Foundry Documentation</title>
       
     
     
@@ -67,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#expected-learning-outcome" class="md-skip">
+        <a href="#via-foundry-supported-browsers" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              demo TETranscripts tutorial
+              Browser Support
             
           </span>
         </div>
@@ -707,14 +709,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
       
       
       
@@ -723,7 +727,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           Administrator Guide
@@ -790,11 +794,68 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../admin-browser-support/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Browser Support
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Browser Support
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#via-foundry-supported-browsers" class="md-nav__link">
+    Via Foundry Supported browsers
+  </a>
+  
+    <nav class="md-nav" aria-label="Via Foundry Supported browsers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#via-foundry-officially-supports-the-following-browsers-on-windows-and-macos-desktop" class="md-nav__link">
+    Via Foundry officially supports the following browsers on Windows and macOS desktop:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-following-browsers-are-not-officially-supported" class="md-nav__link">
+    The following browsers are not officially supported:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -823,8 +884,41 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#via-foundry-supported-browsers" class="md-nav__link">
+    Via Foundry Supported browsers
+  </a>
+  
+    <nav class="md-nav" aria-label="Via Foundry Supported browsers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#via-foundry-officially-supports-the-following-browsers-on-windows-and-macos-desktop" class="md-nav__link">
+    Via Foundry officially supports the following browsers on Windows and macOS desktop:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-following-browsers-are-not-officially-supported" class="md-nav__link">
+    The following browsers are not officially supported:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -839,91 +933,24 @@
                   
 
 
-<div><h1 id="expected-learning-outcome">Expected learning outcome</h1>
-<p>To understand the basics of running a pipeline in Foundry by running the TE Transcripts analysis pipeline on sample mouse data.</p>
-<h1 id="before-you-start">Before you start</h1>
-<p>Please go to <a href="https://www.viafoundry.com">https://www.viafoundry.com</a> and login into your account. If you have any issues logging in, please let us know (support@viascientific.com) and we will help to create an account for you.</p>
-<h1 id="creating-a-project">Creating a Project</h1>
-<p>In Foundry, analysis is organized by project. Each run belongs to a project and a project can consist of multiple runs.</p>
-<p>Once logged in, to create and configure a new project click on the <code>Projects</code> tab in the top menu and select <code>Add a New Project</code> button in the dropdown. In the pop-up, give the project a name (e.g. <code>TE Transcripts Tutorial</code>) and click save.</p>
-<p><img alt="image" src="../../tetranscripts_images/addproject1.png"></p>
-<h1 id="attaching-pipeline-to-project">Attaching Pipeline to Project</h1>
-<p>To help with organization, pipelines used in a project are attached to that project.</p>
-<p><strong>Note:</strong> The same pipeline can be attached to multiple projects.</p>
-<p>To attach a pipeline select the <code>Pipelines</code> tab and then click the <code>Add Pipeline</code> button. </p>
-<p><img alt="image" src="../../tetranscripts_images/addpipeline1.png"></p>
-<p>Locate <code>TE Transcripts</code>, click on the <code>Add</code> button, and then close the window.</p>
-<p><img alt="image" src="../../tetranscripts_images/addpipeline2.png"></p>
-<h1 id="creating-a-run">Creating a Run</h1>
-<p>Once the project is created and a pipeline is attached, you are ready to create a run:</p>
-<ol>
-<li>
-<p>Click the <code>Run</code> button next to the <code>TE Transcripts</code> entry in the table to load the "Run Page"</p>
-<p><img alt="image" src="../../tetranscripts_images/runpipeline1.png"></p>
-</li>
-<li>
-<p>On the run page, under "Run Environment" select <code>viafoundry</code></p>
-</li>
-<li>In the Inputs section, next to <code>FASTQ Input</code>, click <code>Enter File</code></li>
-<li>In the files tab, click <code>Add File</code> button to enter new files.</li>
-<li>
-<p>Next to "1. File Location", enter:</p>
-<div class="highlight"><pre><span></span><code>gs://via-scientific-nprd-bucket/viafoundry/run_data/test_data/fastq_mouse
-</code></pre></div>
-</li>
-<li>
-<p>Click the magnifying glass icon. The box below will populate with files like so:</p>
-<p><img alt="image" src="../../tetranscripts_images/addfiles1.png"></p>
-</li>
-<li>
-<p>In the <code>3. Collection Type</code> dropdown, select <code>Paired List</code></p>
-</li>
-<li>
-<p>Under <code>4. File Pattern</code>, next to <code>Forward Pattern</code>, enter <code>.1</code>. Similarly, enter <code>.2</code> for <code>Reverse Pattern</code>.</p>
-<p><img alt="image" src="../../tetranscripts_images/addfiles2.png"></p>
-</li>
-<li>
-<p>Click <code>Add All Files</code> button. You should now see 6 entries below.</p>
-<p><img alt="image" src="../../tetranscripts_images/addfiles3.png"></p>
-</li>
-<li>
-<p>Next to <code>5. Collection Name</code>, enter <code>mousetest paired</code>. The final three boxes can be left blank. Click <code>Save Files</code></p>
-</li>
-<li>The "Select/Add Input File" screen will now have 6 entries. Click "Save".</li>
-<li>For "Library Type", select <code>pair</code></li>
-<li>For "Genome Build", select <code>mouse</code></li>
-<li>For "Groups file", click <code>Enter File</code></li>
-<li>
-<p>In the "File Location", enter:</p>
-<div class="highlight"><pre><span></span><code>gs://via-scientific-nprd-bucket/viafoundry/run_data/test_data/fastq_mouse_metadata/groups.tsv
-</code></pre></div>
-</li>
-<li>
-<p>Click <code>Save</code></p>
-</li>
-<li>For "Comparison file", click <code>Enter File</code></li>
-<li>
-<p>In the "File Location", enter:</p>
-<div class="highlight"><pre><span></span><code>gs://via-scientific-nprd-bucket/viafoundry/run_data/test_data/fastq_mouse_metadata/comparisons.tsv
-</code></pre></div>
-</li>
-<li>
-<p>Click <code>Save</code></p>
-</li>
-<li>Leave the rest of the inputs as defaults</li>
-<li>Click <code>Run</code> in the top right and then select <code>Start</code>. For this dataset, the TE Transcripts pipeline run typically takes several minutes to complete.</li>
-<li>Navigate to the Log tab and click on log.txt to follow the progress of your run.</li>
-<li>Once the status bar in the top right changes from a blue "Running" status to a green "Completed" status go to the Report tab to see the final reports.</li>
-<li>
-<p>Click on <code>Deseq2</code> to open the "Differential Expression" section. Select the first file on the left tab (exper_vs_control_DE.html). This is a differential expression report for the comparison. The report can be expanded to fit the full screen with the button on the top left.</p>
-<p><img alt="image" src="../../tetranscripts_images/dereport1.png"></p>
-</li>
-<li>
-<p>Launch the <code>GSEA Explorer</code> application by clicking the second file on the left tab (exper_vs_control_DE.Rmd) and then click <code>Launch</code></p>
-</li>
-</ol>
-<p><strong>Note:</strong> For the purposes of speeding up the runtime of this tutorial, the demo dataset has been downsampled to only include a few genes. Differential expression analysis graphs and Gene Set Enrichment Analysis graphs will look very sparse with this dataset.</p>
-<p>Congratulations! You have run and tested the TE Transcripts pipeline on Foundry!</p></div>
+  <h1>Browser Support</h1>
+
+<div><h2 id="via-foundry-supported-browsers">Via Foundry Supported browsers</h2>
+<p>Last Updated: December 1, 2023</p>
+<h3 id="via-foundry-officially-supports-the-following-browsers-on-windows-and-macos-desktop">Via Foundry officially supports the following browsers on Windows and macOS desktop:</h3>
+<ul>
+<li>Google Chrome (current version)</li>
+<li>Firefox (current version)</li>
+<li>Microsoft Edge (current version). You might see performance degradation for some features on Microsoft Edge.</li>
+</ul>
+<h3 id="the-following-browsers-are-not-officially-supported">The following browsers are not officially supported:</h3>
+<ul>
+<li>Safari</li>
+<li>Internet Explorer</li>
+<li>Mobile browsers</li>
+<li>Beta, "preview", or other pre-release versions of desktop browsers</li>
+</ul>
+<p>Using an unsupported browser might cause unexpected behavior, including security issues. Via Foundry can assist only in those support cases where an officially supported browser is being used.</p></div>
 
 
 
