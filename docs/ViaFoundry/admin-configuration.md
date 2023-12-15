@@ -130,19 +130,6 @@ SSO_USER_INFO_URL="https://your_domain/vsso/api/v1/users/info"
 
 All of the configuration directive details can be found [here](../admin-configuration/#vmetavportalvfoundry-config-file-details)
 
-## Configuration of SSO with Microsoft Active Directory:
-
-If you're integrating SSO for user authentication, you can use the SAML method. Below are the URLs and settings you'll need to input in your Microsoft Active Directory configuration:
-
-```
-Identifiers(Entity ID): https://viafoundry.{hostname}/vsso/auth/saml/callback
-Reply URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
-Sign On URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
-Relay State (Optional): https://viafoundry.{hostname}
-Logout Url (Optional):
-```
-
-Make sure to replace `{hostname}` with your actual server's hostname.
 
 ## Configuration of OKTA:
 
@@ -178,6 +165,25 @@ SSO_SAML_DESTINATION_URL=https://viafoundry.{hostname}
 ```
 
 Here, `{ISSUER_ID}` should be replaced with the actual issuer ID provided by OKTA, and `{hostname}` with your server's hostname.
+
+
+## Configuration of Microsoft Active Directory:
+
+If you're integrating Microsoft Active Directory for user authentication, you can use the SAML method. Below are the URLs and settings you'll need to input in your Microsoft Active Directory configuration:
+
+```
+Indentifier(Entity ID): https://viafoundry.{hostname}/vsso/auth/saml/callback
+Reply URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
+Sign On URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
+Relay State (Optional): https://viafoundry.{hostname}
+Logout Url (Optional):
+```
+
+Make sure to replace `{hostname}` with your actual server's hostname.
+
+### Metadata File
+
+Download the `metadata.xml` file from Microsoft Entra and place it in the specified location `SSO_SAML_METADATA`.
 
 ### Configuration File for Microsoft Active Directory 
 
