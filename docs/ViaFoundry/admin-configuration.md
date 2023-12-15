@@ -130,6 +130,20 @@ SSO_USER_INFO_URL="https://your_domain/vsso/api/v1/users/info"
 
 All of the configuration directive details can be found [here](../admin-configuration/#vmetavportalvfoundry-config-file-details)
 
+## Configuration of SSO with Microsoft Active Directory:
+
+If you're integrating SSO for user authentication, you can use the SAML method. Below are the URLs and settings you'll need to input in your Microsoft Active Directory configuration:
+
+```
+Identifiers(Entity ID): https://viafoundry.{hostname}/vsso/auth/saml/callback
+Reply URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
+Sign On URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
+Relay State (Optional): https://viafoundry.{hostname}
+Logout Url (Optional):
+```
+
+Make sure to replace `{hostname}` with your actual server's hostname.
+
 ## Configuration of OKTA:
 
 If you're integrating OKTA for user authentication, you can use the SAML method. Below are the URLs and settings you'll need to input in your OKTA configuration:
@@ -152,18 +166,31 @@ In your OKTA setup, configure it to send the user's first name (`firstName`) and
 
 Download the `metadata.xml` file from OKTA and place it in the specified location `SSO_SAML_METADATA`.
 
-### Configuration File
+### Configuration File for OKTA
 
 Finally, update your configuration file located at `/export/vsso/config.env` with the following parameters:
 
 ```
 OKTA_SAML_LOGIN=true
-SSO_ISSUER=http://www.okta.com/{ISSUER_ID}
+SSO_ISSUER=http://www.okta.com/{ISSUER_ID} 
 SSO_SAML_METADATA=/export/vsso/certs/metadata.xml
 SSO_SAML_DESTINATION_URL=https://viafoundry.{hostname}
 ```
 
 Here, `{ISSUER_ID}` should be replaced with the actual issuer ID provided by OKTA, and `{hostname}` with your server's hostname.
+
+### Configuration File for Microsoft Active Directory 
+
+Finally, update your configuration file located at `/export/vsso/config.env` with the following parameters:
+
+```
+OKTA_SAML_LOGIN=true
+SSO_ISSUER=https://viafoundry.{hostname}/vsso/auth/saml/callback
+SSO_SAML_METADATA=/export/vsso/certs/metadata.xml
+SSO_SAML_DESTINATION_URL=https://viafoundry.{hostname}
+SSO_SAML_WANT_AUTHN_RESPONSE_SIGNED=false
+```
+
 
 ## Apache Configuration for the Foundry Server:
 
