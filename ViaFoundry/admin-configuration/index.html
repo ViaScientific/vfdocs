@@ -832,13 +832,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-of-sso-with-microsoft-active-directory" class="md-nav__link">
-    Configuration of SSO with Microsoft Active Directory:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#configuration-of-okta" class="md-nav__link">
     Configuration of OKTA:
   </a>
@@ -863,6 +856,26 @@
           <li class="md-nav__item">
   <a href="#configuration-file-for-okta" class="md-nav__link">
     Configuration File for OKTA
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-microsoft-active-directory" class="md-nav__link">
+    Configuration of Microsoft Active Directory:
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration of Microsoft Active Directory:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metadata-file_1" class="md-nav__link">
+    Metadata File
   </a>
   
 </li>
@@ -1053,13 +1066,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-of-sso-with-microsoft-active-directory" class="md-nav__link">
-    Configuration of SSO with Microsoft Active Directory:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#configuration-of-okta" class="md-nav__link">
     Configuration of OKTA:
   </a>
@@ -1084,6 +1090,26 @@
           <li class="md-nav__item">
   <a href="#configuration-file-for-okta" class="md-nav__link">
     Configuration File for OKTA
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-microsoft-active-directory" class="md-nav__link">
+    Configuration of Microsoft Active Directory:
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration of Microsoft Active Directory:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metadata-file_1" class="md-nav__link">
+    Metadata File
   </a>
   
 </li>
@@ -1240,15 +1266,6 @@ SSO_REDIRECT_URL="https://your_domain/vportal/receivetoken"
 SSO_USER_INFO_URL="https://your_domain/vsso/api/v1/users/info"
 </code></pre></div>
 <p>All of the configuration directive details can be found <a href="../admin-configuration/#vmetavportalvfoundry-config-file-details">here</a></p>
-<h2 id="configuration-of-sso-with-microsoft-active-directory">Configuration of SSO with Microsoft Active Directory:</h2>
-<p>If you're integrating SSO for user authentication, you can use the SAML method. Below are the URLs and settings you'll need to input in your Microsoft Active Directory configuration:</p>
-<div class="highlight"><pre><span></span><code>Identifiers(Entity ID): https://viafoundry.{hostname}/vsso/auth/saml/callback
-Reply URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
-Sign On URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
-Relay State (Optional): https://viafoundry.{hostname}
-Logout Url (Optional):
-</code></pre></div>
-<p>Make sure to replace <code>{hostname}</code> with your actual server's hostname.</p>
 <h2 id="configuration-of-okta">Configuration of OKTA:</h2>
 <p>If you're integrating OKTA for user authentication, you can use the SAML method. Below are the URLs and settings you'll need to input in your OKTA configuration:</p>
 <div class="highlight"><pre><span></span><code>Single Sign-On URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
@@ -1270,6 +1287,17 @@ SSO_SAML_METADATA=/export/vsso/certs/metadata.xml
 SSO_SAML_DESTINATION_URL=https://viafoundry.{hostname}
 </code></pre></div>
 <p>Here, <code>{ISSUER_ID}</code> should be replaced with the actual issuer ID provided by OKTA, and <code>{hostname}</code> with your server's hostname.</p>
+<h2 id="configuration-of-microsoft-active-directory">Configuration of Microsoft Active Directory:</h2>
+<p>If you're integrating Microsoft Active Directory for user authentication, you can use the SAML method. Below are the URLs and settings you'll need to input in your Microsoft Active Directory configuration:</p>
+<div class="highlight"><pre><span></span><code>Indentifier(Entity ID): https://viafoundry.{hostname}/vsso/auth/saml/callback
+Reply URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
+Sign On URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
+Relay State (Optional): https://viafoundry.{hostname}
+Logout Url (Optional):
+</code></pre></div>
+<p>Make sure to replace <code>{hostname}</code> with your actual server's hostname.</p>
+<h3 id="metadata-file_1">Metadata File</h3>
+<p>Download the <code>metadata.xml</code> file from Microsoft Entra and place it in the specified location <code>SSO_SAML_METADATA</code>.</p>
 <h3 id="configuration-file-for-microsoft-active-directory">Configuration File for Microsoft Active Directory</h3>
 <p>Finally, update your configuration file located at <code>/export/vsso/config.env</code> with the following parameters:</p>
 <div class="highlight"><pre><span></span><code>OKTA_SAML_LOGIN=true
