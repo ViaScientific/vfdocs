@@ -1525,18 +1525,27 @@ share it with others.</p>
 </li>
 <li>
 <p><strong>Bitbucket Credentials:</strong> To utilize SSH Key pairs for importing and updating Bitbucket repositories, you need to follow these steps:</p>
-<ol>
-<li>In Via Foundry, navigate to your profile by clicking on your avatar and selecting "Profile."</li>
-<li>Go to the "SSH Keys" tab within your profile.</li>
-<li>Create a new key pair by generating a new SSH key.</li>
-<li>Open Bitbucket and access your Personal settings by clicking on your avatar.</li>
-<li>Within Bitbucket, select "SSH keys" and click on the "Add key" button.</li>
-<li>Copy the generated public key from Via Foundry (DolphinNext) and paste it into the SSH Key field in Bitbucket.</li>
-<li>Finally, make sure to select the used SSH key in the window within Via Foundry.</li>
+<ul>
+<li>In ViaFoundry:<ol>
+<li>Log in to your ViaFoundry account and go to the "Profile" section.</li>
+<li>Select the "SSH Keys" tab and click on the "Add SSH Key" button.</li>
+<li>Enable the "Create new keys" option and click on the "Generate Keys" button.</li>
+<li>Copy the generated Public Key and click the "Submit" button.</li>
+<li>Navigate to the "Repositories" tab and select the SSH key you just added while creating an account.</li>
+</ol>
+</li>
+<li>In Bitbucket:<ol>
+<li>Open Bitbucket and select the desired repository. Click on the "Repository Settings" option. Look for the "Access Keys" option and click on it.</li>
+<li>If you prefer to give global access Open Bitbucket and access your Personal settings by clicking on your avatar. Within Bitbucket, select "SSH keys". </li>
+<li>Click on the "Add key" button.</li>
+<li>Copy the public key that was generated in ViaFoundry.</li>
+<li>Paste the copied public key into the "SSH Key" field in Bitbucket.</li>
 </ol>
 </li>
 </ul>
-<p>By following these steps, you will successfully configure the SSH Key pairs between Via Foundry and Bitbucket, allowing you to manage your repositories seamlessly.</p>
+</li>
+</ul>
+<p>By following these steps, you will have successfully created and linked the SSH key pair between ViaFoundry and Bitbucket. This will allow you to create and update repositories in Bitbucket using the SSH keys from ViaFoundry.</p>
 <h2 id="change-password">Change Password</h2>
 <p><img alt="image" src="../../images/profile-password.png"></p>
 <p>If you currently rely on a password for logging into your account, you can easily modify your password by accessing the dedicated Change Password section. </p>
