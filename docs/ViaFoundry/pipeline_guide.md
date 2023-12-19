@@ -600,15 +600,73 @@ make changes and improvements without affecting the original pipeline or
 other users' work. It's a convenient way to experiment and iterate on
 pipelines while keeping the original version intact.
 
-## How To Cite Us
+## How to Import Pipelines
 
-If you use Via Foundry (formerly DolphinNext) in your research, please
-cite:
+To import nf-core pipelines or similar standard Nextflow pipelines, follow these steps:
 
-Yukselen, O., Turkyilmaz, O., Ozturk, A.R. et al. DolphinNext: a
-distributed data processing platform for high throughput genomics. BMC
-Genomics 21, 310 (2020). <https://doi.org/10.1186/s12864-020-6714-x>
+1. Visit the "Pipelines" tab and select any pipeline. Click the "Import Pipeline" button.
 
+    ![image](../images/import1.png)
+
+2. Click the "Remote Repository" button and choose the source of your repository: Repository Type (Public or Private).
+
+    ![image](../images/import2.png)
+
+    a. **Public Repository:**
+      If your pipeline is publicly accessible, choose "Public."
+      Enter the Repository URL and provide the tag/branch if available.
+      Click the "Pull Pipeline" button.
+
+    b. **Private Repository:**
+      If your pipeline is private, choose "Private."
+      Select your repository credentials created in the Profile->Repositories section.
+      Enter the Repo URL and provide the tag/branch if available.
+      Click the "Pull Pipeline" button.
+
+3. Importable Pipeline Standards:
+
+    1. **Pipeline Inputs Schema (nextflow_schema.json):**
+
+        To define the inputs for the pipeline, refer to the example inputs provided in the following link: [Example Inputs](https://github.com/nf-core/rnaseq/blob/3.13.2/nextflow_schema.json).
+
+        If you do not have the `nextflow_schema.json` file, you can create one using the [Pipeline Schema Builder Tool](https://nf-co.re/pipeline_schema_builder). Ensure that all inputs are organized within a group section. To create a group, click the "Add Group" button.
+
+
+        ```
+        {
+            "$schema": "http://json-schema.org/draft-07/schema",
+            "$id": "https://raw.githubusercontent.com/YOUR_PIPELINE/master/nextflow_schema.json",
+            "title": "Nextflow pipeline parameters",
+            "description": "This pipeline uses Nextflow and processes some kind of data. The JSON Schema was built using the nf-core pipeline schema builder.",
+            "type": "object",
+            "definitions": {
+                "new_group_1": {
+                    "title": "New Group 1",
+                    "type": "object",
+                    "description": "",
+                    "default": "",
+                    "properties": {
+                        "new_param_1": {
+                            "type": "string"
+                        },
+                        "new_param_2": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/new_group_1"
+                }
+            ]
+        } 
+        ```
+
+    2. Pipeline publish direcory should be set as `params.outdir`.
+
+
+4. To import Via Pipelines, you need admin permission. Contact <support@viascientific.com> for more details.
 ## Support
 
 For any questions or help, please reach out to
