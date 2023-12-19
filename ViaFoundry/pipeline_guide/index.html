@@ -720,8 +720,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-cite-us" class="md-nav__link">
-    How To Cite Us
+  <a href="#how-to-import-pipelines" class="md-nav__link">
+    How to Import Pipelines
   </a>
   
 </li>
@@ -1083,8 +1083,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-cite-us" class="md-nav__link">
-    How To Cite Us
+  <a href="#how-to-import-pipelines" class="md-nav__link">
+    How to Import Pipelines
   </a>
   
 </li>
@@ -1612,12 +1612,72 @@ revision of the pipeline. As such, duplicating a pipeline allows you to
 make changes and improvements without affecting the original pipeline or
 other users' work. It's a convenient way to experiment and iterate on
 pipelines while keeping the original version intact.</p>
-<h2 id="how-to-cite-us">How To Cite Us</h2>
-<p>If you use Via Foundry (formerly DolphinNext) in your research, please
-cite:</p>
-<p>Yukselen, O., Turkyilmaz, O., Ozturk, A.R. et al. DolphinNext: a
-distributed data processing platform for high throughput genomics. BMC
-Genomics 21, 310 (2020). <a href="https://doi.org/10.1186/s12864-020-6714-x">https://doi.org/10.1186/s12864-020-6714-x</a></p>
+<h2 id="how-to-import-pipelines">How to Import Pipelines</h2>
+<p>To import nf-core pipelines or similar standard Nextflow pipelines, follow these steps:</p>
+<ol>
+<li>
+<p>Visit the "Pipelines" tab and select any pipeline. Click the "Import Pipeline" button.</p>
+<p><img alt="image" src="../../images/import1.png"></p>
+</li>
+<li>
+<p>Click the "Remote Repository" button and choose the source of your repository: Repository Type (Public or Private).</p>
+<p><img alt="image" src="../../images/import2.png"></p>
+<p>a. <strong>Public Repository:</strong>
+  If your pipeline is publicly accessible, choose "Public."
+  Enter the Repository URL and provide the tag/branch if available.
+  Click the "Pull Pipeline" button.</p>
+<p>b. <strong>Private Repository:</strong>
+  If your pipeline is private, choose "Private."
+  Select your repository credentials created in the Profile-&gt;Repositories section.
+  Enter the Repo URL and provide the tag/branch if available.
+  Click the "Pull Pipeline" button.</p>
+</li>
+<li>
+<p>Importable Pipeline Standards:</p>
+<ol>
+<li>
+<p><strong>Pipeline Inputs Schema (nextflow_schema.json):</strong></p>
+<p>To define the inputs for the pipeline, refer to the example inputs provided in the following link: <a href="https://github.com/nf-core/rnaseq/blob/3.13.2/nextflow_schema.json">Example Inputs</a>.</p>
+<p>If you do not have the <code>nextflow_schema.json</code> file, you can create one using the <a href="https://nf-co.re/pipeline_schema_builder">Pipeline Schema Builder Tool</a>. Ensure that all inputs are organized within a group section. To create a group, click the "Add Group" button.</p>
+<div class="highlight"><pre><span></span><code>{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://raw.githubusercontent.com/YOUR_PIPELINE/master/nextflow_schema.json",
+    "title": "Nextflow pipeline parameters",
+    "description": "This pipeline uses Nextflow and processes some kind of data. The JSON Schema was built using the nf-core pipeline schema builder.",
+    "type": "object",
+    "definitions": {
+        "new_group_1": {
+            "title": "New Group 1",
+            "type": "object",
+            "description": "",
+            "default": "",
+            "properties": {
+                "new_param_1": {
+                    "type": "string"
+                },
+                "new_param_2": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "#/definitions/new_group_1"
+        }
+    ]
+} 
+</code></pre></div>
+</li>
+<li>
+<p>Pipeline publish direcory should be set as <code>params.outdir</code>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>To import Via Pipelines, you need admin permission. Contact <a href="mailto:support@viascientific.com">support@viascientific.com</a> for more details.</p>
+</li>
+</ol>
 <h2 id="support">Support</h2>
 <p>For any questions or help, please reach out to
 <a href="mailto:support@viascientific.com">support@viascientific.com</a> with your name and question.</p></div>
