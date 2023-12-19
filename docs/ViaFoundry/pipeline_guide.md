@@ -612,16 +612,16 @@ To import nf-core pipelines or similar standard Nextflow pipelines, follow these
 
     ![image](../images/import2.png)
 
-    a. **Public Repository:**
-      If your pipeline is publicly accessible, choose "Public."
-      Enter the Repository URL and provide the tag/branch if available.
-      Click the "Pull Pipeline" button.
+    1. **Public Repository:**
+        1. If your pipeline is publicly accessible, choose "Public."
+        2. Enter the Repository URL and provide the tag/branch if available.
+        3. Click the "Pull Pipeline" button.
 
-    b. **Private Repository:**
-      If your pipeline is private, choose "Private."
-      Select your repository credentials created in the Profile->Repositories section.
-      Enter the Repo URL and provide the tag/branch if available.
-      Click the "Pull Pipeline" button.
+    2. **Private Repository:**
+        1. If your pipeline is private, choose "Private."
+        2. Choose the repository credentials that you have set up in the Profile -> Repositories section. For more information, refer to the [repository connections page](../profile/#repository-connections).
+        3. Enter the Repo URL and provide the tag/branch if available.
+        4. Click the "Pull Pipeline" button.
 
 3. Importable Pipeline Standards:
 
