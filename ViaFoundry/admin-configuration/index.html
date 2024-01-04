@@ -1210,6 +1210,11 @@ PUBWEB_URL=http://localhost:8080/vpipe/tmp/pub
 <div class="highlight"><pre><span></span><code>BASE_PATH=https://your_domain/vpipe
 PUBWEB_URL=https://your_domain/vpipe/tmp/pub
 </code></pre></div>
+<p>Other important parameters:
+</p><div class="highlight"><pre><span></span><code>[CONFIG]
+AUTH_RUN_FILES=true
+AUTH_RUN_FILES_ALLOWED_DOMAINS=your_domain
+</code></pre></div>
 <p>All of the configuration directive details can be found <a href="../admin-configuration/#vpipe-config-file-details">here</a></p>
 <p><strong>Note:</strong> If you were using Standalone Vpipe (or DolphinNext) before, please check the SALT and PEPPER config parameters in /export/vpipe/config/.sec file. These values should be the same for /export/vsso/config.env. So, you need to update /export/vsso/config.env with Vpipe parameters.</p>
 <h2 id="configuration-of-vsso">Configuration of Vsso:</h2>

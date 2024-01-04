@@ -685,6 +685,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#foundry-variables" class="md-nav__link">
+    Foundry Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#header-script" class="md-nav__link">
     Header Script
   </a>
@@ -1103,6 +1110,13 @@
         <li class="md-nav__item">
   <a href="#operators" class="md-nav__link">
     Operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#foundry-variables" class="md-nav__link">
+    Foundry Variables
   </a>
   
 </li>
@@ -1615,6 +1629,54 @@ multiple operators by enclosing them within parentheses <code>( )</code>.</p>
 <p><strong>Tip:</strong> To get more information about operators, check out <a href="https://www.nextflow.io/docs/latest/operator.html">this
 link</a> to Nextflow's
 documentation.</p>
+<h2 id="foundry-variables">Foundry Variables</h2>
+<p><em>Foundry Variables</em> are provided by the Foundry platform and are intended to enhance the flexibility and adaptability of your workflows. These variables can be used in your process scripts or configuration files.</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{{FOUNDRY_RUN_ID}}</td>
+<td>The unique identifier assigned to each run.</td>
+</tr>
+<tr>
+<td>{{FOUNDRY_RUN_URL}}</td>
+<td>The URL that links to the detailed information and logs for the current run.</td>
+</tr>
+<tr>
+<td>{{FOUNDRY_WEB_REPORT_DIR}}</td>
+<td>The URL where run reports are located.</td>
+</tr>
+<tr>
+<td>{{FOUNDRY_WEB_RUN_DIR}}</td>
+<td>The URL where run logs are located.</td>
+</tr>
+<tr>
+<td>{{FOUNDRY_PUBLISH_DIR}}</td>
+<td>The directory path where all reported files are located.</td>
+</tr>
+<tr>
+<td>{{FOUNDRY_LAB}}</td>
+<td>The lab associated with the Foundry account under which the current run is running.</td>
+</tr>
+<tr>
+<td>{{FOUNDRY_USERNAME}}</td>
+<td>The username associated with the Foundry account under which the current run is running.</td>
+</tr>
+<tr>
+<td>{{FOUNDRY_EMAIL}}</td>
+<td>The email address associated with the Foundry account under which the run is running.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Usage</strong>: 
+When scripting within the Foundry platform, you can directly reference these variables by enclosing them in double curly braces. For example:</p>
+<div class="highlight"><pre><span></span><code>echo "Current Run ID: {{FOUNDRY_RUN_ID}}"
+</code></pre></div>
 <h2 id="header-script">Header Script</h2>
 <p>This section, found within the <code>Advanced Options</code> menu, allows you to
 add additional scripts or comments before the beginning of the process
