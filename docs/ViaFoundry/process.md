@@ -315,6 +315,30 @@ Here are some examples of operators and their usage:
 link](https://www.nextflow.io/docs/latest/operator.html) to Nextflow's
 documentation.
 
+## Foundry Variables
+
+*Foundry Variables* are provided by the Foundry platform and are intended to enhance the flexibility and adaptability of your workflows. These variables can be used in your process scripts or configuration files.
+
+| Variable                  | Description                                                                                                                     |
+|---------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| {{FOUNDRY_RUN_ID}}        | The unique identifier assigned to each run.    |
+| {{FOUNDRY_RUN_URL}}       | The URL that links to the detailed information and logs for the current run.                            |
+| {{FOUNDRY_WEB_REPORT_DIR}}| The URL where run reports are located.                                                |
+| {{FOUNDRY_WEB_RUN_DIR}}   | The URL where run logs are located.|
+| {{FOUNDRY_PUBLISH_DIR}}   | The directory path where all reported files are located.                                     |
+| {{FOUNDRY_LAB}}           | The lab associated with the Foundry account under which the current run is running.                    |
+| {{FOUNDRY_USERNAME}}      | The username associated with the Foundry account under which the current run is running.                    |
+| {{FOUNDRY_EMAIL}}         | The email address associated with the Foundry account under which the run is running.               |
+
+
+**Usage**: 
+When scripting within the Foundry platform, you can directly reference these variables by enclosing them in double curly braces. For example:
+
+```
+echo "Current Run ID: {{FOUNDRY_RUN_ID}}"
+```
+
+
 ## Header Script
 
 This section, found within the `Advanced Options` menu, allows you to

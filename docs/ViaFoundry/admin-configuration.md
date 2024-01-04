@@ -36,6 +36,14 @@ BASE_PATH=https://your_domain/vpipe
 PUBWEB_URL=https://your_domain/vpipe/tmp/pub
 ```
 
+Other important parameters:
+```
+[CONFIG]
+AUTH_RUN_FILES=true
+AUTH_RUN_FILES_ALLOWED_DOMAINS=your_domain
+
+```
+
 All of the configuration directive details can be found [here](../admin-configuration/#vpipe-config-file-details)
 
 **Note:** If you were using Standalone Vpipe (or DolphinNext) before, please check the SALT and PEPPER config parameters in /export/vpipe/config/.sec file. These values should be the same for /export/vsso/config.env. So, you need to update /export/vsso/config.env with Vpipe parameters.
