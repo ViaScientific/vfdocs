@@ -149,6 +149,7 @@ Recipient URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
 Destination URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
 Audience Restriction: https://viafoundry.{hostname}/vsso/auth/saml/callback
 Default Relay State: https://viafoundry.{hostname}/vsso/auth/saml
+SAML Issuer ID: http://www.okta.com/${org.externalKey}
 ```
 
 Make sure to replace `{hostname}` with your actual server's hostname.
