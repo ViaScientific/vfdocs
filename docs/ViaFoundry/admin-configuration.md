@@ -147,12 +147,12 @@ If you're integrating OKTA for user authentication, you can use the SAML method.
 Single Sign-On URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
 Recipient URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
 Destination URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
-Audience Restriction: https://viafoundry.{hostname}/vsso/auth/saml/callback
+Audience Restriction: viafoundry-{ViaFoundryID}
 Default Relay State: https://viafoundry.{hostname}/vsso/auth/saml
 SAML Issuer ID: http://www.okta.com/${org.externalKey}
 ```
 
-Make sure to replace `{hostname}` with your actual server's hostname.
+Make sure to replace `{hostname}` with your actual server's hostname. `{ViaFoundryID}` value will be sent by Via Scientific Team.
 
 ### Sending User Attributes
 
@@ -177,12 +177,12 @@ Finally, update your configuration file located at `/export/vsso/config.env` wit
 
 ```
 OKTA_SAML_LOGIN=true
-SSO_ISSUER=https://viafoundry.{hostname}/vsso/auth/saml/callback
+SSO_ISSUER=viafoundry-{ViaFoundryID}
 SSO_SAML_METADATA=/export/vsso/certs/metadata.xml
 SSO_SAML_DESTINATION_URL=https://viafoundry.{hostname}
 ```
 
-Here, `{hostname}` with your server's hostname.
+Here, replace `{hostname}` with your server's hostname and `{viafoundryID}` with the ID that is sent by Via Scientific Team.
 
 
 ## Configuration of Microsoft Active Directory:
