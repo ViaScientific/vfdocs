@@ -1290,11 +1290,11 @@ SSO_USER_INFO_URL="https://your_domain/vsso/api/v1/users/info"
 <div class="highlight"><pre><span></span><code>Single Sign-On URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
 Recipient URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
 Destination URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
-Audience Restriction: https://viafoundry.{hostname}/vsso/auth/saml/callback
+Audience Restriction: viafoundry-{ViaFoundryID}
 Default Relay State: https://viafoundry.{hostname}/vsso/auth/saml
 SAML Issuer ID: http://www.okta.com/${org.externalKey}
 </code></pre></div>
-<p>Make sure to replace <code>{hostname}</code> with your actual server's hostname.</p>
+<p>Make sure to replace <code>{hostname}</code> with your actual server's hostname. <code>{ViaFoundryID}</code> value will be sent by Via Scientific Team.</p>
 <h3 id="sending-user-attributes">Sending User Attributes</h3>
 <p>In your OKTA setup, configure it to send the user's first name (<code>firstName</code>) and last name (<code>lastName</code>) when they log in. Here is the example: </p>
 <p><img alt="image" src="../../images/okta_attributes.png"></p>
@@ -1306,11 +1306,11 @@ SAML Issuer ID: http://www.okta.com/${org.externalKey}
 <h3 id="configuration-file-for-okta">Configuration File for OKTA</h3>
 <p>Finally, update your configuration file located at <code>/export/vsso/config.env</code> with the following parameters:</p>
 <div class="highlight"><pre><span></span><code>OKTA_SAML_LOGIN=true
-SSO_ISSUER=https://viafoundry.{hostname}/vsso/auth/saml/callback
+SSO_ISSUER=viafoundry-{ViaFoundryID}
 SSO_SAML_METADATA=/export/vsso/certs/metadata.xml
 SSO_SAML_DESTINATION_URL=https://viafoundry.{hostname}
 </code></pre></div>
-<p>Here, <code>{hostname}</code> with your server's hostname.</p>
+<p>Here, replace <code>{hostname}</code> with your server's hostname and <code>{viafoundryID}</code> with the ID that is sent by Via Scientific Team.</p>
 <h2 id="configuration-of-microsoft-active-directory">Configuration of Microsoft Active Directory:</h2>
 <p>If you're integrating Microsoft Active Directory for user authentication, you can use the SAML method. Below are the URLs and settings you'll need to input in your Microsoft Active Directory configuration:</p>
 <div class="highlight"><pre><span></span><code>Indentifier(Entity ID): https://viafoundry.{hostname}/vsso/auth/saml/callback
