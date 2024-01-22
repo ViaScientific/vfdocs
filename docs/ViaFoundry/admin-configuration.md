@@ -156,7 +156,16 @@ Make sure to replace `{hostname}` with your actual server's hostname.
 
 ### Sending User Attributes
 
-In your OKTA setup, configure it to send the user's first name (`firstName`) and last name (`lastName`) when they log in.
+In your OKTA setup, configure it to send the user's first name (`firstName`) and last name (`lastName`) when they log in. Here is the example: 
+
+
+![image](../images/okta_attributes.png)
+
+### Foundry Logo for OKTA dashboard
+
+In your OKTA setup, you can use following image for app logo.
+
+![image](../images/ViaFoundry_logo.png){: width="30%"}
 
 ### Metadata File
 
@@ -168,12 +177,12 @@ Finally, update your configuration file located at `/export/vsso/config.env` wit
 
 ```
 OKTA_SAML_LOGIN=true
-SSO_ISSUER=http://www.okta.com/{ISSUER_ID} 
+SSO_ISSUER=https://viafoundry.{hostname}/vsso/auth/saml/callback
 SSO_SAML_METADATA=/export/vsso/certs/metadata.xml
 SSO_SAML_DESTINATION_URL=https://viafoundry.{hostname}
 ```
 
-Here, `{ISSUER_ID}` should be replaced with the actual issuer ID provided by OKTA, and `{hostname}` with your server's hostname.
+Here, `{hostname}` with your server's hostname.
 
 
 ## Configuration of Microsoft Active Directory:
