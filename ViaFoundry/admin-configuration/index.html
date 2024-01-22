@@ -847,6 +847,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#foundry-logo-for-okta-dashboard" class="md-nav__link">
+    Foundry Logo for OKTA dashboard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#metadata-file" class="md-nav__link">
     Metadata File
   </a>
@@ -1081,6 +1088,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#foundry-logo-for-okta-dashboard" class="md-nav__link">
+    Foundry Logo for OKTA dashboard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#metadata-file" class="md-nav__link">
     Metadata File
   </a>
@@ -1282,17 +1296,21 @@ SAML Issuer ID: http://www.okta.com/${org.externalKey}
 </code></pre></div>
 <p>Make sure to replace <code>{hostname}</code> with your actual server's hostname.</p>
 <h3 id="sending-user-attributes">Sending User Attributes</h3>
-<p>In your OKTA setup, configure it to send the user's first name (<code>firstName</code>) and last name (<code>lastName</code>) when they log in.</p>
+<p>In your OKTA setup, configure it to send the user's first name (<code>firstName</code>) and last name (<code>lastName</code>) when they log in. Here is the example: </p>
+<p><img alt="image" src="../../images/okta_attributes.png"></p>
+<h3 id="foundry-logo-for-okta-dashboard">Foundry Logo for OKTA dashboard</h3>
+<p>In your OKTA setup, you can use following image for app logo.</p>
+<p><img alt="image" src="../../images/ViaFoundry_logo.png" width="30%"></p>
 <h3 id="metadata-file">Metadata File</h3>
 <p>Download the <code>metadata.xml</code> file from OKTA and place it in the specified location <code>SSO_SAML_METADATA</code>.</p>
 <h3 id="configuration-file-for-okta">Configuration File for OKTA</h3>
 <p>Finally, update your configuration file located at <code>/export/vsso/config.env</code> with the following parameters:</p>
 <div class="highlight"><pre><span></span><code>OKTA_SAML_LOGIN=true
-SSO_ISSUER=http://www.okta.com/{ISSUER_ID} 
+SSO_ISSUER=https://viafoundry.{hostname}/vsso/auth/saml/callback
 SSO_SAML_METADATA=/export/vsso/certs/metadata.xml
 SSO_SAML_DESTINATION_URL=https://viafoundry.{hostname}
 </code></pre></div>
-<p>Here, <code>{ISSUER_ID}</code> should be replaced with the actual issuer ID provided by OKTA, and <code>{hostname}</code> with your server's hostname.</p>
+<p>Here, <code>{hostname}</code> with your server's hostname.</p>
 <h2 id="configuration-of-microsoft-active-directory">Configuration of Microsoft Active Directory:</h2>
 <p>If you're integrating Microsoft Active Directory for user authentication, you can use the SAML method. Below are the URLs and settings you'll need to input in your Microsoft Active Directory configuration:</p>
 <div class="highlight"><pre><span></span><code>Indentifier(Entity ID): https://viafoundry.{hostname}/vsso/auth/saml/callback
