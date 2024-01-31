@@ -9,6 +9,7 @@ site_author: Via Foundry Team
 
 plugins:
   - mkdocs-video
+  - search
 
 markdown_extensions:
   - admonition
