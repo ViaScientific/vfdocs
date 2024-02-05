@@ -1663,7 +1663,7 @@ multiple operators by enclosing them within parentheses <code>( )</code>.</p>
 link</a> to Nextflow's
 documentation.</p>
 <h2 id="foundry-variables">Foundry Variables</h2>
-<p><em>Foundry Variables</em> are provided by the Foundry platform and are intended to enhance the flexibility and adaptability of your workflows. These variables can be used in your process scripts or configuration files.</p>
+<p><em>Foundry Variables</em> are provided by the Foundry platform and are intended to enhance the flexibility and adaptability of your workflows. These variables (e.g. <code>FOUNDRY_RUN_ID</code>, <code>FOUNDRY_PIPELINE_VERSION</code>, etc.) can be used in your process scripts or configuration files.</p>
 <table>
 <thead>
 <tr>
@@ -1672,6 +1672,18 @@ documentation.</p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>{{FOUNDRY_PIPELINE_ID}}</td>
+<td>The identifier assigned to each pipeline.</td>
+</tr>
+<tr>
+<td>{{FOUNDRY_PIPELINE_URL}}</td>
+<td>The URL assigned to each pipeline.</td>
+</tr>
+<tr>
+<td>{{FOUNDRY_PIPELINE_VERSION}}</td>
+<td>The version assigned to each pipeline.</td>
+</tr>
 <tr>
 <td>{{FOUNDRY_RUN_ID}}</td>
 <td>The unique identifier assigned to each run.</td>
