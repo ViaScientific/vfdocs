@@ -317,12 +317,12 @@ documentation.
 
 ## Foundry Variables
 
-*Foundry Variables* are provided by the Foundry platform and are intended to enhance the flexibility and adaptability of your workflows. These variables can be used in your process scripts or configuration files.
+*Foundry Variables* are provided by the Foundry platform and are intended to enhance the flexibility and adaptability of your workflows. These variables (e.g. ``FOUNDRY_RUN_ID``, ``FOUNDRY_PIPELINE_VERSION``, etc.) can be used in your process scripts or configuration files.
 
 | Variable                  | Description                                                                                                                     |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| {{FOUNDRY_PIPELINE_ID}}        | The unique identifier assigned to each pipeline.    |
-| {{FOUNDRY_PIPELINE_URL}}        | The unique URL assigned to each pipeline.    |
+| {{FOUNDRY_PIPELINE_ID}}        | The identifier assigned to each pipeline.    |
+| {{FOUNDRY_PIPELINE_URL}}        | The URL assigned to each pipeline.    |
 | {{FOUNDRY_PIPELINE_VERSION}}    | The version assigned to each pipeline.    |
 | {{FOUNDRY_RUN_ID}}        | The unique identifier assigned to each run.    |
 | {{FOUNDRY_RUN_URL}}       | The URL that links to the detailed information and logs for the current run.                            |
