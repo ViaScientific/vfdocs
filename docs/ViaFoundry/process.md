@@ -321,6 +321,9 @@ documentation.
 
 | Variable                  | Description                                                                                                                     |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| {{FOUNDRY_PIPELINE_ID}}        | The unique identifier assigned to each pipeline.    |
+| {{FOUNDRY_PIPELINE_URL}}        | The unique URL assigned to each pipeline.    |
+| {{FOUNDRY_PIPELINE_VERSION}}    | The version assigned to each pipeline.    |
 | {{FOUNDRY_RUN_ID}}        | The unique identifier assigned to each run.    |
 | {{FOUNDRY_RUN_URL}}       | The URL that links to the detailed information and logs for the current run.                            |
 | {{FOUNDRY_WEB_REPORT_DIR}}| The URL where run reports are located.                                                |
