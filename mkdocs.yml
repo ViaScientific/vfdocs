@@ -31,6 +31,8 @@ nav:
       - "How To Cite Us": ViaFoundry/cite.md
       - "Frequently Asked Questions": ViaFoundry/get_faq.md
       - "News": ViaFoundry/news.md
+  - HOWTOs:
+      - "Create a project": ViaFoundry/HOWTOs/create_project.md
   - Tutorials:
       - "Running RNA-Seq Pipeline": ViaFoundry/demo_rna-seq_tutorial.md
       - "Running Cellranger Pipeline": ViaFoundry/demo_single_cell_rna-seq_tutorial.md
