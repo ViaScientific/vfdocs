@@ -33,6 +33,9 @@ nav:
       - "News": ViaFoundry/news.md
   - HOWTOs:
       - "Create a project": ViaFoundry/HOWTOs/create_project.md
+  - Training Modules:
+      - Inputs and Outputs:
+          - "Using Files – Single Input Problem": ViaFoundry/courses/single_input.md
   - Tutorials:
       - "Running RNA-Seq Pipeline": ViaFoundry/demo_rna-seq_tutorial.md
       - "Running Cellranger Pipeline": ViaFoundry/demo_single_cell_rna-seq_tutorial.md
