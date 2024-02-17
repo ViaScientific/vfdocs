@@ -11,13 +11,17 @@
       
       
       
+        <link rel="prev" href="../api/">
+      
+      
+        <link rel="next" href="../gsea_explorer/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>Faq developer - Via Foundry Documentation</title>
+        <title>Frequently Asked Questions - Via Foundry Documentation</title>
       
     
     
@@ -101,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Faq developer
+              Frequently Asked Questions
             
           </span>
         </div>
@@ -586,14 +590,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
       
       
       
@@ -602,7 +608,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Developer Guide
@@ -660,6 +666,90 @@
       <a href="../api/" class="md-nav__link">
         API Guide
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Frequently Asked Questions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Frequently Asked Questions
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#frequently-asked-questions-for-developers" class="md-nav__link">
+    Frequently Asked Questions for Developers
+  </a>
+  
+    <nav class="md-nav" aria-label="Frequently Asked Questions for Developers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process-guide" class="md-nav__link">
+    Process Guide
+  </a>
+  
+    <nav class="md-nav" aria-label="Process Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax-errors" class="md-nav__link">
+    Syntax Errors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-exits-with-code-1-without-output" class="md-nav__link">
+    Process Exits with Code 1 without Output
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -886,6 +976,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#process-exits-with-code-1-without-output" class="md-nav__link">
+    Process Exits with Code 1 without Output
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -911,22 +1008,47 @@
                   
 
 
-  <h1>Faq developer</h1>
+  <h1>Frequently Asked Questions</h1>
 
 <div><h2 id="frequently-asked-questions-for-developers">Frequently Asked Questions for Developers</h2>
 <h3 id="process-guide">Process Guide</h3>
 <ol>
-<li>we cannot run another docker command inside the script block since it is already running inside docker. We can change the docker that the process will use.</li>
+<li>
+<p>Inside a Docker container, avoid running additional Docker commands within the script block, as the current process is already running within Docker. Instead, modify the Docker configuration for the desired process.</p>
+</li>
+<li>
+<p>When writing a bash script in the script section, refrain from using <code>#!/bin/bash</code> to prevent interference with nextflow's error detection mechanism.</p>
+</li>
 </ol>
 <h4 id="syntax-errors">Syntax Errors</h4>
 <ol>
-<li>We need to escape dollar characters with slash \ . </li>
-</ol>
-<div class="highlight"><pre><span></span><code>So this part star_w_chimeric_helper($library, $star_index, $genome, $file, $name) needs to be star_w_chimeric_helper(\$library, \$star_index, \$genome, \$file, \$name)
+<li>
+<p>Dollar characters <code>$</code> should be escaped with a backslash <code>\</code> in script blocks.</p>
+<div class="highlight"><pre><span></span><code>#Change:
+helper($library, $star_index)
+#To:
+helper(\$library, \$star_index)
 </code></pre></div>
-<ol>
-<li>We need to escape \ characters with another slash \ . </li>
-</ol></div>
+</li>
+<li>
+<p>Backslash characters <code>\</code> should be escaped with another backslash <code>\</code>.</p>
+</li>
+</ol>
+<h4 id="process-exits-with-code-1-without-output">Process Exits with Code 1 without Output</h4>
+<div class="highlight"><pre><span></span><code>Caused by:
+  Essential container in task exited
+
+Command executed:
+
+  my_command 2&gt;/dev/null
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+</code></pre></div>
+<p>Using <code>command 2&gt;/dev/null</code> will cause the process to exit without providing the reason for the error. Instead use the following pattern: <code>my_command 2&gt;/dev/null || true</code></p></div>
 
 
 
