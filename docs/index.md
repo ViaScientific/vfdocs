@@ -35,6 +35,7 @@
 - [Process Guide](ViaFoundry/process.md)
 - [App Guide](ViaFoundry/app_developer_guide.md)
 - [API Guide](ViaFoundry/api.md)
+- [Frequently Asked Questions](ViaFoundry/faq_developer.md)
 
 ## App Library
 
