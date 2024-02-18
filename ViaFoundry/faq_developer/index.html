@@ -21,7 +21,7 @@
     
     
       
-        <title>Frequently Asked Questions - Via Foundry Documentation</title>
+        <title>Frequently Asked Questions for Developers - Via Foundry Documentation</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#frequently-asked-questions-for-developers" class="md-skip">
+        <a href="#process-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Frequently Asked Questions
+              Frequently Asked Questions for Developers
             
           </span>
         </div>
@@ -685,12 +685,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Frequently Asked Questions
+          Frequently Asked Questions for Developers
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Frequently Asked Questions
+        Frequently Asked Questions for Developers
       </a>
       
         
@@ -707,14 +707,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#frequently-asked-questions-for-developers" class="md-nav__link">
-    Frequently Asked Questions for Developers
-  </a>
-  
-    <nav class="md-nav" aria-label="Frequently Asked Questions for Developers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#process-guide" class="md-nav__link">
     Process Guide
   </a>
@@ -733,11 +725,6 @@
   <a href="#process-exits-with-code-1-without-output" class="md-nav__link">
     Process Exits with Code 1 without Output
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -954,14 +941,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#frequently-asked-questions-for-developers" class="md-nav__link">
-    Frequently Asked Questions for Developers
-  </a>
-  
-    <nav class="md-nav" aria-label="Frequently Asked Questions for Developers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#process-guide" class="md-nav__link">
     Process Guide
   </a>
@@ -987,11 +966,6 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
     </ul>
   
@@ -1008,10 +982,9 @@
                   
 
 
-  <h1>Frequently Asked Questions</h1>
+  <h1>Frequently Asked Questions for Developers</h1>
 
-<div><h2 id="frequently-asked-questions-for-developers">Frequently Asked Questions for Developers</h2>
-<h3 id="process-guide">Process Guide</h3>
+<div><h3 id="process-guide">Process Guide</h3>
 <ol>
 <li>
 <p>Inside a Docker container, avoid running additional Docker commands within the script block, as the current process is already running within Docker. Instead, modify the Docker configuration for the desired process.</p>
@@ -1035,11 +1008,11 @@ helper(\$library, \$star_index)
 </li>
 </ol>
 <h4 id="process-exits-with-code-1-without-output">Process Exits with Code 1 without Output</h4>
+<p><strong>Case-1:</strong></p>
 <div class="highlight"><pre><span></span><code>Caused by:
   Essential container in task exited
 
 Command executed:
-
   my_command 2&gt;/dev/null
 
 Command exit status:
@@ -1048,7 +1021,13 @@ Command exit status:
 Command output:
   (empty)
 </code></pre></div>
-<p>Using <code>command 2&gt;/dev/null</code> will cause the process to exit without providing the reason for the error. Instead use the following pattern: <code>my_command 2&gt;/dev/null || true</code></p></div>
+<p>Using <code>my_command 2&gt;/dev/null || true</code> pattern prevents the process from exiting without providing the reason for the error.</p>
+<p><strong>Case-2:</strong>
+Another reason for unexpected behavior is the use of the expression <code>((k++))</code> in a bash script:</p>
+<div class="highlight"><pre><span></span><code>k=0
+((k++))
+</code></pre></div>
+<p>Instead, use the command <code>k=$((k + 1))</code> in the bash script.</p></div>
 
 
 
