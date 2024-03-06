@@ -75,6 +75,12 @@ Courses can be supported by Training Modules
 
 # Incorporating Google Documentation Style Highlights
 
+When unsure or there are points not covered in this Style Guide, fallback to the Google Style Guide
+
+https://developers.google.com/style/highlights
+
+Some key points to highlight here:
+
 - Ensure clarity and conciseness in all documentation, avoiding jargon and technical language when possible.
 - Use active voice to engage the reader and make the content more direct and easier to understand.
 - Provide clear examples and practical scenarios to illustrate concepts and procedures, enhancing the learning experience for users.
