@@ -95,7 +95,7 @@ Click on the `Metadata` tab. This window is the `Data View` section of the Metad
       ![image](../metadata_geo_images/geo_data1.png)
 
 
-2.Click the Insert button to enter Demo Project into the name field using the form. After that, click the save button.
+2.Click the Insert button to enter Demo Project into the name field using the form. After that, click the save button. 
 
       ![image](../metadata_basic_images/series_insert.png)
 
