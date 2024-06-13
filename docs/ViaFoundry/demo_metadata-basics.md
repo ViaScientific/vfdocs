@@ -97,7 +97,8 @@ Click on the `Metadata` tab. This window is the `Data View` section of the Metad
 
 2.Click the Insert button to enter Demo Project into the name field using the form. After that, click the save button. 
 
-![image](../metadata_basic_images/series_insert.png)
+      ![image](../metadata_basic_images/series_insert.png)
+
 
 3. Importing Biosamples: Go to the collection dropdown and change its value to `Biosamples`. This time we will insert 6 Biosamples using Spreadsheet view. Click the `Edit in Spreadsheet` button. 
 
