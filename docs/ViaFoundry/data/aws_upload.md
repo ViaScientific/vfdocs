@@ -1,25 +1,10 @@
-# Uploading Files to Via Foundry
+# Upload to our bucket from the CLI using `aws cli`
 
-- [Uploading Files to Via Foundry](#uploading-files-to-via-foundry)
-  - [Configure xCloud](#configure-xcloud)
-  - [Upload to our bucket using `aws cli`](#upload-to-our-bucket-using-aws-cli)
-    - [Prerequisites:](#prerequisites)
-    - [Step-by-Step Instructions:](#step-by-step-instructions)
-    - [Example:](#example)
-
----
-
-## Configure xCloud
-
-[xCloud](https://www.viascientific.com/products/)
-
-## Upload to our bucket using `aws cli`
-
-### Prerequisites:
+## Prerequisites:
 
 Ensure you have the AWS CLI installed. If not, follow the instructions [here](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
 
-### Step-by-Step Instructions:
+## Step-by-Step Instructions:
 
 1. **Contact Support**:
    - Before you begin, contact Via Scientific support at `support@viascientific.com` to obtain:
@@ -56,7 +41,7 @@ Ensure you have the AWS CLI installed. If not, follow the instructions [here](ht
      aws s3 ls s3://<bucket-name>/
      ```
 
-### Example:
+## Example:
 If you have a file `data.csv` and a bucket name `via-foundry-bucket`, your commands will look like this:
 ```bash
 aws s3 cp data.csv s3://via-foundry-bucket/
