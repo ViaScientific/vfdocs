@@ -11,10 +11,10 @@ Download Cyber Duck for your platform. Follow the instructions [here](https://cy
 ## Step-by-Step Instructions:
 
 1. **Contact Support**:
-   - Before you begin, contact Via Scientific support at `support@viascientific.com` to obtain:
-     - **Bucket Name**
-     - **AWS Credentials** (Access Key and Secret Key)
-   - Remember these credentials you'll need them later
+     * Before you begin, contact Via Scientific support at `support@viascientific.com` to obtain:
+         * **Bucket Name**
+         * **AWS Credentials** (Access Key and Secret Key)
+     * Remember these credentials you'll need them later
 
 2. **Launch Cyber Duck**
     - ![image](../../images/data/cyber-1-duck-launch.png)
