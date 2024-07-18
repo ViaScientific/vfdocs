@@ -21,6 +21,8 @@ extra_css: [css/custom.css]
 
 extra:
   generator: false
+  version:
+    provider: mike
 
 nav:
   - Home: index.md
@@ -62,4 +64,3 @@ nav:
       - "Testing Pipeline": ViaFoundry/admin-pipeline-testing.md
       - "App Section": ViaFoundry/admin-installation-apps.md
       - "Browser Support": ViaFoundry/admin-browser-support.md
-
