@@ -1,0 +1,55 @@
+name: deploy-prd 
+on:
+    release:
+      types: [published]
+    workflow_dispatch:
+      inputs:
+        version:
+          description: 'Version to deploy'
+          required: true
+          default: '0.0.1'
+
+jobs:
+    
+  mike-versioned-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Install dependencies
+        run: |
+          pip install mkdocs-material mkdocs-video mike
+
+      - name: Configure Git user
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+      - name: Get Alias info
+        id: aliasing
+        run: |
+          if [ -n "${{ inputs.version }}" ]; then
+            echo "alias=dev" >> "$GITHUB_OUTPUT"
+          else
+            echo "alias=latest" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Get version info
+        id: versioning
+        run: |
+          if [ -n "${{ inputs.version }}" ]; then
+            echo "semantic_ver=v${{ inputs.version }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "semantic_ver=v${{ github.event.release.tag_name }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Mkdocs Build
+        run: |
+          mkdocs build
+
+      - name: Mike versioned deploy
+        run: |
+          mike deploy --update-aliases --push ${{ steps.versioning.outputs.semantic_ver }} ${{ steps.aliasing.outputs.alias }}
