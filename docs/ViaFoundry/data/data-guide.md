@@ -1,24 +1,28 @@
-# Getting Your Data on Via Foundry
+# Data Guide
 
-Welcome to the "Data Guide" section! This is your go-to resource for learning how to efficiently connect and manage your data with Via Foundry. Whether you're integrating data from external sources or uploading local datasets, we've got you covered. In this section, we'll walk you through the various features and methods Via Foundry offers for seamless data integration.
+The Data Guide is your go-to resource for learning how to efficiently connect and manage your data with Via Foundry. Whether you're integrating data from external sources or uploading local datasets, Via Foundry has you covered. In this section, we'll walk you through the various features and methods Via Foundry offers for seamless data integration.
 
 ## Connect to your Data in the Cloud
 
-### Connect your storage with Foundry xCloud
+### Integrate your Cloud with Foundry xCloud
 
-Foundry [xCloud](https://www.viascientific.com/products/) enables your cloud storage available in Via Foundry. [xCloud](https://www.viascientific.com/products/) allows organizations and labs to integrate Foundry with their existing cloud infrastructure. Reach out to support to get started, `support@viascientific.com`.
+With Foundry [xCloud](https://www.viascientific.com/products/), deploying Via Foundry in your AWS or GCP account has never been easier. Leveraging xCloud, you can set up Via Foundry in your existing cloud environment. This setup allows you to maintain your cloud infrastructure in AWS and Google Cloud while taking advantage of the the robust, feature-rich Via Foundry experience .
 
-### Connect your Amazon S3 Bucket directly to Foundry
+Want to get started with Foundry xCloud? Reach out to our support team at <support@viascientific.com>, and we'll get you started.
 
-For users seeking greater control of data management we allow connect your private S3 bucket to Via Foundry [vCloud](https://www.viascientific.com/products/) product. Reach out to support to get started, `support@viascientific.com`.
+### Connect your Cloud with Foundry vCloud
 
-## Upload to our bucket from the CLI using `aws cli`
+For users seeking greater control of data management we allow you connect your private S3 or Google bucket to Via Foundry [vCloud](https://www.viascientific.com/products/) product. Reach out to support to get started, `support@viascientific.com`.
 
-### Prerequisites:
+## Upload from your computer
+
+### Prerequisites
 
 Install AWS CLI following the instructions [here](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
 
-### Step-by-Step Instructions:
+### Using CLI using `aws cli`
+
+#### Step-by-Step Instructions:
 
 1. **Contact Support**:
      * Before you begin, contact Via Scientific support at `support@viascientific.com` to obtain:
@@ -54,24 +58,24 @@ Install AWS CLI following the instructions [here](https://docs.aws.amazon.com/cl
      aws s3 ls s3://<bucket-name>/
      ```
 
-### Example:
+#### Example:
 If you have a file `data.csv` and a bucket name `via-foundry-bucket`, your commands will look like this:
 ```bash
 aws s3 cp data.csv s3://via-foundry-bucket/
 aws s3 ls s3://via-foundry-bucket/
 ```
 
-## Upload with Cyber Ducker
+### Using Cyber Ducker
 
 Cyberduck is an open-source file transfer client for Mac and Windows that supports various protocols, including FTP, SFTP, WebDAV, and cloud storage services such as Amazon S3, Google Drive, Dropbox, and Microsoft OneDrive. It is known for its user-friendly interface, which allows users to connect to and manage files on remote servers or cloud storage accounts easily.
 
 You can use Cyber Duck to upload data to Via Foundry. This walkthrough assumes a Mac installation, but similar steps apply to Windows installation.
 
-### Prerequisites:
+#### Prerequisites:
 
 Download Cyber Duck for your platform. Follow the instructions [here](https://cyberduck.io/download/)
 
-### Step-by-Step Instructions:
+#### Step-by-Step Instructions:
 
 1. **Contact Support**:
      * Before you begin, contact Via Scientific support at `support@viascientific.com` to obtain:

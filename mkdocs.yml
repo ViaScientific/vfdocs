@@ -43,13 +43,13 @@ nav:
           - "Run Submission through API": ViaFoundry/demo_run_submission_api.md
     - User Guide:
           - "Quick Start Guide": ViaFoundry/quick.md
+          - "Data Guide": ViaFoundry/data/data-guide.md
           - "Project Guide": ViaFoundry/project.md
           - "Run Guide": ViaFoundry/run.md
           - "App Guide": ViaFoundry/app.md
           - "Metadata Guide": ViaFoundry/metadata_guide.md
           - "Profile Guide": ViaFoundry/profile.md
           - "Frequently Asked Questions": ViaFoundry/faq.md
-          - "Data Guide": ViaFoundry/data/data-guide.md
     - Developer Guide:
           - "Pipeline Guide": ViaFoundry/pipeline_guide.md
           - "Process Guide": ViaFoundry/process.md
