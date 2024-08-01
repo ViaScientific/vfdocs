@@ -4,6 +4,8 @@ theme:
     logo: "images/via_icon.png"
     palette:
         primary: white
+    features:
+        - navigation.sections # Verify mobile experience is improved
 copyright: © 2023 by Via Scientific
 site_author: Via Foundry Team
 
@@ -47,10 +49,7 @@ nav:
           - "Metadata Guide": ViaFoundry/metadata_guide.md
           - "Profile Guide": ViaFoundry/profile.md
           - "Frequently Asked Questions": ViaFoundry/faq.md
-          - Data:
-                - "Import Data with xCloud": ViaFoundry/data/xcloud_import.md
-                - "Import Data with AWS": ViaFoundry/data/aws_upload.md
-                - "Import Data with CyberDuck": ViaFoundry/data/cyber_duck_upload
+          - "Data Guide": ViaFoundry/data/data-guide.md
     - Developer Guide:
           - "Pipeline Guide": ViaFoundry/pipeline_guide.md
           - "Process Guide": ViaFoundry/process.md
