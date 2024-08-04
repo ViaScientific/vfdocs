@@ -2,7 +2,7 @@
 
 The Data Guide is your go-to resource for learning how to efficiently connect and manage your data with Via Foundry. Whether you're integrating data from external sources or uploading local datasets, Via Foundry has you covered. In this section, we'll walk you through the various features and methods Via Foundry offers for seamless data integration.
 
-## Connect to your Data in the Cloud
+## Access your Data in the Cloud
 
 ### Integrate your Cloud with Foundry xCloud
 
@@ -18,52 +18,56 @@ For users seeking greater control of data management we allow you connect your p
 
 ### Prerequisites
 
-Install AWS CLI following the instructions [here](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
+#### Contact Support
+
+Before you begin, contact Via Scientific support at `support@viascientific.com` to obtain:  
+
+* **Bucket Name** You'll need this to know where to upload data.
+* **AWS Credentials** AWS Access Key and Secret Key. We'll use these later to upload.
 
 ### Using CLI using `aws cli`
 
+Install AWS CLI following the instructions [here](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
+
 #### Step-by-Step Instructions:
 
-1. **Contact Support**:
-     * Before you begin, contact Via Scientific support at `support@viascientific.com` to obtain:
-     * **Bucket Name**
-     * **AWS Credentials** (Access Key and Secret Key)
-
-2. **Configure AWS CLI**:
+1. **Configure AWS CLI**:
      * Open your terminal or command prompt.
      * Run the following command to configure your AWS CLI with the credentials provided by support:
      ```bash
      aws configure
      ```
      * Enter the Access Key ID, Secret Access Key, and region when prompted.
-         * Set `us-east-1` as the region
+     * Set `us-east-1` as the region
+     * Example configuration:
+        ```
+        AWS Access Key ID [None]: <ACCESS KEY>
+        AWS Secret Access Key [None]: <SECRET ACCESS KEY>
+        Default region name [None]: us-east-1
+        Default output format [None]:
+        ```
 
-3. **Prepare Your Data**:
-    * Ensure your data files are ready for upload. Organize them in a directory on your local machine.
+2. **Prepare Your Data**:
+    * Organize them in a directories on your local machine.
+    * The organization on your local machine will match the organization on AWS
 
-4. **Upload Data to S3 Bucket**:
-     * Use the `aws s3 cp` command to upload your data. Replace `<bucket-name>` with the bucket name provided by support and `<file-path>` with the path to your data file or directory.
+3. **Upload Data to S3 Bucket**:
+     * Use the `aws s3 cp` command to upload a single file. Replace `<bucket-name>` with the bucket name provided by support and `<file-path>` with the path to your data file or directory.
      * For a single file:
      ```bash
      aws s3 cp <file-path> s3://<bucket-name>/
      ```
-     * For a directory (uploads all files within the directory):
+     * Use the `aws s3 sync` command to upload all files within the directory, retaining the directory structure starting with `<directory-path>`:
      ```bash
-     aws s3 cp <directory-path> s3://<bucket-name>/ --recursive
+     aws s3 sync <directory-path> s3://<bucket-name>/ --recursive
      ```
 
-5. **Verify Upload**:
+4. **Verify Upload**:
      * List the contents of your S3 bucket to verify that your files have been uploaded successfully:
      ```bash
      aws s3 ls s3://<bucket-name>/
+     aws s3 ls s3://<bucket-name>/<directory-path>
      ```
-
-#### Example:
-If you have a file `data.csv` and a bucket name `via-foundry-bucket`, your commands will look like this:
-```bash
-aws s3 cp data.csv s3://via-foundry-bucket/
-aws s3 ls s3://via-foundry-bucket/
-```
 
 ### Using Cyber Ducker
 
