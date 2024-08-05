@@ -4,6 +4,8 @@ theme:
   logo: "images/via_icon.png"
   palette:
     primary: white
+  features:
+    - navigation.sections # Verify mobile experience is improved
 copyright: © 2023 by Via Scientific
 site_author: Via Foundry Team
 
@@ -16,13 +18,12 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - attr_list
+  - md_in_html
 
 extra_css: [css/custom.css]
 
 extra:
   generator: false
-  version:
-    provider: mike
 
 nav:
   - Home: index.md
@@ -43,6 +44,7 @@ nav:
       - "Run Submission through API": ViaFoundry/demo_run_submission_api.md
   - User Guide:
       - "Quick Start Guide": ViaFoundry/quick.md
+      - "Data Guide": ViaFoundry/data/data-guide.md
       - "Project Guide": ViaFoundry/project.md
       - "Run Guide": ViaFoundry/run.md
       - "App Guide": ViaFoundry/app.md
