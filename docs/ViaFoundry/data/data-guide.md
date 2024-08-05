@@ -4,6 +4,10 @@ The Data Guide is your go-to resource for learning how to efficiently connect an
 
 ## Access your Data in the Cloud
 
+!!! tip
+
+    Foundry readily integrate with Cloud Infrastructure. We recommend using [xCloud](https://www.viascientific.com/products/) to take full advantage of Foundry in your environment.
+
 ### Integrate your Cloud with Foundry xCloud
 
 With Foundry [xCloud](https://www.viascientific.com/products/), deploying Via Foundry in your AWS or GCP account has never been easier. Leveraging xCloud, you can set up Via Foundry in your existing cloud environment. This setup allows you to maintain your cloud infrastructure in AWS and Google Cloud while taking advantage of the the robust, feature-rich Via Foundry experience .
@@ -12,9 +16,13 @@ Want to get started with Foundry xCloud? Reach out to our support team at <suppo
 
 ### Connect your Cloud with Foundry vCloud
 
-For users seeking greater control of data management we allow you connect your private S3 or Google bucket to Via Foundry [vCloud](https://www.viascientific.com/products/) product. Reach out to support to get started, `support@viascientific.com`.
+For users who want to use Via Foundry public cloud, but want a greater control of data we allow you connect your private S3 or Google bucket to Via Foundry [vCloud](https://www.viascientific.com/products/) product. Reach out to support to get started, `support@viascientific.com`.
 
 ## Upload from your computer
+
+!!! tip
+
+    When uploading data from your local machine to the cloud, it's crucial to organize your data effectively. This will make it much easier to locate your files when you need them.
 
 ### Prerequisites
 
@@ -70,6 +78,10 @@ Install AWS CLI following the instructions [here](https://docs.aws.amazon.com/cl
      ```
 
 ### Using Cyber Ducker
+
+!!! warning
+
+    Cyberduck is a 3rd party tool. Via Scientific doesn't own, control, support, or distribute this tool. It's one of many UI friendly ways to upload data to the Cloud
 
 Cyberduck is an open-source file transfer client for Mac and Windows that supports various protocols, including FTP, SFTP, WebDAV, and cloud storage services such as Amazon S3, Google Drive, Dropbox, and Microsoft OneDrive. It is known for its user-friendly interface, which allows users to connect to and manage files on remote servers or cloud storage accounts easily.
 
