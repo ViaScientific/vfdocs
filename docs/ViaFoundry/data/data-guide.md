@@ -89,25 +89,30 @@ You can use Cyber Duck to upload data to Via Foundry. This walkthrough assumes a
 
 #### Step-by-Step
 
-1. **Contact Support**:
-     * Before you begin, contact Via Scientific support at `support@viascientific.com` to obtain:
-         * **Bucket Name**
-         * **AWS Credentials** (Access Key and Secret Key)
-     * Remember these credentials you'll need them later
+You'll need the **Bucket Name** and **AWS Credentials** (Access Key and Secret Key) you received from support. Download Cyber Duck for your platform. Follow the instructions [here](https://cyberduck.io/download/)
 
-2. Download Cyber Duck for your platform. Follow the instructions [here](https://cyberduck.io/download/)
-3. **Launch Cyber Duck**
-    - ![image](../../images/data/cyber-1-duck-launch.png)
-4. **Select S3 Bookmark**
-    - ![image](../../images/data/cyber-2-select-mode.png)
-5. **Enter AWS access key and Secret access key**
-    - Enter the AWS credentials you received from support.
-    - ![image](../../images/data/cyber-3-select-access.png)
-6. **Enter Bucket**
-    - Enter the bucket name you received from support.
-    - ![image](../../images/data/cyber-4-enter-bucket.png)
-7. **Upload Data**
-    - Select the settings cog
-    - Select "Upload..." from the menu
-    - Select a file from your local machine
-    - ![image](../../images/data/cyber-5-upload.png)
+<figure markdown="span">
+    ![image](../../images/data/cyber-1-duck-launch.png){ width="600" }
+    <figcaption>Launch Cyber Duck and add a new bookmark</figcaption>
+</figure>
+
+<figure markdown="span">
+    ![image](../../images/data/cyber-2-select-S3.png){ width="600" }
+    <figcaption>Select S3 Bookmark</figcaption>
+</figure>
+
+
+<figure markdown="span">
+    ![image](../../images/data/cyber-3-set-params.png){ width="600" }
+    <figcaption>Enter Bucket name, AWS access key, and Secret access key</figcaption>
+</figure>
+
+<figure markdown="span">
+    ![image](../../images/data/cyber-4-select-bookmark.png){ width="600" }
+    <figcaption>Select newly created bookmark</figcaption>
+</figure>
+
+<figure markdown="span">
+    ![image](../../images/data/cyber-5-select-upload.png){ width="350" }
+    <figcaption>Select "Upload..." from the menu and select a file from your local machine</figcaption>
+</figure>
