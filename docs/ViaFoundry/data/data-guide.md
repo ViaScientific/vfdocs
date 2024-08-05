@@ -37,7 +37,7 @@ Before you begin, contact Via Scientific support at `support@viascientific.com` 
 
 Install AWS CLI following the instructions [here](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
 
-#### Step-by-Step Instructions:
+#### Step-by-Step
 
 1. **Configure AWS CLI**:
      * Open your terminal or command prompt.
@@ -87,11 +87,7 @@ Cyberduck is an open-source file transfer client for Mac and Windows that suppor
 
 You can use Cyber Duck to upload data to Via Foundry. This walkthrough assumes a Mac installation, but similar steps apply to Windows installation.
 
-#### Prerequisites:
-
-Download Cyber Duck for your platform. Follow the instructions [here](https://cyberduck.io/download/)
-
-#### Step-by-Step Instructions:
+#### Step-by-Step
 
 1. **Contact Support**:
      * Before you begin, contact Via Scientific support at `support@viascientific.com` to obtain:
@@ -99,17 +95,18 @@ Download Cyber Duck for your platform. Follow the instructions [here](https://cy
          * **AWS Credentials** (Access Key and Secret Key)
      * Remember these credentials you'll need them later
 
-2. **Launch Cyber Duck**
+2. Download Cyber Duck for your platform. Follow the instructions [here](https://cyberduck.io/download/)
+3. **Launch Cyber Duck**
     - ![image](../../images/data/cyber-1-duck-launch.png)
-3. **Select S3 Bookmark**
+4. **Select S3 Bookmark**
     - ![image](../../images/data/cyber-2-select-mode.png)
-4. **Enter AWS access key and Secret access key**
+5. **Enter AWS access key and Secret access key**
     - Enter the AWS credentials you received from support.
     - ![image](../../images/data/cyber-3-select-access.png)
-5. **Enter Bucket**
+6. **Enter Bucket**
     - Enter the bucket name you received from support.
     - ![image](../../images/data/cyber-4-enter-bucket.png)
-6. **Upload Data**
+7. **Upload Data**
     - Select the settings cog
     - Select "Upload..." from the menu
     - Select a file from your local machine
