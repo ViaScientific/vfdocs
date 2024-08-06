@@ -39,6 +39,24 @@ Command output:
 Using `my_command 2>/dev/null || true` pattern prevents the process from exiting without providing the reason for the error.
 
 **Case-2:**
+
+```
+Caused by:
+  Essential container in task exited
+
+Command executed:
+  aws s3 ls s3://backup/test.txt
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+```
+
+Using the `aws s3 ls` command might fail without providing the reason for the error. To prevent the process from exiting when the file does not exist in the S3 bucket, you can use the pattern `aws s3 ls s3://backup/test.txt 2>/dev/null || true`. This command suppresses error messages by redirecting them to `/dev/null` and ensures the process continues by using the `|| true` pattern.
+
+**Case-3:**
 Another reason for unexpected behavior is the use of the expression `((k++))` in a bash script:
 
 ```
