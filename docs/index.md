@@ -22,6 +22,7 @@
 ## User Guide
 
 - [Quick Start Guide](ViaFoundry/quick.md)
+- [Data Guide](ViaFoundry/data/data-guide.md)
 - [Project Guide](ViaFoundry/project.md)
 - [Run Guide](ViaFoundry/run.md)
 - [App Guide](ViaFoundry/app.md)
