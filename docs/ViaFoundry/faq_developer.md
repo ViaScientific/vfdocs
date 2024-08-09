@@ -18,6 +18,41 @@
 
 2. Backslash characters `\` should be escaped with another backslash `\`.
 
+#### Container Directive Usage in Process Definitions
+
+When defining a process, be cautious with the use of the `when:` directive. Specifically, avoid placing the container directive after the `when:` directive, as it may not work as expected.
+
+```
+// Avoid placing the `when:` directive before the `container` directive:
+
+when:
+params.run_mkfastq == "yes"
+
+container { tool_for_bcl_to_fastq_conversion == 'cellranger' ? 'cellranger:4.0' : 'bclconvert:4.3.6'}
+
+script:
+"""	
+echo "test"
+"""
+```
+
+Correct usage:
+
+```
+// Place the `container` directive before the `when:` directive.
+
+container { tool_for_bcl_to_fastq_conversion == 'cellranger' ? 'cellranger:4.0' : 'bclconvert:4.3.6'}
+
+when:
+params.run_mkfastq == "yes"
+
+script:
+"""	
+echo "test"
+"""
+
+```
+
 #### Process Exits with Code 1 without Output
 
 **Case-1:**
