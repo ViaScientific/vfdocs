@@ -990,6 +990,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#container-directive-usage-in-process-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container Directive Usage in Process Definitions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#process-exits-with-code-1-without-output" class="md-nav__link">
     <span class="md-ellipsis">
       Process Exits with Code 1 without Output
@@ -1304,6 +1313,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#container-directive-usage-in-process-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container Directive Usage in Process Definitions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#process-exits-with-code-1-without-output" class="md-nav__link">
     <span class="md-ellipsis">
       Process Exits with Code 1 without Output
@@ -1357,6 +1375,33 @@ helper(\$library, \$star_index)
 <p>Backslash characters <code>\</code> should be escaped with another backslash <code>\</code>.</p>
 </li>
 </ol>
+<h4 id="container-directive-usage-in-process-definitions">Container Directive Usage in Process Definitions</h4>
+<p>When defining a process, be cautious with the use of the <code>when:</code> directive. Specifically, avoid placing the container directive after the <code>when:</code> directive, as it may not work as expected.</p>
+<div class="highlight"><pre><span></span><code>// Avoid placing the `when:` directive before the `container` directive:
+
+when:
+params.run_mkfastq == "yes"
+
+container { tool_for_bcl_to_fastq_conversion == 'cellranger' ? 'cellranger:4.0' : 'bclconvert:4.3.6'}
+
+script:
+""" 
+echo "test"
+"""
+</code></pre></div>
+<p>Correct usage:</p>
+<div class="highlight"><pre><span></span><code>// Place the `container` directive before the `when:` directive.
+
+container { tool_for_bcl_to_fastq_conversion == 'cellranger' ? 'cellranger:4.0' : 'bclconvert:4.3.6'}
+
+when:
+params.run_mkfastq == "yes"
+
+script:
+""" 
+echo "test"
+"""
+</code></pre></div>
 <h4 id="process-exits-with-code-1-without-output">Process Exits with Code 1 without Output</h4>
 <p><strong>Case-1:</strong></p>
 <div class="highlight"><pre><span></span><code>Caused by:
@@ -1372,7 +1417,21 @@ Command output:
   (empty)
 </code></pre></div>
 <p>Using <code>my_command 2&gt;/dev/null || true</code> pattern prevents the process from exiting without providing the reason for the error.</p>
-<p><strong>Case-2:</strong>
+<p><strong>Case-2:</strong></p>
+<div class="highlight"><pre><span></span><code>Caused by:
+  Essential container in task exited
+
+Command executed:
+  aws s3 ls s3://backup/test.txt
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+</code></pre></div>
+<p>Using the <code>aws s3 ls</code> command might fail without providing the reason for the error. To prevent the process from exiting when the file does not exist in the S3 bucket, you can use the pattern <code>aws s3 ls s3://backup/test.txt 2&gt;/dev/null || true</code>. This command suppresses error messages by redirecting them to <code>/dev/null</code> and ensures the process continues by using the <code>|| true</code> pattern.</p>
+<p><strong>Case-3:</strong>
 Another reason for unexpected behavior is the use of the expression <code>((k++))</code> in a bash script:</p>
 <div class="highlight"><pre><span></span><code>k=0
 ((k++))
