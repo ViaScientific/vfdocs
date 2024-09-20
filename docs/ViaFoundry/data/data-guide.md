@@ -77,7 +77,7 @@ Install AWS CLI following the instructions [here](https://docs.aws.amazon.com/cl
      aws s3 ls s3://<bucket-name>/<directory-path>
      ```
 
-### Using Cyber Ducker
+### Using Cyberduck
 
 !!! warning
 
@@ -85,15 +85,15 @@ Install AWS CLI following the instructions [here](https://docs.aws.amazon.com/cl
 
 Cyberduck is an open-source file transfer client for Mac and Windows that supports various protocols, including FTP, SFTP, WebDAV, and cloud storage services such as Amazon S3, Google Drive, Dropbox, and Microsoft OneDrive. It is known for its user-friendly interface, which allows users to connect to and manage files on remote servers or cloud storage accounts easily.
 
-You can use Cyber Duck to upload data to Via Foundry. This walkthrough assumes a Mac installation, but similar steps apply to Windows installation.
+You can use Cyberduck to upload data to Via Foundry. This walkthrough assumes a Mac installation, but similar steps apply to Windows installation.
 
 #### Step-by-Step
 
-You'll need the **Bucket Name** and **AWS Credentials** (Access Key and Secret Key) you received from support. Download Cyber Duck for your platform. Follow the instructions [here](https://cyberduck.io/download/)
+You'll need the **Bucket Name** and **AWS Credentials** (Access Key and Secret Key) you received from support. Download Cyberduck for your platform. Follow the instructions [here](https://cyberduck.io/download/)
 
 <figure markdown="span">
     ![image](../../images/data/cyber-1-duck-launch.png){ width="600" }
-    <figcaption>Launch Cyber Duck and add a new bookmark</figcaption>
+    <figcaption>Launch Cyberduck and add a new bookmark</figcaption>
 </figure>
 
 <figure markdown="span">
