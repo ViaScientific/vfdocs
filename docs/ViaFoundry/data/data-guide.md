@@ -24,6 +24,13 @@ For users who want to use Via Foundry public cloud, but want a greater control o
 
     When uploading data from your local machine to the cloud, it's crucial to organize your data effectively. This will make it much easier to locate your files when you need them.
 
+!!! Warning "Avoid invalid paths"
+
+    Certain characters are allowed locally, i.e. `/` in Windows, but are problematic in cloud environments. Avoid: `/`. white-spaces, `:`, `"`, `<`, `>`, or `|`, Cloud platform documentation for characters to avoid:
+
+    * [Google Cloud Storage objects](https://cloud.google.com/storage/docs/objects#naming) in paths
+    * [Amazon S3 object naming](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html)
+
 ### Prerequisites
 
 #### Contact Support
