@@ -182,9 +182,7 @@ You can use Cyberduck to upload data to Via Foundry. This walkthrough assumes a 
 
 You'll need the Bucket Path and Google Cloud Platform Project ID you received from support. Download Cyberduck for your platform. Follow the instructions [here](https://cyberduck.io/download/)
 
-!!! Danger "Add video on the data transfer"
-
-    Add video on the data transfer
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NQsFhw_-2QU?si=yAJFXTvW0W50oa6W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 1. Create a new Bookmark, this will take you to the Bookmark configuration window
 2. Enter `Project ID` you received from Via Scientific Support
