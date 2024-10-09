@@ -30,12 +30,96 @@ For users who want to use Via Foundry public cloud, but want a greater control o
 
 Before you begin, contact Via Scientific support at `support@viascientific.com` to obtain:  
 
-* **Bucket Name** You'll need this to know where to upload data.
-* **AWS Credentials** AWS Access Key and Secret Key. We'll use these later to upload.
+* **Bucket Name/Path** You'll need this to know where to upload data.
+* **AWS Credentials** (AWS Access Key and Secret Key) for AWS data transfers.
+* **Project ID** Unique identifier for the Google Cloud project for Google CLoud
+
+### Using CLI with `gsutil`
+
+Before you can upload files, make sure you have these things ready:
+
+* ***Google Cloud SDK Installed**  The Google Cloud SDK contains `gsutil`, the tool you’ll use to upload files. Follow the official [installation guide](https://cloud.google.com/sdk/docs/install) to set it up on your computer.
+* **Google Cloud Project**  You must have access to a Google Cloud project with permission to use Cloud Storage.
+* **Google Cloud Storage Bucket** You need a bucket where your files will be stored. If you're unsure what your bucket name is, **reach out to Via Scientific Support**.
+* **Login Credentials** Make sure you can log in to Google Cloud and access your project. You’ll use your Google account, again **reach out to Via Scientific Support** if there are issues here.
+
+#### GCP Step-by-Step
+
+1. Authenticate with Google Cloud
+
+    First, open your terminal (on Mac/Linux) or command prompt (on Windows) and log in to your Google account by typing:
+
+    ```bash
+    gcloud auth login
+    ```
+
+    This will open a browser window asking you to log in. Once you’ve logged in, close the browser and return to the terminal.
+
+2. Confirm Your Google Cloud Project
+
+    To make sure you're working in the right project, run the following command to check which project is currently active:
+
+    ```bash
+    gcloud config list project
+    ```
+
+    If you need to change the project, use this command:
+
+    ```bash
+    gcloud config set project YOUR_PROJECT_ID
+    ```
+
+    (Replace `YOUR_PROJECT_ID` with the ID of your project. If you don't know your project ID, reach out to support.)
+
+3. Upload a File Using `gsutil`
+
+    Now that you're logged in and working in the correct project, you can upload your file to Google Cloud Storage. Use the following command to upload a file:
+
+    ```bash
+    gsutil cp /path/to/your/file gs://YOUR-BUCKET-NAME/
+    ```
+
+    - Replace `/path/to/your/file` with the actual location of the file on your computer.
+    - Replace `YOUR-BUCKET-NAME` with the name of your Google Cloud Storage bucket. If you're unsure, **contact your IT support team** for this information.
+
+    For example, if you want to upload a file called `data.csv` from your desktop, you would use a command like this:
+
+    ```bash
+    gsutil cp ~/Desktop/data.csv gs://my-research-bucket/
+    ```
+
+4. Upload Multiple Files or a Whole Folder
+
+    To upload multiple files or an entire folder, use the `-r` option (for recursive). For example, to upload a folder named `experiment_data` from your desktop, type:
+
+    ```bash
+    gsutil cp -r ~/Desktop/experiment_data gs://YOUR-BUCKET-NAME/
+    ```
+
+    This will upload all the files in the folder and any subfolders inside it.
+
+5. Check Your Upload
+
+    After uploading, you can verify the files were uploaded by listing the files in your bucket. Use this command:
+
+    ```bash
+    gsutil ls gs://YOUR-BUCKET-NAME/
+    ```
+
+    This will display all the files currently stored in the bucket.
+
+
+??? note "Troubleshooting Google Cloud data uploads"
+
+    If you encounter any issues, like not knowing your bucket name or needing access to a project, **reach out to your VIA Scientific Support**. You may need help with:
+
+    - **Project ID**: The specific project where your data is stored.
+    - **Bucket Name**: The location where your files need to be uploaded.
+    - **Permissions**: Ensuring you have the right access to upload files.
 
 ### Using CLI using `aws cli`
 
-Install AWS CLI following the instructions [here](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
+* Install AWS CLI following the instructions [here](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
 
 #### Step-by-Step
 
@@ -87,7 +171,23 @@ Cyberduck is an open-source file transfer client for Mac and Windows that suppor
 
 You can use Cyberduck to upload data to Via Foundry. This walkthrough assumes a Mac installation, but similar steps apply to Windows installation.
 
-#### Step-by-Step
+#### Google Cloud Storage Step-by-Step
+
+You'll need the Bucket Path and Google Cloud Platform Project ID you received from support. Download Cyberduck for your platform. Follow the instructions [here](https://cyberduck.io/download/)
+
+!!! Danger "Add video on the data transfer"
+
+    Add video on the data transfer
+
+1. Create a new Bookmark
+2. Enter `Project ID` you recieved from Via Scientific Support
+3. Enter the `Path`
+4. Close create a Bookmark window
+5. Open the newly create Googel Storage Bookmark
+6. Organize data as you want (Create folders, move files, etc...)
+7. Right click or Drag and drop files to upload
+
+#### AWS Step-by-Step
 
 You'll need the **Bucket Name** and **AWS Credentials** (Access Key and Secret Key) you received from support. Download Cyberduck for your platform. Follow the instructions [here](https://cyberduck.io/download/)
 
