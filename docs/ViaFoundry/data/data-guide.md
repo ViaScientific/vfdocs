@@ -179,11 +179,11 @@ You'll need the Bucket Path and Google Cloud Platform Project ID you received fr
 
     Add video on the data transfer
 
-1. Create a new Bookmark
-2. Enter `Project ID` you recieved from Via Scientific Support
-3. Enter the `Path`
-4. Close create a Bookmark window
-5. Open the newly create Googel Storage Bookmark
+1. Create a new Bookmark, this will take you to the Bookmark configuration window
+2. Enter `Project ID` you received from Via Scientific Support
+3. Enter the `Path` you received from Via Scientific Support
+4. Close the Bookmark configuration window
+5. Open the newly create Google Storage Bookmark
 6. Organize data as you want (Create folders, move files, etc...)
 7. Right click or Drag and drop files to upload
 
