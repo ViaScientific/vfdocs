@@ -24,20 +24,66 @@ For users who want to use Via Foundry public cloud, but want a greater control o
 
     When uploading data from your local machine to the cloud, it's crucial to organize your data effectively. This will make it much easier to locate your files when you need them.
 
+!!! Warning "Avoid invalid paths"
+
+    Certain characters are allowed locally, i.e. `/` in Windows, but are problematic in cloud environments. Avoid: `/`. white-spaces, `:`, `"`, `<`, `>`, or `|`, Cloud platform documentation for characters to avoid:
+
+    * [Google Cloud Storage objects](https://cloud.google.com/storage/docs/objects#naming) in paths
+    * [Amazon S3 object naming](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html)
+
 ### Prerequisites
 
 #### Contact Support
 
 Before you begin, contact Via Scientific support at `support@viascientific.com` to obtain:  
 
-* **Bucket Name** You'll need this to know where to upload data.
-* **AWS Credentials** AWS Access Key and Secret Key. We'll use these later to upload.
+* **Bucket Name/Path** You'll need this to know where to upload data.
+* **AWS Credentials** (AWS Access Key and Secret Key) for AWS data transfers.
 
-### Using CLI using `aws cli`
+### Google Cloud CLI Step-by-Step
+
+Install the : Download and install the Google Cloud SDK (`gcloud`) by following the instructions [here](https://cloud.google.com/sdk/docs/install).
+
+1. **Authenticate with Google Cloud**:
+     * After installation, authenticate with your Google account:
+     ```bash
+     gcloud auth login
+     ```
+2. **Storage bucket**:
+     * [Contact support](mailto:support@viascientific.com) for the bucket path
+
+3. **Uploading a Single File**:
+
+      * To upload a single file to Google Cloud Storage, use the following command:
+
+      ```bash
+      gcloud storage cp /local/path/to/your/file.txt gs://<your-bucket-name>/
+      ```
+
+      * Example:
+      ```bash
+      gcloud storage cp /home/user/data/myfile.txt gs://my-storage-bucket/
+      ```
+
+      This command uploads the `myfile.txt` from your local system to the Google Cloud Storage bucket named `my-storage-bucket`.
+
+4. **Uploading a Folder**:
+
+      * To upload a folder (including all files and subdirectories within it), use the `-r` flag for a recursive upload:
+      ```bash
+      gcloud storage cp -r /local/path/to/your/folder gs://<your-bucket-name>/
+      ```
+
+      * Example:
+      ```bash
+      gcloud storage cp -r /home/user/data/myfolder gs://my-storage-bucket/
+      ```
+
+      This command uploads the entire contents of the `myfolder` directory (including all files and subdirectories) to the Google Cloud Storage bucket `my-storage-bucket`.
+
+### AWS cli Step-by-Step
 
 Install AWS CLI following the instructions [here](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
-
-#### Step-by-Step
 
 1. **Configure AWS CLI**:
      * Open your terminal or command prompt.
@@ -87,7 +133,20 @@ Cyberduck is an open-source file transfer client for Mac and Windows that suppor
 
 You can use Cyberduck to upload data to Via Foundry. This walkthrough assumes a Mac installation, but similar steps apply to Windows installation.
 
-#### Step-by-Step
+#### Google Cloud Storage Step-by-Step
+
+You'll need the Bucket Path you received from support. Download Cyberduck for your platform. Follow the instructions [here](https://cyberduck.io/download/)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NQsFhw_-2QU?si=yAJFXTvW0W50oa6W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+1. Create a new Bookmark, this will take you to the Bookmark configuration window
+2. Enter the `Path` you received from Via Scientific Support
+3. Close the Bookmark configuration window
+4. Open the newly create Google Storage Bookmark
+5. Organize data as you want (Create folders, move files, etc...)
+6. Right click or Drag and drop files to upload
+
+#### AWS Step-by-Step
 
 You'll need the **Bucket Name** and **AWS Credentials** (Access Key and Secret Key) you received from support. Download Cyberduck for your platform. Follow the instructions [here](https://cyberduck.io/download/)
 
