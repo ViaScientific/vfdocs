@@ -39,7 +39,6 @@ Before you begin, contact Via Scientific support at `support@viascientific.com` 
 
 * **Bucket Name/Path** You'll need this to know where to upload data.
 * **AWS Credentials** (AWS Access Key and Secret Key) for AWS data transfers.
-* **Project ID** Unique identifier for the Google Cloud project
 
 ### Google Cloud CLI Step-by-Step
 
@@ -51,7 +50,7 @@ Install the : Download and install the Google Cloud SDK (`gcloud`) by following 
      gcloud auth login
      ```
 2. **Storage bucket**:
-     * [Contact support](mailto:support@viascientific.com) for the project ID
+     * [Contact support](mailto:support@viascientific.com) for the bucket path
 
 3. **Uploading a Single File**:
 
@@ -136,17 +135,16 @@ You can use Cyberduck to upload data to Via Foundry. This walkthrough assumes a 
 
 #### Google Cloud Storage Step-by-Step
 
-You'll need the Bucket Path and Google Cloud Platform Project ID you received from support. Download Cyberduck for your platform. Follow the instructions [here](https://cyberduck.io/download/)
+You'll need the Bucket Path you received from support. Download Cyberduck for your platform. Follow the instructions [here](https://cyberduck.io/download/)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/NQsFhw_-2QU?si=yAJFXTvW0W50oa6W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 1. Create a new Bookmark, this will take you to the Bookmark configuration window
-2. Enter `Project ID` you received from Via Scientific Support
-3. Enter the `Path` you received from Via Scientific Support
-4. Close the Bookmark configuration window
-5. Open the newly create Google Storage Bookmark
-6. Organize data as you want (Create folders, move files, etc...)
-7. Right click or Drag and drop files to upload
+2. Enter the `Path` you received from Via Scientific Support
+3. Close the Bookmark configuration window
+4. Open the newly create Google Storage Bookmark
+5. Organize data as you want (Create folders, move files, etc...)
+6. Right click or Drag and drop files to upload
 
 #### AWS Step-by-Step
 
