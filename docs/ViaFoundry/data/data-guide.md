@@ -18,6 +18,30 @@ Want to get started with Foundry xCloud? Reach out to our support team at <suppo
 
 For users who want to use Via Foundry public cloud, but want a greater control of data we allow you connect your private S3 or Google bucket to Via Foundry [vCloud](https://www.viascientific.com/products/) product. Reach out to support to get started, `support@viascientific.com`.
 
+
+### Accessing Your Google Cloud Storage Bucket via Web
+
+You can easily manage your Google Cloud Storage bucket through a web interface by accessing a URL in your browser. This allows you to view, upload, and manage the contents of your bucket without needing to use the command line.
+
+To access your bucket, use the following URL format, replacing `<bucket name>` with the name of your bucket:
+
+```
+https://storage.cloud.google.com/<bucket name>/
+```
+
+For example, if your bucket is named `viafoundry-clt-demo-bucket`, you can access it by navigating to:
+
+```
+https://storage.cloud.google.com/viafoundry-clt-demo-bucket/
+```
+
+Once there, you'll have full access to the contents of your bucket and can manage your data directly through the Google Cloud Storage web interface:
+
+<figure markdown="span">
+    ![image](../../images/gcp-bucket-web.png){ width="650" }
+    <figcaption>Google Cloud Storage web interface</figcaption>
+</figure>
+
 ## Upload from your computer
 
 !!! tip
