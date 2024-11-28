@@ -139,6 +139,50 @@ SSO_USER_INFO_URL="https://your_domain/vsso/api/v1/users/info"
 All of the configuration directive details can be found [here](../admin-configuration/#vmetavportalvfoundry-config-file-details)
 
 
+## Configuration of Keycloak:
+
+If you're integrating OKTA for user authentication, you can use the SAML method. Below are the URLs and settings you'll need to input in your OKTA configuration:
+
+```
+Client ID: viafoundry.{hostname}
+Name: viafoundry.{hostname}
+Root URL: https://viafoundry.{hostname}/vsso
+Home URL: https://viafoundry.{hostname}/vsso
+Valid redirect URIs: https://viafoundry.{hostname}/vsso/auth/saml/callback
+Name ID format: email
+Force name ID format: on
+Force POST binding: on
+Include AuthnStatement: on
+Sign documents: on
+Sign assertions on
+Signature algorithm: RSA_SHA256
+SAML signature key name: NONE
+Canonicalization method: EXCLUSIVE_WITH_COMMENTS
+```
+
+Make sure to replace `{hostname}` with your actual server's hostname. 
+
+### Sending User Attributes
+
+In your OKTA setup, configure it to send the user's first name (`firstName`), last name (`lastName`) and institute (`institute`) as attibutes.
+
+### Metadata File
+
+Download the `metadata.xml` file from Keycloak (e.g. https:/keycloak-yourhostname/realms/master/protocol/saml/descriptor) and place it in the specified location `SSO_SAML_METADATA` (e.g. /export/vsso/certs/metadata.xml).
+
+### Configuration File for Keycloak
+
+Finally, update your configuration file located at `/export/vsso/config.env` with the following parameters:
+
+```
+OKTA_SAML_LOGIN=true
+SSO_ISSUER=viafoundry.{hostname}
+SSO_SAML_METADATA=/export/vsso/certs/metadata.xml
+SSO_SAML_DESTINATION_URL=https://viafoundry.{hostname}
+```
+
+Here, replace `{hostname}` with your server's hostname.
+
 ## Configuration of OKTA:
 
 If you're integrating OKTA for user authentication, you can use the SAML method. Below are the URLs and settings you'll need to input in your OKTA configuration:
@@ -156,7 +200,7 @@ Make sure to replace `{hostname}` with your actual server's hostname. `{ViaFound
 
 ### Sending User Attributes
 
-In your OKTA setup, configure it to send the user's first name (`firstName`) and last name (`lastName`) when they log in. Here is the example: 
+In your OKTA setup, configure it to send the user's first name (`firstName`), last name (`lastName`) and institute (`institute`) as attibutes. Here is the example: 
 
 
 ![image](../images/okta_attributes.png)
