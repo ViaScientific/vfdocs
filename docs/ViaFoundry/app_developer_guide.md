@@ -35,7 +35,7 @@ When building a docker, it is best to aim for a minimalistic approach - only inc
 
 ```
 FROM rocker/shiny:4.3.0
-LABEL author="zach@viascientific.com" description="Docker image containing all requirements for the Via Scientific GSEA explorer App"
+LABEL author="support@viascientific.com" description="Docker image containing all requirements for the Via Scientific GSEA explorer App"
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
