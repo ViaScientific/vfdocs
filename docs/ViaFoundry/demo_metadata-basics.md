@@ -8,9 +8,9 @@ Please go to <https://www.viafoundry.com> and login into your account. If you ha
 
 ## Creating Project and Adding Metadata Tracker
 
-Once logged in, click on the `Projects` section at the top menu and click `Add a New Project` button. Enter your project name and click OK. This is the place to configure your project. Click on the `Add Metadata Tracker` icon to add a new `Metadata` tab into your project. 
+Once logged in, click on the `Projects` section at the top menu and click `Add a New Project` button. Enter your project name and click OK. This is the place to configure your project. Click on the `Settings` tab and click on `Create Metadata Tracker` button to add `Metadata` tab into your project. 
 
-   ![image](../metadata_geo_images/geo1.png)
+   ![image](../metadata_geo_images/create_metadata.png)
 
 Click on the `Metadata` tab. This window is the `Data View` section of the Metadata tracker where you will insert your data. Before inserting new data, we need to configure the database structure. To start configuring click on the "Configure Metadata" button at the right. 
 
