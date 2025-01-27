@@ -1,0 +1,1644 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Via Foundry Team">
+      
+      
+      
+        <link rel="prev" href="../demo_metadata-geo/">
+      
+      
+        <link rel="next" href="../demo_run_submission_api/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.32">
+    
+    
+      
+        <title>Metadata Portal - Via Foundry Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#expected-learning-outcome" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Via Foundry Documentation" class="md-header__button md-logo" aria-label="Via Foundry Documentation" data-md-component="logo">
+      
+  <img src="../../images/via_icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Via Foundry Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Metadata Portal
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Via Foundry Documentation" class="md-nav__button md-logo" aria-label="Via Foundry Documentation" data-md-component="logo">
+      
+  <img src="../../images/via_icon.png" alt="logo">
+
+    </a>
+    Via Foundry Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Platform Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipeline_example/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pipeline Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How To Cite Us
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get_faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../news/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    News
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_rna-seq_tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running RNA-Seq Pipeline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_single_cell_rna-seq_tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running Cellranger Pipeline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_developer_tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Developer Tutorial - Creating Pipeline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_metadata-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metadata Tracker - Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_metadata-geo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metadata Tracker - NCBI-GEO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Metadata Portal
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Metadata Portal
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#expected-learning-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expected learning outcome
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before you start
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-metadata-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Metadata Portal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-metadata-tracker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Metadata Tracker
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#portal-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Portal Configuration
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_run_submission_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run Submission through API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/data-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    App Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metadata_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metadata Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../profile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profile Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Developer Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Developer Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipeline_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pipeline Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Process Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app_developer_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_developer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions for Developers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    App Library
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            App Library
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gsea_explorer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GSEA Explorer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network_explorer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Explorer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Administrator Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Administrator Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-pipeline-testing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Pipeline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-installation-apps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    App Section
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-browser-support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Browser Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#expected-learning-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expected learning outcome
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before you start
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-metadata-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Metadata Portal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-metadata-tracker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Metadata Tracker
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#portal-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Portal Configuration
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Metadata Portal</h1>
+
+<div><h2 id="expected-learning-outcome">Expected learning outcome</h2>
+<p>To understand the basics of Metadata Portal.</p>
+<h2 id="before-you-start">Before you start</h2>
+<p>Please go to <a href="https://www.viafoundry.com">https://www.viafoundry.com</a> and login into your account. If you have an issue about login, please let us know about it (support@viascientific.com). We will set an account for you.</p>
+<h2 id="adding-metadata-portal">Adding Metadata Portal</h2>
+<p>Once logged in, first complete <a href="../demo_metadata-basics/">Metadata Tracker - Basics Tutorial</a>. After that Click on the <code>Add Metadata Portal</code> icon to add a new <code>Portal</code> tab into your project. </p>
+<p><img alt="image" src="../../metadata_portal_images/portal1.png"></p>
+<p>To visualize Metadata information, we need to define two API routes in the Metadata Tracker Section. To start configuring API routes click on the <code>Metadata</code> tab and "Configure Metadata" button at the right. </p>
+<p><img alt="image" src="../../metadata_portal_images/portal2.png"></p>
+<h2 id="configuring-metadata-tracker">Configuring Metadata Tracker</h2>
+<ol>
+<li>In this configuration section, click on <code>API Config</code> tab and Click Insert Button.</li>
+<li>
+<p>Add Samples Route and its Required Fields</p>
+<ul>
+<li><strong>Target Collection:</strong> sample</li>
+<li><strong>Route Description:</strong> detailed</li>
+<li><strong>Config:</strong> Click <strong>New Collection Group</strong>, Select <code>Samples</code> Collection and add the following required fields. You might choose to add other fields to visualize in Portal.</li>
+</ul>
+<p><strong>Collection: Samples</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Field</th>
+<th style="text-align: center;">Rename</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">_id  (required)</td>
+<td style="text-align: center;">_id</td>
+</tr>
+<tr>
+<td style="text-align: center;">creationDate (required)</td>
+<td style="text-align: center;">date_created</td>
+</tr>
+<tr>
+<td style="text-align: center;">Name  (required)</td>
+<td style="text-align: center;">name</td>
+</tr>
+<tr>
+<td style="text-align: center;">owner</td>
+<td style="text-align: center;">owner</td>
+</tr>
+<tr>
+<td style="text-align: center;">Assay Type</td>
+<td style="text-align: center;">assay_type</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Click <code>New Collection Group</code>, Select <code>Biosamples</code> Collection and add the following fields.</li>
+</ul>
+<p><strong>Collection: Biosamples</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Field</th>
+<th style="text-align: center;">Rename</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Name (required)</td>
+<td style="text-align: center;">biosample_name</td>
+</tr>
+<tr>
+<td style="text-align: center;">Organism</td>
+<td style="text-align: center;">organism</td>
+</tr>
+<tr>
+<td style="text-align: center;">Tissue</td>
+<td style="text-align: center;">tissue</td>
+</tr>
+<tr>
+<td style="text-align: center;">Treatment</td>
+<td style="text-align: center;">treatment</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Click <code>New Collection Group</code>, Select <code>Series</code> Collection and add the following fields.</li>
+</ul>
+<p><strong>Collection: Series</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Field</th>
+<th style="text-align: center;">Rename</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Name (required)</td>
+<td style="text-align: center;">series</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Click <code>Save API config</code> button to create <code>/api/v1/projectid/${project_id}/data/sample/format/detailed</code> API route.</p>
+</li>
+<li>
+<p>Add File Route and it's Required Fields</p>
+<ul>
+<li><strong>Target Collection:</strong> file</li>
+<li><strong>Route Description:</strong> summary</li>
+<li><strong>Config:</strong> Click <code>New Collection Group</code> and select <code>Files</code> Collection and add the following required fields.</li>
+</ul>
+<p><strong>Collection: Files</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Field</th>
+<th style="text-align: center;">Rename</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">_id (required)</td>
+<td style="text-align: center;">_id</td>
+</tr>
+<tr>
+<td style="text-align: center;">Name</td>
+<td style="text-align: center;">name</td>
+</tr>
+<tr>
+<td style="text-align: center;">owner</td>
+<td style="text-align: center;">owner</td>
+</tr>
+<tr>
+<td style="text-align: center;">Used Files</td>
+<td style="text-align: center;">file_used</td>
+</tr>
+<tr>
+<td style="text-align: center;">Directory</td>
+<td style="text-align: center;">file_dir</td>
+</tr>
+<tr>
+<td style="text-align: center;">Archive Directory</td>
+<td style="text-align: center;">archive_dir</td>
+</tr>
+<tr>
+<td style="text-align: center;">S3 Archive Directory</td>
+<td style="text-align: center;">s3_archive_dir</td>
+</tr>
+<tr>
+<td style="text-align: center;">Google Storage Archive Directory</td>
+<td style="text-align: center;">gs_archive_dir</td>
+</tr>
+<tr>
+<td style="text-align: center;">Collection Type</td>
+<td style="text-align: center;">collection_type</td>
+</tr>
+<tr>
+<td style="text-align: center;">File Type</td>
+<td style="text-align: center;">file_type</td>
+</tr>
+<tr>
+<td style="text-align: center;">creationDate</td>
+<td style="text-align: center;">date_created</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Click <strong>New Collection Group</strong>, Select <code>Samples</code> Collection and add the following fields.</li>
+</ul>
+<p><strong>Collection: Samples</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Field</th>
+<th style="text-align: center;">Rename</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">_id (required)</td>
+<td style="text-align: center;">sample_id</td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong>New Collection Group</strong>, Select <code>Series</code> Collection and add the following fields.</p>
+<p><strong>Collection: Series</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Field</th>
+<th style="text-align: center;">Rename</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Name</td>
+<td style="text-align: center;">collection_name  (required)</td>
+</tr>
+<tr>
+<td style="text-align: center;">Name</td>
+<td style="text-align: center;">project_name (required)</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Click <code>Save API config</code> button to create <code>/api/v1/projectid/${project_id}/data/file/format/summary</code> API route.</p>
+</li>
+</ol>
+<h2 id="portal-configuration">Portal Configuration</h2>
+<p>To visualize the Metadata in Portal, you need to configure the retrieved API data from Metadata Tracker. </p>
+<p><img alt="image" src="../../metadata_portal_images/portal-dashboard.png"></p>
+<ol>
+<li>Click the <code>Configure Portal</code> button at the top right and then click the <code>Add Config</code> button</li>
+<li><strong>Choose a project</strong></li>
+<li><strong>Choose Sample API route:</strong> e.g. (<code>/api/v1/projectid/${project_id}/data/sample/format/detailed</code>)</li>
+<li><strong>Graph Settings:</strong> Choose three fields and labels that you want to visualize on the three bar graphs.</li>
+<li>
+<p><strong>Column Settings:</strong></p>
+<ul>
+<li><strong>Column Label:</strong> You might rename the received data column name here. </li>
+<li><strong>Main Table Column:</strong> Check the checkbox if you want to show the data in the main Portal table.</li>
+<li><strong>Visible on Load:</strong> Check the checkbox if you want to show column data on the initial load of the page.</li>
+<li><strong>Allow Toggle:</strong> Add field into Toggle section so user might show/hide that column.</li>
+<li><strong>Show in the sidebar:</strong> Show field in the left sidebar.</li>
+</ul>
+</li>
+<li>
+<p><strong>Column Order:</strong> You might change the Main Portal column order here by drag and drop.</p>
+</li>
+</ol>
+<p><img alt="image" src="../../metadata_portal_images/portal-config.png"></p>
+<p>Congratulations! You have configured a metadata portal for your project!</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2023 by Via Scientific
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.471ce7a9.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2372 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Via Foundry Team">
+      
+      
+      
+        <link rel="prev" href="../admin-installation/">
+      
+      
+        <link rel="next" href="../admin-pipeline-testing/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.32">
+    
+    
+      
+        <title>Configuration - Via Foundry Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#configuration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Via Foundry Documentation" class="md-header__button md-logo" aria-label="Via Foundry Documentation" data-md-component="logo">
+      
+  <img src="../../images/via_icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Via Foundry Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Configuration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Via Foundry Documentation" class="md-nav__button md-logo" aria-label="Via Foundry Documentation" data-md-component="logo">
+      
+  <img src="../../images/via_icon.png" alt="logo">
+
+    </a>
+    Via Foundry Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Platform Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipeline_example/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pipeline Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How To Cite Us
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get_faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../news/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    News
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_rna-seq_tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running RNA-Seq Pipeline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_single_cell_rna-seq_tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running Cellranger Pipeline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_developer_tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Developer Tutorial - Creating Pipeline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_metadata-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metadata Tracker - Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_metadata-geo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metadata Tracker - NCBI-GEO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_metadata-portal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metadata Portal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo_run_submission_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run Submission through API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/data-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    App Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metadata_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metadata Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../profile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profile Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Developer Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Developer Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipeline_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pipeline Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Process Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app_developer_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_developer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions for Developers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    App Library
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            App Library
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gsea_explorer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GSEA Explorer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network_explorer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Explorer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Administrator Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Administrator Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-amazon-rdscloud-sql-for-mysql-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration of Amazon RDS/Cloud SQL for MySQL (optional):
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-vpipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration of Vpipe:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-vsso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration of Vsso:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-vmeta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration of Vmeta:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-vfoundry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration of Vfoundry:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-vportal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration of Vportal:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-keycloak" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration of Keycloak:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration of Keycloak:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sending-user-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sending User Attributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-file-for-keycloak" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration File for Keycloak
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-okta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration of OKTA:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration of OKTA:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sending-user-attributes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sending User Attributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#foundry-logo-for-okta-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Foundry Logo for OKTA dashboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-file_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-file-for-okta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration File for OKTA
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-microsoft-active-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration of Microsoft Active Directory:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration of Microsoft Active Directory:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metadata-file_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-file-for-microsoft-active-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration File for Microsoft Active Directory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apache-configuration-for-the-foundry-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apache Configuration for the Foundry Server:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#after-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      After Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Configuration:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Configuration:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vpipe-config-file-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vpipe Config File Details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmetavportalvfoundry-config-file-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vmeta/Vportal/Vfoundry Config File Details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vsso-config-file-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vsso Config File Details
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-pipeline-testing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Pipeline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-installation-apps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    App Section
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-browser-support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Browser Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-amazon-rdscloud-sql-for-mysql-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration of Amazon RDS/Cloud SQL for MySQL (optional):
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-vpipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration of Vpipe:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-vsso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration of Vsso:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-vmeta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration of Vmeta:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-vfoundry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration of Vfoundry:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-vportal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration of Vportal:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-keycloak" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration of Keycloak:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration of Keycloak:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sending-user-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sending User Attributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-file-for-keycloak" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration File for Keycloak
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-okta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration of OKTA:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration of OKTA:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sending-user-attributes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sending User Attributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#foundry-logo-for-okta-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Foundry Logo for OKTA dashboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-file_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-file-for-okta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration File for OKTA
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-microsoft-active-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration of Microsoft Active Directory:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration of Microsoft Active Directory:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metadata-file_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-file-for-microsoft-active-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration File for Microsoft Active Directory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apache-configuration-for-the-foundry-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apache Configuration for the Foundry Server:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#after-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      After Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Configuration:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Configuration:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vpipe-config-file-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vpipe Config File Details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmetavportalvfoundry-config-file-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vmeta/Vportal/Vfoundry Config File Details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vsso-config-file-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vsso Config File Details
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div><h1 id="configuration">Configuration</h1>
+<h2 id="configuration-of-amazon-rdscloud-sql-for-mysql-optional">Configuration of Amazon RDS/Cloud SQL for MySQL (optional):</h2>
+<p>Create <code>vpipe</code> database and load initial database file with following commands:</p>
+<div class="highlight"><pre><span></span><code>mysql -h hostname -u root -p -e 'CREATE DATABASE IF NOT EXISTS vpipe;'
+mysql -h hostname -u root -p vpipe &lt; /export/vpipe/db/db.sql
+mysql -h hostname -u root -p -e "CREATE USER 'viafoundry'@'%' IDENTIFIED BY 'change_password';"
+mysql -h hostname -u root -p -e "GRANT ALL PRIVILEGES ON vpipe.* TO 'viafoundry'@'%';"
+</code></pre></div>
+<p>After that please update DBUSER, DBPASS, DBHOST and DBPORT parameters in <code>/export/vpipe/config/.sec</code> file  and then execute the following command:</p>
+<div class="highlight"><pre><span></span><code>cd /export/vpipe/scripts &amp;&amp; python updateDN.py
+</code></pre></div>
+<h2 id="configuration-of-vpipe">Configuration of Vpipe:</h2>
+<p>Vpipe configuration file found in /export/vpipe/config/.sec file.</p>
+<p>By default, localhost:8080 is used for domain name. Please use static IP address or domain name and please update BASE_PATH and PUBWEB_URL as follows:</p>
+<div class="highlight"><pre><span></span><code>BASE_PATH=http://localhost:8080/vpipe
+PUBWEB_URL=http://localhost:8080/vpipe/tmp/pub
+</code></pre></div>
+<p>to</p>
+<div class="highlight"><pre><span></span><code>BASE_PATH=https://your_domain/vpipe
+PUBWEB_URL=https://your_domain/vpipe/tmp/pub
+</code></pre></div>
+<p>Other important parameters:
+</p><div class="highlight"><pre><span></span><code>[CONFIG]
+AUTH_RUN_FILES=true
+AUTH_RUN_FILES_ALLOWED_DOMAINS=your_domain
+</code></pre></div>
+<p>All of the configuration directive details can be found <a href="../admin-configuration/#vpipe-config-file-details">here</a></p>
+<p><strong>Note:</strong> If you were using Standalone Vpipe (or DolphinNext) before, please check the SALT and PEPPER config parameters in /export/vpipe/config/.sec file. These values should be the same for /export/vsso/config.env. So, you need to update /export/vsso/config.env with Vpipe parameters.</p>
+<h2 id="configuration-of-vsso">Configuration of Vsso:</h2>
+<p>Vmeta configuration file found in /export/vsso/config.env.</p>
+<p>By default, localhost:3000 is used for domain name. Please use static IP address or domain name and please update BASE_URL as follows:</p>
+<div class="highlight"><pre><span></span><code>BASE_URL=http://localhost:3000/vsso
+</code></pre></div>
+<p>to</p>
+<div class="highlight"><pre><span></span><code>BASE_URL=https://your_domain/vsso
+</code></pre></div>
+<p>All of the configuration directive details can be found <a href="../admin-configuration/#vsso-config-file-details">here</a></p>
+<h2 id="configuration-of-vmeta">Configuration of Vmeta:</h2>
+<p>Vmeta configuration file found in /export/vmeta/config.env.</p>
+<p>By default, localhost:4000 is used for domain name. Please use static IP address or domain name and please update BASE_URL, SSO_REDIRECT_URL, SSO_USER_INFO_URL and SSO_URL as follows:</p>
+<div class="highlight"><pre><span></span><code>BASE_URL=http://localhost:4000/vmeta
+SSO_URL=http://localhost:3000/vsso
+SSO_REDIRECT_URL="http://localhost:4000/vmeta/receivetoken"
+SSO_USER_INFO_URL="http://localhost:3000/vsso/api/v1/users/info"
+</code></pre></div>
+<p>to</p>
+<div class="highlight"><pre><span></span><code>BASE_URL=https://your_domain/vmeta
+SSO_URL=https://your_domain/vsso
+SSO_REDIRECT_URL="https://your_domain/vmeta/receivetoken"
+SSO_USER_INFO_URL="https://your_domain/vsso/api/v1/users/info"
+</code></pre></div>
+<p>All of the configuration directive details can be found <a href="../admin-configuration/#vmetavportalvfoundry-config-file-details">here</a></p>
+<h2 id="configuration-of-vfoundry">Configuration of Vfoundry:</h2>
+<p>Vfoundry configuration file found in /export/vfoundry/config.env.</p>
+<p>By default, localhost:9000 is used for domain name. Please use static IP address or domain name and please update BASE_URL, SSO_REDIRECT_URL, SSO_USER_INFO_URL and SSO_URL as follows:</p>
+<div class="highlight"><pre><span></span><code>BASE_URL=http://localhost:9000
+SSO_URL=http://localhost:3000/vsso
+SSO_REDIRECT_URL="http://localhost:9000/receivetoken"
+SSO_USER_INFO_URL="http://localhost:3000/vsso/api/v1/users/info"
+</code></pre></div>
+<p>to</p>
+<div class="highlight"><pre><span></span><code>BASE_URL=https://your_domain
+SSO_URL=https://your_domain/vsso
+SSO_REDIRECT_URL="https://your_domain/receivetoken"
+SSO_USER_INFO_URL="https://your_domain/vsso/api/v1/users/info"
+</code></pre></div>
+<p>All of the configuration directive details can be found <a href="../admin-configuration/#vmetavportalvfoundry-config-file-details">here</a></p>
+<h2 id="configuration-of-vportal">Configuration of Vportal:</h2>
+<p>Vportal configuration file found in /export/vportal/config.env.</p>
+<p>By default, localhost:8000 is used for domain name. Please use static IP address or domain name and please update BASE_URL, SSO_REDIRECT_URL, SSO_USER_INFO_URL and SSO_URL as follows:</p>
+<div class="highlight"><pre><span></span><code>BASE_URL=http://localhost:8000
+SSO_URL=http://localhost:3000/vsso
+SSO_REDIRECT_URL="http://localhost:8000/receivetoken"
+SSO_USER_INFO_URL="http://localhost:3000/vsso/api/v1/users/info"
+</code></pre></div>
+<p>to</p>
+<div class="highlight"><pre><span></span><code>BASE_URL=https://your_domain/vportal
+SSO_URL=https://your_domain/vsso
+SSO_REDIRECT_URL="https://your_domain/vportal/receivetoken"
+SSO_USER_INFO_URL="https://your_domain/vsso/api/v1/users/info"
+</code></pre></div>
+<p>All of the configuration directive details can be found <a href="../admin-configuration/#vmetavportalvfoundry-config-file-details">here</a></p>
+<h2 id="configuration-of-keycloak">Configuration of Keycloak:</h2>
+<p>If you're integrating OKTA for user authentication, you can use the SAML method. Below are the URLs and settings you'll need to input in your OKTA configuration:</p>
+<div class="highlight"><pre><span></span><code>Client ID: viafoundry.{hostname}
+Name: viafoundry.{hostname}
+Root URL: https://viafoundry.{hostname}/vsso
+Home URL: https://viafoundry.{hostname}/vsso
+Valid redirect URIs: https://viafoundry.{hostname}/vsso/auth/saml/callback
+Name ID format: email
+Force name ID format: on
+Force POST binding: on
+Include AuthnStatement: on
+Sign documents: on
+Sign assertions on
+Signature algorithm: RSA_SHA256
+SAML signature key name: NONE
+Canonicalization method: EXCLUSIVE_WITH_COMMENTS
+</code></pre></div>
+<p>Make sure to replace <code>{hostname}</code> with your actual server's hostname. </p>
+<h3 id="sending-user-attributes">Sending User Attributes</h3>
+<p>In your OKTA setup, configure it to send the user's first name (<code>firstName</code>), last name (<code>lastName</code>) and institute (<code>institute</code>) as attibutes.</p>
+<h3 id="metadata-file">Metadata File</h3>
+<p>Download the <code>metadata.xml</code> file from Keycloak (e.g. https:/keycloak-yourhostname/realms/master/protocol/saml/descriptor) and place it in the specified location <code>SSO_SAML_METADATA</code> (e.g. /export/vsso/certs/metadata.xml).</p>
+<h3 id="configuration-file-for-keycloak">Configuration File for Keycloak</h3>
+<p>Finally, update your configuration file located at <code>/export/vsso/config.env</code> with the following parameters:</p>
+<div class="highlight"><pre><span></span><code>OKTA_SAML_LOGIN=true
+SSO_ISSUER=viafoundry.{hostname}
+SSO_SAML_METADATA=/export/vsso/certs/metadata.xml
+SSO_SAML_DESTINATION_URL=https://viafoundry.{hostname}
+</code></pre></div>
+<p>Here, replace <code>{hostname}</code> with your server's hostname.</p>
+<h2 id="configuration-of-okta">Configuration of OKTA:</h2>
+<p>If you're integrating OKTA for user authentication, you can use the SAML method. Below are the URLs and settings you'll need to input in your OKTA configuration:</p>
+<div class="highlight"><pre><span></span><code>Single Sign-On URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
+Recipient URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
+Destination URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
+Audience Restriction: viafoundry-{ViaFoundryID}
+Default Relay State: https://viafoundry.{hostname}/vsso/auth/saml
+SAML Issuer ID: http://www.okta.com/${org.externalKey}
+</code></pre></div>
+<p>Make sure to replace <code>{hostname}</code> with your actual server's hostname. <code>{ViaFoundryID}</code> value will be sent by Via Scientific Team.</p>
+<h3 id="sending-user-attributes_1">Sending User Attributes</h3>
+<p>In your OKTA setup, configure it to send the user's first name (<code>firstName</code>), last name (<code>lastName</code>) and institute (<code>institute</code>) as attibutes. Here is the example: </p>
+<p><img alt="image" src="../../images/okta_attributes.png"></p>
+<h3 id="foundry-logo-for-okta-dashboard">Foundry Logo for OKTA dashboard</h3>
+<p>In your OKTA setup, you can use following image for app logo.</p>
+<p><img alt="image" src="../../images/ViaFoundry_logo.png" width="30%"></p>
+<h3 id="metadata-file_1">Metadata File</h3>
+<p>Download the <code>metadata.xml</code> file from OKTA and place it in the specified location <code>SSO_SAML_METADATA</code>.</p>
+<h3 id="configuration-file-for-okta">Configuration File for OKTA</h3>
+<p>Finally, update your configuration file located at <code>/export/vsso/config.env</code> with the following parameters:</p>
+<div class="highlight"><pre><span></span><code>OKTA_SAML_LOGIN=true
+SSO_ISSUER=viafoundry-{ViaFoundryID}
+SSO_SAML_METADATA=/export/vsso/certs/metadata.xml
+SSO_SAML_DESTINATION_URL=https://viafoundry.{hostname}
+</code></pre></div>
+<p>Here, replace <code>{hostname}</code> with your server's hostname and <code>{viafoundryID}</code> with the ID that is sent by Via Scientific Team.</p>
+<h2 id="configuration-of-microsoft-active-directory">Configuration of Microsoft Active Directory:</h2>
+<p>If you're integrating Microsoft Active Directory for user authentication, you can use the SAML method. Below are the URLs and settings you'll need to input in your Microsoft Active Directory configuration:</p>
+<div class="highlight"><pre><span></span><code>Indentifier(Entity ID): https://viafoundry.{hostname}/vsso/auth/saml/callback
+Reply URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
+Sign On URL: https://viafoundry.{hostname}/vsso/auth/saml/callback
+Relay State (Optional): https://viafoundry.{hostname}
+Logout Url (Optional):
+</code></pre></div>
+<p>Make sure to replace <code>{hostname}</code> with your actual server's hostname.</p>
+<h3 id="metadata-file_2">Metadata File</h3>
+<p>Download the <code>metadata.xml</code> file from Microsoft Entra and place it in the specified location <code>SSO_SAML_METADATA</code>.</p>
+<h3 id="configuration-file-for-microsoft-active-directory">Configuration File for Microsoft Active Directory</h3>
+<p>Finally, update your configuration file located at <code>/export/vsso/config.env</code> with the following parameters:</p>
+<div class="highlight"><pre><span></span><code>OKTA_SAML_LOGIN=true
+SSO_ISSUER=https://viafoundry.{hostname}/vsso/auth/saml/callback
+SSO_SAML_METADATA=/export/vsso/certs/metadata.xml
+SSO_SAML_DESTINATION_URL=https://viafoundry.{hostname}
+SSO_SAML_WANT_AUTHN_RESPONSE_SIGNED=false
+</code></pre></div>
+<h2 id="apache-configuration-for-the-foundry-server">Apache Configuration for the Foundry Server:</h2>
+<p>To configure Apache, you need to enable the mod_ssl and mod_proxy modules. Please follow the instructions below:</p>
+<ol>
+<li>
+<p>Create certificate files (SSLCertificateFile and SSLCertificateKeyFile) in PEM format. SSLCertificateChainFile file is optional.</p>
+</li>
+<li>
+<p>Save the following text into /etc/apache2/sites-enabled/viafoundry.conf file
+</p><div class="highlight"><pre><span></span><code>&lt;IfModule mod_ssl.c&gt;
+    &lt;VirtualHost *:443&gt;
+        ServerAdmin Your_Email
+        ServerName Your_Domain.com
+        ServerAlias Your_Domain.com
+        RewriteEngine On
+
+        # Some rewrite rules in this file were disabled on your HTTPS site,
+        # because they have the potential to create redirection loops.
+        SSLCertificateFile /etc/letsencrypt/live/Your_Domain.com/cert.pem
+        SSLCertificateKeyFile /etc/letsencrypt/live/Your_Domain.com/privkey.pem
+        SSLCertificateChainFile /etc/letsencrypt/live/Your_Domain.com/chain.pem
+        SSLProxyEngine on
+
+        &lt;Proxy *&gt;
+            Allow from localhost
+        &lt;/Proxy&gt;
+
+        ProxyPass /vtunnel http://localhost:6000/vtunnel
+        ProxyPassReverse /vtunnel http://localhost:6000/vtunnel
+        ProxyPass / http://localhost:8080/
+        ProxyPassReverse / http://localhost:8080/
+
+        ProxyRequests Off
+
+        CustomLog /var/log/apache2/access_vf.log "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
+    &lt;/VirtualHost&gt;
+
+
+    ErrorLog /var/log/apache2/error_vf.log
+&lt;/IfModule&gt;
+</code></pre></div>
+</li>
+<li>
+<p>Enable mod_ssl: You need to make sure that the mod_ssl module is enabled in your Apache configuration. This module provides support for SSL/TLS encryption.
+    Enable mod_proxy: You also need to enable the mod_proxy module in your Apache configuration. This module allows Apache to act as a proxy server.
+</p><div class="highlight"><pre><span></span><code>a2enmod ssl rewrite proxy requestheader headers proxy_http
+</code></pre></div>
+</li>
+<li>
+<p>Replace "Your_Domain.com", "Your_Email", ProxyPass and ProxyPassReverse: In the Apache configuration, you need to replace "Your_Domain.com" with your actual domain name. </p>
+</li>
+<li>
+<p>Adjust SSL certificate locations: You need to specify the correct SSL certificate locations for the subdomain used by the apps. </p>
+</li>
+<li>
+<p>Check the apache config syntax.
+</p><div class="highlight"><pre><span></span><code>apache2ctl configtest
+</code></pre></div>
+</li>
+<li>
+<p>Restart Apache 2 web server,
+</p><div class="highlight"><pre><span></span><code>/etc/init.d/apache2 restart
+or 
+sudo /etc/init.d/apache2 restart
+or 
+sudo service apache2 restart
+</code></pre></div>
+</li>
+</ol>
+<h2 id="after-configuration">After Configuration</h2>
+<ol>
+<li>After changing the configurations, please restart vfoundry, vmeta, vportal and vsso.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>pm2 restart all
+</code></pre></div>
+<ol>
+<li>Enter Vsso (https://your_domain/vsso) and login with any username and password. The first user will be assigned as admin.</li>
+<li>Enter Vmeta (https://your_domain/vmeta). Click the profile button at the top right and click the Servers tab. Here you can insert multiple foundry servers after clicking the “add a server” button. Enter any name for your vpipe server and select type as “vpipe”.</li>
+<li>URL Client: https://your_domain/vpipe</li>
+<li>URL Server: https://your_domain/vpipe</li>
+<li>Type: vpipe</li>
+<li>Main Server: checked</li>
+</ol>
+<h2 id="advanced-configuration">Advanced Configuration:</h2>
+<h3 id="vpipe-config-file-details">Vpipe Config File Details</h3>
+<p>All of the configuration directive details can be found below:</p>
+<p><strong>[Vpipe] Section:</strong></p>
+<ul>
+<li><strong>DB</strong>: This is the name of the database used by Vpipe.</li>
+<li><strong>DBUSER</strong>: It is the name of a database user who has access to the Vpipe database.</li>
+<li><strong>DBPASS</strong>: This is the password for the specified database user.</li>
+<li><strong>DBHOST</strong>: It represents the hostname or IP address of the MySQL server where the Vpipe database is hosted.</li>
+<li>
+<p><strong>DBPORT</strong>: This specifies the port number used to connect to the MySQL server.</p>
+</li>
+<li>
+<p><strong>SSHPATH</strong>: It denotes the secure path on the system where SSH files are saved. This path is used for SSH-related operations in Vpipe.</p>
+</li>
+<li><strong>AMZPATH</strong>: This is the secure path on the system where Amazon files are saved. It is used for storing files related to Amazon integration in Vpipe.</li>
+<li>
+<p><strong>GOOGPATH</strong>: Similarly, this is the secure path where Google files are saved. It is used for storing files related to Google integration in Vpipe.</p>
+</li>
+<li>
+<p><strong>AMAZON</strong>: It is a randomly generated string or salt used for encrypting Amazon keys. This salt adds an extra layer of security to the encryption process.</p>
+</li>
+<li>
+<p><strong>SALT, PEPPER, MASTER, VERIFY</strong>: These are randomly generated strings used for user authentication. They enhance the security of the authentication process by adding unique elements.</p>
+</li>
+<li>
+<p><strong>JWT_SECRET</strong>: This is the secret key used for creating and verifying JSON Web Tokens (JWT) in Vpipe. JWTs are used for authentication and ensuring the integrity of data transmitted between the client and server.</p>
+</li>
+<li>
+<p><strong>JWT_COOKIE_EXPIRES_IN</strong>: This specifies the expiration time for the JWT cookie. Once the specified time period has passed, the cookie will expire, and the user will need to log in again for authentication. The value is usually set in terms of days.</p>
+</li>
+</ul>
+<p><strong>[CONFIG] Section</strong>:</p>
+<ul>
+<li>
+<p><strong>ENV_PATH</strong>: This is an optional file path that can be specified to be sourced before starting the application's run. It could be a file like "/home/.bashrc" and is used to load environment variables or configuration settings.</p>
+</li>
+<li>
+<p><strong>TIMEZONE</strong>: It sets the default timezone used by all date and time functions in the application. It ensures that the application works with the correct time representation based on the specified timezone.</p>
+</li>
+<li>
+<p><strong>RUNPATH</strong>: This is the relative path where run logs are stored.</p>
+</li>
+<li>
+<p><strong>TEMPPATH</strong>: Similarly, this is the relative path where temporary files created during the application's runtime are stored.</p>
+</li>
+<li>
+<p><strong>API_URL</strong>: This is the Vpipe URL used inside the Docker container. It is the endpoint that the application will use to make API calls when it receives requests.</p>
+</li>
+<li>
+<p><strong>BASE_PATH</strong>: This represents the Vpipe URL outside the Docker container. It is the base URL used to access Vpipe from external sources or systems.</p>
+</li>
+<li>
+<p><strong>PUBWEB_URL</strong>: This is the URL that can be used to reach the public web directory. It specifies the address and path to access the directory where public web files are hosted. For example, "http://localhost:8080/vpipe/tmp/pub" can be the URL for accessing the public web directory when running locally.</p>
+</li>
+<li>
+<p><strong>NEXTFLOW_VERSION</strong>: This setting specifies the version of Nextflow that will be used by the application.</p>
+</li>
+<li>
+<p><strong>LDAP_SERVER, DN_STRING, BIND_USER, BIND_PASS</strong>: These configuration parameters are used for the LDAP (Lightweight Directory Access Protocol) server. They include details such as the LDAP server address, DN string, and credentials for binding to the LDAP server.</p>
+</li>
+<li>
+<p><strong>EMAIL_SENDER</strong>: This configuration parameter represents the email address that will be used as the sender when the Vpipe application sends emails. It is the "From" address in the email communication.</p>
+</li>
+<li>
+<p><strong>EMAIL_ADMIN</strong>: This configuration parameter specifies the email address (or multiple email addresses) of the administrator(s) who will receive notifications from the Vpipe server. These email addresses are used for administrative alerts or important notifications.</p>
+</li>
+<li>
+<p><strong>EMAIL_TYPE</strong>: This configuration parameter determines the type of email sending mechanism to be used by the Vpipe application. There are three options:</p>
+</li>
+<li>
+<p><strong>DEFAULT (sendMail):</strong> This option uses the default email sending method available in the system.</p>
+</li>
+<li><strong>SMTP:</strong> This option utilizes the Simple Mail Transfer Protocol (SMTP) to send emails. It requires additional parameters for SMTP configuration.</li>
+<li>
+<p><strong>HTTP:</strong> This option uses an HTTP-based email sending mechanism. It requires additional parameters for configuring the HTTP endpoint.</p>
+</li>
+<li>
+<p><strong>Required Parameters for EMAIL_TYPE=DEFAULT/SMTP</strong>:</p>
+</li>
+<li>
+<p><strong>EMAIL_HOST</strong>: This parameter specifies the hostname or IP address of the email server to be used for sending emails.</p>
+</li>
+<li><strong>EMAIL_USERNAME</strong>: This parameter represents the username or account name used for authentication when connecting to the email server.</li>
+<li><strong>EMAIL_PASSWORD</strong>: This parameter is the password associated with the email account used for authentication.</li>
+<li>
+<p><strong>EMAIL_PORT</strong>: This parameter indicates the port number used to establish a connection with the email server.</p>
+</li>
+<li>
+<p><strong>Required Parameters for EMAIL_TYPE=HTTP</strong>:</p>
+</li>
+<li><strong>EMAIL_URL</strong>: This parameter represents the URL of the HTTP endpoint used for sending emails.</li>
+<li><strong>EMAIL_HEADER_KEY</strong>: This parameter specifies the header key required by the HTTP endpoint for authentication or identification purposes.</li>
+<li><strong>EMAIL_HEADER_VALUE</strong>: This parameter represents the value associated with the header key mentioned above. It is provided for successful communication with the HTTP endpoint.</li>
+</ul>
+<p><strong>[UICONFIG] Section:</strong></p>
+<ul>
+<li>
+<p><strong>COMPANY_NAME</strong>: This setting defines the name of the company or organization that will be displayed on the webpage.</p>
+</li>
+<li>
+<p><strong>PASSWORD_LOGIN</strong>: This parameter is used to enable or disable password-based login for users.</p>
+</li>
+<li>
+<p><strong>ALLOW_SIGNUP</strong>: This parameter toggles the sign-up button on the home page. Enabling it allows users to sign up for an account.</p>
+</li>
+<li>
+<p><strong>ALLOW_SIGNUPGOOGLE</strong>: This parameter toggles the Google sign-in button on the home page. To use this feature, you need to provide the <code>GOOGLE_CLIENT_ID</code> directive. Enabling this option allows users to sign in using their Google accounts.</p>
+</li>
+<li>
+<p><strong>GOOGLE_CLIENT_ID</strong>: This parameter specifies the client ID required for Google sign-in functionality. It is used to authenticate users through Google services.</p>
+</li>
+<li>
+<p><strong>SHOW_WIZARD</strong>: This parameter toggles the display of a wizard on the home page. Enabling it shows a step-by-step guide or tutorial to assist users.</p>
+</li>
+<li>
+<p><strong>SHOW_AMAZON_KEYS</strong>: This parameter toggles the display of the Amazon Keys tab in the user's profile section.</p>
+</li>
+<li>
+<p><strong>SHOW_GOOGLE_KEYS</strong>: This parameter toggles the display of the Google Keys tab in the user's profile section.</p>
+</li>
+<li>
+<p><strong>SHOW_SSH_KEYS</strong>: This parameter toggles the display of the SSH Keys tab in the user's profile section.</p>
+</li>
+<li>
+<p><strong>SHOW_GROUPS</strong>: This parameter toggles the display of the Groups tab in the user's profile section.</p>
+</li>
+<li>
+<p><strong>SHOW_GITHUB</strong>: This parameter toggles the display of the GitHub tab in the user's profile section.</p>
+</li>
+<li>
+<p><strong>SHOW_RUN_LOG</strong>: This parameter toggles the display of the Log.txt file in the Log tab of the run page.</p>
+</li>
+<li>
+<p><strong>SHOW_RUN_TIMELINE</strong>: This parameter toggles the display of the timeline file in the Log tab of the run page.</p>
+</li>
+<li>
+<p><strong>SHOW_RUN_REPORT</strong>: This parameter toggles the display of the report file in the Log tab of the run page.</p>
+</li>
+<li>
+<p><strong>SHOW_RUN_DAG</strong>: This parameter toggles the display of the DAG (Directed Acyclic Graph) file in the Log tab of the run page.</p>
+</li>
+<li>
+<p><strong>SHOW_RUN_TRACE</strong>: This parameter toggles the display of the trace file in the Log tab of the run page.</p>
+</li>
+<li>
+<p><strong>SHOW_RUN_NEXTFLOWLOG</strong>: This parameter toggles the display of the .nextflow.log file in the Log tab of the run page.</p>
+</li>
+<li>
+<p><strong>SHOW_RUN_NEXTFLOWNF</strong>: This parameter toggles the display of the nextflow.nf file in the Log tab of the run page.</p>
+</li>
+<li>
+<p><strong>SHOW_RUN_NEXTFLOWCONFIG</strong>: This parameter toggles the display of the nextflow.config file in the Log tab of the run page.</p>
+</li>
+<li>
+<p><strong>SHOW_HOMEPAGE</strong>: This parameter toggles the display of the homepage.</p>
+</li>
+<li>
+<p><strong>SHOW_APPS</strong>: This parameter toggles the display of applications on the webpage.</p>
+</li>
+<li>
+<p><strong>ENABLE_SHARE_WITH_EVERYONE_RUN</strong>: This parameter enables or disables the option to share runs with everyone.</p>
+</li>
+<li>
+<p><strong>ENABLE_SHARE_WITH_EVERYONE_PIPELINE</strong>: This parameter enables or disables the option to share pipelines with everyone.</p>
+</li>
+<li>
+<p><strong>CUSTOM_HELP_MESSAGE</strong>: This setting allows the customization of a help message to be displayed in the support section of the webpage.</p>
+</li>
+<li>
+<p><strong>CUSTOM_FILE_LOCATION_MESSAGE</strong>: This setting allows the customization of a message to be displayed in the "add file" window on the run page.</p>
+</li>
+</ul>
+<p><strong>[SSOCONFIG] Section:</strong></p>
+<ul>
+<li>
+<p><strong>SSO_LOGIN</strong>: This setting determines whether Single Sign-On (SSO) login is enabled or disabled for the application. Set it to <code>true</code> to enable SSO login and <code>false</code> to disable it.</p>
+</li>
+<li>
+<p><strong>SSO_URL</strong>: This parameter specifies the URL of the SSO server. It is the endpoint where the authentication process takes place.</p>
+</li>
+<li>
+<p><strong>CLIENT_ID, CLIENT_SECRET</strong>: These parameters represent the client credentials required for SSO integration. They are obtained from the SSO server. The <code>CLIENT_ID</code> is a unique identifier assigned to the Vpipe application, and the <code>CLIENT_SECRET</code> is a secure key used for authentication and authorization purposes.</p>
+</li>
+</ul>
+<p><strong>[VIACONFIG] Section:</strong></p>
+<ul>
+<li><strong>VFOUNDRY_URL</strong>: This parameter represents the URL of the Via Foundry server. The VFOUNDRY_URL setting allows the Vpipe application to connect and interact with the Via Foundry server.</li>
+</ul>
+<h3 id="vmetavportalvfoundry-config-file-details">Vmeta/Vportal/Vfoundry Config File Details</h3>
+<p>All of the configuration directive details can be found below. By configuring these settings, you can customize various aspects of the application, including the environment, server configuration, database connection, authentication options, email settings, SSO integration, SSL/TLS certificates, and session management.</p>
+<ul>
+<li>
+<p><strong>NODE_ENV</strong>: This parameter specifies the environment in which the application is running. The default value is "production".</p>
+</li>
+<li>
+<p><strong>PROTOCOL</strong>: This parameter determines the protocol to be used for communication. It can be either "http" or "https".</p>
+</li>
+<li>
+<p><strong>PORT</strong>: This parameter specifies the port number on which the application will run.</p>
+</li>
+<li>
+<p><strong>BASE_URL</strong>: This parameter represents the base URL of the application. If the application is running under a subfolder of another application, the SUBFOLDER parameter should be defined.</p>
+</li>
+<li>
+<p><strong>SUBFOLDER</strong>: This parameter is used when the application is running under a subfolder of another application. It specifies the subfolder path.</p>
+</li>
+<li>
+<p><strong>DATABASE_LOCAL</strong>: This parameter defines the connection URL for the local MongoDB database. It includes the credentials (username and password), hostname, port, and database name.</p>
+</li>
+<li>
+<p><strong>SESSION_SECRET</strong>: This is a secret key used for session management. It should be a long, secure string.</p>
+</li>
+<li>
+<p><strong>JWT_SECRET</strong>: This is the secret key used for JWT (JSON Web Token) generation and verification. It should also be a long, secure string.</p>
+</li>
+<li>
+<p><strong>JWT_EXPIRES_IN</strong>: This parameter defines the expiration time for JWTs in days.</p>
+</li>
+<li>
+<p><strong>JWT_COOKIE_EXPIRES_IN</strong>: This parameter defines the expiration time for JWT cookies in days.</p>
+</li>
+<li>
+<p><strong>CERTS_PRIVATE_KEY</strong>: This parameter specifies the file path for the private key used for SSL/TLS certificates.</p>
+</li>
+<li>
+<p><strong>CERTS_CERTIFICATE</strong>: This parameter specifies the file path for the SSL/TLS certificate.</p>
+</li>
+<li>
+<p><strong>TIME_TO_CHECK_EXPIRED_TOKENS</strong>: This parameter determines the time interval (in seconds) for checking the database for expired tokens.</p>
+</li>
+<li>
+<p><strong>SSO_LOGIN</strong>: This setting determines whether Single Sign-On (SSO) login is enabled or disabled for the application.</p>
+</li>
+<li>
+<p><strong>SSO_URL</strong>: This parameter represents the URL of the SSO authorization server.</p>
+</li>
+<li>
+<p><strong>SSO_REDIRECT_URL</strong>: This parameter specifies the URL where the user will be redirected after successful SSO authentication.</p>
+</li>
+<li>
+<p><strong>SSO_USER_INFO_URL</strong>: This parameter represents the URL for obtaining user information from the SSO server.</p>
+</li>
+<li>
+<p><strong>CLIENT_ID, CLIENT_SECRET</strong>: These parameters represent the client credentials retrieved from the SSO server for authentication and authorization.</p>
+</li>
+</ul>
+<h3 id="vsso-config-file-details">Vsso Config File Details</h3>
+<p>All of the configuration directive details can be found below. By configuring these settings, you can customize various aspects of the application, including the environment, server configuration, database connection, authentication options, email settings, SSO integration, SSL/TLS certificates, and session management.</p>
+<ul>
+<li>
+<p><strong>NODE_ENV</strong>: This parameter specifies the environment in which the application is running. The default value is "production".</p>
+</li>
+<li>
+<p><strong>PORT</strong>: This parameter specifies the port number on which the application will run. It is set to 3000.</p>
+</li>
+<li>
+<p><strong>PROTOCOL</strong>: This parameter determines the protocol to be used for communication.</p>
+</li>
+<li>
+<p><strong>BASE_URL</strong>: This parameter represents the base URL of the application. If the application is running under a subfolder of another application, the SUBFOLDER parameter should be defined.</p>
+</li>
+<li>
+<p><strong>SUBFOLDER</strong>: This parameter is used when the application is running under a subfolder of another application. It specifies the subfolder path, which is "/vsso" in this case.</p>
+</li>
+<li>
+<p><strong>DATABASE</strong>: This parameter defines the connection URL for the MongoDB database. It includes the credentials (username and password), hostname, port, and database name.</p>
+</li>
+<li>
+<p><strong>SALT, PEPPER</strong>: These parameters are random strings used for user authentication.</p>
+</li>
+<li>
+<p><strong>JWT_SECRET</strong>: This is the secret key used for JWT (JSON Web Token) generation and verification. It should be a long, secure string.</p>
+</li>
+<li>
+<p><strong>JWT_EXPIRES_IN</strong>: This parameter defines the expiration time for JWTs, set to 90 days.</p>
+</li>
+<li>
+<p><strong>JWT_COOKIE_EXPIRES_IN</strong>: This parameter defines the expiration time for JWT cookies, also set to 90 days.</p>
+</li>
+<li>
+<p><strong>COMPANY_NAME</strong>: This parameter specifies the name of the company that will be displayed in the user interface.</p>
+</li>
+<li>
+<p><strong>ALLOW_SIGNUP</strong>: This parameter toggles the sign-up button on the home page. It is set to false, meaning sign-up is not allowed.</p>
+</li>
+<li>
+<p><strong>PASSWORD_LOGIN</strong>: This parameter toggles the password login option. It is set to true, enabling password-based login.</p>
+</li>
+<li>
+<p><strong>EMAIL_FROM, EMAIL_USERNAME, EMAIL_PASSWORD, EMAIL_HOST, EMAIL_PORT, EMAIL_ADMIN, EMAIL_ADMIN_NAME</strong>: These parameters configure the email settings, including the sender's email, SMTP credentials, host, port, admin email, and admin name.</p>
+</li>
+<li>
+<p><strong>GOOGLE_LOGIN</strong>: This parameter enables Google login. It is set to true.</p>
+</li>
+<li>
+<p><strong>GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_CALLBACK_URL</strong>: These parameters represent the client credentials and callback URL for Google login.</p>
+</li>
+<li>
+<p><strong>OKTA_SAML_LOGIN</strong>: This parameter enables SAML-based login with Okta. It is set to true.</p>
+</li>
+<li>
+<p><strong>SSO_ISSUER, SSO_SAML_METADATA, SSO_SAML_DESTINATION_URL</strong>: These parameters configure the SAML settings for Okta login, including the issuer, SAML metadata file path, and destination URL after successful login.</p>
+</li>
+<li>
+<p><strong>CERTS_PRIVATE_KEY, CERTS_CERTIFICATE</strong>: These parameters specify the file paths for the private key and SSL/TLS certificate used by the application.</p>
+</li>
+<li>
+<p><strong>SESSION_SECRET</strong>: This is a secret key used for session management. It should be a long, secure string.</p>
+</li>
+<li>
+<p><strong>SESSION_MAXAGE</strong>: This parameter defines the maximum age (in milliseconds) for sessions.</p>
+</li>
+<li>
+<p><strong>TIME_TO_CHECK_EXPIRED_TOKENS</strong>: This parameter determines the time interval (in seconds) for checking the database for expired tokens.</p>
+</li>
+<li>
+<p><strong>ACCESS_TOKEN_EXPIRES_IN</strong>: This parameter defines the expiration time (in milliseconds) for access tokens.</p>
+</li>
+<li>
+<p><strong>CODE_TOKEN_EXPIRES_IN</strong>: This parameter defines the expiration time (in seconds) for code tokens.</p>
+</li>
+<li>
+<p><strong>REFRESH_TOKEN_EXPIRES_IN</strong>: This parameter defines the expiration time (in minutes) for refresh tokens.</p>
+</li>
+</ul></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2023 by Via Scientific
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.471ce7a9.min.js"></script>
+      
+    
+  </body>
+</html>
