@@ -68,8 +68,9 @@ nav:
       - "Browser Support": ViaFoundry/admin-browser-support.md
   - Pipeline Specification:
       - CAMP Pipeline:
-          - "CAMP Short-Read Quality Control Module": ViaFoundry/pipeline-docs/CAMP/camp-short-read.md
-          - "CAMP Short Read Taxonomy": ViaFoundry/pipeline-docs/CAMP/camp-short-read-taxonomy.md
+          - "Short-Read Quality Control Module": ViaFoundry/pipeline-docs/CAMP/camp-short-read.md
+          - "Short Read Taxonomy": ViaFoundry/pipeline-docs/CAMP/camp-short-read-taxonomy.md
           - "MAG Quality-Checking Module": ViaFoundry/pipeline-docs/CAMP/mag-quality-check.md
           - "Gene Catalog Module": ViaFoundry/pipeline-docs/CAMP/gene-catalog-module.md
           - "Short Read Assembly Module": ViaFoundry/pipeline-docs/CAMP/short-read-assembly.md
+          - "Meta-CAMP: Metagnome binning assembly": ViaFoundry/pipeline-docs/CAMP/camp-metagenome-assembly.md
