@@ -1,6 +1,6 @@
 # CAMP Short-Read Quality Control Module Overview
 
-![CAMP short read pipeline](../../images/camp-pipeline/CAMP-short-read.png)
+![CAMP short read pipeline](../../../images/camp-pipeline/CAMP-short-read.png)
 
 The CAMP Short-Read Quality Control Module is designed to assess the quality of short-read sequencing, ensuring high-confidence data suitable for downstream analyses. This module operates both as a standalone MAG short-read quality control pipeline and as part of the broader CAMP metagenome analysis pipeline. 
 

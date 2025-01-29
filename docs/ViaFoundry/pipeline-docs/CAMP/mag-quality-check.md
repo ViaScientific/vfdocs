@@ -1,6 +1,6 @@
 # CAMP MAG Quality-Checking Module 
 
-![CAMP MAG](../../images/camp-pipeline/CAMP-qc-module.png)
+![CAMP MAG](../../../images/camp-pipeline/CAMP-qc-module.png)
 
 ## Overview
 
