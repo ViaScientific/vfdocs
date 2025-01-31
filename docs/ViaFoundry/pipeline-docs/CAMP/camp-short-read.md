@@ -47,10 +47,6 @@ To facilitate comprehensive quality assessment, the module generates summary sta
 - **Filtered reads (.fastq.gz)**  
   Description: FastQ files that are error-corrected and have host reads removed.
 
-#### Temporary Outputs
-- **Temporary Outputs**  
-  Description: This output...
-  Visualization App: DE Browser
 
 ## Usage Guidelines
 

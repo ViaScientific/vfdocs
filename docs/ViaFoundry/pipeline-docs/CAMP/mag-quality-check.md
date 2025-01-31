@@ -106,3 +106,7 @@ The quality assessment of consensus refined MAGs involves the following paramete
 - **checkm2_out_tsv**  
   *Description:* Summarizes the quality and completeness of bins using the CheckM2 tool in TSV format.  
   *Visualization App:* DataTables
+
+- **dnadiff_report**
+  *Description:* Summarizes the comparison between a MAG (Metagenome-Assembled Genome) and a reference genome retrieved from the GTDB database.
+  *Visualization App:* text

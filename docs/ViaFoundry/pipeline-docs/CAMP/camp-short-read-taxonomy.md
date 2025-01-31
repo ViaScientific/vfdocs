@@ -58,10 +58,10 @@ Additionally, a suite of R-shiny applications is available for detailed analysis
   *Description:* Error-corrected, host-read-removed paired-end FASTQ files (outputs from the short-read quality control module can be used).
 
 - **Kraken db**  
-  *Description:* Database files for Kraken classification. The pipeline provides default DB files, but the `kraken2-build` command can be used to build additional databases.
+  *Description:* Database files for Kraken classification. The pipeline provides default DB files.
 
 - **metaphlan db**  
-  *Description:* MetaPhlAn4 database files for the analysis process. The pipeline offers default DB files, with the option to build databases using the `metaphlan --install --bowtie2db /path/to/database_dir` command.
+  *Description:* MetaPhlAn4 database files for the analysis process. The pipeline offers default DB files.
 
 - **xtree db**  
   *Description:* Database files for the XTree process. Default DB files are provided.
@@ -150,8 +150,8 @@ Additionally, a suite of R-shiny applications is available for detailed analysis
 
 Pavian is an interactive browser application for analyzing and visualizing classification results from classifiers, including Kraken, KrakenUniq, Kraken 2, Centrifuge, and MetaPhlAn. For more information, refer to the publication available at [https://doi.org/10.1093/bioinformatics/btz715](https://doi.org/10.1093/bioinformatics/btz715).
 
-![Pavian Interface](../../images/camp-pipeline/pavian-camp.png)
-![Pavian Interface](../../images/camp-pipeline/pavian-app-viz.png)
+![Pavian Interface](../../../images/camp-pipeline/pavian-camp.png)
+![Pavian Interface](../../../images/camp-pipeline/pavian-app-viz.png)
 
 ### Krona App
 
@@ -163,3 +163,5 @@ Krona provides a means to explore hierarchical data through zoomable, multi-laye
 ### MicroViz
 
 The MicroViz shiny app serves as an interactive environment for exploring microbiota data, combining ordination plots with abundance bar charts. Users can delve into ordination plots, select samples, and analyze their taxonomic compositions on a customizable stacked bar chart with a clear color scheme.
+
+![MicroViz App Interface](../../../images/camp-pipeline/microviz.gif)

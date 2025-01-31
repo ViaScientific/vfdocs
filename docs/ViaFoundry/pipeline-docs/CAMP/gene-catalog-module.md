@@ -32,10 +32,6 @@ The CAMP Gene Cataloguing pipeline orchestrates the identification and functiona
 
 #### Published Outputs
 
-- **`bakta_faa`**  
-  **Description:** FASTA files containing predicted Open Reading Frames (ORFs) for each sample.  
-  **Visualization App:** DataTables.
-
 - **`orf_annotations.tsv`**  
   **Description:** A consolidated annotation file detailing ORFs across all samples.  
   **Visualization App:** DataTables.
@@ -48,10 +44,6 @@ The CAMP Gene Cataloguing pipeline orchestrates the identification and functiona
   **Description:** A TSV file containing the relative abundances of ORFs across all samples.  
   **Visualization App:** DataTables.
 
-- **`orf_filt_seq.fasta`**  
-  **Description:** A FASTA file with representative sequences of filtered ORF clusters.  
-  **Visualization App:** DataTables.
-
 - **`orf_cluster_sizes.csv`**  
   **Description:** A CSV file reporting the sizes of ORF clusters.  
   **Visualization App:** DataTables.
@@ -59,6 +51,14 @@ The CAMP Gene Cataloguing pipeline orchestrates the identification and functiona
 - **`diamond/{sample}.tsv`**  
   **Description:** A TSV file summarizing the alignment of reads against the filtered ORF database.  
   **Visualization App:** DataTables.
+
+#### Intermediate Outputs
+- **`bakta_faa`**  
+  **Description:** FASTA files containing predicted Open Reading Frames (ORFs) for each sample.  
+
+- **`orf_filt_seq.fasta`**  
+  **Description:** A FASTA file with representative sequences of filtered ORF clusters.
+
 
 ## Workflow
 
