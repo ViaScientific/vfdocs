@@ -20,7 +20,7 @@ The current binning algorithms included are: `MetaBAT2`, `CONCOCT`, `SemiBin2`, 
 - **Reads**
     - **Description:** Error-corrected read files. Either BayesHammer (SPAdes) or Tadpole (BBMap) can be used for correction.
 
-- **Assembly File**
+- **Assembly Files**
     - **Description:** `.fasta` (or `.fasta.gz`) files generated from the assembly module or user-created assembly files.
 
 ### Optional Inputs
