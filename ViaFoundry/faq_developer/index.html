@@ -1007,6 +1007,48 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#process-terminated-for-an-unknown-reason" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process terminated for an unknown reason
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Process terminated for an unknown reason">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nextflow-timing-out-while-retrieving-job-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nextflow Timing Out While Retrieving Job Status
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possible-cause-incorrect-queuepartition-for-job-status-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Possible Cause: Incorrect Queue/Partition for Job Status Checks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-enable-global-queue-status-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution: Enable Global Queue Status Check
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1330,6 +1372,48 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#process-terminated-for-an-unknown-reason" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process terminated for an unknown reason
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Process terminated for an unknown reason">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nextflow-timing-out-while-retrieving-job-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nextflow Timing Out While Retrieving Job Status
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possible-cause-incorrect-queuepartition-for-job-status-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Possible Cause: Incorrect Queue/Partition for Job Status Checks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-enable-global-queue-status-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution: Enable Global Queue Status Check
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1352,7 +1436,7 @@
 
   <h1>Frequently Asked Questions for Developers</h1>
 
-<div><h3 id="process-guide">Process Guide</h3>
+<div><h2 id="process-guide">Process Guide</h2>
 <ol>
 <li>
 <p>Inside a Docker container, avoid running additional Docker commands within the script block, as the current process is already running within Docker. Instead, modify the Docker configuration for the desired process.</p>
@@ -1361,7 +1445,7 @@
 <p>When writing a bash script in the script section, refrain from using <code>#!/bin/bash</code> to prevent interference with nextflow's error detection mechanism.</p>
 </li>
 </ol>
-<h4 id="syntax-errors">Syntax Errors</h4>
+<h3 id="syntax-errors">Syntax Errors</h3>
 <ol>
 <li>
 <p>Dollar characters <code>$</code> should be escaped with a backslash <code>\</code> in script blocks.</p>
@@ -1375,7 +1459,7 @@ helper(\$library, \$star_index)
 <p>Backslash characters <code>\</code> should be escaped with another backslash <code>\</code>.</p>
 </li>
 </ol>
-<h4 id="container-directive-usage-in-process-definitions">Container Directive Usage in Process Definitions</h4>
+<h3 id="container-directive-usage-in-process-definitions">Container Directive Usage in Process Definitions</h3>
 <p>When defining a process, be cautious with the use of the <code>when:</code> directive. Specifically, avoid placing the container directive after the <code>when:</code> directive, as it may not work as expected.</p>
 <div class="highlight"><pre><span></span><code>// Avoid placing the `when:` directive before the `container` directive:
 
@@ -1402,7 +1486,7 @@ script:
 echo "test"
 """
 </code></pre></div>
-<h4 id="process-exits-with-code-1-without-output">Process Exits with Code 1 without Output</h4>
+<h3 id="process-exits-with-code-1-without-output">Process Exits with Code 1 without Output</h3>
 <p><strong>Case-1:</strong></p>
 <div class="highlight"><pre><span></span><code>Caused by:
   Essential container in task exited
@@ -1436,7 +1520,45 @@ Another reason for unexpected behavior is the use of the expression <code>((k++)
 <div class="highlight"><pre><span></span><code>k=0
 ((k++))
 </code></pre></div>
-<p>Instead, use the command <code>k=$((k + 1))</code> in the bash script.</p></div>
+<p>Instead, use the command <code>k=$((k + 1))</code> in the bash script.</p>
+<h3 id="process-terminated-for-an-unknown-reason">Process terminated for an unknown reason</h3>
+<p><strong>Case-1:</strong></p>
+<div class="highlight"><pre><span></span><code>ERROR ~ Error executing process &gt; 'STAR'
+
+Caused by:
+  Process `STAR` terminated for an unknown reason -- Likely it has been terminated by the external system
+
+Command executed:
+  my_command
+
+Command exit status:
+  -
+
+Command output:
+  (empty)
+</code></pre></div>
+<p>Please check .nextflow.log file for clues. For example:</p>
+<div class="highlight"><pre><span></span><code>DEBUG nextflow.executor.GridTaskHandler - Failed to get exit status for process 
+TaskHandler[jobId: 33830839; id: 43; name: STAR; status: RUNNING; exit: -; 
+error: -; workDir: /rundir/work/a5/0c31b5e1b0eca2f054d923d509629e started: 1740080252555; exited: -; ] -- exitStatusReadTimeoutMillis: 270000; delta: 270017
+Current queue status:
+  (empty)
+
+Content of workDir: /rundir/work/a5/0c31b5e1b0eca2f054d923d509629e
+null
+</code></pre></div>
+<h4 id="nextflow-timing-out-while-retrieving-job-status"><strong>Nextflow Timing Out While Retrieving Job Status</strong></h4>
+<p>This error occurs when Nextflow times out while attempting to retrieve the exit status from an executor (e.g., SLURM, LSF, SGE). However, the executor itself has no record of job failure, indicating that the job is likely still running.</p>
+<h4 id="possible-cause-incorrect-queuepartition-for-job-status-checks"><strong>Possible Cause: Incorrect Queue/Partition for Job Status Checks</strong></h4>
+<p>By default, Nextflow checks job status in SLURM using the following command:</p>
+<p></p><div class="highlight"><pre><span></span><code>squeue --noheader -o '%i %t' -t all -p $PARTITION -u $USERNAME
+</code></pre></div>
+Nextflow assumes that the job is running in the same partition it was submitted to. However, in some clusters, jobs may be assigned to a <strong>different queue or partition</strong>, causing Nextflow to check the wrong queue and fail to retrieve job status.
+<h4 id="solution-enable-global-queue-status-check"><strong>Solution: Enable Global Queue Status Check</strong></h4>
+<p>To ensure that Nextflow retrieves job status correctly across all partitions, add the following directive in the <strong>Run Environment → Profile Variables</strong> section:</p>
+<p></p><div class="highlight"><pre><span></span><code>executor.queueGlobalStatus = true
+</code></pre></div>
+This setting allows Nextflow to check job statuses across <strong>all partitions</strong>, preventing job tracking failures.</div>
 
 
 
