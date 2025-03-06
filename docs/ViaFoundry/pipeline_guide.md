@@ -665,8 +665,10 @@ To import nf-core pipelines or similar standard Nextflow pipelines, follow these
 
     2. Pipeline publish direcory should be set as `params.outdir`.
 
+```
+Note: To import Via Pipelines, you need admin permission. Contact <support@viascientific.com> for more details.
+```
 
-4. To import Via Pipelines, you need admin permission. Contact <support@viascientific.com> for more details.
 ## Support
 
 For any questions or help, please reach out to
