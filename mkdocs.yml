@@ -12,6 +12,8 @@ site_author: Via Foundry Team
 plugins:
   - mkdocs-video
   - search
+  - sitemap:
+      changefreq: monthly
 
 markdown_extensions:
   - admonition
