@@ -1,4 +1,5 @@
 site_name: Via Foundry Documentation
+site_url: https://docs.viascientific.com/
 theme:
   name: material
   logo: "images/via_icon.png"
