@@ -1,4 +1,5 @@
 site_name: Via Foundry Documentation
+site_url: https://docs.viascientific.com/
 theme:
   name: material
   logo: "images/via_icon.png"
@@ -12,8 +13,6 @@ site_author: Via Foundry Team
 plugins:
   - mkdocs-video
   - search
-  - sitemap:
-      changefreq: monthly
 
 markdown_extensions:
   - admonition
