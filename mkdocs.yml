@@ -2,6 +2,7 @@ site_name: Via Foundry Documentation
 site_url: https://docs.viascientific.com/
 theme:
   name: material
+  custom_dir: overrides
   logo: "images/via_icon.png"
   palette:
     primary: white
