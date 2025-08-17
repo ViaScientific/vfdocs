@@ -218,7 +218,7 @@ three opening double quotes `"""`:
         variable, and used in the STAR command as `${name}`.
 
 
--   **Conditional Scripts:**
+**Conditional Scripts:**
 
 Conditional scripts can be used with control statements such as "if"
 and "switch." To use this feature, you need to start the code block
@@ -291,6 +291,42 @@ of the script, like this:
 
     exec:
     println "${genome}"
+
+**D. Custom Scripts:**
+
+Custom scripts can be written directly to the process, however, there are two additional options:
+
+**Add Custom Scripts Directly to Container**
+
+Scripts that exist on a container can be called directly from the script block, simply provide the path to the script on the container:
+
+    script:
+
+    min_counts = 10 //* @input
+    
+    """
+    /custom_scripts/filter_counts.py --min-count ${min_counts}
+    """
+
+**Tip:** If the script is in the container's `$PATH` then the path to the script is not necessary.
+
+**Add Custom Scripts to the bin Directory on the Pipeline's Advanced Tab**
+
+If a directory named `bin` exists within the pipeline's Advanced tab, the contents of the `bin` directory will be automatically loaded to `/bin` when the process is started.
+
+![image](../images/bin_directory.png)
+
+filter_counts.py can then be executed directly:
+
+    script:
+
+    min_counts = 10 //* @input
+    
+    """
+    filter_counts.py --min-count ${min_counts}
+    """
+
+**Note:** If changes are made to the script after a run has been executed, the 'resume' function will not include the recent changes. Instead, the 'rerun' option must be used.
 
 ## Operators
 
