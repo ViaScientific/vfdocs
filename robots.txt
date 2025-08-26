@@ -1,0 +1,3 @@
+# robots.txt for https://docs.viascientific.com/ 
+User-agent: *
+Sitemap: https://docs.viascientific.com/sitemap.xml
