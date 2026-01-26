@@ -1,0 +1,57 @@
+Cell Ranger is an analysis pipeline that processes Chromium single-cell RNA-seq output to align reads, generate feature-barcode matrices and perform clustering and gene expression analysis.
+
+Steps:
+
+Cellranger count takes FASTQ files performs alignment, filtering, barcode counting, and UMI counting. It uses the Chromium cellular barcodes to generate feature-barcode matrices, determine clusters, and perform gene expression analysis. cellranger count also processes Feature Barcoding data alongside Gene Expression reads.
+Cellranger aggr aggregates outputs from multiple runs of cellranger count, normalizing those runs to the same sequencing depth and then recomputing the feature-barcode matrices and analysis on the combined data. The aggr pipeline can be used to combine data from multiple samples into an experiment-wide feature-barcode matrix and analysis.
+Please check following web site for detailed information: https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/count
+
+Required Inputs are Reads and genome_build.
+
+Overview:
+
+[Run Environment]
+Reads are the main input for the CellRanger pipeline. Before you can select which collection you'll use as your reads input, you have to select a Run Environment. Here I'm choosing 'Via Run Environment'.
+
+['Reads' Collection input]
+On the row with "Reads" you can choose add files, I'll do that and here I'm just going to use something from the public database. I'm going to use the "GEO/NCBI" file import feature in Foundry to import "GSE145926" SRR ID. Now that I've entered the GEO accession number I have the sample here, I just select them, and then I can rename my sample here, and I can create a collection for it, I save it in the collection, and then I click save files. Now the reads input are ready.
+
+['genome_build' input]
+
+For the genome, you can select the genome build that you'd like from the drop down. In this case, we are using 'Human HG38 gencode v32 CellRanger  v6 genome'. 
+
+[Commentary of other inputs]
+
+Below you can see that there are many inputs, but usually under most circumstances, you do not need to really alter them, because they are optimized for most use cases. So if you don't have anything really special, such as you're using a custom genome, just leave it as it is.
+
+[Ambient RNA removal]
+
+Here we have the Ambient RNA removal, this option determines whether to remove Ambient RNA from CellRanger results. you can choose true or false, in most of the cases, you want to say true, because Ambient RNA contamination is common when you are working with a single cell RNA-seq dataset. I'll set 'Ambient RNA removal' to true.
+
+[run_scRNA_Analysis setting]
+
+For 'run_scRNA_Analysis' single cell RNA-seq analysis you always want to set it to true. The 'run_scRNA_Analysis' option perfoms the core downstream analysis, such as QC and clustering. You can access additional settings for the 'run_scRNA_Analysis' by clicking the wrench icon next to the option.
+
+So here in the additional settings, you can optionally enter the metadata information or upload a file here. I'll click the edit icon, which looks like a pencil. The columns for the metadata are: sample and condition. You can right-click on the column names to rename the columns. Let's try it for demonstration purposes. Let's rename the condition column to symptoms. You can also insert another column, and you can rename it too - all by right clicking on the column header. Going back to the additional settings for 'run_scRNA_Analysis', let's look at 'Load_Data_h5' section, all parameters here are automated and optimized, I talk about each parameter in 'Load_Data_h5', in case you're interested. We use the quantiles instead of hard integer threshold for filtering, because if you have multiple samples, and the quality of samples really differs from each other, using a hard threshold will maybe eliminate some many useful and usable cells in the data set, while in another data set, you're not filtering empty cells enough, so here we're using the quantile transcript. Here minimum transcripts and maximum transcripts, are set to 0.01 and 0.99, which means that you are basically filtering out cells with unique transcripts lower than one percent quantile or higher than 99 percent quantile respectively. For the minimal genes and maximum genes, you're doing the same thing, you are filtering cells with lower than one percentile genes in the sample or higher than 99 percentile genes in the cell.
+
+For the 'percent_mt' and 'percent_ribo' means a percentage of mitochondrial countenance and percentage of ribosomal cell countenance, here, the default is 25 percent for mitochondrial and 50 percent ribosomal.
+
+For '# of Variable Features' we set the default as 3,000, but you can definitely increase it or decrease it.
+
+Here we have the 'Normalization Methods', we default to log normalized. There are other methods like relative counts or sct normalization available, you can choose the ones that you would like.
+
+For doublet removal, a doublet in a single cell RNA sequencing context means there are two cells sticking to one droplet, DEFAULT means the pipeline will try to detect whether the data is from a cellranger multi pipeline, if yes the doublet removal will not be run.
+
+'RemoveMitoGenes' whether to remove ribosomal genes from the data in the downstream analysis, the default is false, because these genes still have their biological meanings, removing them may lead to unexpected results.
+
+For the batch effect, the algorithm will try to determine whether you have multiple samples as input, if yes, the algorithm will try to do the batch effect correction, which is highly recommended. 
+
+Next, we're looking at the 'Clustering_and_Find_Markers' option, whcih manages the the clustering and find marker analysis. Here we define cell population in the data set and try to find marker genes for these populations. In this case, we have the minimum resolution and maximum resolution set, which, and the algorithm will try to loop through these, loop through the parameters between these resolutions and try to pick the optimal one.
+
+Here, the number of principal components, you can set either enter an integer larger than two or smaller, and smaller than 100 to do the analysis, or you can enter zero for an automated prediction. We default to zero here.
+
+Next, we can set whether to run CellFindR, CellFindR is another analysis that will try to determine the best clustering resolution. We default to false because it is very slow. And also find cluster for all resolution. Well, this means that whether you want to find the cluster markers for all the resolution that are iterated in the previous steps, the default is false, because this will take a lot of time.
+
+Finally, the 'Generate_loom_file' option dictates whether you want to generate the Loom files in the analysis, the default is false, because it's not a very common file type, and you do not always want to generate it. It can take a lot of time. Now, I will just click start a run. 
+
+And that's it. It can, that's about the starting the run, you know. And that's about it.
